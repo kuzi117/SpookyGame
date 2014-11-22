@@ -1,0 +1,737 @@
+<!--Saved by Quest 5.5.5328.26617-->
+<asl version="550">
+  <include ref="English.aslx" />
+  <include ref="Core.aslx" />
+  <game name="Shadowed">
+    <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
+    <version>1.0</version>
+    <firstpublished>2014</firstpublished>
+    <gridmap />
+    <author>Team Cubed</author>
+    <debug type="boolean">false</debug>
+    <addable_fuel type="stringlist">
+      <value>add10</value>
+      <value>add20</value>
+      <value>add30</value>
+      <value>add60</value>
+      <value>addlots</value>
+    </addable_fuel>
+    <start type="script">
+      // Initial player facing
+      player.facing_num = 0
+      dictionary remove (player.statusattributes, "facing")
+      dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+    </start>
+  </game>
+  <verb>
+    <property>turnup</property>
+    <pattern>turn up</pattern>
+    <defaultexpression>"You can't turn up " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>turndown</property>
+    <pattern>turn down</pattern>
+    <defaultexpression>"You can't turn down " + object.article + "."</defaultexpression>
+  </verb>
+  <object name="defaultroom">
+    <inherit name="editor_room" />
+    <usedefaultprefix />
+    <descriptions type="stringdictionary">
+      <item>
+        <key>darknorth</key>
+        <value>defaultdarknorth</value>
+      </item>
+      <item>
+        <key>darkeast</key>
+        <value>defaultdarkeast</value>
+      </item>
+      <item>
+        <key>darksouth</key>
+        <value>defaultdarksouth</value>
+      </item>
+      <item>
+        <key>darkwest</key>
+        <value>defaultdarkwest</value>
+      </item>
+      <item>
+        <key>dimnorth</key>
+        <value>defaultdimnorth</value>
+      </item>
+      <item>
+        <key>dimeast</key>
+        <value>defaultdimeast</value>
+      </item>
+      <item>
+        <key>dimsouth</key>
+        <value>defaultdimsouth</value>
+      </item>
+      <item>
+        <key>dimwest</key>
+        <value>defaultdimwest</value>
+      </item>
+      <item>
+        <key>brightnorth</key>
+        <value>defaultbrightnorth</value>
+      </item>
+      <item>
+        <key>brighteast</key>
+        <value>defaultbrighteast</value>
+      </item>
+      <item>
+        <key>brightsouth</key>
+        <value>defaultbrightsouth</value>
+      </item>
+      <item>
+        <key>brightwest</key>
+        <value>defaultbrightwest</value>
+      </item>
+    </descriptions>
+    <description type="script">
+      PrintRoomDesc (False)
+    </description>
+  </object>
+  <turnscript name="lantern_turn_script">
+    <script><![CDATA[
+      if (Got(lantern)) {
+        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+          lantern.light_level = 0
+          lantern.burnt_out = True
+          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+          lantern.light_level = 1
+          lantern.low_fuel = True
+          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else {
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        if (game.debug) {
+          msg ("FUEL DEBUG: " + lantern.fuel_level)
+        }
+      }
+    ]]></script>
+  </turnscript>
+  <verb>
+    <property>turnleft</property>
+    <pattern>turn left</pattern>
+    <defaultexpression>"You can't turn left " + object.article + "."</defaultexpression>
+  </verb>
+  <command name="Face North">
+    <pattern>face North</pattern>
+    <script>
+      FaceNorth
+      msg ("You turn to face North.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face East">
+    <pattern>face East</pattern>
+    <script>
+      FaceEast
+      msg ("You turn to face East.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face South">
+    <pattern>face South</pattern>
+    <script>
+      FaceSouth
+      msg ("You turn to face South.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face West">
+    <pattern>face West</pattern>
+    <script>
+      FaceWest
+      msg ("You turn to face West.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="debug">
+    <pattern>debugme</pattern>
+    <script>
+      if (game.debug) {
+        msg ("Debug off.")
+        game.debug = False
+      }
+      else {
+        msg ("Debug on.")
+        game.debug = True
+      }
+    </script>
+  </command>
+  <command name="Add fuel">
+    <pattern>morefuel</pattern>
+    <script>
+      if (game.debug) {
+        ShowMenu ("How much?", game.addable_fuel, True) {
+          msg (result)
+          switch (result) {
+            case ("add10") {
+              lantern.fuel_level = lantern.fuel_level + 10
+            }
+            case ("add20") {
+              lantern.fuel_level = lantern.fuel_level + 20
+            }
+            case ("add30") {
+              lantern.fuel_level = lantern.fuel_level + 30
+            }
+            case ("add60") {
+              lantern.fuel_level = lantern.fuel_level + 60
+            }
+            case ("addlots") {
+              lantern.fuel_level = lantern.fuel_level + 99999
+            }
+            default {
+              msg ("Not adding.")
+            }
+          }
+        }
+      }
+      else {
+        msg ("I don't understand your command.")
+      }
+    </script>
+  </command>
+  <object name="startroom">
+    <inherit name="editor_room" />
+    <usedefaultprefix />
+    <descriptions type="stringdictionary">
+      <item>
+        <key>darknorth</key>
+        <value>defaultdarknorth</value>
+      </item>
+      <item>
+        <key>darkeast</key>
+        <value>defaultdarkeast</value>
+      </item>
+      <item>
+        <key>darksouth</key>
+        <value>defaultdarksouth</value>
+      </item>
+      <item>
+        <key>darkwest</key>
+        <value>defaultdarkwest</value>
+      </item>
+      <item>
+        <key>dimnorth</key>
+        <value>defaultdimnorth</value>
+      </item>
+      <item>
+        <key>dimeast</key>
+        <value>defaultdimeast</value>
+      </item>
+      <item>
+        <key>dimsouth</key>
+        <value>defaultdimsouth</value>
+      </item>
+      <item>
+        <key>dimwest</key>
+        <value>defaultdimwest</value>
+      </item>
+      <item>
+        <key>brightnorth</key>
+        <value>defaultbrightnorth</value>
+      </item>
+      <item>
+        <key>brighteast</key>
+        <value>defaultbrighteast</value>
+      </item>
+      <item>
+        <key>brightsouth</key>
+        <value>defaultbrightsouth</value>
+      </item>
+      <item>
+        <key>brightwest</key>
+        <value>defaultbrightwest</value>
+      </item>
+    </descriptions>
+    <description type="script">
+      PrintRoomDesc (False)
+    </description>
+    <object name="lantern">
+      <inherit name="editor_object" />
+      <inventoryverbs type="stringlist">
+        <value>Look at</value>
+        <value>Drop</value>
+      </inventoryverbs>
+      <take />
+      <attr name="light_level" type="int">2</attr>
+      <drop type="boolean">false</drop>
+      <dropmsg>I have a feeling I'll need this soon.</dropmsg>
+      <attr name="fuel_level" type="int">60</attr>
+      <attr name="burnt_out" type="boolean">false</attr>
+      <attr name="low_fuel" type="boolean">false</attr>
+      <look type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.light_level = 2) {
+            msg ("Your lantern is bright.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("Your lantern is dim.")
+          }
+          else {
+            msg ("Your lantern is off.")
+          }
+          if (lantern.fuel_level = 60) {
+            msg ("Your lantern has full fuel.")
+          }
+          else if (lantern.fuel_level >= 50) {
+            msg ("Your lantern is mostly full.")
+          }
+          else if (lantern.fuel_level >= 35) {
+            msg ("Your lantern is partly full.")
+          }
+          else if (lantern.fuel_level >= 20) {
+            msg ("Your lantern is half empty.")
+          }
+          else if (lantern.fuel_level >= 10) {
+            msg ("Your lantern is running low.")
+          }
+          else if (lantern.fuel_level > 0) {
+            msg ("Your lantern is extremely low.")
+          }
+          else {
+            msg ("Your lantern has run out of fuel.")
+          }
+        }
+        else {
+          msg ("The lantern looks like it's still serviceable.")
+        }
+      ]]></look>
+      <turnup type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.burnt_out = True and lantern.fuel_level > 0) {
+            lantern.burnt_out = False
+          }
+          if (lantern.low_fuel = True and lantern.fuel_level > 10) {
+            lantern.low_fuel = False
+          }
+          if (lantern.burnt_out) {
+            msg ("You can't turn your lantern up since you don't have any fuel.")
+          }
+          else if (lantern.low_fuel and lantern.light_level = 1) {
+            msg ("Your low fuel is limiting how much you can turn your lantern up")
+          }
+          else if (lantern.light_level <> 2) {
+            lantern.light_level = lantern.light_level + 1
+            if (lantern.light_level = 1) {
+              msg ("Your lantern is now dim.")
+            }
+            else {
+              msg ("Your lantern is now bright.")
+            }
+          }
+          else {
+            msg ("Your lantern is already bright.")
+          }
+        }
+        else {
+          msg ("I should pick it up before I fiddle with it..")
+        }
+      ]]></turnup>
+      <turndown type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.light_level <> 0) {
+            lantern.light_level = lantern.light_level - 1
+            if (lantern.light_level = 1) {
+              msg ("Your lantern is now dim.")
+            }
+            else {
+              msg ("Your lantern is now off.")
+            }
+          }
+          else {
+            msg ("Your lantern is already off.")
+          }
+        }
+        else {
+          msg ("I should pick it up before I fiddle with it..")
+        }
+      ]]></turndown>
+      <ontake type="script">
+        EnableTurnScript (lantern_turn_script)
+      </ontake>
+    </object>
+    <object name="player">
+      <inherit name="editor_object" />
+      <inherit name="editor_player" />
+      <facings type="stringlist">
+        <value>Facing: north</value>
+        <value>Facing: east</value>
+        <value>Facing: south</value>
+        <value>Facing: west</value>
+      </facings>
+      <statusattributes type="stringdictionary">
+        <item>
+          <key>facing</key>
+          <value></value>
+        </item>
+      </statusattributes>
+      <attr name="facing_num" type="int">0</attr>
+      <facenorth type="script">
+        player.facing_num = 0
+        dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
+      </facenorth>
+    </object>
+    <exit alias="southeast" to="testroom3">
+      <inherit name="southeastdirection" />
+      <runscript />
+      <script type="script">
+        FaceNorth
+        MoveObject (player, testroom3)
+      </script>
+    </exit>
+    <exit alias="east" to="testroom1">
+      <inherit name="eastdirection" />
+      <runscript />
+      <script type="script">
+        FaceWest
+        MoveObject (player, testroom1)
+      </script>
+    </exit>
+    <exit alias="south" to="testroom2">
+      <inherit name="southdirection" />
+      <runscript />
+      <script type="script">
+        FaceNorth
+        MoveObject (player, testroom2)
+      </script>
+    </exit>
+  </object>
+  <object name="testroom1">
+    <inherit name="editor_room" />
+    <usedefaultprefix />
+    <descriptions type="stringdictionary">
+      <item>
+        <key>darknorth</key>
+        <value>defaultdarknorth</value>
+      </item>
+      <item>
+        <key>darkeast</key>
+        <value>defaultdarkeast</value>
+      </item>
+      <item>
+        <key>darksouth</key>
+        <value>defaultdarksouth</value>
+      </item>
+      <item>
+        <key>darkwest</key>
+        <value>defaultdarkwest</value>
+      </item>
+      <item>
+        <key>dimnorth</key>
+        <value>defaultdimnorth</value>
+      </item>
+      <item>
+        <key>dimeast</key>
+        <value>defaultdimeast</value>
+      </item>
+      <item>
+        <key>dimsouth</key>
+        <value>defaultdimsouth</value>
+      </item>
+      <item>
+        <key>dimwest</key>
+        <value>defaultdimwest</value>
+      </item>
+      <item>
+        <key>brightnorth</key>
+        <value>defaultbrightnorth</value>
+      </item>
+      <item>
+        <key>brighteast</key>
+        <value>defaultbrighteast</value>
+      </item>
+      <item>
+        <key>brightsouth</key>
+        <value>defaultbrightsouth</value>
+      </item>
+      <item>
+        <key>brightwest</key>
+        <value>defaultbrightwest</value>
+      </item>
+    </descriptions>
+    <description type="script">
+      PrintRoomDesc (False)
+    </description>
+    <exit alias="west" to="startroom">
+      <inherit name="westdirection" />
+      <runscript />
+      <script type="script">
+        FaceEast
+        MoveObject (player, startroom)
+      </script>
+    </exit>
+    <exit alias="south" to="testroom3">
+      <inherit name="southdirection" />
+      <runscript />
+      <script type="script">
+        FaceNorth
+        MoveObject (player, testroom3)
+      </script>
+    </exit>
+    <exit alias="southwest" to="testroom2">
+      <inherit name="southwestdirection" />
+      <runscript />
+      <script type="script">
+        FaceNorth
+        MoveObject (player, testroom2)
+      </script>
+    </exit>
+  </object>
+  <object name="testroom2">
+    <inherit name="editor_room" />
+    <usedefaultprefix />
+    <descriptions type="stringdictionary">
+      <item>
+        <key>darknorth</key>
+        <value>defaultdarknorth</value>
+      </item>
+      <item>
+        <key>darkeast</key>
+        <value>defaultdarkeast</value>
+      </item>
+      <item>
+        <key>darksouth</key>
+        <value>defaultdarksouth</value>
+      </item>
+      <item>
+        <key>darkwest</key>
+        <value>defaultdarkwest</value>
+      </item>
+      <item>
+        <key>dimnorth</key>
+        <value>defaultdimnorth</value>
+      </item>
+      <item>
+        <key>dimeast</key>
+        <value>defaultdimeast</value>
+      </item>
+      <item>
+        <key>dimsouth</key>
+        <value>defaultdimsouth</value>
+      </item>
+      <item>
+        <key>dimwest</key>
+        <value>defaultdimwest</value>
+      </item>
+      <item>
+        <key>brightnorth</key>
+        <value>defaultbrightnorth</value>
+      </item>
+      <item>
+        <key>brighteast</key>
+        <value>defaultbrighteast</value>
+      </item>
+      <item>
+        <key>brightsouth</key>
+        <value>defaultbrightsouth</value>
+      </item>
+      <item>
+        <key>brightwest</key>
+        <value>defaultbrightwest</value>
+      </item>
+    </descriptions>
+    <description type="script">
+      PrintRoomDesc (False)
+    </description>
+    <exit alias="north" to="startroom">
+      <inherit name="northdirection" />
+      <runscript />
+      <script type="script">
+        FaceSouth
+        MoveObject (player, startroom)
+      </script>
+    </exit>
+    <exit alias="northeast" to="testroom1">
+      <inherit name="northeastdirection" />
+      <runscript />
+      <script type="script">
+        FaceWest
+        MoveObject (player, testroom1)
+      </script>
+    </exit>
+    <exit alias="east" to="testroom3">
+      <inherit name="eastdirection" />
+      <runscript />
+      <script type="script">
+        FaceWest
+        MoveObject (player, testroom3)
+      </script>
+    </exit>
+  </object>
+  <object name="testroom3">
+    <inherit name="editor_room" />
+    <usedefaultprefix />
+    <descriptions type="stringdictionary">
+      <item>
+        <key>darknorth</key>
+        <value>defaultdarknorth</value>
+      </item>
+      <item>
+        <key>darkeast</key>
+        <value>defaultdarkeast</value>
+      </item>
+      <item>
+        <key>darksouth</key>
+        <value>defaultdarksouth</value>
+      </item>
+      <item>
+        <key>darkwest</key>
+        <value>defaultdarkwest</value>
+      </item>
+      <item>
+        <key>dimnorth</key>
+        <value>defaultdimnorth</value>
+      </item>
+      <item>
+        <key>dimeast</key>
+        <value>defaultdimeast</value>
+      </item>
+      <item>
+        <key>dimsouth</key>
+        <value>defaultdimsouth</value>
+      </item>
+      <item>
+        <key>dimwest</key>
+        <value>defaultdimwest</value>
+      </item>
+      <item>
+        <key>brightnorth</key>
+        <value>defaultbrightnorth</value>
+      </item>
+      <item>
+        <key>brighteast</key>
+        <value>defaultbrighteast</value>
+      </item>
+      <item>
+        <key>brightsouth</key>
+        <value>defaultbrightsouth</value>
+      </item>
+      <item>
+        <key>brightwest</key>
+        <value>defaultbrightwest</value>
+      </item>
+    </descriptions>
+    <description type="script">
+      PrintRoomDesc (False)
+    </description>
+    <exit alias="northwest" to="startroom">
+      <inherit name="northwestdirection" />
+      <runscript />
+      <script type="script">
+        FaceEast
+        MoveObject (player, startroom)
+      </script>
+    </exit>
+    <exit alias="north" to="testroom1">
+      <inherit name="northdirection" />
+      <runscript />
+      <script type="script">
+        FaceSouth
+        MoveObject (player, testroom1)
+      </script>
+    </exit>
+    <exit alias="west" to="testroom2">
+      <inherit name="westdirection" />
+      <runscript />
+      <script type="script">
+        FaceWest
+        MoveObject (player, testroom2)
+      </script>
+    </exit>
+  </object>
+  <function name="PrintRoomDesc" parameters="all">
+    if (Got(lantern)) {
+      if (lantern.light_level = 2) {
+        switch (player.facing_num) {
+          case (0) {
+            msg (StringDictionaryItem (player.parent.descriptions, "brightnorth"))
+          }
+          case (1) {
+            msg (StringDictionaryItem (player.parent.descriptions, "brighteast"))
+          }
+          case (2) {
+            msg (StringDictionaryItem (player.parent.descriptions, "brightsouth"))
+          }
+          case (3) {
+            msg (StringDictionaryItem (player.parent.descriptions, "brightwest"))
+          }
+        }
+      }
+      else if (lantern.light_level = 1) {
+        switch (player.facing_num) {
+          case (0) {
+            msg (StringDictionaryItem (player.parent.descriptions, "dimnorth"))
+          }
+          case (1) {
+            msg (StringDictionaryItem (player.parent.descriptions, "dimeast"))
+          }
+          case (2) {
+            msg (StringDictionaryItem (player.parent.descriptions, "dimsouth"))
+          }
+          case (3) {
+            msg (StringDictionaryItem (player.parent.descriptions, "dimwest"))
+          }
+        }
+      }
+      else {
+        switch (player.facing_num) {
+          case (0) {
+            msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
+          }
+          case (1) {
+            msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
+          }
+          case (2) {
+            msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
+          }
+          case (3) {
+            msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
+          }
+        }
+      }
+    }
+    else {
+      switch (player.facing_num) {
+        case (0) {
+          msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
+        }
+        case (1) {
+          msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
+        }
+        case (2) {
+          msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
+        }
+        case (3) {
+          msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
+        }
+      }
+    }
+  </function>
+  <function name="FaceNorth">
+    player.facing_num = 0
+    dictionary remove (player.statusattributes, "facing")
+    dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+  </function>
+  <function name="FaceEast">
+    player.facing_num = 1
+    dictionary remove (player.statusattributes, "facing")
+    dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+  </function>
+  <function name="FaceSouth">
+    player.facing_num = 2
+    dictionary remove (player.statusattributes, "facing")
+    dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+  </function>
+  <function name="FaceWest">
+    player.facing_num = 3
+    dictionary remove (player.statusattributes, "facing")
+    dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+  </function>
+</asl>
