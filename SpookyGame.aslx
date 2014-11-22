@@ -675,19 +675,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are on the staircase. You cannot see; it is pitch black. You feel a cord hanging directly in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are on the staircase. You cannot see; it is pitch black. You can feel a wall directly in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are on the staircase. You cannot see; it is pitch black.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are on the staircase. You cannot see; it is pitch black. You can feel a wall directly in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -746,19 +746,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are on the staircase. You cannot see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are on the staircase. You cannot see. You can feel a wall directly in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are on the staircase. You cannot see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are on the staircase. You cannot see. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -817,19 +817,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You can see out of the window, moonlight is shining in. Outside the window is a steep cliff, with jagged rocks, and crashing waves at the bottom. You would not survive the fall. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. You can see a wall a couple of steps in front of you. There is a window to the north of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You see a puddle on the floor in front of you. There is a chair to the west of you. The cell door is a few steps south of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. You see a chair in front of you, there is nothing of interest on it.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -888,19 +888,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. There is a wall in front of you. You are in a corner of the cell. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. There is a wall in front of you. You are in a corner of the cell.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You can see the cell bars a few steps in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. You can see most of the cell from here. The chair in the northwest corner, the puddle in the middle of the cell, cell bars, and door to the south side of the cell. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -960,19 +960,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are on the staircase. You can barely see. It is very dark, the moonlight cannot illuminate this area.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are on the staircase. You can barely see. It is very dark. You are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are on the staircase. You can barely see. It is very dark.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are on the staircase. You can barely see. It is very dark. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1031,19 +1031,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. You are facing a chair, there is nothing of interest on it.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. There is a puddle on the floor in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You see the cell bars a few steps in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1123,19 +1123,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. You are standing in a shallow puddle. You can see your reflection.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. You are standing in a shallow puddle. You can see your reflection.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You are standing in a shallow puddle. You can see your reflection. You can see the cell door a few steps in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. You are standing in a shallow puddle. You can see your reflection.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1209,19 +1209,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. You can see moonlight streaming through a window a few steps northwest of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. You are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You see the cell bars a couple steps in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. There is a puddle on the floor in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1288,19 +1288,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are on the staircase. You can barely see; the staircase seems to continue. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are on the staircase. You can barely see. You are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are on the staircase. You can barely see; the staircase seems to continue.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are on the staircase. You can barely see. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1359,19 +1359,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. You can see most of the cell here. The chair, and window to the north; also, the puddle in the middle of the room.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. The cell bars are immediately in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1430,19 +1430,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. The puddle is in front of you, and the window a couple steps in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. There is a wall a few steps in front of you, and the cell door to the south of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. The cell door is directly in front of you, it is open. You see a table beyond the door.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell. There is a wall a few steps in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1516,19 +1516,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a prison cell. You can see the window, and chair northwest of you, and the puddle in the middle of the cell.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a prison cell. You are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a prison cell. You are facing the cell bars.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a prison cell.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1602,19 +1602,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are on a staircase. You can barely see; the staircase seems to continue upwards.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are on a staircase. You can barely see. You are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are on a staircase. You can barely see; the staircase ends in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are on a staircase. You can barely see. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1688,19 +1688,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. You are facing the prison cell bars.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway. There is a table to the south of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. You are facing a table.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. You are facing a wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1774,19 +1774,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. You see the open prison cell door in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway. There is a table directly to the south of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. You are facing a table.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. There is a table directly south of you, and there is a wall a few steps in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1860,19 +1860,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. You are facing the prison cell bars.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. There is a wall a few steps in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. There is a table a few steps to the southwest of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1946,19 +1946,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. It is hard to see, you are facing cell bars to another prison cell. There appears to be lump in the corner of the cell, wrapped in burlap. You can see a bone sticking out of the burlap sack. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2032,19 +2032,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. It is hard to see. You are facing a cell door to another prison cell, it is locked. You can see some bones scattered about the cell. A rat squeaks and runs into the darkness.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2118,19 +2118,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. It is very hard to see. You are facing the cell bars of another prison cell. You can see some bones in the darkness, scattered about the cell floor.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2204,19 +2204,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. It is very hard to see. You can tell you are facing a wall.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2290,19 +2290,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see. You can tell there is a staircase in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see. You can tell you are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2376,19 +2376,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in the dungeon hallway. You can see a prison cell a few steps in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in the dungeon hallway.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in the dungeon hallway. You are facing a wall.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in the dungeon hallway. There is a table in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2462,19 +2462,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. You are facing a prison cell, it is too dark to see what is inside the cell.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2548,19 +2548,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is hard to see. You are facing the door to another prison cell, it is locked, and it is too dark to see what is inside of the cell.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is hard to see./value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2634,19 +2634,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is hard to see. You are facing the bars to a prison cell, but it is too dark to see inside the cell. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2720,19 +2720,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is very hard to see. You can tell you are facing a wall.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is very hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2806,19 +2806,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see. You can tell you are facing a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see. You can tell you are facing a wall.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You are in a dungeon hallway. It is extremely hard to see.</value>
         </item>
         <item>
           <key>dimnorth</key>
