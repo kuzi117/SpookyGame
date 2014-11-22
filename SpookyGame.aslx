@@ -6,7 +6,7 @@
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
     <firstpublished>2014</firstpublished>
-    <gridmap />
+    <gridmap type="boolean">false</gridmap>
     <author>Team Cubed</author>
     <debug type="boolean">false</debug>
     <addable_fuel type="stringlist">
@@ -89,6 +89,35 @@
     <description type="script">
       PrintRoomDesc (False)
     </description>
+    <exit name="North" alias="north" to="defaultroom">
+      <inherit name="northdirection" />
+      <runscript />
+      <script type="script">
+        MoveAndFace (defaultroom, 0)
+      </script>
+    </exit>
+    <exit name="East" alias="east" to="defaultroom">
+      <inherit name="eastdirection" />
+      <runscript />
+      <script type="script">
+        MoveAndFace (defaultroom, 1)
+      </script>
+    </exit>
+    <exit name="South" alias="south" to="defaultroom">
+      <inherit name="southdirection" />
+      <runscript />
+      <script type="script">
+        MoveAndFace (defaultroom, 2)
+      </script>
+    </exit>
+    <exit name="West" alias="west" to="defaultroom">
+      <inherit name="westdirection" />
+      <runscript />
+      <script type="script">
+        MoveAndFace (defaultroom, 3)
+      </script>
+      <visible type="boolean">false</visible>
+    </exit>
   </object>
   <turnscript name="lantern_turn_script">
     <script><![CDATA[
@@ -356,27 +385,6 @@
       <ontake type="script">
         EnableTurnScript (lantern_turn_script)
       </ontake>
-    </object>
-    <object name="player">
-      <inherit name="editor_object" />
-      <inherit name="editor_player" />
-      <facings type="stringlist">
-        <value>Facing: north</value>
-        <value>Facing: east</value>
-        <value>Facing: south</value>
-        <value>Facing: west</value>
-      </facings>
-      <statusattributes type="stringdictionary">
-        <item>
-          <key>facing</key>
-          <value></value>
-        </item>
-      </statusattributes>
-      <attr name="facing_num" type="int">0</attr>
-      <facenorth type="script">
-        player.facing_num = 0
-        dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
-      </facenorth>
     </object>
     <exit alias="southeast" to="testroom3">
       <inherit name="southeastdirection" />
@@ -646,6 +654,2226 @@
       </script>
     </exit>
   </object>
+  <object name="Dungeon">
+    <inherit name="editor_object" />
+    <object name="dungeon1">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South1" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon2, 2)
+        </script>
+      </exit>
+      <exit name="NorthToHub" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon2">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North2" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon1, 0)
+        </script>
+      </exit>
+      <exit name="South2" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon5, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon3">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East3" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon4, 1)
+        </script>
+      </exit>
+      <exit name="South3" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon7, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon4">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South4" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 2)
+        </script>
+      </exit>
+      <exit name="West4" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+    </object>
+    <object name="dungeon5">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North5" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon2, 0)
+        </script>
+      </exit>
+      <exit name="South5" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon9, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon6">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East6" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon7, 1)
+        </script>
+      </exit>
+      <exit name="South6" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon10, 2)
+        </script>
+      </exit>
+      <object name="player">
+        <inherit name="editor_object" />
+        <inherit name="editor_player" />
+        <facings type="stringlist">
+          <value>Facing: north</value>
+          <value>Facing: east</value>
+          <value>Facing: south</value>
+          <value>Facing: west</value>
+        </facings>
+        <statusattributes type="stringdictionary">
+          <item>
+            <key>facing</key>
+            <value></value>
+          </item>
+        </statusattributes>
+        <attr name="facing_num" type="int">0</attr>
+        <facenorth type="script">
+          player.facing_num = 0
+          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
+        </facenorth>
+      </object>
+    </object>
+    <object name="dungeon7">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North7" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+      <exit name="East7" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="South7" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="West7" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+    </object>
+    <object name="dungeon8">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West1" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon7, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South8" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon12, 2)
+        </script>
+      </exit>
+      <exit name="North1" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon4, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon9">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South9" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon13, 2)
+        </script>
+      </exit>
+      <exit name="North3" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon5, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon10">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East4" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 1)
+        </script>
+      </exit>
+      <exit name="North4" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon11">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West5" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon10, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South11" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon15, 2)
+        </script>
+      </exit>
+      <exit name="East5" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon12, 1)
+        </script>
+      </exit>
+      <exit name="North6" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon7, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon12">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West6" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South12" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East8" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North8" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon13">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West8" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South13" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East9" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North9" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon14">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West9" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South14" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East10" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North10" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon15">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West10" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South15" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East11" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North11" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon16">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West11" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South16" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East12" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North12" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon17">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West12" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South17" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East13" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North13" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon18">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West13" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South18" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East14" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North14" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon19">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West14" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South19" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East15" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North15" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon20">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West15" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South20" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East16" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North16" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon21">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West16" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South21" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East17" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North17" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon22">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West17" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South22" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East18" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North18" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon23">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West18" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South23" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East19" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North19" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon24">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West19" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South24" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East20" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North20" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon25">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West20" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South25" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East21" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North21" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon26">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West21" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South26" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East22" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North22" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="dungeon27">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="West22" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon6, 3)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <exit name="South27" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon11, 2)
+        </script>
+      </exit>
+      <exit name="East23" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon8, 1)
+        </script>
+      </exit>
+      <exit name="North23" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (dungeon3, 0)
+        </script>
+      </exit>
+    </object>
+  </object>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -733,5 +2961,22 @@
     player.facing_num = 3
     dictionary remove (player.statusattributes, "facing")
     dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+  </function>
+  <function name="MoveAndFace" parameters="Dest, Facing">
+    MoveObject (player, Dest)
+    switch (Facing) {
+      case (0) {
+        FaceNorth
+      }
+      case (1) {
+        FaceEast
+      }
+      case (2) {
+        FaceSouth
+      }
+      case (3) {
+        FaceWest
+      }
+    }
   </function>
 </asl>
