@@ -22,6 +22,17 @@
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
     </start>
+    <autodescription />
+    <showdescriptiononenter />
+    <showlocation type="boolean">false</showlocation>
+    <defaultfont>'Courier New', Courier, monospace</defaultfont>
+    <defaultwebfont>Vollkorn</defaultwebfont>
+    <defaultbackground>#101020</defaultbackground>
+    <defaultforeground>White</defaultforeground>
+    <underlinehyperlinks />
+    <enablehyperlinks type="boolean">false</enablehyperlinks>
+    <showtitle />
+    <showhealth type="boolean">false</showhealth>
   </game>
   <verb>
     <property>turnup</property>
@@ -282,6 +293,8 @@
     <description type="script">
       PrintRoomDesc (False)
     </description>
+    <beforeenter type="script">
+    </beforeenter>
     <object name="lantern">
       <inherit name="editor_object" />
       <inventoryverbs type="stringlist">
