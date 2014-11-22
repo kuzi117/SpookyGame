@@ -16,12 +16,6 @@
       <value>add60</value>
       <value>addlots</value>
     </addable_fuel>
-    <start type="script">
-      // Initial player facing
-      player.facing_num = 0
-      dictionary remove (player.statusattributes, "facing")
-      dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
-    </start>
     <autodescription />
     <showdescriptiononenter />
     <showlocation type="boolean">false</showlocation>
@@ -33,6 +27,116 @@
     <enablehyperlinks type="boolean">false</enablehyperlinks>
     <showtitle />
     <showhealth type="boolean">false</showhealth>
+    <start type="script">
+      // Initial player facing
+      player.facing_num = 0
+      dictionary remove (player.statusattributes, "facing")
+      dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+    </start>
+    <object name="lantern">
+      <inherit name="editor_object" />
+      <inventoryverbs type="stringlist">
+        <value>Look at</value>
+        <value>Drop</value>
+      </inventoryverbs>
+      <take />
+      <attr name="light_level" type="int">2</attr>
+      <drop type="boolean">false</drop>
+      <dropmsg>I have a feeling I'll need this soon.</dropmsg>
+      <attr name="fuel_level" type="int">60</attr>
+      <attr name="burnt_out" type="boolean">false</attr>
+      <attr name="low_fuel" type="boolean">false</attr>
+      <look type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.light_level = 2) {
+            msg ("Your lantern is bright.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("Your lantern is dim.")
+          }
+          else {
+            msg ("Your lantern is off.")
+          }
+          if (lantern.fuel_level = 60) {
+            msg ("Your lantern has full fuel.")
+          }
+          else if (lantern.fuel_level >= 50) {
+            msg ("Your lantern is mostly full.")
+          }
+          else if (lantern.fuel_level >= 35) {
+            msg ("Your lantern is partly full.")
+          }
+          else if (lantern.fuel_level >= 20) {
+            msg ("Your lantern is half empty.")
+          }
+          else if (lantern.fuel_level >= 10) {
+            msg ("Your lantern is running low.")
+          }
+          else if (lantern.fuel_level > 0) {
+            msg ("Your lantern is extremely low.")
+          }
+          else {
+            msg ("Your lantern has run out of fuel.")
+          }
+        }
+        else {
+          msg ("The lantern looks like it's still serviceable.")
+        }
+      ]]></look>
+      <turnup type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.burnt_out = True and lantern.fuel_level > 0) {
+            lantern.burnt_out = False
+          }
+          if (lantern.low_fuel = True and lantern.fuel_level > 10) {
+            lantern.low_fuel = False
+          }
+          if (lantern.burnt_out) {
+            msg ("You can't turn your lantern up since you don't have any fuel.")
+          }
+          else if (lantern.low_fuel and lantern.light_level = 1) {
+            msg ("Your low fuel is limiting how much you can turn your lantern up")
+          }
+          else if (lantern.light_level <> 2) {
+            lantern.light_level = lantern.light_level + 1
+            if (lantern.light_level = 1) {
+              msg ("Your lantern is now dim.")
+            }
+            else {
+              msg ("Your lantern is now bright.")
+            }
+          }
+          else {
+            msg ("Your lantern is already bright.")
+          }
+        }
+        else {
+          msg ("I should pick it up before I fiddle with it..")
+        }
+      ]]></turnup>
+      <turndown type="script"><![CDATA[
+        if (Got(lantern)) {
+          if (lantern.light_level <> 0) {
+            lantern.light_level = lantern.light_level - 1
+            if (lantern.light_level = 1) {
+              msg ("Your lantern is now dim.")
+            }
+            else {
+              msg ("Your lantern is now off.")
+            }
+          }
+          else {
+            msg ("Your lantern is already off.")
+          }
+        }
+        else {
+          msg ("I should pick it up before I fiddle with it..")
+        }
+      ]]></turndown>
+      <ontake type="script">
+        EnableTurnScript (lantern_turn_script)
+      </ontake>
+    </object>
   </game>
   <verb>
     <property>turnup</property>
@@ -124,10 +228,10 @@
     <exit name="West" alias="west" to="defaultroom">
       <inherit name="westdirection" />
       <runscript />
+      <visible type="boolean">false</visible>
       <script type="script">
         MoveAndFace (defaultroom, 3)
       </script>
-      <visible type="boolean">false</visible>
     </exit>
   </object>
   <turnscript name="lantern_turn_script">
@@ -237,436 +341,6 @@
       }
     </script>
   </command>
-  <object name="startroom">
-    <inherit name="editor_room" />
-    <usedefaultprefix />
-    <descriptions type="stringdictionary">
-      <item>
-        <key>darknorth</key>
-        <value>defaultdarknorth</value>
-      </item>
-      <item>
-        <key>darkeast</key>
-        <value>defaultdarkeast</value>
-      </item>
-      <item>
-        <key>darksouth</key>
-        <value>defaultdarksouth</value>
-      </item>
-      <item>
-        <key>darkwest</key>
-        <value>defaultdarkwest</value>
-      </item>
-      <item>
-        <key>dimnorth</key>
-        <value>defaultdimnorth</value>
-      </item>
-      <item>
-        <key>dimeast</key>
-        <value>defaultdimeast</value>
-      </item>
-      <item>
-        <key>dimsouth</key>
-        <value>defaultdimsouth</value>
-      </item>
-      <item>
-        <key>dimwest</key>
-        <value>defaultdimwest</value>
-      </item>
-      <item>
-        <key>brightnorth</key>
-        <value>defaultbrightnorth</value>
-      </item>
-      <item>
-        <key>brighteast</key>
-        <value>defaultbrighteast</value>
-      </item>
-      <item>
-        <key>brightsouth</key>
-        <value>defaultbrightsouth</value>
-      </item>
-      <item>
-        <key>brightwest</key>
-        <value>defaultbrightwest</value>
-      </item>
-    </descriptions>
-    <description type="script">
-      PrintRoomDesc (False)
-    </description>
-    <beforeenter type="script">
-    </beforeenter>
-    <object name="lantern">
-      <inherit name="editor_object" />
-      <inventoryverbs type="stringlist">
-        <value>Look at</value>
-        <value>Drop</value>
-      </inventoryverbs>
-      <take />
-      <attr name="light_level" type="int">2</attr>
-      <drop type="boolean">false</drop>
-      <dropmsg>I have a feeling I'll need this soon.</dropmsg>
-      <attr name="fuel_level" type="int">60</attr>
-      <attr name="burnt_out" type="boolean">false</attr>
-      <attr name="low_fuel" type="boolean">false</attr>
-      <look type="script"><![CDATA[
-        if (Got(lantern)) {
-          if (lantern.light_level = 2) {
-            msg ("Your lantern is bright.")
-          }
-          else if (lantern.light_level = 1) {
-            msg ("Your lantern is dim.")
-          }
-          else {
-            msg ("Your lantern is off.")
-          }
-          if (lantern.fuel_level = 60) {
-            msg ("Your lantern has full fuel.")
-          }
-          else if (lantern.fuel_level >= 50) {
-            msg ("Your lantern is mostly full.")
-          }
-          else if (lantern.fuel_level >= 35) {
-            msg ("Your lantern is partly full.")
-          }
-          else if (lantern.fuel_level >= 20) {
-            msg ("Your lantern is half empty.")
-          }
-          else if (lantern.fuel_level >= 10) {
-            msg ("Your lantern is running low.")
-          }
-          else if (lantern.fuel_level > 0) {
-            msg ("Your lantern is extremely low.")
-          }
-          else {
-            msg ("Your lantern has run out of fuel.")
-          }
-        }
-        else {
-          msg ("The lantern looks like it's still serviceable.")
-        }
-      ]]></look>
-      <turnup type="script"><![CDATA[
-        if (Got(lantern)) {
-          if (lantern.burnt_out = True and lantern.fuel_level > 0) {
-            lantern.burnt_out = False
-          }
-          if (lantern.low_fuel = True and lantern.fuel_level > 10) {
-            lantern.low_fuel = False
-          }
-          if (lantern.burnt_out) {
-            msg ("You can't turn your lantern up since you don't have any fuel.")
-          }
-          else if (lantern.low_fuel and lantern.light_level = 1) {
-            msg ("Your low fuel is limiting how much you can turn your lantern up")
-          }
-          else if (lantern.light_level <> 2) {
-            lantern.light_level = lantern.light_level + 1
-            if (lantern.light_level = 1) {
-              msg ("Your lantern is now dim.")
-            }
-            else {
-              msg ("Your lantern is now bright.")
-            }
-          }
-          else {
-            msg ("Your lantern is already bright.")
-          }
-        }
-        else {
-          msg ("I should pick it up before I fiddle with it..")
-        }
-      ]]></turnup>
-      <turndown type="script"><![CDATA[
-        if (Got(lantern)) {
-          if (lantern.light_level <> 0) {
-            lantern.light_level = lantern.light_level - 1
-            if (lantern.light_level = 1) {
-              msg ("Your lantern is now dim.")
-            }
-            else {
-              msg ("Your lantern is now off.")
-            }
-          }
-          else {
-            msg ("Your lantern is already off.")
-          }
-        }
-        else {
-          msg ("I should pick it up before I fiddle with it..")
-        }
-      ]]></turndown>
-      <ontake type="script">
-        EnableTurnScript (lantern_turn_script)
-      </ontake>
-    </object>
-    <exit alias="southeast" to="testroom3">
-      <inherit name="southeastdirection" />
-      <runscript />
-      <script type="script">
-        FaceNorth
-        MoveObject (player, testroom3)
-      </script>
-    </exit>
-    <exit alias="east" to="testroom1">
-      <inherit name="eastdirection" />
-      <runscript />
-      <script type="script">
-        FaceWest
-        MoveObject (player, testroom1)
-      </script>
-    </exit>
-    <exit alias="south" to="testroom2">
-      <inherit name="southdirection" />
-      <runscript />
-      <script type="script">
-        FaceNorth
-        MoveObject (player, testroom2)
-      </script>
-    </exit>
-  </object>
-  <object name="testroom1">
-    <inherit name="editor_room" />
-    <usedefaultprefix />
-    <descriptions type="stringdictionary">
-      <item>
-        <key>darknorth</key>
-        <value>defaultdarknorth</value>
-      </item>
-      <item>
-        <key>darkeast</key>
-        <value>defaultdarkeast</value>
-      </item>
-      <item>
-        <key>darksouth</key>
-        <value>defaultdarksouth</value>
-      </item>
-      <item>
-        <key>darkwest</key>
-        <value>defaultdarkwest</value>
-      </item>
-      <item>
-        <key>dimnorth</key>
-        <value>defaultdimnorth</value>
-      </item>
-      <item>
-        <key>dimeast</key>
-        <value>defaultdimeast</value>
-      </item>
-      <item>
-        <key>dimsouth</key>
-        <value>defaultdimsouth</value>
-      </item>
-      <item>
-        <key>dimwest</key>
-        <value>defaultdimwest</value>
-      </item>
-      <item>
-        <key>brightnorth</key>
-        <value>defaultbrightnorth</value>
-      </item>
-      <item>
-        <key>brighteast</key>
-        <value>defaultbrighteast</value>
-      </item>
-      <item>
-        <key>brightsouth</key>
-        <value>defaultbrightsouth</value>
-      </item>
-      <item>
-        <key>brightwest</key>
-        <value>defaultbrightwest</value>
-      </item>
-    </descriptions>
-    <description type="script">
-      PrintRoomDesc (False)
-    </description>
-    <exit alias="west" to="startroom">
-      <inherit name="westdirection" />
-      <runscript />
-      <script type="script">
-        FaceEast
-        MoveObject (player, startroom)
-      </script>
-    </exit>
-    <exit alias="south" to="testroom3">
-      <inherit name="southdirection" />
-      <runscript />
-      <script type="script">
-        FaceNorth
-        MoveObject (player, testroom3)
-      </script>
-    </exit>
-    <exit alias="southwest" to="testroom2">
-      <inherit name="southwestdirection" />
-      <runscript />
-      <script type="script">
-        FaceNorth
-        MoveObject (player, testroom2)
-      </script>
-    </exit>
-  </object>
-  <object name="testroom2">
-    <inherit name="editor_room" />
-    <usedefaultprefix />
-    <descriptions type="stringdictionary">
-      <item>
-        <key>darknorth</key>
-        <value>defaultdarknorth</value>
-      </item>
-      <item>
-        <key>darkeast</key>
-        <value>defaultdarkeast</value>
-      </item>
-      <item>
-        <key>darksouth</key>
-        <value>defaultdarksouth</value>
-      </item>
-      <item>
-        <key>darkwest</key>
-        <value>defaultdarkwest</value>
-      </item>
-      <item>
-        <key>dimnorth</key>
-        <value>defaultdimnorth</value>
-      </item>
-      <item>
-        <key>dimeast</key>
-        <value>defaultdimeast</value>
-      </item>
-      <item>
-        <key>dimsouth</key>
-        <value>defaultdimsouth</value>
-      </item>
-      <item>
-        <key>dimwest</key>
-        <value>defaultdimwest</value>
-      </item>
-      <item>
-        <key>brightnorth</key>
-        <value>defaultbrightnorth</value>
-      </item>
-      <item>
-        <key>brighteast</key>
-        <value>defaultbrighteast</value>
-      </item>
-      <item>
-        <key>brightsouth</key>
-        <value>defaultbrightsouth</value>
-      </item>
-      <item>
-        <key>brightwest</key>
-        <value>defaultbrightwest</value>
-      </item>
-    </descriptions>
-    <description type="script">
-      PrintRoomDesc (False)
-    </description>
-    <exit alias="north" to="startroom">
-      <inherit name="northdirection" />
-      <runscript />
-      <script type="script">
-        FaceSouth
-        MoveObject (player, startroom)
-      </script>
-    </exit>
-    <exit alias="northeast" to="testroom1">
-      <inherit name="northeastdirection" />
-      <runscript />
-      <script type="script">
-        FaceWest
-        MoveObject (player, testroom1)
-      </script>
-    </exit>
-    <exit alias="east" to="testroom3">
-      <inherit name="eastdirection" />
-      <runscript />
-      <script type="script">
-        FaceWest
-        MoveObject (player, testroom3)
-      </script>
-    </exit>
-  </object>
-  <object name="testroom3">
-    <inherit name="editor_room" />
-    <usedefaultprefix />
-    <descriptions type="stringdictionary">
-      <item>
-        <key>darknorth</key>
-        <value>defaultdarknorth</value>
-      </item>
-      <item>
-        <key>darkeast</key>
-        <value>defaultdarkeast</value>
-      </item>
-      <item>
-        <key>darksouth</key>
-        <value>defaultdarksouth</value>
-      </item>
-      <item>
-        <key>darkwest</key>
-        <value>defaultdarkwest</value>
-      </item>
-      <item>
-        <key>dimnorth</key>
-        <value>defaultdimnorth</value>
-      </item>
-      <item>
-        <key>dimeast</key>
-        <value>defaultdimeast</value>
-      </item>
-      <item>
-        <key>dimsouth</key>
-        <value>defaultdimsouth</value>
-      </item>
-      <item>
-        <key>dimwest</key>
-        <value>defaultdimwest</value>
-      </item>
-      <item>
-        <key>brightnorth</key>
-        <value>defaultbrightnorth</value>
-      </item>
-      <item>
-        <key>brighteast</key>
-        <value>defaultbrighteast</value>
-      </item>
-      <item>
-        <key>brightsouth</key>
-        <value>defaultbrightsouth</value>
-      </item>
-      <item>
-        <key>brightwest</key>
-        <value>defaultbrightwest</value>
-      </item>
-    </descriptions>
-    <description type="script">
-      PrintRoomDesc (False)
-    </description>
-    <exit alias="northwest" to="startroom">
-      <inherit name="northwestdirection" />
-      <runscript />
-      <script type="script">
-        FaceEast
-        MoveObject (player, startroom)
-      </script>
-    </exit>
-    <exit alias="north" to="testroom1">
-      <inherit name="northdirection" />
-      <runscript />
-      <script type="script">
-        FaceSouth
-        MoveObject (player, testroom1)
-      </script>
-    </exit>
-    <exit alias="west" to="testroom2">
-      <inherit name="westdirection" />
-      <runscript />
-      <script type="script">
-        FaceWest
-        MoveObject (player, testroom2)
-      </script>
-    </exit>
-  </object>
   <object name="Dungeon">
     <inherit name="editor_object" />
     <object name="dungeon1">
@@ -948,10 +622,10 @@
       <exit name="West4" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
           MoveAndFace (dungeon3, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
     </object>
     <object name="dungeon5">
@@ -1095,27 +769,6 @@
           MoveAndFace (dungeon10, 2)
         </script>
       </exit>
-      <object name="player">
-        <inherit name="editor_object" />
-        <inherit name="editor_player" />
-        <facings type="stringlist">
-          <value>Facing: north</value>
-          <value>Facing: east</value>
-          <value>Facing: south</value>
-          <value>Facing: west</value>
-        </facings>
-        <statusattributes type="stringdictionary">
-          <item>
-            <key>facing</key>
-            <value></value>
-          </item>
-        </statusattributes>
-        <attr name="facing_num" type="int">0</attr>
-        <facenorth type="script">
-          player.facing_num = 0
-          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
-        </facenorth>
-      </object>
     </object>
     <object name="dungeon7">
       <inherit name="editor_room" />
@@ -1197,11 +850,32 @@
       <exit name="West7" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
           MoveAndFace (dungeon6, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
+      <object name="player">
+        <inherit name="editor_object" />
+        <inherit name="editor_player" />
+        <facings type="stringlist">
+          <value>Facing: north</value>
+          <value>Facing: east</value>
+          <value>Facing: south</value>
+          <value>Facing: west</value>
+        </facings>
+        <statusattributes type="stringdictionary">
+          <item>
+            <key>facing</key>
+            <value></value>
+          </item>
+        </statusattributes>
+        <attr name="facing_num" type="int">0</attr>
+        <facenorth type="script">
+          player.facing_num = 0
+          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
+        </facenorth>
+      </object>
     </object>
     <object name="dungeon8">
       <inherit name="editor_room" />
@@ -1262,10 +936,10 @@
       <exit name="West1" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
           MoveAndFace (dungeon7, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South8" alias="south" to="defaultroom">
         <inherit name="southdirection" />
@@ -1483,10 +1157,10 @@
       <exit name="West5" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
           MoveAndFace (dungeon10, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South11" alias="south" to="defaultroom">
         <inherit name="southdirection" />
@@ -1569,30 +1243,16 @@
       <exit name="West6" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South12" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
-      <exit name="East8" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon11, 3)
         </script>
       </exit>
       <exit name="North8" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon8, 0)
         </script>
       </exit>
     </object>
@@ -1652,33 +1312,18 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
-      <exit name="West8" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
       <exit name="South13" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
-      <exit name="East9" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon21, 2)
         </script>
       </exit>
       <exit name="North9" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon9, 0)
         </script>
       </exit>
     </object>
@@ -1738,33 +1383,11 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
-      <exit name="West9" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South14" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
       <exit name="East10" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North10" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon15, 1)
         </script>
       </exit>
     </object>
@@ -1827,30 +1450,23 @@
       <exit name="West10" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South15" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon14, 3)
         </script>
       </exit>
       <exit name="East11" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon16, 1)
         </script>
       </exit>
       <exit name="North11" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon11, 0)
         </script>
       </exit>
     </object>
@@ -1913,30 +1529,23 @@
       <exit name="West11" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon15, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South16" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon22, 2)
         </script>
       </exit>
       <exit name="East12" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North12" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon17, 1)
         </script>
       </exit>
     </object>
@@ -1999,30 +1608,23 @@
       <exit name="West12" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon16, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South17" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon23, 2)
         </script>
       </exit>
       <exit name="East13" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North13" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon18, 1)
         </script>
       </exit>
     </object>
@@ -2085,30 +1687,23 @@
       <exit name="West13" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon17, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South18" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon24, 2)
         </script>
       </exit>
       <exit name="East14" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North14" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon19, 1)
         </script>
       </exit>
     </object>
@@ -2171,30 +1766,23 @@
       <exit name="West14" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon18, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South19" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon25, 2)
         </script>
       </exit>
       <exit name="East15" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North15" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon20, 1)
         </script>
       </exit>
     </object>
@@ -2257,30 +1845,23 @@
       <exit name="West15" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon19, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South20" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon26, 2)
         </script>
       </exit>
       <exit name="East16" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
-        </script>
-      </exit>
-      <exit name="North16" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon21, 1)
         </script>
       </exit>
     </object>
@@ -2343,30 +1924,23 @@
       <exit name="West16" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
+          MoveAndFace (dungeon20, 3)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="South21" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
-      <exit name="East17" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon27, 2)
         </script>
       </exit>
       <exit name="North17" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon13, 0)
         </script>
       </exit>
     </object>
@@ -2426,33 +2000,18 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
-      <exit name="West17" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South22" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
       <exit name="East18" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon23, 1)
         </script>
       </exit>
       <exit name="North18" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon16, 0)
         </script>
       </exit>
     </object>
@@ -2515,30 +2074,23 @@
       <exit name="West18" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South23" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon22, 3)
         </script>
       </exit>
       <exit name="East19" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon24, 1)
         </script>
       </exit>
       <exit name="North19" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon17, 0)
         </script>
       </exit>
     </object>
@@ -2601,30 +2153,23 @@
       <exit name="West19" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South24" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon23, 3)
         </script>
       </exit>
       <exit name="East20" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon25, 1)
         </script>
       </exit>
       <exit name="North20" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon18, 0)
         </script>
       </exit>
     </object>
@@ -2687,30 +2232,23 @@
       <exit name="West20" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South25" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon24, 3)
         </script>
       </exit>
       <exit name="East21" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon26, 1)
         </script>
       </exit>
       <exit name="North21" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon19, 0)
         </script>
       </exit>
     </object>
@@ -2773,30 +2311,23 @@
       <exit name="West21" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South26" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
+          MoveAndFace (dungeon25, 3)
         </script>
       </exit>
       <exit name="East22" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon27, 1)
         </script>
       </exit>
       <exit name="North22" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon20, 0)
         </script>
       </exit>
     </object>
@@ -2859,30 +2390,16 @@
       <exit name="West22" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
+        <visible />
         <script type="script">
-          MoveAndFace (dungeon6, 3)
-        </script>
-        <visible type="boolean">false</visible>
-      </exit>
-      <exit name="South27" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon11, 2)
-        </script>
-      </exit>
-      <exit name="East23" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (dungeon8, 1)
+          MoveAndFace (dungeon26, 3)
         </script>
       </exit>
       <exit name="North23" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon21, 0)
         </script>
       </exit>
     </object>
