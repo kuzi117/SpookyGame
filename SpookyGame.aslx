@@ -2404,6 +2404,38 @@
       </exit>
     </object>
   </object>
+  <command name="Face North Short">
+    <pattern>fn</pattern>
+    <script>
+      FaceNorth
+      msg ("You turn to face North.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face East Short">
+    <pattern>fe</pattern>
+    <script>
+      FaceEast
+      msg ("You turn to face East.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face South Short">
+    <pattern>fs</pattern>
+    <script>
+      FaceSouth
+      msg ("You turn to face South.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
+  <command name="Face West Short">
+    <pattern>fw</pattern>
+    <script>
+      FaceWest
+      msg ("You turn to face West.")
+      PrintRoomDesc (False)
+    </script>
+  </command>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -2493,7 +2525,6 @@
     dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
   </function>
   <function name="MoveAndFace" parameters="Dest, Facing">
-    MoveObject (player, Dest)
     switch (Facing) {
       case (0) {
         FaceNorth
@@ -2508,5 +2539,6 @@
         FaceWest
       }
     }
+    MoveObject (player, Dest)
   </function>
 </asl>
