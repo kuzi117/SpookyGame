@@ -16,12 +16,6 @@
       <value>add60</value>
       <value>addlots</value>
     </addable_fuel>
-    <start type="script">
-      // Initial player facing
-      player.facing_num = 0
-      dictionary remove (player.statusattributes, "facing")
-      dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
-    </start>
     <autodescription />
     <showdescriptiononenter />
     <showlocation type="boolean">false</showlocation>
@@ -33,6 +27,23 @@
     <enablehyperlinks type="boolean">false</enablehyperlinks>
     <showtitle />
     <showhealth type="boolean">false</showhealth>
+    <counterDisabled type="boolean">false</counterDisabled>
+    <statusattributes type="stringdictionary">
+      <item>
+        <key>counter</key>
+        <value></value>
+      </item>
+    </statusattributes>
+    <maxCounter type="int">10</maxCounter>
+    <counter type="int">10</counter>
+    <pov type="object">player</pov>
+    <start type="script">
+      // Initial player facing
+      player.facing_num = 0
+      dictionary remove (player.statusattributes, "facing")
+      dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+      UpdateCounter
+    </start>
   </game>
   <verb>
     <property>turnup</property>
@@ -102,28 +113,10 @@
     </description>
   </object>
   <turnscript name="lantern_turn_script">
-    <script><![CDATA[
-      if (Got(lantern)) {
-        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
-          lantern.light_level = 0
-          lantern.burnt_out = True
-          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.light_level = 1
-          lantern.low_fuel = True
-          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else {
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        if (game.debug) {
-          msg ("FUEL DEBUG: " + lantern.fuel_level)
-        }
-      }
-    ]]></script>
+    <script>
+      TakeTurn
+    </script>
+    <enabled />
   </turnscript>
   <verb>
     <property>turnleft</property>
@@ -747,4 +740,60 @@
     dictionary remove (player.statusattributes, "facing")
     dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
   </function>
+  <function name="TakeTurn"><![CDATA[
+    game.counter = game.maxCounter
+    if (Got(lantern)) {
+      if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+        lantern.light_level = 0
+        lantern.burnt_out = True
+        msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+        lantern.fuel_level = lantern.fuel_level - lantern.light_level
+      }
+      else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+        lantern.light_level = 1
+        lantern.low_fuel = True
+        msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame.")
+        lantern.fuel_level = lantern.fuel_level - lantern.light_level
+      }
+      else {
+        lantern.fuel_level = lantern.fuel_level - lantern.light_level
+      }
+      if (game.debug) {
+        msg ("FUEL DEBUG: " + lantern.fuel_level)
+      }
+    }
+    UpdateCounter
+  ]]></function>
+  <function name="UpdateCounter">
+    dictionary remove (game.statusattributes, "counter")
+    if (not game.counterDisabled) {
+      if ((game.counter % 2) = 0) {
+        dictionary add (game.statusattributes, "counter", "♡ " + game.counter)
+      }
+      else {
+        dictionary add (game.statusattributes, "counter", "♥ " + game.counter)
+      }
+    }
+    else {
+      dictionary add (game.statusattributes, "counter", "♡")
+    }
+  </function>
+  <timer name="Heartbeat">
+    <interval>1</interval>
+    <enabled />
+    <script><![CDATA[
+      if (not game.counterDisabled) {
+        // Count down
+        game.counter = game.counter - 1
+        // When counter reaches 0, reset
+        if (game.counter <= 0) {
+          game.counter = game.maxCounter
+          msg ("")
+          msg ("Time passes.")
+          TakeTurn
+        }
+        UpdateCounter
+      }
+    ]]></script>
+  </timer>
 </asl>
