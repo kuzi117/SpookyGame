@@ -43,6 +43,7 @@
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       UpdateCounter
+      request (RunScript, "hidePanels")
     </start>
   </game>
   <verb>
@@ -4353,6 +4354,7 @@
     }
     MoveObject (player, Dest)
   </function>
+  <javascript src="javascript.js" />
   <timer name="Heartbeat">
     <interval>1</interval>
     <enabled />
