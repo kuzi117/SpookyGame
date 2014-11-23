@@ -28,22 +28,16 @@
     <showtitle />
     <showhealth type="boolean">false</showhealth>
     <counterDisabled type="boolean">false</counterDisabled>
-    <statusattributes type="stringdictionary">
-      <item>
-        <key>counter</key>
-        <value></value>
-      </item>
-    </statusattributes>
-    <maxCounter type="int">10</maxCounter>
-    <counter type="int">10</counter>
+    <statusattributes type="stringdictionary" />
+    <heartRate type="int">1000</heartRate>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
       player.facing_num = 0
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
-      UpdateCounter
       request (RunScript, "hidePanels")
+      SetHeartRate (game.heartRate)
     </start>
   </game>
   <verb>
@@ -4352,8 +4346,7 @@
     dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
   </function>
   <function name="TakeTurn"><![CDATA[
-    DisableTimer (Heartbeat)
-    game.counter = game.maxCounter
+    request (RunScript, "resetHeartCount")
     if (Got(lantern)) {
       if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
         lantern.light_level = 0
@@ -4374,23 +4367,7 @@
         msg ("FUEL DEBUG: " + lantern.fuel_level)
       }
     }
-    UpdateCounter
-    EnableTimer (Heartbeat)
   ]]></function>
-  <function name="UpdateCounter">
-    dictionary remove (game.statusattributes, "counter")
-    if (not game.counterDisabled) {
-      if ((game.counter % 2) = 0) {
-        dictionary add (game.statusattributes, "counter", "♡ " + game.counter)
-      }
-      else {
-        dictionary add (game.statusattributes, "counter", "♥ " + game.counter)
-      }
-    }
-    else {
-      dictionary add (game.statusattributes, "counter", "♡")
-    }
-  </function>
   <function name="MoveAndFace" parameters="Dest, Facing">
     switch (Facing) {
       case (0) {
@@ -4408,23 +4385,13 @@
     }
     MoveObject (player, Dest)
   </function>
+  <function name="TimeOut" parameters="all">
+    msg ("")
+    msg ("Time passes.")
+  </function>
+  <function name="SetHeartRate" parameters="heartRate">
+    game.heartRate = heartRate
+    request (RunScript, "setHeartRate; " + game.heartRate)
+  </function>
   <javascript src="javascript.js" />
-  <timer name="Heartbeat">
-    <interval>1</interval>
-    <enabled />
-    <script><![CDATA[
-      if (not game.counterDisabled) {
-        // Count down
-        game.counter = game.counter - 1
-        // When counter reaches 0, reset
-        if (game.counter <= 0) {
-          game.counter = game.maxCounter
-          msg ("")
-          msg ("Time passes.")
-          TakeTurn
-        }
-        UpdateCounter
-      }
-    ]]></script>
-  </timer>
 </asl>
