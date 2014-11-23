@@ -286,13 +286,13 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <attr name="ladder_down" type="boolean">false</attr>
       <description type="script">
         PrintRoomDesc (False)
         if (dungeon1.ladder_down) {
           msg ("You can still feel the ladder that slid down earlier.")
         }
       </description>
-      <attr name="ladder_down" type="boolean">false</attr>
       <exit name="South1" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -303,6 +303,7 @@
       <exit name="NorthToHub" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
+        <visible type="boolean">false</visible>
         <script type="script">
           msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
           dungeon1.ladder_down = False
@@ -310,7 +311,6 @@
           MakeExitInvisible (UpToHub)
           MakeExitInvisible (NorthToHub)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <command name="Pull cord">
         <pattern type="string">pull (cord|rope|string)</pattern>
@@ -329,6 +329,7 @@
       <exit name="UpToHub" alias="up" to="defaultroom">
         <inherit name="updirection" />
         <runscript />
+        <visible type="boolean">false</visible>
         <script type="script">
           msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
           dungeon1.ladder_down = False
@@ -336,10 +337,10 @@
           MakeExitInvisible (UpToHub)
           MakeExitInvisible (NorthToHub)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <command name="Climb Ladder">
         <pattern type="string">(climb|up) ladder</pattern>
+        <unresolved type="string"></unresolved>
         <script>
           // Alternate way to take the exit, because seriously my first instinct is to "climb" not up/north
           msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
@@ -348,7 +349,6 @@
           MakeExitInvisible (UpToHub)
           MakeExitInvisible (NorthToHub)
         </script>
-        <unresolved type="string"></unresolved>
       </command>
     </object>
     <object name="dungeon2">
@@ -3913,7 +3913,7 @@
           <value>Drop</value>
         </inventoryverbs>
         <take />
-        <attr name="light_level" type="int">2</attr>
+        <attr name="light_level" type="int">0</attr>
         <drop type="boolean">false</drop>
         <dropmsg>I have a feeling I'll need this soon.</dropmsg>
         <attr name="fuel_level" type="int">60</attr>
