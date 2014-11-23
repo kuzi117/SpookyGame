@@ -410,7 +410,7 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (dungeon3, 0)
+          MoveAndFace (dungeon7, 0)
         </script>
       </exit>
     </object>
@@ -1116,7 +1116,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>You are in a prison cell. There is a wall a few steps in front of you.</value>
+          <value>You are in a prison cell. There is a wall a few steps in front of you, and the cell door to the south of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1198,7 +1198,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You are in a prison cell. You are facing the cell bars.</value>
+          <value>You are in a prison cell. The cell bars are immediately in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -1345,7 +1345,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>You are in the dungeon hallway. You are facing a wall.</value>
+          <value>You are in the dungeon hallway. You are facing a wall and there is a table to the south of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1401,7 +1401,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You are in the dungeon hallway. There is a table directly to the south of you.</value>
+          <value>You are in the dungeon hallway. There is a table directly south of you.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -1409,7 +1409,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>You are in the dungeon hallway. There is a table directly south of you, and there is a wall a few steps in front of you.</value>
+          <value>You are in the dungeon hallway. There is a table directly south of you and a wall a few steps in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -1476,7 +1476,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You are in the dungeon hallway. You are facing the prison cell bars.</value>
+          <value>You are in the dungeon hallway. You are directly outside the prison cell bars.</value>
         </item>
         <item>
           <key>darkeast</key>
