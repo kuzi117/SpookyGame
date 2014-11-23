@@ -287,7 +287,11 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (dungeon1.ladder_down) {
+          msg ("You can still feel the ladder that slid down earlier.")
+        }
       </description>
+      <attr name="ladder_down" type="boolean">false</attr>
       <exit name="South1" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -299,9 +303,52 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
+          msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
+          dungeon1.ladder_down = False
           MoveAndFace (hub16, 0)
+          MakeExitInvisible (UpToHub)
+          MakeExitInvisible (NorthToHub)
         </script>
+        <visible type="boolean">false</visible>
       </exit>
+      <command name="Pull cord">
+        <pattern type="string">pull (cord|rope|string)</pattern>
+        <script>
+          if (not dungeon1.ladder_down) {
+            dungeon1.ladder_down = True
+            msg ("As you pull the cord you hear a grinding noise with a final thump. Upon further inspection you feel that a ladder has slid down in front of you.")
+            MakeExitVisible (NorthToHub)
+            MakeExitVisible (UpToHub)
+          }
+          else {
+            msg ("You pull the cord again but nothing happens.")
+          }
+        </script>
+      </command>
+      <exit name="UpToHub" alias="up" to="defaultroom">
+        <inherit name="updirection" />
+        <runscript />
+        <script type="script">
+          msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
+          dungeon1.ladder_down = False
+          MoveAndFace (hub16, 0)
+          MakeExitInvisible (UpToHub)
+          MakeExitInvisible (NorthToHub)
+        </script>
+        <visible type="boolean">false</visible>
+      </exit>
+      <command name="Climb Ladder">
+        <pattern type="string">(climb|up) ladder</pattern>
+        <script>
+          // Alternate way to take the exit, because seriously my first instinct is to "climb" not up/north
+          msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
+          dungeon1.ladder_down = False
+          MoveAndFace (hub16, 0)
+          MakeExitInvisible (UpToHub)
+          MakeExitInvisible (NorthToHub)
+        </script>
+        <unresolved type="string"></unresolved>
+      </command>
     </object>
     <object name="dungeon2">
       <inherit name="editor_room" />
@@ -4206,6 +4253,13 @@
           MoveAndFace (hub12, 3)
         </script>
       </exit>
+      <command name="Examine Chessboard">
+        <unresolved type="string"></unresolved>
+        <pattern type="string">(ex|examine|look) chessboard</pattern>
+        <script>
+          msg ("The chessboard has x on it. Please give me some real text..")
+        </script>
+      </command>
     </object>
   </object>
   <function name="PrintRoomDesc" parameters="all">
