@@ -36,9 +36,10 @@
       player.facing_num = 0
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
-      request (RunScript, "hidePanels")
-      SetHeartRate (game.heartRate)
+      // REMOVE ME
+      player.parent = hub11
     </start>
+    <heartEnabled />
   </game>
   <verb>
     <property>turnup</property>
@@ -757,6 +758,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+        kitchen.inside = false
+      </enter>
       <exit name="North7" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -4261,6 +4265,8 @@
   </object>
   <object name="kitchen">
     <inherit name="editor_object" />
+    <inside type="boolean">false</inside>
+    <butcherTimer type="int">0</butcherTimer>
     <object name="kitchen1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -4314,15 +4320,20 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+        kitchen.inside = true
+      </enter>
       <exit name="East29" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
           MoveAndFace (hub11, 1)
         </script>
+        <visible type="boolean">false</visible>
       </exit>
       <exit name="West30" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -4386,6 +4397,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4458,6 +4470,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4530,6 +4543,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4609,6 +4623,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4688,6 +4703,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4767,6 +4783,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4846,6 +4863,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -4925,6 +4943,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5004,6 +5023,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5083,6 +5103,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5147,6 +5168,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5233,6 +5255,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5312,6 +5335,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5391,6 +5415,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5470,6 +5495,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5549,6 +5575,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5628,6 +5655,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5707,6 +5735,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5786,6 +5815,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5865,6 +5895,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -5944,6 +5975,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6023,6 +6055,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6102,6 +6135,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6167,6 +6201,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6231,6 +6266,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6302,6 +6338,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6380,6 +6417,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6466,6 +6504,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6537,6 +6576,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6608,6 +6648,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6672,6 +6713,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6744,6 +6786,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6816,6 +6859,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6895,6 +6939,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -6966,6 +7011,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7037,6 +7083,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7108,6 +7155,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7179,6 +7227,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7250,6 +7299,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7336,6 +7386,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7407,6 +7458,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7478,6 +7530,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7542,6 +7595,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7614,6 +7668,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7686,6 +7741,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7765,6 +7821,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7836,6 +7893,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7907,6 +7965,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -7978,6 +8037,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8049,6 +8109,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8120,6 +8181,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8199,6 +8261,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8271,6 +8334,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8343,6 +8407,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8414,6 +8479,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8485,6 +8551,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8556,6 +8623,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8627,6 +8695,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8698,6 +8767,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8769,6 +8839,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8848,6 +8919,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8920,6 +8992,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -8991,6 +9064,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9063,6 +9137,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9135,6 +9210,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9207,6 +9283,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9279,6 +9356,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9351,6 +9429,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9430,6 +9509,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9509,6 +9589,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9580,6 +9661,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9644,6 +9726,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9715,6 +9798,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9801,6 +9885,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9880,6 +9965,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -9966,6 +10052,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10045,6 +10132,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10124,6 +10212,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10210,6 +10299,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10296,6 +10386,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10375,6 +10466,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10454,6 +10546,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10540,6 +10633,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10626,6 +10720,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10705,6 +10800,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10776,6 +10872,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10854,6 +10951,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -10932,6 +11030,7 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -24130,6 +24229,9 @@
         msg ("FUEL DEBUG: " + lantern.fuel_level)
       }
     }
+    if (kitchen.inside) {
+      Butcher
+    }
   ]]></function>
   <function name="MoveAndFace" parameters="Dest, Facing">
     switch (Facing) {
@@ -24156,14 +24258,61 @@
     game.heartRate = heartRate
     request (RunScript, "setHeartRate; " + game.heartRate)
   </function>
-  <function name="Die">
-    msg ("placeholder death")
-  </function>
   <function name="ResetPeter">
     Peter.distance = Peter.start_distance
     Peter.chasing = False
     DisableTurnScript (peter_turn_script)
     msg ("DEBUG: PETER NO LONGER CHASING")
+  </function>
+  <function name="Butcher">
+    if (player.parent.bloodTrail) {
+      kitchen.butcherTimer = 0
+    }
+    else {
+      switch (kitchen.butcherTimer) {
+        case (0) {
+          msg ("The grunting has stopped.")
+        }
+        case (1) {
+          msg ("You feel like you are being watched.")
+        }
+        case (2) {
+          msg ("You hear heavy footsteps moving toward you.")
+        }
+        case (3) {
+          msg ("A monstrous creature brandishing a meat cleaver charges at you from the darkness. It furiously hacks at your torso, chopping you in two.")
+          Die
+        }
+      }
+      kitchen.butcherTimer = kitchen.butcherTimer + 1
+    }
+  </function>
+  <function name="EnableHeart">
+    request (RunScript, "enableHeart")
+  </function>
+  <function name="DisableHeart">
+    request (RunScript, "disableHeart")
+  </function>
+  <function name="Die">
+    DisableHeart
+    msg ("You have died.")
+    finish
+  </function>
+  <function name="GetJS" parameters="all">
+    SetHeartRate (game.heartRate)
+    if (game.heartEnabled) {
+      EnableHeart
+    }
+    else {
+      DisableHeart
+    }
+  </function>
+  <function name="SetHeartCount" parameters="heartCount">
+    game.heartCount = heartCount
+    request (RunScript, "setHeartCount; " + game.heartCount)
+  </function>
+  <function name="UpdateHeartCount" parameters="heartCount">
+    game.heartCount = heartCount
   </function>
   <javascript src="javascript.js" />
 </asl>
