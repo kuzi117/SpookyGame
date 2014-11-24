@@ -786,6 +786,27 @@
           MoveAndFace (dungeon6, 3)
         </script>
       </exit>
+      <object name="player">
+        <inherit name="editor_object" />
+        <inherit name="editor_player" />
+        <facings type="stringlist">
+          <value>Facing: north</value>
+          <value>Facing: east</value>
+          <value>Facing: south</value>
+          <value>Facing: west</value>
+        </facings>
+        <statusattributes type="stringdictionary">
+          <item>
+            <key>facing</key>
+            <value></value>
+          </item>
+        </statusattributes>
+        <attr name="facing_num" type="int">0</attr>
+        <facenorth type="script">
+          player.facing_num = 0
+          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
+        </facenorth>
+      </object>
     </object>
     <object name="dungeon8">
       <inherit name="editor_room" />
@@ -2583,27 +2604,6 @@
           MoveAndFace (nursery1, 0)
         </script>
       </exit>
-      <object name="player">
-        <inherit name="editor_object" />
-        <inherit name="editor_player" />
-        <facings type="stringlist">
-          <value>Facing: north</value>
-          <value>Facing: east</value>
-          <value>Facing: south</value>
-          <value>Facing: west</value>
-        </facings>
-        <statusattributes type="stringdictionary">
-          <item>
-            <key>facing</key>
-            <value></value>
-          </item>
-        </statusattributes>
-        <attr name="facing_num" type="int">0</attr>
-        <facenorth type="script">
-          player.facing_num = 0
-          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
-        </facenorth>
-      </object>
     </object>
     <object name="hub4">
       <inherit name="editor_room" />
