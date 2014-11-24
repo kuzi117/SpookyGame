@@ -786,27 +786,6 @@
           MoveAndFace (dungeon6, 3)
         </script>
       </exit>
-      <object name="player">
-        <inherit name="editor_object" />
-        <inherit name="editor_player" />
-        <facings type="stringlist">
-          <value>Facing: north</value>
-          <value>Facing: east</value>
-          <value>Facing: south</value>
-          <value>Facing: west</value>
-        </facings>
-        <statusattributes type="stringdictionary">
-          <item>
-            <key>facing</key>
-            <value></value>
-          </item>
-        </statusattributes>
-        <attr name="facing_num" type="int">0</attr>
-        <facenorth type="script">
-          player.facing_num = 0
-          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
-        </facenorth>
-      </object>
     </object>
     <object name="dungeon8">
       <inherit name="editor_room" />
@@ -2601,9 +2580,30 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub16, 0)
+          MoveAndFace (nursery1, 0)
         </script>
       </exit>
+      <object name="player">
+        <inherit name="editor_object" />
+        <inherit name="editor_player" />
+        <facings type="stringlist">
+          <value>Facing: north</value>
+          <value>Facing: east</value>
+          <value>Facing: south</value>
+          <value>Facing: west</value>
+        </facings>
+        <statusattributes type="stringdictionary">
+          <item>
+            <key>facing</key>
+            <value></value>
+          </item>
+        </statusattributes>
+        <attr name="facing_num" type="int">0</attr>
+        <facenorth type="script">
+          player.facing_num = 0
+          dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
+        </facenorth>
+      </object>
     </object>
     <object name="hub4">
       <inherit name="editor_room" />
@@ -10948,6 +10948,4848 @@
         </script>
       </exit>
     </object>
+  </object>
+  <object name="nursery">
+    <inherit name="editor_object" />
+    <object name="nursery1">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North33" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery2, 0)
+        </script>
+      </exit>
+      <exit name="South37" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (hub3, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery2">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North40" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery5, 0)
+        </script>
+      </exit>
+      <exit name="South39" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery1, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery3">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North42" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery6, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery4">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North44" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery9, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery5">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North46" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery12, 0)
+        </script>
+      </exit>
+      <exit name="South45" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery2, 2)
+        </script>
+      </exit>
+      <exit name="West64" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery6, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery6">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East66" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery5, 1)
+        </script>
+      </exit>
+      <exit name="South48" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery3, 2)
+        </script>
+      </exit>
+      <exit name="West65" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery7, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery7">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North51" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery13, 0)
+        </script>
+      </exit>
+      <exit name="East70" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery6, 1)
+        </script>
+      </exit>
+      <exit name="West66" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery8, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery8">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North53" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery14, 0)
+        </script>
+      </exit>
+      <exit name="East71" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery7, 1)
+        </script>
+      </exit>
+      <exit name="West70" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery9, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery9">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East72" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery8, 1)
+        </script>
+      </exit>
+      <exit name="South54" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery4, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery10">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North57" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery15, 0)
+        </script>
+      </exit>
+      <exit name="West46" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery11, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery11">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North59" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery16, 0)
+        </script>
+      </exit>
+      <exit name="East74" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery10, 1)
+        </script>
+      </exit>
+      <exit name="West73" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery12, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery12">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North60" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery17, 0)
+        </script>
+      </exit>
+      <exit name="East76" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery11, 1)
+        </script>
+      </exit>
+      <exit name="South59" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery5, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery13">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North67" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery18, 0)
+        </script>
+      </exit>
+      <exit name="South66" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery7, 2)
+        </script>
+      </exit>
+      <exit name="West76" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery14, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery14">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North68" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery19, 0)
+        </script>
+      </exit>
+      <exit name="East78" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery13, 1)
+        </script>
+      </exit>
+      <exit name="South67" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery8, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery15">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South68" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery10, 2)
+        </script>
+      </exit>
+      <exit name="West78" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery16, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery16">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East83" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery15, 1)
+        </script>
+      </exit>
+      <exit name="South78" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery11, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery17">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North80" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery20, 0)
+        </script>
+      </exit>
+      <exit name="South79" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery12, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery18">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South80" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery13, 2)
+        </script>
+      </exit>
+      <exit name="West84" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery19, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery19">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East86" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery18, 1)
+        </script>
+      </exit>
+      <exit name="South87" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery14, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery20">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North89" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery23, 0)
+        </script>
+      </exit>
+      <exit name="South88" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery17, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery21">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North90" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery27, 0)
+        </script>
+      </exit>
+      <exit name="West90" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery22, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery22">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North97" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery28, 0)
+        </script>
+      </exit>
+      <exit name="East93" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery21, 1)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery23">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North100" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery31, 0)
+        </script>
+      </exit>
+      <exit name="South99" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery20, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery24">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North101" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery32, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery25">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North102" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery34, 0)
+        </script>
+      </exit>
+      <exit name="West94" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery26, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery26">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East98" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery25, 1)
+        </script>
+      </exit>
+      <exit name="West95" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery27, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery27">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North104" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery35, 0)
+        </script>
+      </exit>
+      <exit name="East99" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery26, 1)
+        </script>
+      </exit>
+      <exit name="South103" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery21, 2)
+        </script>
+      </exit>
+      <exit name="West98" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery28, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery28">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North107" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery36, 0)
+        </script>
+      </exit>
+      <exit name="East105" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery27, 1)
+        </script>
+      </exit>
+      <exit name="South106" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery22, 2)
+        </script>
+      </exit>
+      <exit name="West106" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery29, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery29">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North113" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery37, 0)
+        </script>
+      </exit>
+      <exit name="East107" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery28, 1)
+        </script>
+      </exit>
+      <exit name="West107" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery30, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery30">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East108" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery29, 1)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery31">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North121" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery38, 0)
+        </script>
+      </exit>
+      <exit name="South120" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery23, 2)
+        </script>
+      </exit>
+      <exit name="West121" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery32, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery32">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North123" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery39, 0)
+        </script>
+      </exit>
+      <exit name="East123" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery31, 1)
+        </script>
+      </exit>
+      <exit name="South123" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery24, 2)
+        </script>
+      </exit>
+      <exit name="West122" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery33, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery33">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East124" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery32, 1)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery34">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South125" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery25, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery35">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North126" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery40, 0)
+        </script>
+      </exit>
+      <exit name="South126" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery27, 2)
+        </script>
+      </exit>
+      <exit name="West125" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery36, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery36">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North127" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery41, 0)
+        </script>
+      </exit>
+      <exit name="East127" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery35, 1)
+        </script>
+      </exit>
+      <exit name="South127" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery28, 2)
+        </script>
+      </exit>
+      <exit name="West126" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery37, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery37">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North128" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery42, 0)
+        </script>
+      </exit>
+      <exit name="East128" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery36, 1)
+        </script>
+      </exit>
+      <exit name="South128" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery29, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery38">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North129" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery44, 0)
+        </script>
+      </exit>
+      <exit name="South129" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery31, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery39">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South130" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery32, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery40">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South131" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery35, 2)
+        </script>
+      </exit>
+      <exit name="West130" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery41, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery41">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East132" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery40, 1)
+        </script>
+      </exit>
+      <exit name="South132" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery36, 2)
+        </script>
+      </exit>
+      <exit name="West131" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery42, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery42">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North133" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery45, 0)
+        </script>
+      </exit>
+      <exit name="East133" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery41, 1)
+        </script>
+      </exit>
+      <exit name="South133" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery37, 2)
+        </script>
+      </exit>
+      <exit name="West132" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery43, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery43">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East134" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery42, 1)
+        </script>
+      </exit>
+      <exit name="West133" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery44, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery44">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North135" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery46, 0)
+        </script>
+      </exit>
+      <exit name="East135" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery43, 1)
+        </script>
+      </exit>
+      <exit name="South135" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery38, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery45">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South136" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery42, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery46">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North137" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery48, 0)
+        </script>
+      </exit>
+      <exit name="South137" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery44, 2)
+        </script>
+      </exit>
+      <exit name="West136" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery47, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery47">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East138" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery46, 1)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery48">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North139" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery49, 0)
+        </script>
+      </exit>
+      <exit name="South139" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery46, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery49">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North140" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery50, 0)
+        </script>
+      </exit>
+      <exit name="South140" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery48, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery50">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North141" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery52, 0)
+        </script>
+      </exit>
+      <exit name="South141" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery49, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery51">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North142" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery55, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery52">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North143" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery56, 0)
+        </script>
+      </exit>
+      <exit name="South143" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery50, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery53">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North144" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery57, 0)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery54">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North145" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery59, 0)
+        </script>
+      </exit>
+      <exit name="West144" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery55, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery55">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North146" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery60, 0)
+        </script>
+      </exit>
+      <exit name="East146" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery54, 1)
+        </script>
+      </exit>
+      <exit name="South146" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery51, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery56">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North147" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery62, 0)
+        </script>
+      </exit>
+      <exit name="South147" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery52, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery57">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South148" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery53, 2)
+        </script>
+      </exit>
+      <exit name="West147" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery58, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery58">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North149" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery63, 0)
+        </script>
+      </exit>
+      <exit name="East149" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery57, 1)
+        </script>
+      </exit>
+      <exit name="West148" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery59, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery59">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East150" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery58, 1)
+        </script>
+      </exit>
+      <exit name="South150" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery54, 2)
+        </script>
+      </exit>
+      <exit name="West149" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery60, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery60">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East151" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery59, 1)
+        </script>
+      </exit>
+      <exit name="South151" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery55, 2)
+        </script>
+      </exit>
+      <exit name="West150" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery61, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery61">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East152" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery60, 1)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery62">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North153" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery64, 0)
+        </script>
+      </exit>
+      <exit name="South153" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery56, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery63">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="North154" alias="north" to="defaultroom">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery66, 0)
+        </script>
+      </exit>
+      <exit name="South154" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery58, 2)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery64">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="South155" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery62, 2)
+        </script>
+      </exit>
+      <exit name="West154" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery65, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery65">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East156" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery64, 1)
+        </script>
+      </exit>
+      <exit name="West155" alias="west" to="defaultroom">
+        <inherit name="westdirection" />
+        <runscript />
+        <visible />
+        <script type="script">
+          MoveAndFace (nursery66, 3)
+        </script>
+      </exit>
+    </object>
+    <object name="nursery66">
+      <inherit name="editor_room" />
+      <usedefaultprefix />
+      <descriptions type="stringdictionary">
+        <item>
+          <key>darknorth</key>
+          <value>defaultdarknorth</value>
+        </item>
+        <item>
+          <key>darkeast</key>
+          <value>defaultdarkeast</value>
+        </item>
+        <item>
+          <key>darksouth</key>
+          <value>defaultdarksouth</value>
+        </item>
+        <item>
+          <key>darkwest</key>
+          <value>defaultdarkwest</value>
+        </item>
+        <item>
+          <key>dimnorth</key>
+          <value>defaultdimnorth</value>
+        </item>
+        <item>
+          <key>dimeast</key>
+          <value>defaultdimeast</value>
+        </item>
+        <item>
+          <key>dimsouth</key>
+          <value>defaultdimsouth</value>
+        </item>
+        <item>
+          <key>dimwest</key>
+          <value>defaultdimwest</value>
+        </item>
+        <item>
+          <key>brightnorth</key>
+          <value>defaultbrightnorth</value>
+        </item>
+        <item>
+          <key>brighteast</key>
+          <value>defaultbrighteast</value>
+        </item>
+        <item>
+          <key>brightsouth</key>
+          <value>defaultbrightsouth</value>
+        </item>
+        <item>
+          <key>brightwest</key>
+          <value>defaultbrightwest</value>
+        </item>
+      </descriptions>
+      <description type="script">
+        PrintRoomDesc (False)
+      </description>
+      <exit name="East157" alias="east" to="defaultroom">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery65, 1)
+        </script>
+      </exit>
+      <exit name="South157" alias="south" to="defaultroom">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script">
+          MoveAndFace (nursery63, 2)
+        </script>
+      </exit>
+    </object>
+  </object>
+  <object name="library">
+    <inherit name="editor_object" />
   </object>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
