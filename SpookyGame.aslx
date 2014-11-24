@@ -2603,6 +2603,8 @@
         <script type="script">
           MoveAndFace (nursery1, 0)
         </script>
+        <scenery />
+        <locked />
       </exit>
     </object>
     <object name="hub4">
@@ -14356,9 +14358,33 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery47, 3)
+          if (nursery47.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery47, 3)
+          }
         </script>
       </exit>
+      <command name="Open door">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          msg ("The door swings open easily.")
+          nursery47.door_closed = False
+        </script>
+      </command>
+      <command name="Shut door">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          nursery47.door_closed = True
+          if (Peter.chasing) {
+            msg ("You slam the door shut.")
+          }
+          else {
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery47">
       <inherit name="editor_room" />
@@ -14413,16 +14439,60 @@
           <value>defaultbrightwest</value>
         </item>
       </descriptions>
+      <door_closed />
       <description type="script">
-        PrintRoomDesc (False)
+        OutputTextNoBr ("As you enter the room you hear a shriek from directly in front of you. ")
+        if (lantern.light_level=2) {
+          msg ("A ghostly child a few steps in front of you throws his toys aside and begins to sprint at you.")
+        }
+        else if (lantern.light_level=1) {
+          msg ("You see a thrashing of motion a few steps in front of you, before the darkness begins to charge at you.")
+        }
+        else {
+          msg ("")
+        }
+        Peter.chasing = True
+        EnableTurnScript (peter_turn_script)
+        if (game.debug) {
+          msg ("DEBUG: PETER IS NOW CHASING")
+        }
       </description>
+      <enter type="script">
+      </enter>
       <exit name="East138" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (nursery46, 1)
+          if (nursery47.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery46, 1)
+          }
         </script>
       </exit>
+      <command name="Shut door1">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          nursery47.door_closed = True
+          msg ("You slam the door shut.")
+        </script>
+      </command>
+      <command name="Open door1">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          msg ("The door swings open easily.")
+          nursery47.door_closed = False
+        </script>
+      </command>
+      <command name="Fight Peter">
+        <pattern type="string">(punch|hit|kick|fight|kill|tackle) (kid|child|peter)</pattern>
+        <script>
+          msg ("You try to fight the child. He wins.")
+          ResetPeter
+          Die
+        </script>
+      </command>
     </object>
     <object name="nursery48">
       <inherit name="editor_room" />
@@ -15786,6 +15856,12 @@
           MoveAndFace (nursery63, 2)
         </script>
       </exit>
+    </object>
+    <object name="Peter">
+      <inherit name="editor_object" />
+      <chasing type="boolean">false</chasing>
+      <distance type="int">2</distance>
+      <attr name="start_distance" type="int">2</attr>
     </object>
   </object>
   <object name="library">
@@ -23929,6 +24005,21 @@
       </exit>
     </object>
   </object>
+  <turnscript name="peter_turn_script">
+    <script><![CDATA[
+      Peter.distance = Peter.distance - 1
+      if (game.debug) {
+        msg ("DEBUG: PETER DISTANCE = " + Peter.distance)
+      }
+      if (nursery47.door_closed) {
+        ResetPeter
+      }
+      else if (Peter.distance <= 0) {
+        msg ("The child tackles the soul right out of you.")
+        Die
+      }
+    ]]></script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -24064,6 +24155,15 @@
   <function name="SetHeartRate" parameters="heartRate">
     game.heartRate = heartRate
     request (RunScript, "setHeartRate; " + game.heartRate)
+  </function>
+  <function name="Die">
+    msg ("placeholder death")
+  </function>
+  <function name="ResetPeter">
+    Peter.distance = Peter.start_distance
+    Peter.chasing = False
+    DisableTurnScript (peter_turn_script)
+    msg ("DEBUG: PETER NO LONGER CHASING")
   </function>
   <javascript src="javascript.js" />
 </asl>
