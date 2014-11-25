@@ -4273,51 +4273,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway, facing a locked door. It’s the door you came in from. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway, facing a locked door. It is the door you came in from. There are walls on both sides of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground in front of you, leading forwards.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -4350,51 +4350,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. There is a trail of blood on the ground that leads to the door you came in from. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading forwards. </value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -4423,51 +4423,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You see some blood on the ground a step in front of you. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You see some blood on the ground a step in front of you. </value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -4496,51 +4496,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You feel a wall in front of you. It is damp and slimy.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading to the door you came in from.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading west.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -4576,51 +4576,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It’s cold.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You see some blood on the ground to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You see some blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You see some blood on the ground to the south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -4656,51 +4656,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading east, to the door you came in from.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading east, to the door you came in from.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading east, to the door you came in from. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground, but the trail breaks off in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -4736,51 +4736,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is damp and slimy.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You cannot see the trail of blood from here. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You think you can see the trail of blood southwest of you, but it is hard to tell.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You think you can see the trail of blood southwest of you, but it is hard to tell. </value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -4816,51 +4816,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is damp, and slimy. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. You see some blood on the ground a step to the east of you, and a step to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see some blood on the ground a step in front of you. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. You can see blood on the ground a step to the east of you, and a step to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway, there is a wall in front of you. You can see blood on the ground a step in front of you. </value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -4896,51 +4896,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground. There is a window, you can see into a small room. You see what appears to be a cask of oil inside the room.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground. You see a window into a small room to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here. There is a window, you can see into a small room. You see a cask of oil inside the room, and the door to the room is a step northwest of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see some blood on the ground a step south of you. You see a window into a small room to the north of you, you can see into a small room and a cask of oil is visible inside the room.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -4976,51 +4976,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. Your hand grazes some spider webs, you brush it off but it still feels like the spiders are crawling on your skin.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground. You can see the sheen of a glass pane a few steps in front of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground. You can see the light being reflected off a surface to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground. You can see the light being reflected off a surface to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading west. You can see a window a few steps in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. The trail of blood stops a step in front of you. You can see the light being reflected off of a window to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading west. You can see the light being reflected off of a window to the north of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -5121,51 +5121,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, facing a door. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground. There is a door to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, facing a door. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see some blood on the ground to the south of you, and a door to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see blood on the ground to the west of you, and a door directly north of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5208,51 +5208,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It’s cold.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. The trail of blood ends in front of you. You see a door a few steps in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading east. You can see a door a few steps to the north.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading east, the trail breaks off to the west. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. The trail of blood cuts off in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -5288,51 +5288,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood, but there is a door to the northeast.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood, but there is a door up ahead.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here, but there is a door to the northeast.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You cannot see the trail of blood from here, but there is a door northeast of you, and you can see the light of your lantern reflect off a window further east of that.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see the trail of blood a few steps southeast, and a few steps southwest.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood southwest of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5368,51 +5368,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is cold, and damp.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see some blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see some blood on the ground a step east of you, and a step west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood a step in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5448,51 +5448,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see some blood on the ground south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see some blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see a trail of blood south of you, leading west.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5528,51 +5528,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is cold and slimy, maybe covered in damp moss.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. There is a trail of blood on the ground, leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see that the trail of blood breaks off in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground, leading west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading forwards.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -5608,51 +5608,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see the trail of blood south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see the trail of blood a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5688,51 +5688,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is damp and slimy. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. The trail of blood continues east, and west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. The trail of blood continues in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading east, and west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. There is a trail of blood on the ground leading forwards.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -5768,51 +5768,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is cold.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway.  You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway.  You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway.  You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You can see the trail of blood south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You can see the trail of blood a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood on the ground south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5848,51 +5848,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. The trail of blood breaks off in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. The trail of blood continues in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. The trail of blood continues east of you, and breaks off west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. The trail of blood breaks off in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -5928,51 +5928,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway. You think you can see some blood on the ground southwest of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood southwest of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6008,51 +6008,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a hallway. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a hallway. You think you can see some blood on the ground west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a hallway. There is some blood on the ground a step in front of you, the trail leads east.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a hallway, there is a wall in front of you. You can see the trail of blood to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a hallway. You can see the trail of blood a step in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6088,51 +6088,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are facing a wall, in a corner. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are facing a wall, in a corner. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are facing a wall, in a corner. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are facing the only way out of this corner. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are facing a wall, in a corner. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are facing a wall, in a corner. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are facing a wall, in a corner. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are facing the only way out of this corner. You cannot see the trail of blood from here.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6219,51 +6219,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter west of you, and a wall to the east. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter west of you, and a wall to the east. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you. There are some kitchen utensils on the counter, but nothing of actual interest. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter west of you, and a wall to the east. You see a dead end a step in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter west of you, and a wall to the east. You think you can see some blood on the ground to the south of you, but it is hard to tell from here.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. There are some kitchen utensils* on the counter, but nothing of actual interest. You cannot see the trail of blood from here.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6291,51 +6291,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter west of you. There are some pots and pans piled up on the counter. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You cannot see any blood on the ground here.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter west of you. There are some pots and pans piled up on the counter. You cannot see any blood on the ground here. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you. There are some pots and pans piled precariously on the counter. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter west of you. There are some pots and pans piled up on the counter. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You can see some blood on the ground a step south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter west of you. There are some pots and pans piled up on the counter, they look like they might fall. You can see the trail of blood a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. There are some pots and pans piled precariously on the counter, if you bump the counter they might fall. You can see the trail of blood south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6370,51 +6370,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a trail of blood breaks off in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a trail of blood on the ground leading forwards.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -6457,51 +6457,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is cold.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter west of you, and a wall to the east. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter west of you, and wall east of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you, there are some cutting boards on the counter covered with rotting meat, and maggots. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter west of you, and a wall to the east. You can see some blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you. You can see some blood on the ground a step north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter west of you, and wall east of you. You cannot see the trail of blood from here, but you can see there is a dead end a few steps in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. There are some cutting boards on the counter covered with rotting meat, and maggots, but nothing looks useful here. You can see some blood on the ground to the north of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6529,51 +6529,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It is sticky.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.  You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter west of you, and a wall to the east. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall east of you, and a counter west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter in front of you. There are some cutting boards on the counter covered with rotting meat, and maggots, but nothing looks useful here. You can see some blood on the ground to the north of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall east of you, and a counter west of you. You cannot see the trail of blood from here, but you can see a dead end up ahead. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. There is nothing of interest on it. You think you can see some blood on the ground to the north of you, but it is hard to tell. You can see that there is a dead end south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6666,51 +6666,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a counter south of you, and a wall north of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter south of you, and a wall north of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you. You think you can see some blood on the ground to the west of you, but it is hard to tell.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You cannot see the trail of blood from here. There is a dead end up ahead.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter in front of you, it is dirty, and crawling with bugs, but there is nothing of interest on it. You think you can see some blood on the ground a couple steps west of you, but it is hard to tell.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall north of you, and a counter south of you. You can see some blood on the ground a few steps forwards.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6739,51 +6739,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You feel a counter in front of you, and you bump it slightly fumbling in the darkness. You hear a quiet clang, you don’t think anything heard it, thankfully.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a counter in front of you, it is covered in something slimy and pungent.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter in front of you. It is piled high with pots and pans, they look like they might fall. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There are counters both to the north, and to the south of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter in front of you, it is covered in rotting meat and maggots. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter north of you, and a counter south of you. The counter north of you has a pile of pots and pans on it. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter in front of you. It is piled high with pots and pans, they look like they might fall. You might be able to fix them without making too much noise. The trail of blood breaks off west of you. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There are counters both to the north and to the south of you. The counter to the north has a large pile of pots and pans that may fall at any second. The trail of blood continues eastward in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter in front of you, it is covered in rotting meant and maggots, but nothing useful. The trail of blood breaks off to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter north of you, and a counter south of you. The counter north of you has a pile of pots and pans on it that might fall at any second. You can probably fix them without making too much noise. The trail of blood breaks off in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -6812,51 +6812,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall on your north-side. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you. You can some spots of blood on the ground one step west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall on your north-side. You cannot see the blood trail from here. Up ahead is a dead end.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You can see some blood on the ground a few steps ahead, and a step west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You can see a trail of blood one step in front of you, leading west.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6892,51 +6892,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a counter in front of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see the blood trail from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a counter in front of you. You can see some blood on the ground to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter to the east, and to the west of you. There is blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. You can see blood on the ground a step to the south.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -6964,51 +6964,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You feel a counter in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a counter to the west of you, and to the east of you. The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a counter in front of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a counter to the east of you, and to the west of you. The counter to the west of you has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a counter in front of you. There is a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix it without making too much noise.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a counter to the west of you, and to the east of you. The counter to the west has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix without making too much noise. The trail of blood on the ground breaks off in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a counter in front of you. The trail of blood breaks off a step to the north of you, and carries on to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a counter to the east of you, and to the west of you. The counter to the west of you has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix it without making too much noise. The trail of blood on the ground continues in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a counter in front of you. There is a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix it without making too much noise.</value>
         </item>
       </descriptions>
       <bloodTrail />
