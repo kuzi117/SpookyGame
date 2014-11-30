@@ -2626,7 +2626,7 @@
         <inherit name="northdirection" />
         <runscript />
         <scenery />
-        <locked />
+        <locked type="boolean">false</locked>
         <script type="script">
           MoveAndFace (nursery1, 0)
         </script>
@@ -4114,7 +4114,7 @@
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub16, 2)
+          MoveAndFace (hub20, 2)
         </script>
       </exit>
     </object>
@@ -11095,7 +11095,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you. </value>
         </item>
         <item>
           <key>dimeast</key>
@@ -11103,7 +11103,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you. </value>
         </item>
         <item>
           <key>dimwest</key>
@@ -11111,7 +11111,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -11142,6 +11142,7 @@
         <script type="script">
           MoveAndFace (hub3, 2)
         </script>
+        <locked />
       </exit>
     </object>
     <object name="nursery2">
@@ -11237,11 +11238,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a wall to the east of you, and a dresser to the west.</value>
+          <value>There is a wall to the east of you, and a dresser to the west. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a wall in front of you.</value>
+          <value>There is a wall in front of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -11249,11 +11250,11 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a dresser in front of you.</value>
+          <value>There is a dresser in front of you. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a wall to the east of you, and a dresser to the west. The dresser is covered in a thick film of dust.</value>
+          <value>There is a wall to the east of you, and a dresser to the west. The dresser is covered in a thick film of dust. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -11309,7 +11310,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a wall in front of you, and a dresser to the east.</value>
+          <value>There is a wall in front of you, and a dresser to the east. </value>
         </item>
         <item>
           <key>dimwest</key>
@@ -11321,11 +11322,11 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a dresser in front of you, and a wall to the south. The dresser is covered in a thick film of dust.</value>
+          <value>There is a dresser in front of you, and a wall to the south. The dresser is covered in a thick film of dust. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall in front of you, and a dresser to the east. The dresser is covered in a thick film of dust.</value>
+          <value>There is a wall in front of you, and a dresser to the east. The dresser is covered in a thick film of dust. </value>
         </item>
         <item>
           <key>brightwest</key>
@@ -11377,7 +11378,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>You are in a narrow hallway, there is a door in front of you.</value>
+          <value>You are in a narrow hallway, there is a door in front of you. </value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -11444,11 +11445,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table in front of you. There is a door to the east of you.</value>
+          <value>There is a small table in front of you. There is a door to the east of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a door in front of you, and a table to the north of you.</value>
+          <value>There is a door in front of you, and a table to the north of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -11456,7 +11457,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a table to the north of you. (TODO: Before you have originally spoken to the boy: There is some kind of translucent glimmer a few steps northwest of you.)</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -11464,7 +11465,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a door in front of you, and a table to the north of you. The table has some old papers scattered on it, but nothing peaks your interest.</value>
+          <value>There is a door in front of you, and a table to the north of you. The table has some old papers scattered on it, but nothing peaks your interest. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -11472,7 +11473,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a table to the north of you. (TODO: Before you have originally spoken to the boy: There is some kind of translucent glimmer a few steps northwest of you.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -11523,7 +11524,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a table to the southeast of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -11531,19 +11532,19 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a dusty dresser in front of you.</value>
+          <value>There is a dusty dresser in front of you. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a dresser to the south of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a table to the southeast of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a door a couple steps forwards, and a table to the southeast.</value>
+          <value>There is a door a couple steps forwards, and a table to the southeast. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -11551,7 +11552,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a dresser to the south of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -11590,7 +11591,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You cannot see anything.</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
@@ -11602,27 +11603,27 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: There is a figure of a little boy in front of you, he is translucent.)</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: there is a figure of a little boy to the north of you, he is translucent.)</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a dusty dresser in front of you.</value>
+          <value>There is a dusty dresser in front of you. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a dresser to the south of you, and a small bed to the northwest. (TODO: Before you have original spoken to the boy: There is a figure of a little boy to the north of you, he is translucent.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: There is a figure of a little boy in front of you, he is translucent.)</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: there is a figure of a little boy to the north of you, he is translucent.)</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -11630,7 +11631,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a dusty dresser to the south of you, and a small bed to the northwest. (TODO: Before you have original spoken to the boy: There is a figure of a little boy to the north of you, he is translucent.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -11681,11 +11682,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small bed in front of you.</value>
+          <value>There is a small bed in front of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>: There is a small bed to the north of you.</value>
+          <value>There is a small bed to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -11697,19 +11698,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small bed in front of you. (TODO: Before you originally talk to the boy: There is glimmer hanging in the air to the northeast.)</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small bed to the north of you, and a dresser to the southeast. (TODO: Before you originally talk to the boy: There is a glimmer hanging in the air to the northeast.)</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a dresser to the southeast of you, and a wall to the west.</value>
+          <value>There is a dresser to the southeast of you, and a wall to the west. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you, and a small bed to the north.</value>
+          <value>There is a wall in front of you, and a small bed to the north. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -11736,51 +11737,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall to the east of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall to the east of you, you are in a small closet.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and to the south of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and to the east of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall to the south of you, and a door a few steps forwards. You are in a small closet.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -11808,51 +11809,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and a door to the west.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a door in front of you, and a wall to the south.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a door to the west of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall to the south of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and a door to the west. You are in a small closet.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a door in front of you, and a wall to the south. You are in a small closet.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -11887,51 +11888,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a door to the east, and a wall to the west of you. There is a painting of a lady on the wall. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you. There is a painting of a lady on the wall.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a door to the east, and a wall to the west of you. On the wall there is a painting of a lady. It feels like she is watching you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value> There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall. It feels like she is watching you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you. There is a painting of a lady on the wall, it feels like she is watching you. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -11965,51 +11966,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a table to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a table in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a table to the east of you. (TODO: Before you have met the boy: There is a figure of a small boy hanging in the air to the west of you.)</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value> There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a table to the east of you, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a table in front of you, and a door to the southeast. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a table to the east of you, and a dresser a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small bed a few steps forwards, and a wall a few steps north. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12044,51 +12045,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel some kind of blanket-covered piece of furniture in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small bed to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a table a few steps forwards.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small bed to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small bed in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small bed to the west of you, and a wall a few steps forwards. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small table a few steps forwards, and a wall to the north. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small bed to the west of you, and a dresser a few steps south.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small bed in front of you, and a wall to the north. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12122,51 +12123,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and to the east of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and to the north of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the east of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall to the north of you. You are in a small closet. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12194,51 +12195,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall in front of you, and to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and to the west of you. You are in a small closet.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall to the north of you. You are in a small closet. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the west of you. You are in a small closet. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall in front of you, and to the north of you. You are in a small closet. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12265,51 +12266,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12336,51 +12337,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and a table to the east.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a table in front of you, and a wall to the north.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a table to the east of you. (TODO: Before you met boy: There is a glimmer hanging in the air to the southwest.)</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall to the north of you. (TODO: Before you met boy: There is a figure of a small boy hanging in the air to the southwest, he is translucent.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and a table to the east. There is a small bed a few steps west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a table in front of you, and a wall to the north.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a table to the east of you. There is a small bed a few steps to the west. (TODO: Before you met boy: There is a glimmer hanging in the air to the southwest.)</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall to the north of you. There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air to the southwest, he is translucent.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12408,51 +12409,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.  </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a piece of furniture in front of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and a small bed to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall to the north of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small bed to the west of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air in front of you.)</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small bed in front of you, and a wall to the north.  (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and a small bed to the west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall to the north of you, and a small table a few steps forwards. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small bed to the west of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air in front of you.)</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small bed in front of you, and a wall to the north. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12479,51 +12480,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12550,51 +12551,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and to the east of you. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall to the east of you. There is a door a step forwards, and to the east. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and to the south of you. You are in a corner of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and to the east of you. You are in a corner of the room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall to the south of you. There is what appears to be a children’s toy chest a few steps forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12622,51 +12623,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you. It is covered in cobwebs, and as you brush it off it feels like spiders are running up your arms.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a children’s toychest to the west of you. It is covered in cobwebs, and crawling with spiders.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and a children’s toy chest to the west. It is infested with spiders.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a children’s toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a children’s toy chest to the west of you. It is covered in cobwebs, and crawling with spiders. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall to the south of you. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and a children’s toy chest to the west. It is infested with spiders, and covered in cobwebs.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a children’s toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12693,51 +12694,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12764,51 +12765,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. There is a pile of soft objects in front of you, resting on what feels like a table.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a pile of toys rest on a small table to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and to the east of you. To the west is a pile of toys resting on a small table. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a small room. There is a pile of toys resting on a small table in front of you. There are some teddy bears missing buttons, limbs, and stuffing strewn about. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a pile of toys rest on a small table to the west of you, and a wall to the east. You are in a small room.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and to the south of you. You are in the corner of a small room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and to the east of you. To the west is a pile of toys resting on a small table. You are in the corner of a small room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a pile of toys resting on a small table in front of you. There are some teddy bears missing buttons, limbs, and stuffing strewn about. You are in the corner of a small room. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12828,51 +12829,55 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small crib to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small crib in front of you, and a small children’s dresser to the south of you. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small children’s dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small children’s dresser to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a small room. There is a small crib to the east of you, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a small room. There is a small crib in front of you, and a small children’s dresser to the south of you. The crib is dusty, and practically rotting away. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a small room. There is a small children’s dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a small children’s dresser to the south of you, and a door a few steps forwards.</value>
+        </item>
+        <item>
+          <key>notes</key>
+          <value>This is where you find the boy for the 3rd time.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12900,51 +12905,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a piece of furniture in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a shelf holding some old, dusty toys in front of you. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small children’s dresser to the south of you, and a shelf holding some old dusty toys to the north. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small children’s dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a door in front of you, a small dresser to the south of you, and a shelf holding some toys to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a small room. There is a shelf holding some old, dusty toys in front of you. There is a door to the west of you. You think you see something move on the shelf, but when you check again there doesn’t seem to be anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a small room. There is a small children’s dresser to the south of you, a shelf holding some old dusty toys to the south, and a small crib a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a small room. There is a small children’s dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you. There is a small crib a few steps to the east of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a door in front of you, a small dresser to the south of you, and a shelf holding some toys to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12972,51 +12977,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a door to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a door in front of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a door to the east of you, and a wall a few steps forwards. There are some noises coming from a few steps behind you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall a few steps south of you. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a door to the east of you, you hear some noises coming from a few steps forwards, and can see a glimmer of light on the ground a few steps forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a door in front of you. You can hear some noises coming from a few steps to the north. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a door to the east of you, and a wall a few steps forwards. There are some noises coming from a few steps behind you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall a few steps south of you. There are some noises coming from the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13058,51 +13063,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You think you are in the middle of the room. You can hear some noises coming from the northeast corner.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You think you are in the middle of the room.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You think you are in the middle of the room. You can hear some noises coming from the northeast corner.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You think you are in the middle of the room. You can see a door a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you, and a wall a few steps ahead.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13144,51 +13149,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a piece of furniture in front of you, it is covered in cobwebs, and they stick to your skin.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table to the northwest of you, there is a cask of oil sitting on it. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a children’s toy chest to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table to the northwest of you, there is a cask of oil sitting on it. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a children’s toy chest to the south of you. You can hear some noises coming from the northeast corner. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall a few steps to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards. There is a cask of oil sitting on a small table to the northwest of you. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -13223,51 +13228,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel some kind of table in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel something covered in spider webs in front of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table in front of you, and a wall to the west. There is a cask of oil sitting on the table in front of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table in front of you, and a wall to the west. There is a cask of oil sitting on the table in front of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you, it is covered in spider webs. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13287,51 +13292,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway. There is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway. There is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway. There is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13366,51 +13371,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a side table with a cask of oil on it to the northwest, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a door in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a door to the east of you. There is a pile of toys on a small table to the southwest.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a large mound of toys a few steps in front of you. There is a doll in front of them all, wearing a dress with little lambs on it. You could have sworn she just blinked.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a side table with a cask of oil on it to the northwest, and a wall a few steps forwards. You are in a small room. You feel something watching you. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a door in front of you. You are in a small room. You think something is watching you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a door to the east of you. There is a pile of toys on a small table to the southwest. You are in a small room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a large mound of toys a few steps in front of you. There is a doll in front of them all, wearing a dress with little lambs on it. You could have sworn she just blinked.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13452,51 +13457,55 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a table of some kind in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are surrounding by toys on tables. There is a door a few steps forwards.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small table in front of you, covered in toys. There are stuffed teddy bears missing eyes, limbs, and insides strewn about. There is a doll sitting in front of all the other toys to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress. Did she just move? (TODO: If boy is hiding here: You think you see a faint glow emanating from the cabinet.)</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a small room. There is a small table in front of you, there is a cask of oil sitting on it. You feel like something is staring at you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a small room, surrounding by toys on tables. There is a door a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a small room. There is a small table in front of you, covered in toys. There are stuffed teddy bears missing eyes, limbs, and insides strewn about. There is a doll sitting in front of all the other toys to the west of you. She is wearing a little lamb dress.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress. (TODO: If boy is hiding here: You think you see a faint glow emanating from the cabinet.)</value>
+        </item>
+        <item>
+          <key>notes</key>
+          <value>Boy hides here for the 1st time. Find him facing west and inspecting cabinet.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13516,51 +13525,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel some kind of furniture in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel some kind of shelf in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, a small crib to the east of you, and a shelf with some old toys sitting on it to the west of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a crib in front of you, and a wall to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small crib to the east of you, a shelf with some old toys on it to the west.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a shelf in front of you, with some old toys laying on it. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a small room. There is a wall in front of you, a small crib to the east of you, and a shelf with some old toys sitting on it to the west of you. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a small room. There is a crib in front of you, and a wall to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a small room. There is a small crib to the east of you, a shelf with some old toys on it to the west. There is a small children’s dresser a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a small room. There is a shelf in front of you, with some old toys laying on it. There is a wall to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13580,51 +13589,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall to the east of you. You can hear some strange noises coming from a few steps forwards.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you. You can hear some strange noises a few steps to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the east of you. You hear a child’s voice murmuring from little ways behind you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is not much around you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall to the east of you. You can hear some strange noises coming from a few steps forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you. You can hear some strange noises a few steps to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the east of you. You hear a child’s voice murmuring from little ways behind you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is not much around you. You hear some movement to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13659,51 +13668,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is not much around you, you think you are in the middle of the room.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is not much around you, you think you are in the middle of the room.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is not much around you, you think you are in the middle of the room. You can hear the tapping of a toy on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is not much around you, you think you are in the middle of the room.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is not much around you, you think you are in the middle of the room. You can hear some noise coming from the northeast corner. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is not much around you, you think you are in the middle of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is not much around you, you think you are in the middle of the room. You can hear the tapping of a toy on the ground.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is not much around you, you think you are in the middle of the room. You think you can see a small table a few spaces ahead.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13745,51 +13754,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you. There seems to be something on it.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is not much around you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table to the west of you, it has a cask of oil sitting on it. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is not much around you. You can hear some toys being clacked together in the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13823,51 +13832,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13894,51 +13903,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a table in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you, with a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the east of you, and a small table to the west with a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you, with a cask of oil sitting on it. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and to the north of you. You are in the corner of a small room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the east of you, and a small table to the west with a cask of oil sitting on it. You are in the corner of a small room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the north of you. You are in the corner of a small room.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13958,51 +13967,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can hear something moving in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall to the east of you. In front of you there is the glimmering figure of a little boy sitting on the ground. He looks irate, and is playing with his toys.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you. There is a translucent figure of a small boy to the north of you, he looks angry.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the east of you. You can hear noises coming from behind you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a translucent, glimmering figure of a small boy to the north of you. He is playing with something, smashing it around violently.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall to the east of you. In front of you there is the glimmering figure of a little boy sitting on the ground. He looks irate, and is playing with his toys.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you. There is a translucent figure of a small boy to the north of you, he looks angry.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the east of you. You can hear noises coming from behind you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a translucent, glimmering figure of a small boy to the north of you. He is playing with what looks like a bone, smashing it around violently.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14030,51 +14039,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. There is something in front of you, but you can’t tell what it is.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a pile of toys surrounding the base of an anatomical skeleton. There is a translucent figure of a little boy to the east of it who seems to be playing with an arm bone of the skeleton.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the north of you. There is not much else around you. There is a glimmer of a little boy to the northeast.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is not much around you. You can hear noises coming from the northeast of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the north of you. There is not much else around you. You can hear noises coming from a bit behind you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a pile of toys surrounding the base of an anatomical skeleton. There is a translucent figure of a little boy to the east of it who seems to be playing with an arm bone of the skeleton.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the north of you. There is not much else around you. There is a glimmer of a little boy to the northeast. He is murmuring to himself.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is not much around you. You can hear noises coming from the northeast of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the north of you. There is not much else around you. You can hear noises coming from a bit behind you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14109,51 +14118,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall a few steps forwards, a pile of toys to the northeast of you, and a small table to the northwest of you. There is a door a few steps to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a pile of toys to the northeast of you. There is not much else around you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a door a few steps to the west of you, and a small table with a cask of oil on it to the southwest.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a door a few steps forwards, a small table to the southwest with a cask of oil it, and a small table to the northwest.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall a few steps forwards, a pile of toys to the northeast of you, and a small table to the northwest of you. There is a door a few steps to the west of you. You can hear movement in the northeast corner of the room.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a pile of toys to the northeast of you. There is not much else around you. You hear the repeated bashing of something onto the ground coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a door a few steps to the west of you, and a small table with a cask of oil on it to the southwest.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a door a few steps forwards, a small table to the southwest with a cask of oil it, and a small table to the northwest.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14195,51 +14204,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel some kind of table in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a table in front of you. It seems like there’s something on it.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small end table in front of you, it is old and dusty but doesn’t have anything of interest on it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small table to the north of you, and a table to the south of you with a cask of oil sitting on it. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you. The table to the south has a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small end table in front of you, it is old and dusty but doesn’t have anything of interest on it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small table to the north of you, and a table to the south of you with a cask of oil sitting on it. There is some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a door to the west of you. There are some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you. The table to the south has a cask of oil sitting on it.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14267,51 +14276,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a door to the east of you, and a wall to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a door to the east of you, and a wall to the west.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a door to the east of you, and a wall to the west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a door to the east of you, and a wall to the west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14345,51 +14354,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a table in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you. There is a pile of toys, including an incredibly realistic anatomical skeleton to the east of you. There is a small table to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a pile of toys, including an incredibly realistic anatomical skeleton in front of you. There is a wall to the north of you. On the other side of the toys there is a glimmer in the figure of a small boy sitting. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the east of you, and a small table to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a table in front of you, it doesn’t have anything of interest on it. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you. There is a pile of toys, including an incredibly realistic anatomical skeleton to the east of you. There is a small table to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a pile of toys, including an incredibly realistic anatomical skeleton in front of you. There is a wall to the north of you. On the other side of the toys there is a glimmer in the figure of a small boy sitting.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a pile of toys, including an anatomical skeleton to the east of you, and a small table to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a table in front of you, it doesn’t have anything of interest on it. There is a wall to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14409,51 +14418,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14512,51 +14521,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a door to the east of you. To the west of you there is a translucent little boy glaring up at you. He is growling.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a door in front of you. You can hear growling and grunting coming from behind you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, and a door to the east of you.  To the west there is a little boy glaring at you, snarling. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a little translucent boy in front of you. He stands up off the ground and is growling, snarling, and glaring at you. He is clawing his way through the rack of old clothes to reach you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a door to the east of you. To the west of you there is a translucent little boy glaring up at you. He is growling and looks like he is about to attack you. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a door in front of you. You can hear growling and grunting coming from behind you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, and a door to the east of you.  To the west there is a little boy glaring at you, snarling. He looks like he might kill you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a little translucent boy in front of you. He stands up off the ground and is growling, snarling, and glaring at you. He is clawing his way through the rack of old clothes to reach you.</value>
         </item>
       </descriptions>
       <door_closed />
@@ -14620,51 +14629,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14691,51 +14700,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14762,51 +14771,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14833,51 +14842,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel some kind of table in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel some kind of furniture in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a vanity table to the east of you, and a dresser to the west. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a vanity table in front of you, and a wall to the south. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall in front of you, a vanity table to the east, and a dresser to the west. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a dresser in front of you, it is dusty, old and missing one of the drawers. There is a wall to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a vanity table to the east of you, and a dresser to the west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a vanity table in front of you, and a wall to the south. The vanity table is dusty, but looks antique and still in relatively good condition compared to the rest of the furniture you’ve seen.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall in front of you, a vanity table to the east, and a dresser to the west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a dresser in front of you, it is dusty, old and missing one of the drawers. There is a wall to the south of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14897,51 +14906,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14968,51 +14977,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel some kind of furniture in front of you, you aren’t completely sure what it is. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall to the east of you, and a chair to the west. The room is very dusty here, it is hard to breathe.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and a vanity table to the south. The room is very dusty here, it is hard to breathe.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you’ve seen so far. It is very dusty here, you cough trying to breathe.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is an old chair in front of you, it is broken in parts, and looks like it is about to collapse. There is a vanity table to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall to the east of you, and a chair to the west. The room is very dusty here, it is hard to breathe.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and a vanity table to the south. The room is very dusty here, it is hard to breathe.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you’ve seen so far. It is very dusty here, you cough trying to breathe.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is an old chair in front of you, it is broken in parts, and looks like it is about to collapse. There is a vanity table to the south of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15032,51 +15041,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you, but you can’t quite tell what it is.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is an old chair to the east of you, it is broken and falling apart. There is a bed a few steps forwards.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is an old, falling apart chair in front of you. There is a vanity to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you’ve seen. There is a chair to the east of you, in terrible condition.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a vanity table to the south of you. A few steps forwards there is an old dresser, it is missing a drawer.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is an old chair to the east of you, it is broken and falling apart. There is a bed a few steps forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is an old, falling apart chair in front of you. There is a vanity to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you’ve seen. There is a chair to the east of you, in terrible condition. There is a dresser a few steps west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a vanity table to the south of you. A few steps forwards there is an old dresser, it is missing a drawer.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15104,51 +15113,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel some kind of piece of furniture in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is an old dresser to the west of you, it is missing a drawer but there is nothing of interest in, or on it. There is a bed a few steps forwards.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is an old chair, which is falling apart, a few steps forwards. There is a wall a few steps south, and a bed a few steps north.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a dresser to the west of you. It is old and missing a drawer. There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn’t seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is an old dresser to the west of you, it is missing a drawer but there is nothing of interest in, or on it. There is a bed a few steps forwards. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is an old chair, which is falling apart, a few steps forwards. There is a wall a few steps south, and a bed a few steps north.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a dresser to the west of you. It is old and missing a drawer. There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn’t seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15182,51 +15191,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15253,51 +15262,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a small table in front of you, there seems to be something on it.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it.  There is a wall to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall in front of you, and a small table with a cask of oil sitting on it to the north. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a wall to the east of you. A vanity table is a few steps south of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small table with a cask of oil sitting on it to the north of you. There is an old, broken chair to the southwest of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it.  There is a wall to the east of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall in front of you, and a small table with a cask of oil sitting on it to the north.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a wall to the east of you. A vanity table is a few steps south of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small table with a cask of oil sitting on it to the north of you. There is an old, broken chair to the southwest of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15325,51 +15334,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel something in front of you, but you aren’t quite sure what it is. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table with a cask of oil on it to the northeast, and a bed to the northwest.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small table with a cask of oil sitting on it to the northeast, and a broken, old chair to the south. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a chair to the south of you, and a bed to the northwest.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table with a cask of oil on it to the northeast, and a bed to the northwest.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small table with a cask of oil sitting on it to the northeast, and a broken, old chair to the south. There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a chair to the south of you, and a bed to the northwest.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15404,51 +15413,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel something in front of you, it feels softer and covered in a fabric.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a bed in front of you, there is a dusty flower patterned duvet laying on it. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a bed to the north of you, and a chair to the southeast. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a chair to the southeast of you, and a vanity table a few steps forwards.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a bed to the north of you, and a chair to the southeast.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a bed in front of you, there is a dusty flower patterned duvet laying on it. The flowers look like posies.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a bed to the north of you, and a chair to the southeast. The bed is covered in a dusty, flower patterned duvet.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a chair to the southeast of you, and a vanity table a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a bed to the north of you, and a chair to the southeast. The bed is covered in a dusty, flower patterned duvet.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15483,51 +15492,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel something in front of you, it is dusty and covered in fabric.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a bed in front of you, it has a dusty, flower patterned duvet laying on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a bed to the north of you. It has a dusty, flower patterned duvet laying on it.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is an old dresser to the southwest of you</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a bed to the north of you, there is a flower patterned duvet laying on it. There is a wall a few steps forwards, and a dresser to the southwest.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a bed in front of you, it has a dusty, flower patterned duvet laying on it. The flowers look like posies.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a bed to the north of you. It has a dusty, flower patterned duvet laying on it. The flowers look like posies.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is an old dresser to the southwest of you, and a vanity table a few steps southeast.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a bed to the north of you, there is a flower patterned duvet laying on it. There is a wall a few steps forwards, and a dresser to the southwest. The flowers look like posies.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15562,51 +15571,55 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel something covered in a dusty fabric in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a hard surface in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you. (TODO: If the boy is hiding here: You can see a faint glow emanating from under the bed.)</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a bed to the north of you, covered in a flower patterned duvet. The flowers look like posies. There is a dresser to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a dresser in front of you, it is old and broken but there is nothing of interest in or on it. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a wall in front of you. There is an old dresser to the south of you, and a bed to the north. The bed has a flower patterned duvet on it, the flowers look like posies.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you. (TODO: If the boy is hiding here: You can see a faint glow emanating from under the bed.)</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a bed to the north of you, covered in a flower patterned duvet. The flowers look like posies. There is a dresser to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a dresser in front of you, it is old and broken but there is nothing of interest in or on it. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a wall in front of you. There is an old dresser to the south of you, and a bed to the north. The bed has a flower patterned duvet on it, the flowers look like posies.</value>
+        </item>
+        <item>
+          <key>notes</key>
+          <value>This is where the boy hides for the 2nd time.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15626,51 +15639,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a wall to the east, and to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15697,51 +15710,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a small table in front of you, there seems to be something on it.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you, it is covered in fabric.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a small table to the east of you, there is a cask of oil sitting on it. There is a bed to the west of you, it has a flower patterned duvet on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small table with a cask of oil sitting on it to the east, and a bed to the west. The bed has a flower patterned duvet on it.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a small table to the east of you, there is a cask of oil sitting on it. There is a bed to the west of you, it has a flower patterned duvet on it. There is a wall a few spaces forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small table with a cask of oil sitting on it to the east, and a bed to the west. The bed has a flower patterned duvet on it. There is an old chair a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall a few steps north of you. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -15768,51 +15781,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>You are in a narrow hallway, there is a wall in front of you, and a door to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you, and a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>You are in a narrow hallway, there is a wall in front of you, and a door to the west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>You are in a narrow hallway, there is a door to the west of you, and a wall to the east.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>You are in a narrow hallway, there is a door in front of you, and a wall to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15840,51 +15853,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything. You can feel something in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything. You can feel a table in front of you, there seems to be something on it.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and a door to the east of you. </value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a door in front of you, and a small table, with a cask of oil sitting on it, to the south. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it. There is a door to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a small table to the south of you, with a cask of oil sitting on it. There is a wall to the north.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and a door to the east of you. There is a bed a few steps west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a door in front of you, and a small table, with a cask of oil sitting on it, to the south. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a small table in front of you, there is a cask of oil sitting on it. There is a door to the east of you, and there is a bed a few steps to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a small table to the south of you, with a cask of oil sitting on it. There is a wall to the north, and a bed a few steps forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15912,51 +15925,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>You cannot see anything. You can feel a wall in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>defaultdarkeast</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>defaultdarksouth</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>defaultdarkwest</value>
+          <value>You cannot see anything. You can feel something covered in a dusty fabric in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>defaultdimnorth</value>
+          <value>There is a wall in front of you, and a bed to the west of you. The bed has a flower patterned duvet covering it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>defaultdimeast</value>
+          <value>There is a wall to the north of you, and a small table with a cask of oil on it to the southeast.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>defaultdimsouth</value>
+          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. There is a small table with a cask of oil on it to the southeast. </value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>defaultdimwest</value>
+          <value>There is a bed in front of you, it is covered in a flower patterned duvet. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
+          <value>There is a wall in front of you, and a bed to the west of you. The bed has a flower patterned duvet covering it. The flowers look like posies.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>defaultbrighteast</value>
+          <value>There is a wall to the north of you, and a small table with a cask of oil on it to the southeast. There is a door a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
+          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. The flowers look like posies. There is a small table with a cask of oil on it to the southeast. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>defaultbrightwest</value>
+          <value>There is a bed in front of you, it is covered in a flower patterned duvet. The flowers look like posies. There is a wall to the north of you. </value>
         </item>
       </descriptions>
       <description type="script">
