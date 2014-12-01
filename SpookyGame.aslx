@@ -1,3 +1,4 @@
+<!--Saved by Quest 5.5.5328.26617-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -355,7 +356,7 @@
       </exit>
       <command name="Climb Ladder">
         <pattern type="string">(climb|up) ladder</pattern>
-        <unresolved type="string" />
+        <unresolved type="string"></unresolved>
         <script>
           // Alternate way to take the exit, because seriously my first instinct is to "climb" not up/north
           msg ("You climb up the ladder, which slides closed behind you as you reach the top. You close the trapdoor at the top so you don't fall back down.")
@@ -822,7 +823,7 @@
         <statusattributes type="stringdictionary">
           <item>
             <key>facing</key>
-            <value />
+            <value></value>
           </item>
         </statusattributes>
         <attr name="facing_num" type="int">0</attr>
@@ -4279,7 +4280,7 @@
         </script>
       </exit>
       <command name="Examine Chessboard">
-        <unresolved type="string" />
+        <unresolved type="string"></unresolved>
         <pattern type="string">(ex|examine|look) chessboard</pattern>
         <script>
           msg ("The chessboard has x on it. Please give me some real text..")
@@ -11150,10 +11151,10 @@
       <exit name="South37" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
+        <locked />
         <script type="script">
           MoveAndFace (hub3, 2)
         </script>
-        <locked />
       </exit>
     </object>
     <object name="nursery2">
@@ -24194,15 +24195,30 @@
   </turnscript>
   <turnscript name="butcher_turn_script">
     <enabled />
-    <script>
+    <script><![CDATA[
       if (kitchen.inside) {
         if (player.parent.bloodTrail and Got(lantern) and not lantern.light_level = 0) {
           kitchen.butcherTimer = 0
+          x = GetRandomInt(1,10)
+          if (x <= 2 and lantern.light_level < 2) {
+            flavour = GetRandomInt(1,3)
+            switch (flavour) {
+              case (0) {
+                msg ("You hear footsteps in the distance. You cannot tell if they are getting closer...")
+              }
+              case (1) {
+                msg ("You hear chopping and grunting. The sound echoes around you, and you cannot tell where they are coming from.")
+              }
+              case (2) {
+                msg ("You feel something on the back of your neck. It feels like someone’s breath but you can’t tell...")
+              }
+            }
+          }
         }
         else {
           switch (kitchen.butcherTimer) {
             case (0) {
-              msg ("The grunting has stopped.")
+              msg ("The room has become very silent.")
             }
             case (2) {
               msg ("You feel like you are being watched.")
@@ -24221,7 +24237,7 @@
           kitchen.butcherTimer = kitchen.butcherTimer + 1
         }
       }
-    </script>
+    ]]></script>
   </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
