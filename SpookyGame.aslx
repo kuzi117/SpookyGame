@@ -29,16 +29,20 @@
     <showhealth type="boolean">false</showhealth>
     <counterDisabled type="boolean">false</counterDisabled>
     <statusattributes type="stringdictionary" />
-    <heartRate type="int">1000</heartRate>
+    <heartRate type="int">1200</heartRate>
     <heartEnabled />
+    <defaultHeartRate type="int">1200</defaultHeartRate>
+    <jumpScareAmount type="int">900</jumpScareAmount>
+    <attr name="cask_size" type="int">20</attr>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
       player.facing_num = 0
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
+      game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = hub14
+      player.parent = kitchen65
       lantern.parent = player
     </start>
   </game>
@@ -152,7 +156,7 @@
         else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
           lantern.light_level = 1
           lantern.low_fuel = True
-          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame.")
+          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
           lantern.fuel_level = lantern.fuel_level - lantern.light_level
         }
         else {
@@ -173,7 +177,7 @@
     <pattern>face North</pattern>
     <script>
       FaceNorth
-      msg ("You turn to face North.")
+      msg ("You turn to face north.")
       PrintRoomDesc (False)
     </script>
   </command>
@@ -181,7 +185,7 @@
     <pattern>face East</pattern>
     <script>
       FaceEast
-      msg ("You turn to face East.")
+      msg ("You turn to face east.")
       PrintRoomDesc (False)
     </script>
   </command>
@@ -189,7 +193,7 @@
     <pattern>face South</pattern>
     <script>
       FaceSouth
-      msg ("You turn to face South.")
+      msg ("You turn to face south.")
       PrintRoomDesc (False)
     </script>
   </command>
@@ -197,7 +201,7 @@
     <pattern>face West</pattern>
     <script>
       FaceWest
-      msg ("You turn to face West.")
+      msg ("You turn to face west.")
       PrintRoomDesc (False)
     </script>
   </command>
@@ -3989,15 +3993,15 @@
               msg ("You can't turn your lantern up since you don't have any fuel.")
             }
             else if (lantern.low_fuel and lantern.light_level = 1) {
-              msg ("Your low fuel is limiting how much you can turn your lantern up")
+              msg ("Your low fuel is limiting how much you can turn your lantern up.")
             }
             else if (lantern.light_level <> 2) {
               lantern.light_level = lantern.light_level + 1
               if (lantern.light_level = 1) {
-                msg ("Your lantern is now dim.")
+                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
               }
               else {
-                msg ("Your lantern is now bright.")
+                msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
               }
             }
             else {
@@ -4013,10 +4017,10 @@
             if (lantern.light_level <> 0) {
               lantern.light_level = lantern.light_level - 1
               if (lantern.light_level = 1) {
-                msg ("Your lantern is now dim.")
+                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
               }
               else {
-                msg ("Your lantern is now off.")
+                msg ("Your lantern is now off. Your eyes adjust to the new light level.")
               }
             }
             else {
@@ -4024,7 +4028,7 @@
             }
           }
           else {
-            msg ("I should pick it up before I fiddle with it..")
+            msg ("I should pick it up before I fiddle with it...")
           }
         ]]></turndown>
         <ontake type="script">
@@ -5126,7 +5130,8 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("You enter a small room. There is a cask of oil sitting on a small table in front of you. As you reach out to touch it, a large shadow overwhelms the room. You can barely see anything except the glint of a butcher’s knife. The smell of rotting meat overwhelms you to the point of nausea and you keel over, vomiting. You turn your head slightly to see the glint of the knife raising high in the air, then swinging down towards the back of your neck.")
+        Die
       </description>
       <exit name="South46" alias="south" to="defaultroom">
         <inherit name="southdirection" />
@@ -6224,7 +6229,7 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        MoveAndFace (kitchen26, 2)
       </description>
       <exit name="South60" alias="south" to="defaultroom">
         <inherit name="southdirection" />
@@ -6295,7 +6300,10 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (kitchen25, 0)
+          msg ("You fall into a pile of meat that maggots were making a meal of out. You get up, brushing yourself off as quickly as you can.")
+          JumpScare
+          FaceSouth
+          kitchen.butcherTimer = 0
         </script>
       </exit>
       <exit name="South61" alias="south" to="defaultroom">
@@ -6612,7 +6620,10 @@
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (kitchen31, 2)
+          msg ("You hear the sound of a blade being sharpened moving closer and closer. You swing your lantern around trying to find the source, but it hits the countertop and topples out of your hands, spilling oil everywhere. The noises stop.")
+          JumpScare
+          lantern.fuel_level = lantern.fuel_level - 15
+          FaceNorth
         </script>
       </exit>
     </object>
@@ -6776,7 +6787,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter in front of you. It is piled high with pots and pans, they look like they might fall. There are some spots of blood on the ground.</value>
+          <value>There is a counter in front of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -6788,15 +6799,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a counter north of you, and a counter south of you. The counter north of you has a pile of pots and pans on it. There are some spots of blood on the ground.</value>
+          <value>There is a counter north of you, and a counter south of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter in front of you. It is piled high with pots and pans, they look like they might fall. You might be able to fix them without making too much noise. The trail of blood breaks off west of you. </value>
+          <value>There is a counter in front of you. The trail of blood breaks off west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There are counters both to the north and to the south of you. The counter to the north has a large pile of pots and pans that may fall at any second. The trail of blood continues eastward in front of you.</value>
+          <value>There are counters both to the north and to the south of you. The trail of blood continues eastward in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -6804,7 +6815,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a counter north of you, and a counter south of you. The counter north of you has a pile of pots and pans on it that might fall at any second. You can probably them without making too much noise. The trail of blood breaks off in front of you.</value>
+          <value>There is a counter north of you, and a counter south of you. The trail of blood breaks off in front of you.</value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -6826,6 +6837,35 @@
           MoveAndFace (kitchen40, 3)
         </script>
       </exit>
+      <object name="pots">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>pans</value>
+          <value>pots and pans</value>
+        </alt>
+        <gender>they</gender>
+        <article>they</article>
+        <displayverbs type="stringlist">
+          <value>Look at</value>
+        </displayverbs>
+        <fixed type="boolean">false</fixed>
+        <drop type="boolean">false</drop>
+        <feature_usegive />
+        <visible />
+        <scenery />
+        <fix type="script">
+          msg ("You quietly and painstakingly rearrange the pots and pans. They seem stable now.")
+          pots.fixed = True
+        </fix>
+        <use type="script">
+          msg ("You quietly and painstakingly rearrange the pots and pans. They seem stable now.")
+          pots.fixed = True
+        </use>
+        <move type="script">
+          msg ("You quietly and painstakingly rearrange the pots and pans. They seem stable now.")
+          pots.fixed = True
+        </move>
+      </object>
     </object>
     <object name="kitchen34">
       <inherit name="editor_room" />
@@ -6966,7 +7006,15 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        if (dishes.fixed = True) {
+          PrintRoomDesc (False)
+        }
+        else {
+          msg ("As you are making your way through the narrow space between counters, you accidently smack your hip on the countertop. A plate comes crashing down on the ground.")
+          msg ("The crash is suddenly followed by a loud rumble, grunting, and heavy feet stomping closer and closer to you. You try to make yourself as small as possible, hiding by pressing yourself down against the counter.")
+          msg ("You can hear the creature inhale deeply, and then it is as if he could smell you. He knows exactly where you are. You close your eyes, you hear his stomps stop in front of you. You take a deep breath. It smells of pungent rotting meat. You hear movement, and a rush of air. And then...")
+          Die
+        }
       </description>
       <exit name="North70" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -7005,7 +7053,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter to the west of you, and to the east of you. The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the west of you, and to the east of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -7013,7 +7061,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter to the east of you, and to the west of you. The counter to the west of you has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. There are some spots of blood on the ground. </value>
+          <value>There is a counter to the east of you, and to the west of you. There are some spots of blood on the ground. </value>
         </item>
         <item>
           <key>dimwest</key>
@@ -7021,7 +7069,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the west of you, and to the east of you. The counter to the west has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix without making too much noise. The trail of blood on the ground breaks off in front of you.</value>
+          <value>There is a counter to the west of you, and to the east of you. The trail of blood on the ground breaks off in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -7029,7 +7077,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter to the east of you, and to the west of you. The counter to the west of you has a pile of dirty, bug infested dishes on it. They look like they might fall at any second. You might be able to fix it without making too much noise. The trail of blood on the ground continues in front of you.</value>
+          <value>There is a counter to the east of you, and to the west of you. The trail of blood on the ground continues in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -7054,6 +7102,34 @@
           MoveAndFace (kitchen37, 2)
         </script>
       </exit>
+      <object name="dishes">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>plates</value>
+        </alt>
+        <gender>they</gender>
+        <article>they</article>
+        <displayverbs type="stringlist">
+          <value>Look at</value>
+        </displayverbs>
+        <fixed type="boolean">false</fixed>
+        <drop type="boolean">false</drop>
+        <feature_usegive />
+        <visible />
+        <scenery />
+        <fix type="script">
+          msg ("You carefully nudge the dishes into a steadier position. They seem stable now.")
+          dishes.fixed = True
+        </fix>
+        <use type="script">
+          msg ("You carefully nudge the dishes into a steadier position. They seem stable now.")
+          dishes.fixed = True
+        </use>
+        <move type="script">
+          msg ("You carefully nudge the dishes into a steadier position. They seem stable now.")
+          dishes.fixed = True
+        </move>
+      </object>
     </object>
     <object name="kitchen37">
       <inherit name="editor_room" />
@@ -7077,15 +7153,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east has a cask of oil sitting on it. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the east, and to the west of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter in front of you. There is a cask of oil sitting on it. There are some spots of blood on the ground.</value>
+          <value>There is a counter in front of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value> There is a counter to the east, and to the west of you. The counter to the east of you has a cask of oil sitting on it. There are some spots of blood on the ground.</value>
+          <value> There is a counter to the east, and to the west of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -7093,15 +7169,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east has a cask of oil sitting on it. The trail of blood continues in front of you. </value>
+          <value>There is a counter to the east, and to the west of you. The trail of blood continues in front of you. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter in front of you. There is a cask of oil sitting on it. There is a trail of blood on the ground that continues northwards, and southwards.</value>
+          <value>There is a counter in front of you. There is a trail of blood on the ground that continues northwards, and southwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east of you has a cask of oil sitting on it. There is a trail of blood on the ground that continues forwards.</value>
+          <value>There is a counter to the east, and to the west of you. There is a trail of blood on the ground that continues forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -7126,6 +7202,21 @@
           MoveAndFace (kitchen38, 2)
         </script>
       </exit>
+      <object name="oil1">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil1)
+        </take>
+        <use type="script">
+          GetOil (oil1)
+        </use>
+      </object>
     </object>
     <object name="kitchen38">
       <inherit name="editor_room" />
@@ -7254,7 +7345,15 @@
       </descriptions>
       <bloodTrail />
       <description type="script">
-        PrintRoomDesc (False)
+        if (pots.fixed) {
+          PrintRoomDesc (False)
+        }
+        else {
+          msg ("Your lantern catches on a jutting pot handle, bringing the entire pile of cookware cacophonously to the ground and extinguishing your lantern. You hear grunts, and stomping coming closer to you. You hold your breath...")
+          msg ("It stops and goes back to wherever it came from. You breathe a sigh of relief and pick up your lantern.")
+          JumpScare
+          lantern.light_level = 0
+        }
       </description>
       <exit name="North74" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -7354,7 +7453,9 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (kitchen45, 3)
+          msg ("Your foot gets caught in something, and you fall to the ground. You try to brace your fall, but only end up letting go of the lantern, which rolls away from you. You seem to have tripped on an old wooden trap door. It is rotting away, and has a large hole in it where your foot once was. You get back up, and pick up your lantern that is now unlit.")
+          JumpScare
+          lantern.light_level = 0
         </script>
       </exit>
     </object>
@@ -7694,14 +7795,14 @@
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
+      <description type="string"></description>
       <exit name="East80" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (kitchen40, 1)
+          msg ("Your foot gets caught in something, and you fall to the ground. You try to brace your fall, but only end up letting go of the lantern, which rolls away from you. You seem to have tripped on an old wooden trap door. It is rotting away, and has a large hole in it where your foot once was. You get back up, and pick up your lantern that is now unlit.")
+          JumpScare
+          lantern.light_level = 0
         </script>
       </exit>
       <exit name="West80" alias="west" to="defaultroom">
@@ -8617,15 +8718,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east of you has a bunch of knives laying all over it, some look like they might fall. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the east, and to the west of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter in front of you. There are a bunch of knives laying all over it, some look like they might fall. There are some spots of blood on the ground.</value>
+          <value>There is a counter in front of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter to the east and to the west of you. The counter to the east of you has a bunch of knives laying on it, some look like they might fall. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the east and to the west of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -8633,15 +8734,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east of you has a bunch of precariously placed knives on it. They look like they might fall, you could probably fix them. There is a trail of blood on the ground leading forwards. </value>
+          <value>There is a counter to the east, and to the west of you. There is a trail of blood on the ground leading forwards. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter in front of you. There are a bunch of precariously place knives on it. They look like they might fall, but you could probably fix them. There is a trail of blood on the ground leading to the north, and breaks off to the south. </value>
+          <value>There is a counter in front of you. There is a trail of blood on the ground leading to the north, and breaks off to the south. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east of you has a bunch of knives laying precariously on it. They look like they might fall, but you could probably fix them. There is a trail of blood on the ground that breaks off in front of you.</value>
+          <value>There is a counter to the east, and to the west of you. They look like they might fall, but you could probably fix them. There is a trail of blood on the ground that breaks off in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -8666,6 +8767,34 @@
           MoveAndFace (kitchen59, 2)
         </script>
       </exit>
+      <object name="knives">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>plates</value>
+        </alt>
+        <gender>they</gender>
+        <article>they</article>
+        <displayverbs type="stringlist">
+          <value>Look at</value>
+        </displayverbs>
+        <fixed type="boolean">false</fixed>
+        <drop type="boolean">false</drop>
+        <feature_usegive />
+        <visible />
+        <scenery />
+        <fix type="script">
+          msg ("You quietly push the knives to the center of the counter. They don't seem like they'll fall now.")
+          knives.fixed = True
+        </fix>
+        <use type="script">
+          msg ("You quietly push the knives to the center of the counter. They don't seem like they'll fall now.")
+          knives.fixed = True
+        </use>
+        <move type="script">
+          msg ("You quietly push the knives to the center of the counter. They don't seem like they'll fall now.")
+          knives.fixed = True
+        </move>
+      </object>
     </object>
     <object name="kitchen59">
       <inherit name="editor_room" />
@@ -8722,7 +8851,13 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        if (knives.fixed) {
+          PrintRoomDesc (False)
+        }
+        else {
+          msg ("As you are moving, your lantern hits a knife that is sticking off the edge of the counter. You do not have enough time to react, and the knife falls, stabbing you in the foot. The lantern falls from your hand, crashing loudly to the ground, and exploding. You hear something grunt loudly in the distance, and then heavy stomps rush up to you. You are surrounded in darkness and feel a rush of air on your face before something swings down, and...")
+          Die
+        }
       </description>
       <exit name="North94" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -9354,15 +9489,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter to the north, and to the south of you. There is a cask of oil on the counter to the south of you. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the north, and to the south of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter in front of you, there is a cask of oil on it. There are some spots of blood on the ground.</value>
+          <value>There is a counter in front of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a counter to the north, and to the south of you. The counter to the south has a cask of oil sitting on it. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the north, and to the south of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -9370,15 +9505,15 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter to the north, and to the south of you. There is a cask of oil on the counter to the south of you. There is a trail of blood on the ground that leads forwards.</value>
+          <value>There is a counter to the north, and to the south of you. There is a trail of blood on the ground that leads forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter in front of you, there is a cask of oil on it. There is a trail of blood on the ground that continues east of you, and breaks off to the west.</value>
+          <value>There is a counter in front of you. There is a trail of blood on the ground that continues east of you, and breaks off to the west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a counter to the north, and to the south of you. The counter to the south has a cask of oil sitting on it. There is a trail of blood on the ground that breaks off in front of you. </value>
+          <value>There is a counter to the north, and to the south of you. There is a trail of blood on the ground that breaks off in front of you. </value>
         </item>
       </descriptions>
       <bloodTrail />
@@ -9423,11 +9558,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter in front of you, there is a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter to the north of you, it has a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter to the north of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -9435,15 +9570,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a counter to the north of you, it has a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter to the north of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter in front of you, there is a cask of oil sitting on it. You cannot see the trail of blood from here. </value>
+          <value>There is a counter in front of you. You cannot see the trail of blood from here. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter to the north of you, it has a cask of oil sitting on it. There is some blood on the ground a step to the south of you.</value>
+          <value>There is a counter to the north of you. There is some blood on the ground a step to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -9451,7 +9586,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a counter to the north of you, it has a cask of oil sitting on it. There is some blood on the ground a step south of you.</value>
+          <value>There is a counter to the north of you. There is some blood on the ground a step south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -9879,15 +10014,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter to the east of you, it has a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter to the east of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter in front of you, there is a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter to the east of you, there is a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter to the east of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -9895,15 +10030,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the east of you, it has a cask of oil sitting on it. You can the trail of blood to the west of you.</value>
+          <value>There is a counter to the east of you. You can the trail of blood to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter in front of you, there is a cask of oil sitting on it. You cannot see the trail of blood from here.</value>
+          <value>There is a counter in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter to the east of you, there is a cask of oil sitting on it. There is some blood on the ground a few steps forwards, and a step to the west.</value>
+          <value>There is a counter to the east of you. There is some blood on the ground a few steps forwards, and a step to the west.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -10827,7 +10962,12 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("Your foot gets caught in a hole on the ground, causing you to tumble into the countertop. You crash into all sorts of utensils, and your lantern rolls across the counter staying lit. You see something move on the other side of the counter. You hear what begins as a low rumble, and progressively getting louder, turns into a roar.")
+        msg ("The lantern rolls off the other side of the counter, falls to the ground, and shatters. It leaks oil all over the floor, and in the process lights it all on fire. You can see now what is on the other side of the counter.")
+        msg ("There are no words. It is a huge, and wide creature, made of shadows and dripping blood. All you can see in the mass of shadows is a fanged mouth, filled with sharp talons for teeth. It is wielding a large butcher’s knife, covered in the blood and guts of the meat surrounding him.")
+        msg ("It charges.")
+        msg ("You close your eyes.")
+        Die
       </description>
       <exit name="East121" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
@@ -11028,15 +11168,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter to the south of you, it has a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a counter to the south of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter in front of you, it has a cask of oil sitting on it. There is a wall to the west of you. You cannot see any blood on the ground.</value>
+          <value>There is a counter in front of you. There is a wall to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a wall in front of you. There is a counter to the south of you, it has a cask of oil sitting on it. You cannot see any blood on the ground.</value>
+          <value>There is a wall in front of you. There is a counter to the south of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -11044,15 +11184,15 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter to the south of you, it has a cask oil sitting on it. There is some blood on the ground a step forwards.</value>
+          <value>There is a counter to the south of you. There is some blood on the ground a step forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is counter in front of you, it has a cask of oil sitting on it. There is a wall to the west of you. There is some blood on the ground to the east of you. </value>
+          <value>There is counter in front of you. There is a wall to the west of you. There is some blood on the ground to the east of you. </value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you. There is a counter to the south of you, it has a cask of oil sitting on it. You cannot see the trail of blood from here.  </value>
+          <value>There is a wall in front of you. There is a counter to the south of you. You cannot see the trail of blood from here.  </value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -11073,6 +11213,21 @@
           MoveAndFace (kitchen88, 0)
         </script>
       </exit>
+      <object name="oil3">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil3)
+        </take>
+        <use type="script">
+          GetOil (oil3)
+        </use>
+      </object>
     </object>
   </object>
   <object name="nursery">
@@ -20976,6 +21131,21 @@
           MoveAndFace (library67, 2)
         </script>
       </exit>
+      <object name="oil2">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil2)
+        </take>
+        <use type="script">
+          GetOil (oil2)
+        </use>
+      </object>
     </object>
     <object name="library69">
       <inherit name="editor_room" />
@@ -24219,7 +24389,47 @@
       }
     ]]></script>
   </turnscript>
-  <function name="PrintRoomDesc" parameters="all">
+  <turnscript name="heartrate_turn_script">
+    <enabled />
+    <script><![CDATA[
+      if (game.heartRate < game.defaultHeartRate) {
+        offset = game.defaultHeartRate - game.heartRate
+        if (offset >= game.jumpScareAmount * 2 / 3) {
+          msg ("Your heart is pounding and your breath is short.")
+        }
+        else if (offset >= game.jumpScareAmount * 1 / 3) {
+          msg ("Your heart is beating quickly.")
+        }
+        else {
+          msg ("Your heart is starting to calm down.")
+        }
+        newHeartRate = game.heartRate + 150
+        if (newHeartRate <= game.defaultHeartRate) {
+          SetHeartRate (newHeartRate)
+        }
+        else {
+          SetHeartRate (game.defaultHeartRate)
+        }
+      }
+    ]]></script>
+  </turnscript>
+  <verb>
+    <property>fix</property>
+    <pattern>fix</pattern>
+    <defaultexpression>"You can't fix " + object.article + "."</defaultexpression>
+  </verb>
+  <turnscript name="oil_follow_script">
+    <enabled />
+    <script><![CDATA[
+      // This is kind of horrible, but makes the oil accessible from multiple places
+      if (oil2.parent <> null) {
+        if (player.parent = kitchen68 or player.parent = kitchen75 or player.parent = kitchen69) {
+          oil2.parent = player.parent
+        }
+      }
+    ]]></script>
+  </turnscript>
+  <function name="PrintRoomDesc" parameters="all"><![CDATA[
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
         switch (player.facing_num) {
@@ -24286,7 +24496,111 @@
         }
       }
     }
-  </function>
+    if (player.parent = kitchen36 and not dishes.fixed) {
+      if (Got(lantern)) {
+        if (lantern.light_level = 1) {
+          if (player.facing_num = 3) {
+            msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+          }
+          else if (player.facing_num <> 1) {
+            msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+          }
+        }
+        else if (lantern.light_level = 2) {
+          if (player.facing_num = 3) {
+            msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+          }
+          else if (player.facing_num <> 1) {
+            msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+          }
+        }
+      }
+    }
+    if (player.parent = kitchen33 and not pots.fixed) {
+      if (Got(lantern)) {
+        if (lantern.light_level = 1) {
+          if (player.facing_num = 0) {
+            msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second.")
+          }
+        }
+        else if (lantern.light_level = 2) {
+          if (player.facing_num = 0) {
+            msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+          }
+        }
+      }
+    }
+    if (player.parent = kitchen58 and not knives.fixed) {
+      if (Got(lantern)) {
+        if (lantern.light_level = 1) {
+          if (player.facing_num = 1) {
+            msg ("The counter in front of you has a bunch of knives laying on it. Some look like they might fall.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("The counter to the east has a bunch of knives laying on it. Some look like they might fall.")
+          }
+        }
+        else if (lantern.light_level = 2) {
+          if (player.facing_num = 1) {
+            msg ("The counter in front of you has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("The counter to the east has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
+          }
+        }
+      }
+    }
+    if (Got(lantern) and lantern.light_level > 0) {
+      if (player.parent = kitchen37 and not oil1.parent = null) {
+        if (player.facing_num = 1) {
+          msg ("The counter in front of you has a cask of oil sitting on it.")
+        }
+        else if (player.facing_num <> 3) {
+          msg ("The counter to the east has a cask of oil sitting on it.")
+        }
+      }
+      if (not oil2.parent = null) {
+        if (player.parent = kitchen68) {
+          if (player.facing_num = 2) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("The counter to the south has a cask of oil sitting on it.")
+          }
+        }
+        if (player.parent = kitchen69) {
+          if (player.facing_num = 0) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("The counter to the north has a cask of oil sitting on it.")
+          }
+        }
+        if (player.parent = kitchen75) {
+          if (player.facing_num = 1) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("The counter to the east has a cask of oil sitting on it.")
+          }
+        }
+      }
+      if (player.parent = kitchen89 and not oil3.parent = null) {
+        if (player.facing_num = 2) {
+          msg ("The counter in front of you has a cask of oil sitting on it.")
+        }
+        else if (player.facing_num <> 0) {
+          msg ("The counter to the south has a cask of oil sitting on it.")
+        }
+      }
+    }
+  ]]></function>
   <function name="FaceNorth">
     player.facing_num = 0
     dictionary remove (player.statusattributes, "facing")
@@ -24364,6 +24678,22 @@
   </function>
   <function name="UpdateHeartCount" parameters="heartCount">
     game.heartCount = heartCount
+  </function>
+  <function name="JumpScare">
+    SetHeartRate (game.defaultHeartRate - game.jumpScareAmount)
+  </function>
+  <function name="AddFuel" parameters="amount" type="int"><![CDATA[
+    lantern.fuel_level = lantern.fuel_level + amount
+    if (lantern.fuel_level > 60) {
+      lantern.fuel_level = 60
+    }
+  ]]></function>
+  <function name="GetOil" parameters="oilObject" type="object">
+    if (Got(lantern)) {
+      AddFuel (20)
+      msg ("You pour the oil into your lantern's reserve.")
+      RemoveObject (oilObject)
+    }
   </function>
   <javascript src="javascript.js" />
 </asl>
