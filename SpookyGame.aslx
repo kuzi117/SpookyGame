@@ -2404,15 +2404,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
+          <value> There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall to the west of you. You are in the corner of a small room. </value>
+          <value> There is a wall to the west of you. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
+          <value> There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2471,19 +2471,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall in front of you, it is made of stone. You are in a small room. </value>
+          <value>  There is a wall in front of you, it is made of stone. You are in a small room. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
+          <value> There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
+          <value> You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
+          <value> There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2550,19 +2550,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
+          <value>  There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
+          <value> There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
+          <value> You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
+          <value> There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2638,19 +2638,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
+          <value>  There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall to the north of you. A few steps forwards there is a wall.</value>
+          <value> There is a wall to the north of you. A few steps forwards there is a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
+          <value> You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
+          <value> There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2717,19 +2717,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          <value>  There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          <value> There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
+          <value> There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall to the north of you. You are in the corner of a small room. </value>
+          <value> There is a wall to the north of you. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2793,15 +2793,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
+          <value> You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
+          <value> There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
+          <value> There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2867,19 +2867,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall a few steps forwards. You are in a small room. The room is lit by the moonlight cascading through large glass panes on the ceiling. The light coats the room in a ghostly glow. (TODO: Alternate for when windows shut: There is a wall a few steps forwards. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> There is a wall a few steps forwards. You are in a small room. The room is lit by the moonlight cascading through large glass panes on the ceiling. The light coats the room in a ghostly glow. (TODO: Alternate for when windows shut: There is a wall a few steps forwards. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard sitting on a small table to the southeast of you. You can see some pieces arranged on the board, but need to get a bit closer to fully make out what they are.</value>
+          <value> There is a chessboard sitting on a small table to the southeast of you. You can see some pieces arranged on the board, but need to get a bit closer to fully make out what they are.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a chessboard sitting on a table to the southeast of you. You are in a small room that is lit by the moonlight cascading in from large glass panes on the ceiling. (TODO: Alternate for when windows shut: There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> There is a chessboard sitting on a table to the southeast of you. You are in a small room that is lit by the moonlight cascading in from large glass panes on the ceiling. (TODO: Alternate for when windows shut: There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>You are in a small room, lit by the moonlight cascading through large glass panes in the ceiling. You can see some of the stars through it, including the constellation of Cassiopeia.  (TODO: Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> You are in a small room, lit by the moonlight cascading through large glass panes in the ceiling. You can see some of the stars through it, including the constellation of Cassiopeia.  (TODO: Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2953,19 +2953,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a darkly stained oak door a few steps forwards of you.</value>
+          <value>  There is a darkly stained oak door a few steps forwards of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
+          <value> There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a chessboard sitting on a small table in front of you. There are some pieces arranged on the board.</value>
+          <value> There is a chessboard sitting on a small table in front of you. There are some pieces arranged on the board.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
+          <value> There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3039,11 +3039,11 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>  There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -3051,7 +3051,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard to the southwest of you, in the middle of the room. The room is lit by moonlight cascading in from the large glass panes on the ceiling. You can see the full moon through the glass, it is large and imposing. (TODO: Alternate: There is a chessboard to the southwest of you, in the middle of the room. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> There is a chessboard to the southwest of you, in the middle of the room. The room is lit by moonlight cascading in from the large glass panes on the ceiling. You can see the full moon through the glass, it is large and imposing. (TODO: Alternate: There is a chessboard to the southwest of you, in the middle of the room. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3129,15 +3129,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
+          <value> There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
+          <value> There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
+          <value> There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3208,15 +3208,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
+          <value> There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
+          <value> There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
+          <value> There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3283,19 +3283,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle a few steps west. </value>
+          <value>  There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle a few steps west. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard sitting atop a small table in front of you. There are some pieces arrange on the board.</value>
+          <value> There is a chessboard sitting atop a small table in front of you. There are some pieces arrange on the board.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle a few steps west</value>
+          <value> There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle a few steps west</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is an oak door a few steps forwards. You are in a small room. </value>
+          <value> There is an oak door a few steps forwards. You are in a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3369,19 +3369,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a large, dark cherry stained, oak door a few steps to the east of you. There is a chessboard sitting on a small table to the west.</value>
+          <value>  There is a large, dark cherry stained, oak door a few steps to the east of you. There is a chessboard sitting on a small table to the west.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a large, dark cherry stained, oak door a few steps forwards. You are in a small room.</value>
+          <value> There is a large, dark cherry stained, oak door a few steps forwards. You are in a small room.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a chessboard sitting on a small table to the west of you. There is a large, dark cherry stained, oak door to the east of you. </value>
+          <value> There is a chessboard sitting on a small table to the west of you. There is a large, dark cherry stained, oak door to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard sitting on a small table in front of you. There are some pieces arranged on it. </value>
+          <value> There is a chessboard sitting on a small table in front of you. There are some pieces arranged on it. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3459,15 +3459,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
+          <value> There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
+          <value> There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
+          <value> There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3541,19 +3541,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you, and a table to the west of you.</value>
+          <value>  There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you, and a table to the west of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you. </value>
+          <value> There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a table to the west of you, and a wall a few steps forwards.</value>
+          <value> There is a table to the west of you, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a table in front of you. There are tarnished silver cups, and plates on it. On the southwest corner of the table, there is an unlit lantern.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you. There are tarnished silver cups, and plates on it.)</value>
+          <value> There is a table in front of you. There are tarnished silver cups, and plates on it. On the southwest corner of the table, there is an unlit lantern.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you. There are tarnished silver cups, and plates on it.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3623,7 +3623,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
+          <value> There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
         </item>
         <item>
           <key>darksouth</key>
@@ -3631,7 +3631,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
+          <value> There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3705,19 +3705,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a chessboard on a small table to the northwest of you. There are some pieces arranged on it. </value>
+          <value> There is a chessboard on a small table to the northwest of you. There are some pieces arranged on it. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall a few steps forwards, and a few steps to the south of you. </value>
+          <value> There is a wall a few steps forwards, and a few steps to the south of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall a few steps forwards, and a few steps to the east of you. </value>
+          <value> There is a wall a few steps forwards, and a few steps to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall a few steps to the south of you. There is a chessboard sitting on a small table to the northwest of you. </value>
+          <value> There is a wall a few steps to the south of you. There is a chessboard sitting on a small table to the northwest of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3791,19 +3791,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
+          <value>  There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
+          <value> There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
+          <value> There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
+          <value> There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3863,19 +3863,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
+          <value>  There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
+          <value> There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
+          <value> There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
+          <value> There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4042,15 +4042,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
+          <value> There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
+          <value> There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
+          <value> There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4124,23 +4124,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-<<<<<<< HEAD
-          <value>  There is a large statue of a knight to the east of you, he is towering over you. You feel as though you are being watched. </value>
-=======
-          <value>There is a large statue of a knight to the east of you, he is towering over you. You feel like you're being watched. </value>
->>>>>>> origin/master
+          <value>  There is a large statue of a knight to the east of you, he is towering over you. You feel like youâ€™re being watched. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
+          <value> There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a wall in front of you, and a large statue of a knight to the east of you. </value>
+          <value> There is a wall in front of you, and a large statue of a knight to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
+          <value> There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4200,7 +4196,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a darkly stained oak door a few steps forwards of you.</value>
+          <value>defaultdarknorth</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -4318,11 +4314,7 @@
         </item>
         <item>
           <key>dimeast</key>
-<<<<<<< HEAD
-          <value>You are in a hallway, facing a locked door. It is the door you came in from. There are spots of blood on the ground.</value>
-=======
-          <value>You are in a hallway, facing a locked door. It's the door you came in from. There are spots of blood on the ground.</value>
->>>>>>> origin/master
+          <value>You are in a hallway, facing a locked door. It’s the door you came in from. There are spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -4411,7 +4403,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
+          <value> You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -4472,7 +4464,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
+          <value> You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -4605,7 +4597,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You cannot see anything. You can feel a wall in front of you. It's cold.</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It’s cold.</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -4689,7 +4681,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You cannot see anything.</value>
+          <value> You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -5194,7 +5186,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>You are in a hallway. You can see blood on the ground to the west of you, and a door directly north of you.</value>
+          <value> You are in a hallway. You can see blood on the ground to the west of you, and a door directly north of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -5245,7 +5237,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You cannot see anything. You can feel a wall in front of you. It's cold.</value>
+          <value>You cannot see anything. You can feel a wall in front of you. It’s cold.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -6768,7 +6760,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You cannot see anything. You feel a counter in front of you, and you bump it slightly fumbling in the darkness. You hear a quiet clang, you don't think anything heard it, thankfully. </value>
+          <value>You cannot see anything. You feel a counter in front of you, and you bump it slightly fumbling in the darkness. You hear a quiet clang, you don’t think anything heard it, thankfully. </value>
         </item>
         <item>
           <key>darkeast</key>
@@ -7093,7 +7085,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a counter to the east, and to the west of you. The counter to the east of you has a cask of oil sitting on it. There are some spots of blood on the ground.</value>
+          <value> There is a counter to the east, and to the west of you. The counter to the east of you has a cask of oil sitting on it. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -7983,7 +7975,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the east, and to the west of you. You think you can see some blood on the ground a few steps ahead, but it's hard to tell.</value>
+          <value>There is a counter to the east, and to the west of you. You think you can see some blood on the ground a few steps ahead, but it’s hard to tell.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -8433,11 +8425,11 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You can hear some grunting coming from the west, you can also see some of your lantern's light reflecting on some moving objects in your peripherals. There is a trail of blood on the ground a step in front of you.</value>
+          <value>You can hear some grunting coming from the west, you can also see some of your lantern’s light reflecting on some moving objects in your peripherals. There is a trail of blood on the ground a step in front of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a counter in front of you. You can hear some grunting coming from something on the other side of the counter, and you can see some of your lantern's light reflect off of what looks like moving knives. There is some blood on the ground a step to the south of you.</value>
+          <value>There is a counter in front of you. You can hear some grunting coming from something on the other side of the counter, and you can see some of your lantern’s light reflect off of what looks like moving knives. There is some blood on the ground a step to the south of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -9728,7 +9720,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a counter to the east, and to the west of you. Up ahead you see something moving in the shadows, it looks like a large knife is catching your lantern's light as it moves. You cannot see any blood on the ground. </value>
+          <value>There is a counter to the east, and to the west of you. Up ahead you see something moving in the shadows, it looks like a large knife is catching your lantern’s light as it moves. You cannot see any blood on the ground. </value>
         </item>
         <item>
           <key>dimeast</key>
@@ -9744,7 +9736,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a counter to the east, and to the west of you. You cannot see the trail of blood from here, but up ahead you see something moving. It looks like it is swinging a butcher's knife. </value>
+          <value>There is a counter to the east, and to the west of you. You cannot see the trail of blood from here, but up ahead you see something moving. It looks like it is swinging a butcher’s knife. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -9752,7 +9744,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a counter to the east of you. You can hear grunting nearby. You cannot see the trail of blood from here. </value>
+          <value>TODO: implement this description</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -11940,7 +11932,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall. It feels like she is watching you.</value>
+          <value> There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall. It feels like she is watching you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -12006,7 +11998,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
+          <value> There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -12018,7 +12010,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a table to the east of you, and a dresser a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value</value>
+          <value>There is a table to the east of you, and a dresser a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -12607,7 +12599,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall to the south of you. There is what appears to be a children's toy chest a few steps forwards.</value>
+          <value>There is a wall to the south of you. There is what appears to be a children’s toy chest a few steps forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -12651,7 +12643,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a children's toychest to the west of you. It is covered in cobwebs, and crawling with spiders.</value>
+          <value>There is a children’s toychest to the west of you. It is covered in cobwebs, and crawling with spiders.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -12659,15 +12651,15 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a wall in front of you, and a children's toy chest to the west. It is infested with spiders.</value>
+          <value>There is a wall in front of you, and a children’s toy chest to the west. It is infested with spiders.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a children's toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
+          <value>There is a children’s toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a children's toy chest to the west of you. It is covered in cobwebs, and crawling with spiders. </value>
+          <value>There is a children’s toy chest to the west of you. It is covered in cobwebs, and crawling with spiders. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -12675,11 +12667,11 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall in front of you, and a children's toy chest to the west. It is infested with spiders, and covered in cobwebs.</value>
+          <value>There is a wall in front of you, and a children’s toy chest to the west. It is infested with spiders, and covered in cobwebs.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a children's toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
+          <value>There is a children’s toy chest in front of you, and a wall to the south of you. The toy chest is covered in cobwebs, and spiders are running across it. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -12861,15 +12853,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small crib in front of you, and a small children's dresser to the south of you. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
+          <value>There is a small crib in front of you, and a small children’s dresser to the south of you. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small children's dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
+          <value>There is a small children’s dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small children's dresser to the south of you.</value>
+          <value>There is a small children’s dresser to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -12877,15 +12869,15 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. There is a small crib in front of you, and a small children's dresser to the south of you. The crib is dusty, and practically rotting away. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
+          <value>You are in a small room. There is a small crib in front of you, and a small children’s dresser to the south of you. The crib is dusty, and practically rotting away. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You are in a small room. There is a small children's dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
+          <value>You are in a small room. There is a small children’s dresser in front of you, the brightly painted colours are chipping off. There is a small crib to the east of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>You are in a small room. There is a small children's dresser to the south of you, and a door a few steps forwards.</value>
+          <value>You are in a small room. There is a small children’s dresser to the south of you, and a door a few steps forwards.</value>
         </item>
         <item>
           <key>notes</key>
@@ -12937,11 +12929,11 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small children's dresser to the south of you, and a shelf holding some old dusty toys to the north. </value>
+          <value>There is a small children’s dresser to the south of you, and a shelf holding some old dusty toys to the north. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small children's dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you.</value>
+          <value>There is a small children’s dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -12949,15 +12941,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a small room. There is a shelf holding some old, dusty toys in front of you. There is a door to the west of you. You think you see something move on the shelf, but when you check again there doesn't seem to be anything.</value>
+          <value>You are in a small room. There is a shelf holding some old, dusty toys in front of you. There is a door to the west of you. You think you see something move on the shelf, but when you check again there doesn’t seem to be anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. There is a small children's dresser to the south of you, a shelf holding some old dusty toys to the south, and a small crib a few steps forwards.</value>
+          <value>You are in a small room. There is a small children’s dresser to the south of you, a shelf holding some old dusty toys to the south, and a small crib a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You are in a small room. There is a small children's dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you. There is a small crib a few steps to the east of you.</value>
+          <value>You are in a small room. There is a small children’s dresser in front of you, all of the paint is chipping off of it. There is a door to the west of you. There is a small crib a few steps to the east of you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -13099,11 +13091,11 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>You think you are in the middle of the room. There is a children's toy chest to the southwest of you.</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>You think you are in the middle of the room. There is a children's toy chest to the southwest of you.</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -13115,11 +13107,11 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You think you are in the middle of the room. There is a children's toy chest to the southwest of you, and a wall a few steps ahead.</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you, and a wall a few steps ahead.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>You think you are in the middle of the room. There is a children's toy chest to the southwest of you. You can hear some noises coming from the northeast corner of the room.</value>
+          <value>You think you are in the middle of the room. There is a children’s toy chest to the southwest of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13181,15 +13173,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a children's toy chest to the south of you. </value>
+          <value>There is a children’s toy chest to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a children's toy chest in front of you, it is covered in cobwebs.</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a children's toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards.</value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -13197,15 +13189,15 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a children's toy chest to the south of you. You can hear some noises coming from the northeast corner. </value>
+          <value>There is a children’s toy chest to the south of you. You can hear some noises coming from the northeast corner. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a children's toy chest in front of you, it is covered in cobwebs. There is a wall a few steps to the west of you.</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall a few steps to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a children's toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards. There is a cask of oil sitting on a small table to the northwest of you. </value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards. There is a cask of oil sitting on a small table to the northwest of you. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -13260,15 +13252,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children's toy chest to the south of you.</value>
+          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a children's toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you.</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children's toy chest to the south. </value>
+          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south. </value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -13276,15 +13268,15 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children's toy chest to the south of you, it is covered in spider webs. </value>
+          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you, it is covered in spider webs. </value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a children's toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you. You can hear some noises coming from the northeast corner of the room.</value>
+          <value>There is a children’s toy chest in front of you, it is covered in cobwebs. There is a wall to the west of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children's toy chest to the south.</value>
+          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -13577,7 +13569,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You are in a small room. There is a small crib to the east of you, a shelf with some old toys on it to the west. There is a small children's dresser a few steps forwards.</value>
+          <value>You are in a small room. There is a small crib to the east of you, a shelf with some old toys on it to the west. There is a small children’s dresser a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -13625,7 +13617,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a wall to the east of you. You hear a child's voice murmuring from little ways behind you.</value>
+          <value>There is a wall to the east of you. You hear a child’s voice murmuring from little ways behind you.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -13641,7 +13633,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall to the east of you. You hear a child's voice murmuring from little ways behind you.</value>
+          <value>There is a wall to the east of you. You hear a child’s voice murmuring from little ways behind you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -14051,7 +14043,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You cannot see anything. There is something in front of you, but you can't tell what it is.</value>
+          <value>You cannot see anything. There is something in front of you, but you can’t tell what it is.</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -14224,7 +14216,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You cannot see anything. You can feel a table in front of you. It seems like there's something on it.</value>
+          <value>You cannot see anything. You can feel a table in front of you. It seems like there’s something on it.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -14232,7 +14224,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small end table in front of you, it is old and dusty but doesn't have anything of interest on it. There is a door to the west of you.</value>
+          <value>There is a small end table in front of you, it is old and dusty but doesn’t have anything of interest on it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -14248,7 +14240,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small end table in front of you, it is old and dusty but doesn't have anything of interest on it. There is a door to the west of you.</value>
+          <value>There is a small end table in front of you, it is old and dusty but doesn’t have anything of interest on it. There is a door to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -14394,7 +14386,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a table in front of you, it doesn't have anything of interest on it. There is a wall to the north of you.</value>
+          <value>There is a table in front of you, it doesn’t have anything of interest on it. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -14410,7 +14402,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a table in front of you, it doesn't have anything of interest on it. There is a wall to the north of you.</value>
+          <value>There is a table in front of you, it doesn’t have anything of interest on it. There is a wall to the north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -14890,7 +14882,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a vanity table in front of you, and a wall to the south. The vanity table is dusty, but looks antique and still in relatively good condition compared to the rest of the furniture you've seen.</value>
+          <value>There is a vanity table in front of you, and a wall to the south. The vanity table is dusty, but looks antique and still in relatively good condition compared to the rest of the furniture you’ve seen.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -15001,7 +14993,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>You cannot see anything. You can feel some kind of furniture in front of you, you aren't completely sure what it is. </value>
+          <value>You cannot see anything. You can feel some kind of furniture in front of you, you aren’t completely sure what it is. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -15013,7 +15005,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you've seen so far. It is very dusty here, you cough trying to breathe.</value>
+          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you’ve seen so far. It is very dusty here, you cough trying to breathe.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -15029,7 +15021,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you've seen so far. It is very dusty here, you cough trying to breathe.</value>
+          <value>There is a vanity table in front of you, and a wall to the east. The vanity is old and dusty, but it is antique and in much better condition than the other furniture you’ve seen so far. It is very dusty here, you cough trying to breathe.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -15057,7 +15049,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You cannot see anything. You can feel something in front of you, but you can't quite tell what it is.</value>
+          <value>You cannot see anything. You can feel something in front of you, but you can’t quite tell what it is.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -15077,7 +15069,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you've seen. There is a chair to the east of you, in terrible condition.</value>
+          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you’ve seen. There is a chair to the east of you, in terrible condition.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -15093,7 +15085,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you've seen. There is a chair to the east of you, in terrible condition. There is a dresser a few steps west of you.</value>
+          <value>There is a vanity table in front of you, it is old, but antique and in good condition compared to the other furniture you’ve seen. There is a chair to the east of you, in terrible condition. There is a dresser a few steps west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -15153,7 +15145,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn't seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
+          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn’t seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -15169,11 +15161,7 @@
         </item>
         <item>
           <key>brightwest</key>
-<<<<<<< HEAD
-          <value>There is a dresser in front of you. It is old and missing a drawer, but there does not seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
-=======
-          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn't seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
->>>>>>> origin/master
+          <value>There is a dresser in front of you. It is old and missing a drawer, but there doesn’t seem to be anything of interest in or on it. There is a bed a few steps north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -15358,7 +15346,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You cannot see anything. You can feel something in front of you, but you aren't quite sure what it is. </value>
+          <value>You cannot see anything. You can feel something in front of you, but you aren’t quite sure what it is. </value>
         </item>
         <item>
           <key>darkwest</key>
@@ -15374,11 +15362,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-<<<<<<< HEAD
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different; thinner, and darker. As if you were fading away. Maybe it's just the lighting.</value>
-=======
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different – thinner, and darker. As if you were fading away. Maybe it's just the lighting.</value>
->>>>>>> origin/master
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -15394,11 +15378,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-<<<<<<< HEAD
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different; thinner, and darker. As if you were fading away. Maybe it's just the lighting.</value>
-=======
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different – thinner, and darker. As if you were fading away. Maybe it's just the lighting.</value>
->>>>>>> origin/master
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -16415,11 +16395,11 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf in front of you, and a wall to the west. The path turns to the east.  There is a red book on the shelf, with gold lettering on the spine. It says The King's Court on it.</value>
+          <value>There is a bookshelf in front of you, and a wall to the west. The path turns to the east.  There is a red book on the shelf, with gold lettering on the spine. It says The King’s Court on it.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf to the north of you, there is a book in the shelf that catches your eye. It is red, with gold lettering. It says The King's Court on it. </value>
+          <value>There is a bookshelf to the north of you, there is a book in the shelf that catches your eye. It is red, with gold lettering. It says The King’s Court on it. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -16427,7 +16407,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you, and a bookshelf to the north. There is a red book on the shelf, with gold lettering. It says The King's Court. </value>
+          <value>There is a wall in front of you, and a bookshelf to the north. There is a red book on the shelf, with gold lettering. It says The King’s Court. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -16901,7 +16881,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you. There is a blue book on it, it has King's Quarters written in black lettering on the spine.</value>
+          <value>There is a bookshelf in front of you. There is a blue book on it, it has King’s Quarters written in black lettering on the spine.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -16913,15 +16893,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a wall to the west of you, and a bookshelf to the east. The path continues forwards. The bookshelf has a blue book on it, it is called the King's Quarters. </value>
+          <value>There is a wall to the west of you, and a bookshelf to the east. The path continues forwards. The bookshelf has a blue book on it, it is called the King’s Quarters. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you. There is a blue book on it, it has King's Quarters written in black lettering on the spine.</value>
+          <value>There is a bookshelf in front of you. There is a blue book on it, it has King’s Quarters written in black lettering on the spine.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall to the west, and a bookshelf to the east. There is a blue book on the shelf. It says King's Quarters in black lettering on the spine.</value>
+          <value>There is a wall to the west, and a bookshelf to the east. There is a blue book on the shelf. It says King’s Quarters in black lettering on the spine.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -17558,7 +17538,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf in front of you. A white book stands out amongst a shelf filled with darkly coloured books. It isn't of any importance, it is just noticeable.</value>
+          <value>There is a bookshelf in front of you. A white book stands out amongst a shelf filled with darkly coloured books. It isn’t of any importance, it is just noticeable.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -17574,7 +17554,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a bookshelf in front of you. A white book stands out amongst a shelf filled with darkly coloured books. It isn't of any importance, it is just noticeable. The path continues to the south, and north of you.</value>
+          <value>There is a bookshelf in front of you. A white book stands out amongst a shelf filled with darkly coloured books. It isn’t of any importance, it is just noticeable. The path continues to the south, and north of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -17764,7 +17744,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you, and to the south of you. On the shelf in front of you there is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: 'Their life is the energy that he obtains his immortality from.'</value>
+          <value>There is a bookshelf in front of you, and to the south of you. On the shelf in front of you there is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: ‘Their life is the energy that he obtains his immortality from.’</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -17776,11 +17756,11 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf to the east of you. There is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: 'Their life is the energy that he obtains his immortality from.' The path continues forwards.</value>
+          <value>There is a bookshelf to the east of you. There is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: ‘Their life is the energy that he obtains his immortality from.’ The path continues forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you, and to the south of you. On the shelf in front of you there is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: 'Their life is the energy that he obtains his immortality from.' The path continues to the north.</value>
+          <value>There is a bookshelf in front of you, and to the south of you. On the shelf in front of you there is a faded orange book laying open on a mostly barren shelf. A phrase catches your eye, it reads: ‘Their life is the energy that he obtains his immortality from.’ The path continues to the north.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -18056,11 +18036,11 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you. On it there is a row of encyclopaedias, and in the middle there is a thin purple book. It isn't that interesting, just out of place.</value>
+          <value>There is a bookshelf in front of you. On it there is a row of encyclopaedias, and in the middle there is a thin purple book. It isn’t that interesting, just out of place.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a bookshelf to the west, and to the east of you. The shelf to the east has a thin purple book in the middle of a row of encyclopaedias. It doesn't seem like an interesting book, just out of place.</value>
+          <value>There is a bookshelf to the west, and to the east of you. The shelf to the east has a thin purple book in the middle of a row of encyclopaedias. It doesn’t seem like an interesting book, just out of place.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -18068,15 +18048,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf to the east, and west of you. On the bookshelf to the east, there is a thin purple book shoved inside a row of encyclopaedias. It doesn't seem that interesting of a book, just out of place. The path continues forwards.</value>
+          <value>There is a bookshelf to the east, and west of you. On the bookshelf to the east, there is a thin purple book shoved inside a row of encyclopaedias. It doesn’t seem that interesting of a book, just out of place. The path continues forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you. On it there is a row of encyclopaedias, and in the middle there is a thin purple book. It isn't that interesting, just out of place. The path continues to the south, and north of you.</value>
+          <value>There is a bookshelf in front of you. On it there is a row of encyclopaedias, and in the middle there is a thin purple book. It isn’t that interesting, just out of place. The path continues to the south, and north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a bookshelf to the west, and to the east of you. The shelf to the east has a thin purple book in the middle of a row of encyclopaedias. It doesn't seem like an interesting book, just out of place. The path continues forwards. </value>
+          <value>There is a bookshelf to the west, and to the east of you. The shelf to the east has a thin purple book in the middle of a row of encyclopaedias. It doesn’t seem like an interesting book, just out of place. The path continues forwards. </value>
         </item>
         <item>
           <key>brightwest</key>
@@ -18305,7 +18285,7 @@
         </item>
         <item>
           <key>notes</key>
-          <value>JK this isn't a real space, it's a trap. It will push the player back 2 spaces. It should only tell the player that they have been pushed, but not how far.</value>
+          <value>JK this isn’t a real space, it’s a trap. It will push the player back 2 spaces. It should only tell the player that they have been pushed, but not how far.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -18628,7 +18608,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a lone black book sitting on it. It doesn't have any writing on it. </value>
+          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a lone black book sitting on it. It doesn’t have any writing on it. </value>
         </item>
         <item>
           <key>dimeast</key>
@@ -18636,15 +18616,15 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a single block book sitting on it. It doesn't have any writing on it.</value>
+          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a single block book sitting on it. It doesn’t have any writing on it.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf in front of you, on it there is a single black book. It doesn't have any writing on it.</value>
+          <value>There is a bookshelf in front of you, on it there is a single black book. It doesn’t have any writing on it.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a lone black book sitting on it. It doesn't have any writing on it. The path continues forwards.</value>
+          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a lone black book sitting on it. It doesn’t have any writing on it. The path continues forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -18652,11 +18632,11 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a single block book sitting on it. It doesn't have any writing on it. The path continues forwards.</value>
+          <value>There is a bookshelf to the east, and west of you. The shelf to the west has a single block book sitting on it. It doesn’t have any writing on it. The path continues forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a bookshelf in front of you, on it there is a single black book. It doesn't have any writing on it. The path continues to the south, and to the north. </value>
+          <value>There is a bookshelf in front of you, on it there is a single black book. It doesn’t have any writing on it. The path continues to the south, and to the north. </value>
         </item>
       </descriptions>
       <description type="script">
@@ -19013,15 +18993,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a small room. There is something moving a few steps east of you. It sounds irritated, and seems to be looking for the source of the light. You shouldn't get too close. </value>
+          <value>You are in a small room. There is something moving a few steps east of you. It sounds irritated, and seems to be looking for the source of the light. You shouldn’t get too close. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. There is something moving a few steps forwards. It sounds irritated, and seems to be looking for the source of the light. You shouldn't get too close.</value>
+          <value>You are in a small room. There is something moving a few steps forwards. It sounds irritated, and seems to be looking for the source of the light. You shouldn’t get too close.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>You are in a small room. There is something moving a few east. It sounds irritated, and seems to be looking for the source of the light. You shouldn't get too close.</value>
+          <value>You are in a small room. There is something moving a few east. It sounds irritated, and seems to be looking for the source of the light. You shouldn’t get too close.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -19087,11 +19067,11 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>You are in a small room. You can see something moving in the middle of the room. You can't tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
+          <value>You are in a small room. You can see something moving in the middle of the room. You can’t tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a bookshelf to the west of you. You are in a small room. You can see something moving in the middle of the room. You can't tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
+          <value>There is a bookshelf to the west of you. You are in a small room. You can see something moving in the middle of the room. You can’t tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -19103,11 +19083,11 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. You can see something moving in the middle of the room. You can't tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
+          <value>You are in a small room. You can see something moving in the middle of the room. You can’t tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a bookshelf to the west of you. You are in a small room. You can see something moving in the middle of the room. You can't tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
+          <value>There is a bookshelf to the west of you. You are in a small room. You can see something moving in the middle of the room. You can’t tell what it is, but it looks humanoid. It seems irritated and is looking around for the source of light.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -19457,7 +19437,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf to the south, and to the north of you. The path continues forwards.</value>
+          <value> There is a bookshelf to the south, and to the north of you. The path continues forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -19525,11 +19505,11 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a small room. There is something moving to the northeast of you. It is a tall shadowy figure, it is grunting angrily, and seems to be looking for the source of the light. You shouldn't get too close. </value>
+          <value>You are in a small room. There is something moving to the northeast of you. It is a tall shadowy figure, it is grunting angrily, and seems to be looking for the source of the light. You shouldn’t get too close. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. There is something moving to the northeast of you. It is a tall shadowy figure, it is grunting angrily, and seems to be looking for the source of the light. You shouldn't get too close. </value>
+          <value>You are in a small room. There is something moving to the northeast of you. It is a tall shadowy figure, it is grunting angrily, and seems to be looking for the source of the light. You shouldn’t get too close. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -19651,7 +19631,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You cannot see anything. You feel as if you have faded into the darkness. You cannot feel anything around you, and assume you're in the middle of the room.</value>
+          <value>You cannot see anything. You feel as if you have faded into the darkness. You cannot feel anything around you, and assume you’re in the middle of the room.</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -21626,7 +21606,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf in front of you. The path continues to the south and north of you.</value>
+          <value> There is a bookshelf in front of you. The path continues to the south and north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -21763,11 +21743,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bookshelf to the east of you. There is something on the floor a step forwards, but you can't tell what it is.</value>
+          <value>There is a bookshelf to the east of you. There is something on the floor a step forwards, but you can’t tell what it is.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you. You notice something on the floor to the north of you, but you can't tell what it is. </value>
+          <value>There is a bookshelf in front of you. You notice something on the floor to the north of you, but you can’t tell what it is. </value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -21775,15 +21755,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>You notice the ground to the north of you has something on it, but you can't tell what it is.</value>
+          <value>You notice the ground to the north of you has something on it, but you can’t tell what it is.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf to the east of you. There is something on the floor a step forwards, but you can't tell what it is.</value>
+          <value>There is a bookshelf to the east of you. There is something on the floor a step forwards, but you can’t tell what it is.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you. You notice something on the floor to the north of you, but you can't tell what it is. </value>
+          <value>There is a bookshelf in front of you. You notice something on the floor to the north of you, but you can’t tell what it is. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -21791,7 +21771,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>You notice the ground to the north of you has something on it, but you can't tell what it is. The path continues forwards.</value>
+          <value>You notice the ground to the north of you has something on it, but you can’t tell what it is. The path continues forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23038,7 +23018,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a small table in front of you, it has a cask of oil sitting on it.</value>
+          <value>TODO: implement this description</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -23338,19 +23318,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23410,19 +23390,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23489,19 +23469,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23560,19 +23540,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23646,19 +23626,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -23702,7 +23682,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bookshelf in front of you. The path continues to the east, and to the west.</value>
+          <value> There is a bookshelf in front of you. The path continues to the east, and to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -23718,19 +23698,19 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value> The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can't see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -24230,7 +24210,7 @@
               msg ("The footsteps are getting closer.")
             }
             case (5) {
-              msg ("You hear something rushing at you. The pungent odor of rotting meat fills your lungs, and you cough, closing your eyes. You feel a brush wind across your face, and hear movement in front of you. You open your eyes to see the glint of a butcher's knife swing down.")
+              msg ("You hear something rushing at you. The pungent odor of rotting meat fills your lungs, and you cough, closing your eyes. You feel a brush wind across your face, and hear movement in front of you. You open your eyes to see the glint of a butcher’s knife swing down.")
               Die
             }
           }
