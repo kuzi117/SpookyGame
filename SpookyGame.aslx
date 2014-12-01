@@ -4195,7 +4195,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>defaultdarknorth</value>
+          <value>There is a darkly stained oak door a few steps forwards of you.</value>
         </item>
         <item>
           <key>darkeast</key>
