@@ -42,7 +42,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen37
+      player.parent = kitchen73
       lantern.parent = player
     </start>
   </game>
@@ -9934,15 +9934,11 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("You hear something rushing at you. The pungent odor of rotting meat fills your lungs, and you cough, closing your eyes. You feel a brush wind across your face, and hear movement in front of you. You open your eyes to see the glint of a butcher’s knife swing down.")
+        Die
       </description>
-      <exit name="South107" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (kitchen73, 2)
-        </script>
-      </exit>
+      <beforeenter type="script">
+      </beforeenter>
     </object>
     <object name="kitchen73">
       <inherit name="editor_room" />
