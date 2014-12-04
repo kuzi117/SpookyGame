@@ -24563,9 +24563,14 @@
           lantern.fuel_level = lantern.fuel_level - lantern.light_level
         }
         else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.light_level = 1
           lantern.low_fuel = True
-          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+          if (lantern.light_level = 2) {
+            lantern.light_level = 1
+            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible.")
+          }
           lantern.fuel_level = lantern.fuel_level - lantern.light_level
         }
         else {
