@@ -30,6 +30,7 @@
     <counterDisabled type="boolean">false</counterDisabled>
     <statusattributes type="stringdictionary" />
     <heartRate type="int">1000</heartRate>
+    <heartEnabled />
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -39,7 +40,6 @@
       // REMOVE ME
       player.parent = hub11
     </start>
-    <heartEnabled />
   </game>
   <verb>
     <property>turnup</property>
@@ -2604,11 +2604,11 @@
       <exit name="North13" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
+        <scenery />
+        <locked />
         <script type="script">
           MoveAndFace (nursery1, 0)
         </script>
-        <scenery />
-        <locked />
       </exit>
     </object>
     <object name="hub4">
@@ -4330,10 +4330,10 @@
       <exit name="East29" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
+        <visible type="boolean">false</visible>
         <script type="script">
           MoveAndFace (hub11, 1)
         </script>
-        <visible type="boolean">false</visible>
       </exit>
       <exit name="West30" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -15959,8 +15959,8 @@
     <object name="Peter">
       <inherit name="editor_object" />
       <chasing type="boolean">false</chasing>
-      <distance type="int">2</distance>
-      <attr name="start_distance" type="int">2</attr>
+      <distance type="int">3</distance>
+      <attr name="start_distance" type="int">3</attr>
     </object>
   </object>
   <object name="library">
@@ -24114,7 +24114,7 @@
         ResetPeter
       }
       else if (Peter.distance <= 0) {
-        msg ("The child tackles the soul right out of you.")
+        msg ("Just as you have time to observe the room, the child tackles the soul right out of you.")
         Die
       }
     ]]></script>
@@ -24262,7 +24262,9 @@
     Peter.distance = Peter.start_distance
     Peter.chasing = False
     DisableTurnScript (peter_turn_script)
-    msg ("DEBUG: PETER NO LONGER CHASING")
+    if (game.debug) {
+      msg ("DEBUG: PETER NO LONGER CHASING")
+    }
   </function>
   <function name="Butcher">
     if (player.parent.bloodTrail) {
