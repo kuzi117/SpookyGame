@@ -42,7 +42,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen37
+      player.parent = kitchen73
       lantern.parent = player
     </start>
   </game>
@@ -9934,15 +9934,14 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("As you walk forward, you become aware of a dark presence in front of you. You inch forward into the darkness -- perhaps out of morbid curiosity, or perhaps out of foolhardy bravery.")
+        msg ("The monster comes into sight. It is a huge, and wide creature, made of shadows and dripping blood. All you can see in the mass of shadows is a fanged mouth, filled with sharp talons for teeth. It is wielding a large butcher’s knife, covered in the blood and guts of the meat surrounding him.")
+        msg ("It charges.")
+        msg ("You close your eyes.")
+        Die
       </description>
-      <exit name="South107" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (kitchen73, 2)
-        </script>
-      </exit>
+      <beforeenter type="script">
+      </beforeenter>
     </object>
     <object name="kitchen73">
       <inherit name="editor_room" />
