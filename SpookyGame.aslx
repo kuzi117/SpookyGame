@@ -16289,8 +16289,8 @@
     <object name="Peter">
       <inherit name="editor_object" />
       <chasing type="boolean">false</chasing>
-      <distance type="int">2</distance>
-      <attr name="start_distance" type="int">2</attr>
+      <distance type="int">3</distance>
+      <attr name="start_distance" type="int">3</attr>
     </object>
   </object>
   <object name="library">
@@ -24460,7 +24460,7 @@
         ResetPeter
       }
       else if (Peter.distance <= 0) {
-        msg ("The child tackles the soul right out of you.")
+        msg ("Just as you have time to observe the room, the child tackles the soul right out of you.")
         Die
       }
     ]]></script>
@@ -24694,7 +24694,9 @@
     Peter.distance = Peter.start_distance
     Peter.chasing = False
     DisableTurnScript (peter_turn_script)
-    msg ("DEBUG: PETER NO LONGER CHASING")
+    if (game.debug) {
+      msg ("DEBUG: PETER NO LONGER CHASING")
+    }
   </function>
   <function name="EnableHeart">
     request (RunScript, "enableHeart")
