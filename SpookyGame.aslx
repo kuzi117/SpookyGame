@@ -42,7 +42,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen65
+      player.parent = kitchen37
       lantern.parent = player
     </start>
   </game>
@@ -142,32 +142,6 @@
       </script>
     </exit>
   </object>
-  <turnscript name="lantern_turn_script">
-    <enabled />
-    <script><![CDATA[
-      request (RunScript, "resetHeartCount")
-      if (Got(lantern)) {
-        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
-          lantern.light_level = 0
-          lantern.burnt_out = True
-          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.light_level = 1
-          lantern.low_fuel = True
-          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else {
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        if (game.debug) {
-          msg ("FUEL DEBUG: " + lantern.fuel_level)
-        }
-      }
-    ]]></script>
-  </turnscript>
   <verb>
     <property>turnleft</property>
     <pattern>turn left</pattern>
@@ -3999,9 +3973,11 @@
               lantern.light_level = lantern.light_level + 1
               if (lantern.light_level = 1) {
                 msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
               }
               else {
                 msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
               }
             }
             else {
@@ -4018,9 +3994,11 @@
               lantern.light_level = lantern.light_level - 1
               if (lantern.light_level = 1) {
                 msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
               }
               else {
                 msg ("Your lantern is now off. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
               }
             }
             else {
@@ -6866,6 +6844,31 @@
           pots.fixed = True
         </move>
       </object>
+      <turnscript name="pots_script">
+        <enabled />
+        <script><![CDATA[
+          if (not pots.fixed) {
+            if (Got(lantern)) {
+              if (lantern.light_level = 1) {
+                if (player.facing_num = 0) {
+                  msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second.")
+                }
+                else if (player.facing_num <> 2) {
+                  msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second.")
+                }
+              }
+              else if (lantern.light_level = 2) {
+                if (player.facing_num = 0) {
+                  msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+                }
+                else if (player.facing_num <> 2) {
+                  msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+                }
+              }
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen34">
       <inherit name="editor_room" />
@@ -7088,6 +7091,10 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+      </enter>
+      <beforeenter type="script">
+      </beforeenter>
       <exit name="North71" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -7130,6 +7137,31 @@
           dishes.fixed = True
         </move>
       </object>
+      <turnscript name="dishes_script">
+        <enabled />
+        <script><![CDATA[
+          if (not dishes.fixed) {
+            if (Got(lantern)) {
+              if (lantern.light_level = 1) {
+                if (player.facing_num = 3) {
+                  msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+                }
+                else if (player.facing_num <> 1) {
+                  msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+                }
+              }
+              else if (lantern.light_level = 2) {
+                if (player.facing_num = 3) {
+                  msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+                }
+                else if (player.facing_num <> 1) {
+                  msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+                }
+              }
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen37">
       <inherit name="editor_room" />
@@ -7217,6 +7249,19 @@
           GetOil (oil1)
         </use>
       </object>
+      <turnscript name="oil1_script">
+        <enabled />
+        <script><![CDATA[
+          if (Got(lantern) and lantern.light_level > 0 and not oil1.parent = null) {
+            if (player.facing_num = 1) {
+              msg ("The counter in front of you has a cask of oil sitting on it.")
+            }
+            else if (player.facing_num <> 3) {
+              msg ("The counter to the east has a cask of oil sitting on it.")
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen38">
       <inherit name="editor_room" />
@@ -8795,6 +8840,31 @@
           knives.fixed = True
         </move>
       </object>
+      <turnscript name="knives_script">
+        <enabled />
+        <script><![CDATA[
+          if (not knives.fixed) {
+            if (Got(lantern)) {
+              if (lantern.light_level = 1) {
+                if (player.facing_num = 1) {
+                  msg ("The counter in front of you has a bunch of knives laying on it. Some look like they might fall.")
+                }
+                else if (player.facing_num <> 3) {
+                  msg ("The counter to the east has a bunch of knives laying on it. Some look like they might fall.")
+                }
+              }
+              else if (lantern.light_level = 2) {
+                if (player.facing_num = 1) {
+                  msg ("The counter in front of you has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
+                }
+                else if (player.facing_num <> 3) {
+                  msg ("The counter to the east has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
+                }
+              }
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen59">
       <inherit name="editor_room" />
@@ -9535,6 +9605,34 @@
           MoveAndFace (kitchen74, 3)
         </script>
       </exit>
+      <object name="oil2">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil2)
+        </take>
+        <use type="script">
+          GetOil (oil2)
+        </use>
+      </object>
+      <turnscript name="oil2_script68">
+        <enabled />
+        <script><![CDATA[
+          if (not oil2.parent = null) {
+            if (player.facing_num = 2) {
+              msg ("The counter in front of you has a cask of oil sitting on it.")
+            }
+            else if (player.facing_num <> 0) {
+              msg ("The counter to the south has a cask of oil sitting on it.")
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen69">
       <inherit name="editor_room" />
@@ -9615,6 +9713,19 @@
           MoveAndFace (kitchen76, 3)
         </script>
       </exit>
+      <turnscript name="oil2_script69">
+        <enabled />
+        <script><![CDATA[
+          if (not oil2.parent = null) {
+            if (player.facing_num = 0) {
+              msg ("The counter in front of you has a cask of oil sitting on it.")
+            }
+            else if (player.facing_num <> 2) {
+              msg ("The counter to the north has a cask of oil sitting on it.")
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen70">
       <inherit name="editor_room" />
@@ -10071,6 +10182,19 @@
           MoveAndFace (kitchen79, 3)
         </script>
       </exit>
+      <turnscript name="oil2_script75">
+        <enabled />
+        <script><![CDATA[
+          if (not oil2.parent = null) {
+            if (player.facing_num = 1) {
+              msg ("The counter in front of you has a cask of oil sitting on it.")
+            }
+            else if (player.facing_num <> 3) {
+              msg ("The counter to the east has a cask of oil sitting on it.")
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
     <object name="kitchen76">
       <inherit name="editor_room" />
@@ -11228,6 +11352,19 @@
           GetOil (oil3)
         </use>
       </object>
+      <turnscript name="oil3_script">
+        <enabled />
+        <script><![CDATA[
+          if (not oil3.parent = null) {
+            if (player.facing_num = 2) {
+              msg ("The counter in front of you has a cask of oil sitting on it.")
+            }
+            else if (player.facing_num <> 0) {
+              msg ("The counter to the south has a cask of oil sitting on it.")
+            }
+          }
+        ]]></script>
+      </turnscript>
     </object>
   </object>
   <object name="nursery">
@@ -21131,21 +21268,6 @@
           MoveAndFace (library67, 2)
         </script>
       </exit>
-      <object name="oil2">
-        <inherit name="editor_object" />
-        <alt type="stringlist">
-          <value>cask</value>
-        </alt>
-        <alias>oil</alias>
-        <scenery />
-        <feature_usegive />
-        <take type="script">
-          GetOil (oil2)
-        </take>
-        <use type="script">
-          GetOil (oil2)
-        </use>
-      </object>
     </object>
     <object name="library69">
       <inherit name="editor_room" />
@@ -24429,7 +24551,33 @@
       }
     ]]></script>
   </turnscript>
-  <function name="PrintRoomDesc" parameters="all"><![CDATA[
+  <turnscript name="lantern_turn_script">
+    <enabled />
+    <script><![CDATA[
+      request (RunScript, "resetHeartCount")
+      if (Got(lantern)) {
+        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+          lantern.light_level = 0
+          lantern.burnt_out = True
+          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+          lantern.light_level = 1
+          lantern.low_fuel = True
+          msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else {
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        if (game.debug) {
+          msg ("FUEL DEBUG: " + lantern.fuel_level)
+        }
+      }
+    ]]></script>
+  </turnscript>
+  <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
         switch (player.facing_num) {
@@ -24496,111 +24644,7 @@
         }
       }
     }
-    if (player.parent = kitchen36 and not dishes.fixed) {
-      if (Got(lantern)) {
-        if (lantern.light_level = 1) {
-          if (player.facing_num = 3) {
-            msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
-          }
-          else if (player.facing_num <> 1) {
-            msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
-          }
-        }
-        else if (lantern.light_level = 2) {
-          if (player.facing_num = 3) {
-            msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-          }
-          else if (player.facing_num <> 1) {
-            msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-          }
-        }
-      }
-    }
-    if (player.parent = kitchen33 and not pots.fixed) {
-      if (Got(lantern)) {
-        if (lantern.light_level = 1) {
-          if (player.facing_num = 0) {
-            msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second.")
-          }
-          else if (player.facing_num <> 2) {
-            msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second.")
-          }
-        }
-        else if (lantern.light_level = 2) {
-          if (player.facing_num = 0) {
-            msg ("The counter in front of you is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-          }
-          else if (player.facing_num <> 2) {
-            msg ("The counter to the north is piled high with pots and pans. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-          }
-        }
-      }
-    }
-    if (player.parent = kitchen58 and not knives.fixed) {
-      if (Got(lantern)) {
-        if (lantern.light_level = 1) {
-          if (player.facing_num = 1) {
-            msg ("The counter in front of you has a bunch of knives laying on it. Some look like they might fall.")
-          }
-          else if (player.facing_num <> 3) {
-            msg ("The counter to the east has a bunch of knives laying on it. Some look like they might fall.")
-          }
-        }
-        else if (lantern.light_level = 2) {
-          if (player.facing_num = 1) {
-            msg ("The counter in front of you has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
-          }
-          else if (player.facing_num <> 3) {
-            msg ("The counter to the east has a bunch of precariously placed knives on it. They look like they might fall, but you can probably fix them quietly.")
-          }
-        }
-      }
-    }
-    if (Got(lantern) and lantern.light_level > 0) {
-      if (player.parent = kitchen37 and not oil1.parent = null) {
-        if (player.facing_num = 1) {
-          msg ("The counter in front of you has a cask of oil sitting on it.")
-        }
-        else if (player.facing_num <> 3) {
-          msg ("The counter to the east has a cask of oil sitting on it.")
-        }
-      }
-      if (not oil2.parent = null) {
-        if (player.parent = kitchen68) {
-          if (player.facing_num = 2) {
-            msg ("The counter in front of you has a cask of oil sitting on it.")
-          }
-          else if (player.facing_num <> 0) {
-            msg ("The counter to the south has a cask of oil sitting on it.")
-          }
-        }
-        if (player.parent = kitchen69) {
-          if (player.facing_num = 0) {
-            msg ("The counter in front of you has a cask of oil sitting on it.")
-          }
-          else if (player.facing_num <> 2) {
-            msg ("The counter to the north has a cask of oil sitting on it.")
-          }
-        }
-        if (player.parent = kitchen75) {
-          if (player.facing_num = 1) {
-            msg ("The counter in front of you has a cask of oil sitting on it.")
-          }
-          else if (player.facing_num <> 3) {
-            msg ("The counter to the east has a cask of oil sitting on it.")
-          }
-        }
-      }
-      if (player.parent = kitchen89 and not oil3.parent = null) {
-        if (player.facing_num = 2) {
-          msg ("The counter in front of you has a cask of oil sitting on it.")
-        }
-        else if (player.facing_num <> 0) {
-          msg ("The counter to the south has a cask of oil sitting on it.")
-        }
-      }
-    }
-  ]]></function>
+  </function>
   <function name="FaceNorth">
     player.facing_num = 0
     dictionary remove (player.statusattributes, "facing")
