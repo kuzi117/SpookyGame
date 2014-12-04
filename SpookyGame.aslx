@@ -46,6 +46,78 @@
       lantern.parent = player
     </start>
   </game>
+  <command name="lookdir">
+    <pattern type="string"><![CDATA[^look (?<exit>north|east|south|west|northeast|northwest|southeast|southwest|out|up|down|n|e|s|w|ne|nw|se|sw|o|u|d)$]]></pattern>
+    <script><![CDATA[
+      switch (exit.alias) {
+        case ("north") {
+          FaceNorth
+          msg ("You turn to face north.")
+          PrintRoomDesc (False)
+        }
+        case ("n") {
+          FaceNorth
+          msg ("You turn to face north.")
+          PrintRoomDesc (False)
+        }
+        case ("south") {
+          FaceSouth
+          msg ("You turn to face south.")
+          PrintRoomDesc (False)
+        }
+        case ("s") {
+          FaceSouth
+          msg ("You turn to face south.")
+          PrintRoomDesc (False)
+        }
+        case ("west") {
+          FaceSouth
+          msg ("You turn to face west.")
+          PrintRoomDesc (False)
+        }
+        case ("w") {
+          FaceSouth
+          msg ("You turn to face west.")
+          PrintRoomDesc (False)
+        }
+        case ("east") {
+          FaceSouth
+          msg ("You turn to face east.")
+          PrintRoomDesc (False)
+        }
+        case ("e") {
+          FaceSouth
+          msg ("You turn to face east.")
+          PrintRoomDesc (False)
+        }
+        case (default) {
+          if (HasScript(exit, "look")) {
+            do (exit, "look")
+          }
+          else {
+            message = DynamicTemplate("YouLooking",exit.alias)
+            if (HasString(exit, "look")) {
+              if (exit.look <> "") {
+                message = exit.look
+              }
+            }
+            if (exit.locked) {
+              if (HasString(exit,"lockmessage")) {
+                lockmessage = exit.lockmessage
+              }
+              else {
+                lockmessage = Template("LockedExit")
+              }
+              msg (message+" "+lockmessage)
+            }
+            else {
+              msg (message)
+            }
+          }
+        }
+      }
+    ]]></script>
+  </command>
   <verb>
     <property>turnup</property>
     <pattern>turn up</pattern>
