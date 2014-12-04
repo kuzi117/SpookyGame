@@ -42,7 +42,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen73
+      player.parent = kitchen70
       lantern.parent = player
     </start>
   </game>
@@ -9806,6 +9806,14 @@
           MoveAndFace (kitchen77, 3)
         </script>
       </exit>
+      <object name="turkey">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>turkey carcass</value>
+        </alt>
+        <look type="script">
+        </look>
+      </object>
     </object>
     <object name="kitchen71">
       <inherit name="editor_room" />
@@ -24539,7 +24547,7 @@
     <pattern>fix</pattern>
     <defaultexpression>"You can't fix " + object.article + "."</defaultexpression>
   </verb>
-  <turnscript name="oil_follow_script">
+  <turnscript name="item_follow_script">
     <enabled />
     <script><![CDATA[
       // This is kind of horrible, but makes the oil accessible from multiple places
@@ -24547,6 +24555,9 @@
         if (player.parent = kitchen68 or player.parent = kitchen75 or player.parent = kitchen69) {
           oil2.parent = player.parent
         }
+      }
+      if (player.parent = kitchen63 or player.parent = kitchen66 or player.parent = kitchen67 or player.parent = kitchen70) {
+        turkey.parent = player.parent
       }
     ]]></script>
   </turnscript>
