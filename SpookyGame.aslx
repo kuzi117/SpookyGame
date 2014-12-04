@@ -9934,7 +9934,10 @@
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script">
-        msg ("You hear something rushing at you. The pungent odor of rotting meat fills your lungs, and you cough, closing your eyes. You feel a brush wind across your face, and hear movement in front of you. You open your eyes to see the glint of a butcher’s knife swing down.")
+        msg ("As you walk forward, you become aware of a dark presence in front of you. You inch forward into the darkness -- perhaps out of morbid curiosity, or perhaps out of foolhardy bravery.")
+        msg ("The monster comes into sight. It is a huge, and wide creature, made of shadows and dripping blood. All you can see in the mass of shadows is a fanged mouth, filled with sharp talons for teeth. It is wielding a large butcher’s knife, covered in the blood and guts of the meat surrounding him.")
+        msg ("It charges.")
+        msg ("You close your eyes.")
         Die
       </description>
       <beforeenter type="script">
