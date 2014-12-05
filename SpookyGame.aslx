@@ -25727,9 +25727,9 @@
     }
   </function>
   <function name="EndKitchen">
-    msg ("You knock over the pots and pans.")
-    msg ("The butcher does stuff and something happens with the turkey.")
-    msg ("You get knocked out.")
+    msg ("The creature in the distance grunts in annoyance. You can hear his footsteps stomping closer and closer towards you. The creature rushes up towards you, and you can hear his heavy breathing, and the putrid smell of rotting meat.")
+    msg ("You try to stay as silent as possible, holding your breath. The creature makes an exasperated grunt and smashes his cleaver down on the counter, bits of turkey flying everywhere. The creature makes another satisfied grunt, and walks back to where he was before.")
+    msg ("You stand up, out of hiding, and see a small piece of paper sitting in the turkey rubble. You grab it and read it.")
     msg ("")
     msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
     msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
@@ -25754,6 +25754,49 @@
   </function>
   <function name="EndLibrary">
     library_turn_script.enabled = false
+  </function>
+  <function name="PrintRiddle" parameters="number" type="int">
+    switch (number) {
+      case (0) {
+        msg ("One against four, the battle goes on.")
+        msg ("The one with the sword must take the pawn.")
+        msg ("Follow the trail, of blood, sweat and tears;")
+        msg ("For if you shall stray, you’ll realize your fears.")
+        msg ("Noise is dangerous, and the darkness is loud.")
+        msg ("To travel in it, will only for so long be allowed.")
+        msg ("To find the exit: serve the bird,")
+        msg ("To do so the creature’s wrath must be incurred.")
+      }
+      case (1) {
+        msg ("In the tower the pawn will fall.")
+        msg ("So watch your back down the long hall.")
+        msg ("Find the boy, time and again,")
+        msg ("For seeking him will lead you to the end.")
+        msg ("In a closet, it is death you will find,")
+        msg ("If your exit is not perfectly timed.")
+        msg ("To find the boy, listen to the nursery,")
+        msg ("On this long night, the moon’s anniversary.")
+      }
+      case (2) {
+        msg ("The chessboard is set up again as before, but the pawn must be taken by the queen this time.")
+        msg ("By her hand, ")
+        msg ("Her might the pawn cannot withstand.")
+        msg ("The path is long, it forks and turns.")
+        msg ("Be careful, because for the shadows the light burns.")
+        msg ("There is a creature, tall and broad.")
+        msg ("Yet, in the dark his sight is flawed.")
+        msg ("Longer now, the darkness holds you,")
+        msg ("But only long enough to get through.")
+      }
+      case (3) {
+        msg ("Here we are, near the end.")
+        msg ("For yourself, will you fend?")
+        msg ("And the pawn, so mighty and strong,")
+        msg ("Will face the darkened throng,")
+        msg ("Only to fall at the hands of a king?")
+        msg ("What a peculiar thing.")
+      }
+    }
   </function>
   <javascript src="javascript.js" />
 </asl>
