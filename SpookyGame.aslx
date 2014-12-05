@@ -3135,11 +3135,11 @@
               lantern.light_level = lantern.light_level + 1
               if (lantern.light_level = 1) {
                 msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
+                ShowRoomDescription
               }
               else {
                 msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
+                ShowRoomDescription
               }
             }
             else {
@@ -3156,11 +3156,11 @@
               lantern.light_level = lantern.light_level - 1
               if (lantern.light_level = 1) {
                 msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
+                ShowRoomDescription
               }
               else {
                 msg ("Your lantern is now off. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
+                ShowRoomDescription
               }
             }
             else {
@@ -11856,6 +11856,10 @@
           }
           else {
             MoveAndFace (nursery6, 3)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -11958,6 +11962,10 @@
           }
           else {
             MoveAndFace (nursery5, 1)
+            Laila.paused = False
+            if (game.debug) {
+              msg ("DEBUG: unpause Laila")
+            }
           }
         </script>
       </exit>
@@ -12214,13 +12222,17 @@
           if (Maven.conversation_part = 1) {
             DisableHeart
             Maven.conversation_part = 2
-            msg ("\"Oh, thank you! The others never want to play… hide and seek is my favorite, I will hide, okay?\" Maven turns and starts running away. He stops and turns back for a moment. \"You better come find me, but be careful of the others… Laila, she wants to play too, but I don’t… think she knows what it means! She is really mean, I don’t like to play with her. She doesn't like bright lights.\"")
+            msg ("'Oh, thank you! The others never want to play… hide and seek is my favorite, I will hide, okay?' Maven turns and starts running away. He stops and turns back for a moment. 'You better come find me, but be careful of the others… Laila, she wants to play too, but I don’t… think she knows what it means! She is really mean, I don’t like to play with her. She doesn't like bright lights.'")
             nursery12.door_locked = false
             nursery31.door_locked = false
             nursery44.door_locked = false
             nursery46.door_locked = false
             nursery64.door_locked = false
             nursery14.maven_here = false
+            nursery33.maven_here = True
+            EnableTurnScript (laila_turn_script)
+            msg ("He turns around and continues out of the room; you can hear him singing: 'Mary had a little lamb, His fleece was white as snow, And everywhere that Mary went, The lamb was sure to go.'")
+            Maven.conversation_part = 2
           }
           else {
             msg ("I don't understand your command.")
@@ -12459,6 +12471,10 @@
           }
           else {
             MoveAndFace (nursery12, 3)
+            Laila.paused = False
+            if (game.debug) {
+              msg ("DEBUG: unpause Laila")
+            }
           }
         </script>
       </exit>
@@ -12561,6 +12577,10 @@
           }
           else {
             MoveAndFace (nursery11, 1)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -12734,6 +12754,10 @@
             nursery46.door_locked = false
             nursery64.door_locked = false
             nursery14.maven_here = false
+            EnableTurnScript (laila_turn_script)
+            nursery33.maven_here = True
+            msg ("He turns around and continues out of the room; you can hear him singing: 'Mary had a little lamb, His fleece was white as snow, And everywhere that Mary went, The lamb was sure to go.'")
+            Maven.conversation_part = 2
           }
           else {
             msg ("I don't understand your command.")
@@ -13239,9 +13263,15 @@
             nursery46.door_locked = false
             nursery64.door_locked = false
             nursery14.maven_here = false
+            EnableTurnScript (laila_turn_script)
+            nursery33.maven_here = True
+            msg ("He turns around and continues out of the room; you can hear him singing: 'Mary had a little lamb, His fleece was white as snow, And everywhere that Mary went, The lamb was sure to go.'")
+            Maven.conversation_part = 2
           }
           else {
             msg ("I don't understand your command.")
+            EnableTurnScript (laila_turn_script)
+            msg ("He turns around and continues out of the room; you can hear him singing: 'Mary had a little lamb, His fleece was white as snow, And everywhere that Mary went, The lamb was sure to go.'")
           }
         </script>
       </command>
@@ -13652,9 +13682,18 @@
           <value>This is where you find the boy for the 3rd time.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (player.facing_num = 1 and nursery25.maven_here) {
+          if (lantern.light_level <> 0 and Maven.conversation_part = 5) {
+            msg ("You think you can see a faint glimmer emanating from under the blanket in the crib.")
+          }
+          else if (Maven.conversation_part = 6) {
+            msg ("Maven is standing in front of you.")
+          }
+        }
+      ]]></description>
+      <attr name="maven_here" type="boolean">false</attr>
       <exit name="North102" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -13670,6 +13709,22 @@
           MoveAndFace (nursery26, 3)
         </script>
       </exit>
+      <command name="Examine Crib">
+        <pattern type="string">(examine|look|check|ex|l|look in|open) crib</pattern>
+        <script>
+          if (nursery25.maven_here) {
+            DisableHeart
+            if (Maven.conversation_part = 5) {
+              msg ("‘Awesome, you found me again!’ Maven smiles, widely. ‘Well, I suppose I can keep my promise…’ Maven gestures to the crib, you can see a piece of paper on it now. It looks like another riddle. You thank Maven, and he smiles. ‘No problem, thank you for playing with me! It was a lot of fun, it has been a long time…” Maven looks into the distance, wistfully. ‘Not many people survive the tests, but I hope you do! Just be careful… I hear bad things happen when you change, when you meet him.’ Maven sighs, ‘Well go on then, don’t get stuck here forever like me. I was too young for the tests, I don’t know why he picked me back then, experiment maybe? Anyway, good luck out there!’ Maven vanishes into thin air.")
+              Maven.conversation_part = 6
+              nursery25.maven_here = False
+            }
+          }
+          else {
+            msg ("There's nothing particularly interesting about the cabinet."
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery26">
       <inherit name="editor_room" />
@@ -14168,6 +14223,10 @@
           }
           else {
             MoveAndFace (nursery32, 3)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -14278,6 +14337,10 @@
           }
           else {
             MoveAndFace (nursery31, 1)
+            Laila.paused = False
+            if (game.debug) {
+              msg ("DEBUG: unpause Laila")
+            }
           }
         </script>
       </exit>
@@ -14355,7 +14418,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress. Did she just move? (TODO: If boy is hiding here: You think you see a faint glow emanating from the cabinet.)</value>
+          <value>There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress. Did she just move?</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -14371,7 +14434,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>You are in a small room. There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress. (TODO: If boy is hiding here: You think you see a faint glow emanating from the cabinet.)</value>
+          <value>You are in a small room. There is a small cabinet in front of you. There is a doll sitting on it, wearing a little lamb dress.</value>
         </item>
         <item>
           <key>notes</key>
@@ -14388,7 +14451,16 @@
             msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
+        if (player.facing_num = 3 and nursery33.maven_here) {
+          if (lantern.light_level <> 0 and Maven.conversation_part = 2) {
+            msg ("You think you see a faint glow emanating from the cabinet.")
+          }
+          else if (Maven.conversation_part = 3) {
+            msg ("Maven is standing in front of you.")
+          }
+        }
       ]]></description>
+      <attr name="maven_here" type="boolean">false</attr>
       <exit name="East124" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -14396,6 +14468,53 @@
           MoveAndFace (nursery32, 1)
         </script>
       </exit>
+      <command name="Examine Cabinet">
+        <pattern type="string">(examine|look|check|ex|l|look in|open) cabinet</pattern>
+        <script>
+          if (nursery33.maven_here) {
+            DisableHeart
+            if (Maven.conversation_part = 2) {
+              msg ("‘You found me! You found me! I was sure you would leave like the others.’ You look at Maven, puzzled for a moment. ‘There have always been more like you, y’know. The king must go on, or whatever it is he says. He’s a big ol’ dummy anyway.’ Maven twiddles his thumbs and looks up at you shyly, ‘Can we play again?’ ")
+              Maven.conversation_part = 3
+            }
+            else if (Maven.conversation_part = 3) {
+              msg ("'So will you play again?' he asks looking more excited.")
+            }
+          }
+          else {
+            msg ("There's nothing particularly interesting about the cabinet."
+          }
+        </script>
+      </command>
+      <command name="Say Yes3">
+        <pattern type="string">(say yes|yes|tell boy yes|tell ghost yes|accept|accept game|play|play with boy|play with ghost)</pattern>
+        <script>
+          if (Maven.conversation_part = 3) {
+            DisableHeart
+            msg ("‘You’re the best! Okay well, just be careful of Geoffrey… He likes the quiet, just… count to five before you take a step!’ ")
+            msg ("Maven skips away again but you can hear him singing, 'Ring-a-ring o' roses, A pocket full of posies, A-tishoo! A-tishoo! We all fall down.'")
+            nursery33.maven_here = False
+            nursery61.maven_here = True
+            Maven.conversation_part = 4
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
+      <command name="Talk To Maven">
+        <unresolved type="string"></unresolved>
+        <pattern type="string">(talk|talk to|talk to boy|talk to ghost|speak|speak to|speak to boy|speak to ghost)</pattern>
+        <script>
+          if (nursery33.maven_here and Maven.conversation_part = 3) {
+            DisableHeart
+            msg ("'So will you play again?' he asks looking more excited.")
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery34">
       <inherit name="editor_room" />
@@ -15295,6 +15414,10 @@
           }
           else {
             MoveAndFace (nursery43, 1)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -15481,6 +15604,10 @@
           }
           else {
             MoveAndFace (nursery47, 3)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -15607,6 +15734,10 @@
           }
           else {
             MoveAndFace (nursery46, 1)
+            Laila.paused = False
+            if (game.debug) {
+              msg ("DEBUG: unpause Laila")
+            }
           }
         </script>
       </exit>
@@ -16635,7 +16766,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you. (TODO: If the boy is hiding here: You can see a faint glow emanating from under the bed.)</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -16651,7 +16782,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you. (TODO: If the boy is hiding here: You can see a faint glow emanating from under the bed.)</value>
+          <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall to the west of you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -16670,9 +16801,18 @@
           <value>This is where the boy hides for the 2nd time.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery61.maven_here and player.facing_num = 0) {
+          if (Maven.conversation_part = 4 and lantern.light_level <> 0) {
+            msg ("You can see a faint glow emanating from under the bed.")
+          }
+          else if (Maven.conversation_part = 5) {
+            msg ("Maven is standing in front of you.")
+          }
+        }
+      ]]></description>
+      <attr name="maven_here" type="boolean">false</attr>
       <exit name="East152" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -16680,6 +16820,52 @@
           MoveAndFace (nursery60, 1)
         </script>
       </exit>
+      <command name="Examine Bed">
+        <pattern type="string">(examine|look|check|ex|l|look in|open) bed</pattern>
+        <script>
+          if (nursery61.maven_here) {
+            DisableHeart
+            if (Maven.conversation_part = 4) {
+              msg ("‘Yay! You’re so good at this!’ Maven bounces around you, excitedly. He stops and looks at you for a moment, then says ‘You know you’re changing, right? Like, you feel different, right?' You look at him confused for a moment. 'Ah, never mind, I guess it’s better if you don’t know.' Maven nods to himself, and spins around in a circle. 'Can we play one last time? I’ll help you get out of here if you do…'")
+              Maven.conversation_part = 5
+            }
+            else if (Maven.conversation_part = 5) {
+              msg ("'So will you play again?' he asks, looking much happier than when you originally met him.")
+            }
+          }
+          else {
+            msg ("There's nothing particularly interesting about the bed."
+          }
+        </script>
+      </command>
+      <command name="Talk To Maven1">
+        <unresolved type="string"></unresolved>
+        <pattern type="string">(talk|talk to|talk to boy|talk to ghost|speak|speak to|speak to boy|speak to ghost)</pattern>
+        <script>
+          if (nursery61.maven_here and Maven.conversation_part = 5) {
+            DisableHeart
+            msg ("'So will you play again?' he asks, looking much happier than when you originally met him.")
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
+      <command name="Say Yes4">
+        <pattern type="string">(say yes|yes|tell boy yes|tell ghost yes|accept|accept game|play|play with boy|play with ghost)</pattern>
+        <script>
+          if (Maven.conversation_part = 5) {
+            DisableHeart
+            msg ("Maven, already excited, bounces away without even replying. You can hear him singing again though: 'Hush-a-by baby, On the tree top, When the wind blows, The cradle will rock...'")
+            nursery61.maven_here = False
+            nursery25.maven_here = True
+            Maven.conversation_part = 6
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery62">
       <inherit name="editor_room" />
@@ -16906,6 +17092,10 @@
           }
           else {
             MoveAndFace (nursery65, 3)
+            Laila.paused = True
+            if (game.debug) {
+              msg ("DEBUG: pause Laila")
+            }
           }
         </script>
       </exit>
@@ -17012,6 +17202,10 @@
           }
           else {
             MoveAndFace (nursery64, 1)
+            Laila.paused = False
+            if (game.debug) {
+              msg ("DEBUG: unpause Laila")
+            }
           }
         </script>
       </exit>
@@ -25207,7 +25401,7 @@
           ResetPeter
         }
         else {
-          msg ("You see the small boy claw out from under the hanging coats, and other garments. His face is screwed up rage, and he looks deranged. Half of his face looks as if it was melted off in a fire, and he spits, and growls at you. He clears the coats, and dives at you knocking you down. Ripping at your flesh with his claws, he tears chunks of skin off your limbs. You try to push him off, but your hands go right through him. The only part of him that seems to be able to affect you are his hands, and you reach out to grab them to throw him off, but he is faster. He glares straight into your eyes, while reaching out and clawing at your throat. You feel yourself choke on your blood as he snarls, and stands over you as you bleed out on the ground.")
+          msg ("You see the small boy claw out from under the hanging coats, and other garments. His face is screwed up with rage, and he looks deranged. Half of his face looks as if it was melted off in a fire, and he spits, and growls at you. He clears the coats, and dives at you, knocking you down. Ripping at your flesh with his claws, he tears chunks of skin off your limbs. You try to push him off, but your hands go right through him. The only part of him that seems to be able to affect you are his hands, and you reach out to grab them to throw him off, but he is faster. He glares straight into your eyes, while reaching out and clawing at your throat. You feel yourself choke on your blood as he snarls, and stands over you as you bleed out on the ground.")
           Die
         }
       }
