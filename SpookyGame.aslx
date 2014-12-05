@@ -25805,8 +25805,8 @@
     Die
   </function>
   <function name="EndLibrary">
-    msg ("You aren't sure where the door leads, but you have no other choice. You frantically fumble with the knob and fling it open. You scramble through the doorway and slam the door behind you.")
-    msg ("It is dark and cool. Relief washes over you. A familiar dark force begins to overwhelm your senses and you drift into unconsciousness.")
+    msg ("You aren't sure where the door leads, but you have no other choice. You frantically fumble with the knob and fling it open, scrambling through the doorway and slamming the door behind you.")
+    msg ("It is dark and cool in here. Relief washes over you, and you collapse on the stone floor out of exhaustion. A familiar dark force begins to overwhelm your senses and you drift into unconsciousness.")
     msg ("In your sleep, words course through your mind. Their origin is uncertain, but to you, their meaning is clear:")
     msg ("")
     PrintRiddle (3)
