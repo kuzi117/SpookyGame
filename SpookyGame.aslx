@@ -43,8 +43,9 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = hub16
-      game.part = 3
+      game.part = 2
+      player.parent = nursery5
+      lantern.parent = player
     </start>
   </game>
   <command name="lookdir">
@@ -54,42 +55,42 @@
         case ("north") {
           FaceNorth
           msg ("You turn to face north.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("n") {
           FaceNorth
           msg ("You turn to face north.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("south") {
           FaceSouth
           msg ("You turn to face south.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("s") {
           FaceSouth
           msg ("You turn to face south.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("west") {
           FaceSouth
           msg ("You turn to face west.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("w") {
           FaceSouth
           msg ("You turn to face west.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("east") {
           FaceSouth
           msg ("You turn to face east.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case ("e") {
           FaceSouth
           msg ("You turn to face east.")
-          PrintRoomDesc (False)
+          ShowRoomDescription
         }
         case (default) {
           if (HasScript(exit, "look")) {
@@ -221,36 +222,56 @@
     <defaultexpression>"You can't turn left " + object.article + "."</defaultexpression>
   </verb>
   <command name="Face North">
-    <pattern>face North</pattern>
-    <script>
-      FaceNorth
-      msg ("You turn to face north.")
-      PrintRoomDesc (False)
-    </script>
+    <pattern type="string">(Face North|face n|f north|f n|fn)</pattern>
+    <script><![CDATA[
+      if (player.facing_num <> 0) {
+        FaceNorth
+        msg ("You turn to face north.")
+        ShowRoomDescription
+      }
+      else {
+        msg ("You are already facing north.")
+      }
+    ]]></script>
   </command>
   <command name="Face East">
-    <pattern>face East</pattern>
-    <script>
-      FaceEast
-      msg ("You turn to face east.")
-      PrintRoomDesc (False)
-    </script>
+    <pattern type="string">(Face East|face e|f east|f e|fe)</pattern>
+    <script><![CDATA[
+      if (player.facing_num <> 1) {
+        FaceEast
+        msg ("You turn to face east.")
+        ShowRoomDescription
+      }
+      else {
+        msg ("You are already facing east.")
+      }
+    ]]></script>
   </command>
   <command name="Face South">
-    <pattern>face South</pattern>
-    <script>
-      FaceSouth
-      msg ("You turn to face south.")
-      PrintRoomDesc (False)
-    </script>
+    <pattern type="string">(face south|face s|f south|f s|fs)</pattern>
+    <script><![CDATA[
+      if (player.facing_num <> 2) {
+        FaceSouth
+        msg ("You turn to face south.")
+        ShowRoomDescription
+      }
+      else {
+        msg ("You are already facing south.")
+      }
+    ]]></script>
   </command>
   <command name="Face West">
-    <pattern>face West</pattern>
-    <script>
-      FaceWest
-      msg ("You turn to face west.")
-      PrintRoomDesc (False)
-    </script>
+    <pattern type="string">(face west|f west|face w|f w|fw)</pattern>
+    <script><![CDATA[
+      if (player.facing_num <> 3) {
+        FaceWest
+        msg ("You turn to face west.")
+        ShowRoomDescription
+      }
+      else {
+        msg ("You are already facing west.")
+      }
+    ]]></script>
   </command>
   <command name="debug">
     <pattern>debugme</pattern>
@@ -2422,38 +2443,6 @@
       </exit>
     </object>
   </object>
-  <command name="Face North Short">
-    <pattern>fn</pattern>
-    <script>
-      FaceNorth
-      msg ("You turn to face North.")
-      PrintRoomDesc (False)
-    </script>
-  </command>
-  <command name="Face East Short">
-    <pattern>fe</pattern>
-    <script>
-      FaceEast
-      msg ("You turn to face East.")
-      PrintRoomDesc (False)
-    </script>
-  </command>
-  <command name="Face South Short">
-    <pattern>fs</pattern>
-    <script>
-      FaceSouth
-      msg ("You turn to face South.")
-      PrintRoomDesc (False)
-    </script>
-  </command>
-  <command name="Face West Short">
-    <pattern>fw</pattern>
-    <script>
-      FaceWest
-      msg ("You turn to face West.")
-      PrintRoomDesc (False)
-    </script>
-  </command>
   <object name="hub">
     <inherit name="editor_object" />
     <object name="hub1">
@@ -11638,6 +11627,7 @@
           <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
       </descriptions>
+      <door_closed />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -11660,9 +11650,38 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery6, 3)
+          if (nursery5.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery6, 3)
+          }
         </script>
       </exit>
+      <command name="Open door2">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery5.door_closed) {
+            msg ("The door swings open.")
+            nursery5.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
+      <command name="Shut door2">
+        <pattern type="string">(close|shut) door</pattern>
+        <script>
+          if (nursery5.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery5.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery6">
       <inherit name="editor_room" />
@@ -11698,7 +11717,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a table to the north of you. (TODO: Before you have originally spoken to the boy: There is some kind of translucent glimmer a few steps northwest of you.)</value>
+          <value>There is a table to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -11714,17 +11733,31 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a table to the north of you. (TODO: Before you have originally spoken to the boy: There is some kind of translucent glimmer a few steps northwest of you.)</value>
+          <value>There is a table to the north of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here and lantern.light_level <> 0) {
+          if (player.facing_num = 0) {
+            msg ("There is some kind of translucent glimmer a few steps northwest of you.")
+          }
+          else if (player.facing_num = 3) {
+            msg ("There is some kind of translucent glimmer a few steps northwest of you.")
+          }
+        }
+      ]]></description>
       <exit name="East66" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
+        <locked type="boolean">false</locked>
         <script type="script">
-          MoveAndFace (nursery5, 1)
+          if (nursery5.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery5, 1)
+          }
         </script>
       </exit>
       <exit name="South48" alias="south" to="defaultroom">
@@ -11742,6 +11775,30 @@
           MoveAndFace (nursery7, 3)
         </script>
       </exit>
+      <command name="Shut door3">
+        <pattern type="string">(close|shut) door</pattern>
+        <script>
+          if (nursery5.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery5.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
+      <command name="Open door3">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery5.door_closed) {
+            msg ("The door swings open.")
+            nursery5.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery7">
       <inherit name="editor_room" />
@@ -11765,7 +11822,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a table to the southeast of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
+          <value>There is a table to the southeast of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -11777,11 +11834,11 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a dresser to the south of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
+          <value>There is a dresser to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a table to the southeast of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
+          <value>There is a table to the southeast of you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -11793,12 +11850,20 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a dresser to the south of you. (TODO: Before you have originally spoken to the boy: You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.)</value>
+          <value>There is a dresser to the south of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here and lantern.light_level <> 0) {
+          if (player.facing_num = 0) {
+            msg ("You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.")
+          }
+          else if (player.facing_num = 3) {
+            msg ("You can see a glimmer hanging in the air to the northwest. It looks like the shape of a child.")
+          }
+        }
+      ]]></description>
       <exit name="North51" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -11844,11 +11909,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: There is a figure of a little boy in front of you, he is translucent.)</value>
+          <value>There is a small bed to the northwest of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: there is a figure of a little boy to the north of you, he is translucent.)</value>
+          <value>There is a small bed to the northwest of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -11856,15 +11921,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a dresser to the south of you, and a small bed to the northwest. (TODO: Before you have original spoken to the boy: There is a figure of a little boy to the north of you, he is translucent.)</value>
+          <value>There is a dresser to the south of you, and a small bed to the northwest. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: There is a figure of a little boy in front of you, he is translucent.)</value>
+          <value>There is a small bed to the northwest of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small bed to the northwest of you. (TODO: Before you have originally spoken to the boy: there is a figure of a little boy to the north of you, he is translucent.)</value>
+          <value>There is a small bed to the northwest of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -11872,18 +11937,45 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a dusty dresser to the south of you, and a small bed to the northwest. (TODO: Before you have original spoken to the boy: There is a figure of a little boy to the north of you, he is translucent.)</value>
+          <value>There is a dusty dresser to the south of you, and a small bed to the northwest.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here) {
+          if (player.facing_num = 0) {
+            if (lantern.light_level = 0) {
+              msg ("There is a figure of a little boy in front of you, he is translucent.")
+            }
+            else {
+              msg ("There is a figure of a little boy in front of you, he is translucent.")
+            }
+          }
+          else if (player.facing_num = 1 and lantern.light_level <> 0) {
+            msg ("There is a figure of a little boy to the north of you, he is translucent.")
+          }
+          else if (player.facing_num = 3 and lantern.light_level <> 0) {
+            msg ("There is a figure of a little boy to the north of you, he is translucent.")
+          }
+        }
+      ]]></description>
       <exit name="North53" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
-        <script type="script">
-          MoveAndFace (nursery14, 0)
-        </script>
+        <script type="script"><![CDATA[
+          if (nursery14.maven_here) {
+            if (player.facing_num <> 0) {
+              msg ("You turn to move North and notice a ghost boy is already standing there.")
+              FaceNorth
+            }
+            else {
+              msg ("The ghost boy is there and walking through him feels... rude.")
+            }
+          }
+          else {
+            MoveAndFace (nursery14, 0)
+          }
+        ]]></script>
       </exit>
       <exit name="East71" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
@@ -11900,6 +11992,40 @@
           MoveAndFace (nursery9, 3)
         </script>
       </exit>
+      <command name="Talk to Maven1">
+        <pattern type="string">(talk|talk to|talk to boy|talk to ghost|speak|speak to|speak to boy|speak to ghost)</pattern>
+        <script>
+          DisableHeart
+          switch (Maven.conversation_part) {
+            case (0) {
+              msg ("'Another one, huh?' The little boy stares at you for a moment, he is small, frail looking, and in tattered clothing from a time long since past. 'I’m Maven, will you play with me?'")
+              Maven.conversation_part = 1
+            }
+            case (1) {
+              msg ("'So will you play with me?' he asks again quietly.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Say Yes1">
+        <pattern type="string">(say yes|yes|tell boy yes|tell ghost yes|accept|accept game|play|play with boy|play with ghost)</pattern>
+        <script>
+          if (Maven.conversation_part = 1) {
+            DisableHeart
+            Maven.conversation_part = 2
+            msg ("\"Oh, thank you! The others never want to play… hide and seek is my favorite, I will hide, okay?\" Maven turns and starts running away. He stops and turns back for a moment. \"You better come find me, but be careful of the others… Laila, she wants to play too, but I don’t… think she knows what it means! She is really mean, I don’t like to play with her. She doesn't like bright lights.\"")
+            nursery12.door_locked = false
+            nursery31.door_locked = false
+            nursery44.door_locked = false
+            nursery46.door_locked = false
+            nursery64.door_locked = false
+            nursery14.maven_here = false
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery9">
       <inherit name="editor_room" />
@@ -11939,11 +12065,11 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small bed in front of you. (TODO: Before you originally talk to the boy: There is glimmer hanging in the air to the northeast.)</value>
+          <value>There is a small bed in front of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small bed to the north of you, and a dresser to the southeast. (TODO: Before you originally talk to the boy: There is a glimmer hanging in the air to the northeast.)</value>
+          <value>There is a small bed to the north of you, and a dresser to the southeast.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -11954,9 +12080,17 @@
           <value>There is a wall in front of you, and a small bed to the north. </value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here and lantern.light_level <> 0) {
+          if (player.facing_num = 0) {
+            msg ("There is glimmer hanging in the air to the northeast. It has a child-like shape.")
+          }
+          else if (player.facing_num = 1) {
+            msg ("There is glimmer hanging in the air to the northeast. It has a child-like shape.")
+          }
+        }
+      ]]></description>
       <exit name="East72" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -12119,9 +12253,38 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery12, 3)
+          if (nursery12.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery12, 3)
+          }
         </script>
       </exit>
+      <command name="Shut door4">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery12.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery12.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
+      <command name="Open door4">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery12.door_closed) {
+            msg ("The door swings open.")
+            nursery12.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery12">
       <inherit name="editor_room" />
@@ -12176,6 +12339,8 @@
           <value>You are in a narrow hallway, there is a wall in front of you. There is a painting of a lady on the wall, it feels like she is watching you. </value>
         </item>
       </descriptions>
+      <door_closed />
+      <door_locked />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -12190,7 +12355,12 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (nursery11, 1)
+          if (nursery12.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery11, 1)
+          }
         </script>
       </exit>
       <exit name="South59" alias="south" to="defaultroom">
@@ -12200,6 +12370,35 @@
           MoveAndFace (nursery5, 2)
         </script>
       </exit>
+      <command name="Shut door5">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery12.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery12.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
+      <command name="Open door5">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery12.door_locked) {
+            msg ("You turn the handle but find the door locked.")
+          }
+          else {
+            if (nursery12.door_closed) {
+              msg ("The door swings open.")
+              nursery12.door_closed = False
+            }
+            else {
+              msg ("The door is already open.")
+            }
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery13">
       <inherit name="editor_room" />
@@ -12231,11 +12430,11 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a table to the east of you. (TODO: Before you have met the boy: There is a figure of a small boy hanging in the air to the west of you.)</value>
+          <value>There is a table to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
+          <value> There is a small bed a few steps forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -12251,12 +12450,28 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small bed a few steps forwards, and a wall a few steps north. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
+          <value>There is a small bed a few steps forwards, and a wall a few steps north.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here) {
+          if (player.facing_num = 3) {
+            if (lantern.light_level = 0) {
+              msg ("There is a figure of a small boy hanging in the air in front of you. He is looking up at you.")
+            }
+            else {
+              msg ("There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.")
+            }
+          }
+          else if (player.facing_num = 2 and lantern.light_level <> 0) {
+            msg ("There is a figure of a small boy hanging in the air to the west of you.")
+          }
+          else if (player.facing_num = 0 and lantern.light_level <> 0) {
+            msg ("There is a figure of a small boy hanging in the air to the west of you.")
+          }
+        }
+      ]]></description>
       <exit name="North67" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -12275,10 +12490,55 @@
         <inherit name="westdirection" />
         <runscript />
         <visible />
-        <script type="script">
-          MoveAndFace (nursery14, 3)
-        </script>
+        <script type="script"><![CDATA[
+          if (nursery14.maven_here) {
+            if (player.facing_num <> 3) {
+              msg ("You turn to move West and notice a ghost boy is already standing there.")
+              FaceWest
+            }
+            else {
+              msg ("The ghost boy is there and walking through him feels... rude.")
+            }
+          }
+          else {
+            MoveAndFace (nursery14, 3)
+          }
+        ]]></script>
       </exit>
+      <command name="Talk to Maven">
+        <pattern type="string">(talk|talk to|talk to boy|talk to ghost|speak|speak to|speak to boy|speak to ghost)</pattern>
+        <script>
+          DisableHeart
+          switch (Maven.conversation_part) {
+            case (0) {
+              msg ("'Another one, huh?' The little boy stares at you for a moment, he is small, frail looking, and in tattered clothing from a time long since past. 'I’m Maven, will you play with me?'")
+              Maven.conversation_part = 1
+            }
+            case (1) {
+              msg ("'So will you play with me?' he asks again quietly.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Say Yes">
+        <pattern type="string">(say yes|yes|tell boy yes|tell ghost yes|accept|accept game|play|play with boy|play with ghost)</pattern>
+        <script>
+          if (Maven.conversation_part = 1) {
+            DisableHeart
+            Maven.conversation_part = 2
+            msg ("\"Oh, thank you! The others never want to play… hide and seek is my favorite, I will hide, okay?\" Maven turns and starts running away. He stops and turns back for a moment. \"You better come find me, but be careful of the others… Laila, she wants to play too, but I don’t… think she knows what it means! She is really mean, I don’t like to play with her. She doesn't like bright lights.\"")
+            nursery12.door_locked = false
+            nursery31.door_locked = false
+            nursery44.door_locked = false
+            nursery46.door_locked = false
+            nursery64.door_locked = false
+            nursery14.maven_here = false
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery14">
       <inherit name="editor_room" />
@@ -12333,6 +12593,7 @@
           <value>There is a small bed in front of you, and a wall to the north. </value>
         </item>
       </descriptions>
+      <maven_here />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -12602,11 +12863,11 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a table to the east of you. (TODO: Before you met boy: There is a glimmer hanging in the air to the southwest.)</value>
+          <value>There is a table to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a wall to the north of you. (TODO: Before you met boy: There is a figure of a small boy hanging in the air to the southwest, he is translucent.)</value>
+          <value>There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -12618,16 +12879,24 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a table to the east of you. There is a small bed a few steps to the west. (TODO: Before you met boy: There is a glimmer hanging in the air to the southwest.)</value>
+          <value>There is a table to the east of you. There is a small bed a few steps to the west.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall to the north of you. There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air to the southwest, he is translucent.)</value>
+          <value>There is a wall to the north of you. There is a small bed a few steps forwards.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here and lantern.light_level <> 0) {
+          if (player.facing_num = 2) {
+            msg ("There is a figure of a small boy hanging in the air to the southwest, he is translucent.")
+          }
+          else if (player.facing_num = 3) {
+            msg ("There is a figure of a small boy hanging in the air to the southwest, he is translucent.")
+          }
+        }
+      ]]></description>
       <exit name="South80" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -12670,15 +12939,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a wall to the north of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
+          <value>There is a wall to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small bed to the west of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air in front of you.)</value>
+          <value>There is a small bed to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small bed in front of you, and a wall to the north.  (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
+          <value>There is a small bed in front of you, and a wall to the north.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -12686,20 +12955,36 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a wall to the north of you, and a small table a few steps forwards. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
+          <value>There is a wall to the north of you, and a small table a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small bed to the west of you. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air in front of you.)</value>
+          <value>There is a small bed to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small bed in front of you, and a wall to the north. (TODO: Before you meet boy: There is a translucent figure of a small boy hanging in the air to the south of you.)</value>
+          <value>There is a small bed in front of you, and a wall to the north.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (nursery14.maven_here) {
+          if (player.facing_num = 2) {
+            if (lantern.light_level = 0) {
+              msg ("There is a translucent figure of a small boy hanging in the air in front of you.")
+            }
+            else {
+              msg ("There is a translucent figure of a small boy hanging in the air in front of you.")
+            }
+          }
+          else if (player.facing_num = 1 and lantern.light_level <> 0) {
+            msg ("There is a translucent figure of a small boy hanging in the air to the south of you.")
+          }
+          else if (player.facing_num = 3 and lantern.light_level <> 0) {
+            msg ("There is a translucent figure of a small boy hanging in the air to the south of you.")
+          }
+        }
+      ]]></description>
       <exit name="East86" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -12710,10 +12995,55 @@
       <exit name="South87" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
-        <script type="script">
-          MoveAndFace (nursery14, 2)
-        </script>
+        <script type="script"><![CDATA[
+          if (nursery14.maven_here) {
+            if (player.facing_num <> 2) {
+              msg ("You turn to move South and notice a ghost boy is already standing there.")
+              FaceSouth
+            }
+            else {
+              msg ("The ghost boy is there and walking through him feels... rude.")
+            }
+          }
+          else {
+            MoveAndFace (nursery14, 2)
+          }
+        ]]></script>
       </exit>
+      <command name="Talk to Maven2">
+        <pattern type="string">(talk|talk to|talk to boy|talk to ghost|speak|speak to|speak to boy|speak to ghost)</pattern>
+        <script>
+          DisableHeart
+          switch (Maven.conversation_part) {
+            case (0) {
+              msg ("'Another one, huh?' The little boy stares at you for a moment, he is small, frail looking, and in tattered clothing from a time long since past. 'I’m Maven, will you play with me?'")
+              Maven.conversation_part = 1
+            }
+            case (1) {
+              msg ("'So will you play with me?' he asks again quietly.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Say Yes2">
+        <pattern type="string">(say yes|yes|tell boy yes|tell ghost yes|accept|accept game|play|play with boy|play with ghost)</pattern>
+        <script>
+          if (Maven.conversation_part = 1) {
+            DisableHeart
+            Maven.conversation_part = 2
+            msg ("\"Oh, thank you! The others never want to play… hide and seek is my favorite, I will hide, okay?\" Maven turns and starts running away. He stops and turns back for a moment. \"You better come find me, but be careful of the others… Laila, she wants to play too, but I don’t… think she knows what it means! She is really mean, I don’t like to play with her. She doesn't like bright lights.\"")
+            nursery12.door_locked = false
+            nursery31.door_locked = false
+            nursery44.door_locked = false
+            nursery46.door_locked = false
+            nursery64.door_locked = false
+            nursery14.maven_here = false
+          }
+          else {
+            msg ("I don't understand your command.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery20">
       <inherit name="editor_room" />
@@ -13580,6 +13910,8 @@
           <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
       </descriptions>
+      <door_closed />
+      <door_locked />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -13602,9 +13934,43 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery32, 3)
+          if (nursery31.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery32, 3)
+          }
         </script>
       </exit>
+      <command name="Open door6">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery31.door_locked) {
+            msg ("You turn the handle but find the door locked.")
+          }
+          else {
+            if (nursery31.door_closed) {
+              msg ("The door swings open.")
+              nursery31.door_closed = False
+            }
+            else {
+              msg ("The door is already open.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Shut door6">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery31.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery31.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery32">
       <inherit name="editor_room" />
@@ -13673,7 +14039,12 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (nursery31, 1)
+          if (nursery31.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery31, 1)
+          }
         </script>
       </exit>
       <exit name="South123" alias="south" to="defaultroom">
@@ -13691,6 +14062,30 @@
           MoveAndFace (nursery33, 3)
         </script>
       </exit>
+      <command name="Open door7">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery31.door_closed) {
+            msg ("The door swings open.")
+            nursery31.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
+      <command name="Shut door7">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery31.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery31.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery33">
       <inherit name="editor_room" />
@@ -14507,9 +14902,38 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery44, 3)
+          if (nursery44.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery44, 3)
+          }
         </script>
       </exit>
+      <command name="Open door8">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery44.door_closed) {
+            msg ("The door swings open.")
+            nursery44.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
+      <command name="Shut door8">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery44.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery44.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery44">
       <inherit name="editor_room" />
@@ -14564,6 +14988,8 @@
           <value>You are in a narrow hallway, there is a wall in front of you.</value>
         </item>
       </descriptions>
+      <door_closed />
+      <door_locked />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -14578,7 +15004,12 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (nursery43, 1)
+          if (nursery44.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery43, 1)
+          }
         </script>
       </exit>
       <exit name="South135" alias="south" to="defaultroom">
@@ -14588,6 +15019,35 @@
           MoveAndFace (nursery38, 2)
         </script>
       </exit>
+      <command name="Open door9">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery44.door_locked) {
+            msg ("You turn the handle but find the door locked.")
+          }
+          else {
+            if (nursery44.door_closed) {
+              msg ("The door swings open.")
+              nursery44.door_closed = False
+            }
+            else {
+              msg ("The door is already open.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Shut door9">
+        <pattern type="string">(close|shut|lock) door</pattern>
+        <script>
+          if (nursery44.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery44.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery45">
       <inherit name="editor_room" />
@@ -14706,6 +15166,8 @@
           <value>You are in a narrow hallway, there is a door in front of you.</value>
         </item>
       </descriptions>
+      <door_closed />
+      <door_locked />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -14728,7 +15190,7 @@
         <runscript />
         <visible />
         <script type="script">
-          if (nursery47.door_closed) {
+          if (nursery46.door_closed) {
             msg ("A closed door blocks your way.")
           }
           else {
@@ -14739,19 +15201,40 @@
       <command name="Open door">
         <pattern type="string">(open|push|kick|hit|punch) door</pattern>
         <script>
-          msg ("The door swings open easily.")
-          nursery47.door_closed = False
+          if (nursery46.door_locked) {
+            msg ("You turn the handle but find the door locked.")
+          }
+          else {
+            if (nursery46.door_closed) {
+              msg ("The door swings open.")
+              nursery46.door_closed = False
+            }
+            else {
+              msg ("The door is already open.")
+            }
+          }
         </script>
       </command>
       <command name="Shut door">
         <pattern type="string">(close|shut|lock) door</pattern>
         <script>
-          nursery47.door_closed = True
           if (Peter.chasing) {
-            msg ("You slam the door shut.")
+            if (nursery46.door_closed) {
+              msg ("The door is already closed.")
+            }
+            else {
+              msg ("You slam the door shut.")
+              nursery46.door_closed = True
+            }
           }
           else {
-            msg ("You close the door.")
+            if (nursery46.door_closed) {
+              msg ("The door is already closed.")
+            }
+            else {
+              nursery46.door_closed = True
+              msg ("You close the door.")
+            }
           }
         </script>
       </command>
@@ -14809,14 +15292,14 @@
           <value>There is a little translucent boy in front of you. He stands up off the ground and is growling, snarling, and glaring at you. He is clawing his way through the rack of old clothes to reach you.</value>
         </item>
       </descriptions>
-      <door_closed />
       <description type="script">
+        JumpScare
         OutputTextNoBr ("As you enter the room you hear a shriek from directly in front of you. ")
         if (lantern.light_level=2) {
-          msg ("A ghostly child a few steps in front of you throws his toys aside and begins to sprint at you.")
+          msg ("There's also motion beneath a rack of hanging coats in the same direction.")
         }
         else if (lantern.light_level=1) {
-          msg ("You see a thrashing of motion a few steps in front of you, before the darkness begins to charge at you.")
+          msg ("There's also motion in the same direction.")
         }
         else {
           msg ("")
@@ -14833,7 +15316,7 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          if (nursery47.door_closed) {
+          if (nursery46.door_closed) {
             msg ("A closed door blocks your way.")
           }
           else {
@@ -14844,15 +15327,25 @@
       <command name="Shut door1">
         <pattern type="string">(close|shut|lock) door</pattern>
         <script>
-          nursery47.door_closed = True
-          msg ("You slam the door shut.")
+          if (nursery46.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery46.door_closed = True
+            msg ("As you quickly close the door you begin to realize you've probably made a mistake.")
+          }
         </script>
       </command>
       <command name="Open door1">
         <pattern type="string">(open|push|kick|hit|punch) door</pattern>
         <script>
-          msg ("The door swings open easily.")
-          nursery47.door_closed = False
+          if (nursery46.door_closed) {
+            msg ("The door swings open.")
+            nursery46.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
         </script>
       </command>
       <command name="Fight Peter">
@@ -16069,6 +16562,8 @@
           <value>You are in a narrow hallway, there is a door in front of you, and a wall to the north of you.</value>
         </item>
       </descriptions>
+      <door_locked />
+      <door_closed />
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -16084,9 +16579,43 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (nursery65, 3)
+          if (nursery64.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery65, 3)
+          }
         </script>
       </exit>
+      <command name="Open door10">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery64.door_locked) {
+            msg ("You turn the handle but find the door locked.")
+          }
+          else {
+            if (nursery64.door_closed) {
+              msg ("The door swings open.")
+              nursery64.door_closed = False
+            }
+            else {
+              msg ("The door is already open.")
+            }
+          }
+        </script>
+      </command>
+      <command name="Shut door10">
+        <pattern type="string">(close|shut) door</pattern>
+        <script>
+          if (nursery64.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery64.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery65">
       <inherit name="editor_room" />
@@ -16148,7 +16677,12 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (nursery64, 1)
+          if (nursery64.door_closed) {
+            msg ("A closed door blocks your way.")
+          }
+          else {
+            MoveAndFace (nursery64, 1)
+          }
         </script>
       </exit>
       <exit name="West155" alias="west" to="defaultroom">
@@ -16159,6 +16693,30 @@
           MoveAndFace (nursery66, 3)
         </script>
       </exit>
+      <command name="Open door11">
+        <pattern type="string">(open|push|kick|hit|punch) door</pattern>
+        <script>
+          if (nursery64.door_closed) {
+            msg ("The door swings open.")
+            nursery64.door_closed = False
+          }
+          else {
+            msg ("The door is already open.")
+          }
+        </script>
+      </command>
+      <command name="Shut door11">
+        <pattern type="string">(close|shut) door</pattern>
+        <script>
+          if (nursery64.door_closed) {
+            msg ("The door is already closed.")
+          }
+          else {
+            nursery64.door_closed = True
+            msg ("You close the door.")
+          }
+        </script>
+      </command>
     </object>
     <object name="nursery66">
       <inherit name="editor_room" />
@@ -16236,6 +16794,17 @@
       <chasing type="boolean">false</chasing>
       <distance type="int">3</distance>
       <attr name="start_distance" type="int">3</attr>
+    </object>
+    <object name="Laila">
+      <inherit name="editor_object" />
+      <attr name="chase_state" type="int">0</attr>
+      <paused type="boolean">false</paused>
+      <attr name="sub_state" type="int">0</attr>
+      <attr name="attack_from" type="int">0</attr>
+    </object>
+    <object name="Maven">
+      <inherit name="editor_object" />
+      <attr name="conversation_part" type="int">0</attr>
     </object>
   </object>
   <object name="library">
@@ -24395,21 +24964,6 @@
       </exit>
     </object>
   </object>
-  <turnscript name="peter_turn_script">
-    <script><![CDATA[
-      Peter.distance = Peter.distance - 1
-      if (game.debug) {
-        msg ("DEBUG: PETER DISTANCE = " + Peter.distance)
-      }
-      if (nursery47.door_closed) {
-        ResetPeter
-      }
-      else if (Peter.distance <= 0) {
-        msg ("Just as you have time to observe the room, the child tackles the soul right out of you.")
-        Die
-      }
-    ]]></script>
-  </turnscript>
   <turnscript name="butcher_turn_script">
     <enabled />
     <script><![CDATA[
@@ -24480,6 +25034,27 @@
       }
     ]]></script>
   </turnscript>
+  <turnscript name="peter_turn_script">
+    <script><![CDATA[
+      Peter.distance = Peter.distance - 1
+      if (game.debug) {
+        msg ("DEBUG: PETER DISTANCE = " + Peter.distance)
+      }
+      if (nursery46.door_closed) {
+        if (player.parent <> nursery47) {
+          ResetPeter
+        }
+        else {
+          msg ("You see the small boy claw out from under the hanging coats, and other garments. His face is screwed up rage, and he looks deranged. Half of his face looks as if it was melted off in a fire, and he spits, and growls at you. He clears the coats, and dives at you knocking you down. Ripping at your flesh with his claws, he tears chunks of skin off your limbs. You try to push him off, but your hands go right through him. The only part of him that seems to be able to affect you are his hands, and you reach out to grab them to throw him off, but he is faster. He glares straight into your eyes, while reaching out and clawing at your throat. You feel yourself choke on your blood as he snarls, and stands over you as you bleed out on the ground.")
+          Die
+        }
+      }
+      else if (Peter.distance <= 0) {
+        msg ("You see the small boy claw out from under the hanging coats, and other garments. His face is screwed up rage, and he looks deranged. Half of his face looks as if it was melted off in a fire, and he spits, and growls at you. He clears the coats, and dives at you knocking you down. Ripping at your flesh with his claws, he tears chunks of skin off your limbs. You try to push him off, but your hands go right through him. The only part of him that seems to be able to affect you are his hands, and you reach out to grab them to throw him off, but he is faster. He glares straight into your eyes, while reaching out and clawing at your throat. You feel yourself choke on your blood as he snarls, and stands over you as you bleed out on the ground. ")
+        Die
+      }
+    ]]></script>
+  </turnscript>
   <verb>
     <property>fix</property>
     <pattern>fix</pattern>
@@ -24517,7 +25092,7 @@
             msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
           }
           else if (lantern.light_level = 1) {
-            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible.")
+            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
           }
           lantern.fuel_level = lantern.fuel_level - lantern.light_level
         }
@@ -24558,6 +25133,181 @@
         EnableHeart
       }
     </script>
+  </turnscript>
+  <turnscript name="laila_turn_script">
+    <enabled />
+    <script><![CDATA[
+      if (not Laila.paused) {
+        if (Laila.chase_state = 0 and GetRandomDouble() < .25) {
+          msg ("You hear distant giggling...")
+          Laila.chase_state = 1
+          switch (player.facing_num) {
+            case (0) {
+              Laila.attack_from = 2
+            }
+            case (2) {
+              Laila.attack_from = 0
+            }
+            case (1) {
+              if (GetRandomDouble() < .5) {
+                Laila.attack_from = 2
+              }
+              else {
+                Laila.attack_from = 0
+              }
+            }
+            case (3) {
+              if (GetRandomDouble() < .5) {
+                Laila.attack_from = 2
+              }
+              else {
+                Laila.attack_from = 0
+              }
+            }
+          }
+          if (game.debug) {
+            msg ("DEBUG: Laila advancing to stage 1: attacking from " + Laila.attack_from)
+          }
+        }
+        else if (Laila.chase_state = 1) {
+          // Don't advance if you're bright or looking at her
+          if (lantern.light_level <> 2 or (lantern.light_level = 2 and (not (player.facing_num = Laila.attack_from)))) {
+            // Tick at least once
+            // On second 50/50 chance to advance or stay in 2
+            // On third tick always move to state 3 (PS, these comments used to be in useful places, but quest moves them to a shitty place)
+            if (Laila.sub_state = 0) {
+              Laila.sub_state = 1
+            }
+            else if (Laila.sub_state = 1) {
+              if (GetRandomDouble() < .5) {
+                Laila.sub_state = 0
+                Laila.chase_state = 2
+                if (game.debug) {
+                  msg ("DEBUG: Laila advancing to stage 2 on 2")
+                }
+              }
+              else {
+                Laila.sub_state = 2
+              }
+            }
+            else if (Laila.sub_state = 2) {
+              Laila.sub_state = 0
+              Laila.chase_state = 2
+              if (game.debug) {
+                msg ("DEBUG: Laila advancing to stage 2 on 3")
+              }
+            }
+          }
+          else if (game.debug) {
+            msg ("DEBUG: Laila waiting in stage 1")
+          }
+        }
+        else if (Laila.chase_state = 2) {
+          // Don't advance if you're bright or looking at her
+          if ((lantern.light_level = 0) or ( (not (player.facing_num = Laila.attack_from)) and (lantern.light_level <> 0)) ) {
+            // Tick at least once
+            // On second 50/50 chance to advance or stay in 2
+            // On third tick always move to state 3 (PS, these comments used to be in useful places, but quest moves them to a shitty place)
+            if (Laila.sub_state = 0) {
+              Laila.sub_state = 1
+            }
+            else if (Laila.sub_state = 1) {
+              if (GetRandomDouble() < .5) {
+                Laila.sub_state = 0
+                Laila.chase_state = 3
+                if (game.debug) {
+                  msg ("DEBUG: Laila advancing to stage 3 on 2")
+                }
+              }
+              else {
+                Laila.sub_state = 2
+              }
+            }
+            else if (Laila.sub_state = 2) {
+              Laila.sub_state = 0
+              Laila.chase_state = 3
+              if (game.debug) {
+                msg ("DEBUG: Laila advancing to stage 3 on 3")
+              }
+            }
+          }
+          else if (game.debug) {
+            msg ("DEBUG: Laila waiting in stage 2")
+          }
+        }
+        else if (Laila.chase_state = 3) {
+          // Don't advance if you're bright or looking at her
+          if ((lantern.light_level = 0) or (not (player.facing_num = Laila.attack_from))) {
+            // Tick at least once
+            // On second 50/50 chance to advance or stay in 3
+            // On third tick always move to state 4 (PS, these comments used to be in useful places, but quest moves them to a shitty place)
+            if (Laila.sub_state = 0) {
+              Laila.sub_state = 1
+            }
+            else if (Laila.sub_state = 1) {
+              if (GetRandomDouble() < .5) {
+                Laila.sub_state = 0
+                Laila.chase_state = 4
+              }
+              else {
+                Laila.sub_state = 2
+                if (game.debug) {
+                  msg ("DEBUG: Laila advancing to stage 4 on 2")
+                }
+              }
+            }
+            else if (Laila.sub_state = 2) {
+              Laila.sub_state = 0
+              Laila.chase_state = 4
+              if (game.debug) {
+                msg ("DEBUG: Laila advancing to stage 4 on 3")
+              }
+            }
+          }
+          else if (game.debug) {
+            msg ("DEBUG: Laila waiting in stage 3")
+          }
+        }
+        else if (Laila.chase_state = 4) {
+          if (lantern.light_level <> 0) {
+            OutputTextNoBr ("You fumble and manage to turn up you lantern too late. ")
+          }
+          msg ("'Let’s play' she giggles, and tackles you to the ground. You wheeze, having the air knocked out of you. You feel like you were hit with a ton of bricks, and your limbs feel too heavy to move. You don’t know how a little girl could be so powerful. 'Why won’t you play with me' she screams, her face screwing up in malice. She begins to slam your head on the hard stone floor, disorienting you so there is no hope of fighting back. 'Why…' slam 'won’t' slam 'you' slam 'PLAY WITH ME!' she slams your head on the ground again, with more ferocity this time.")
+          Die
+        }
+      }
+      // Now print descriptions
+      if (player.facing_num = Laila.attack_from) {
+        if (lantern.light_level = 2 and Laila.chase_state = 1) {
+          msg ("You see a faint glimmering in the distance.")
+        }
+        else if (Laila.chase_state = 2) {
+          if (lantern.light_level = 1) {
+            msg ("You see a faint glimmering a few meters away from you.")
+          }
+          else if (lantern.light_level = 2) {
+            msg ("You see a ghostly figure a few meters away from you.")
+          }
+        }
+        else if (Laila.chase_state = 3) {
+          if (lantern.light_level = 2) {
+            msg ("You hear a shriek from the girl, 'I just wanted to play!', as she fades from existence.")
+            // Reset Laila
+            Laila.sub_state = 0
+            Laila.chase_state = 0
+            if (game.debug) {
+              msg ("Debug: Laila reset.")
+            }
+          }
+          else if (lantern.light_level = 1) {
+            msg ("A ghostly figure resembling a girl floats a short distance from you. You can see excitement on her face.")
+          }
+          else {
+            msg ("There's a faint glowing resembling a child floating a few feet off the ground not far in front off you.")
+          }
+        }
+      }
+    ]]></script>
   </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
