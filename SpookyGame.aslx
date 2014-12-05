@@ -48,7 +48,7 @@
       // REMOVE ME
       lantern.parent = player
       lantern.light_level = 2
-      player.parent = nursery65
+      player.parent = library34
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -2740,7 +2740,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle to your west. </value>
+          <value>There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle to the west. </value>
         </item>
         <item>
           <key>darkeast</key>
@@ -2748,7 +2748,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle to your west.</value>
+          <value>There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle to the west.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -3198,7 +3198,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>There is a chessboard on a small table to the north of you. To your south is a large, ornate, black door. </value>
+          <value>There is a chessboard on a small table to the north of you. To the south is a large, ornate, black door. </value>
         </item>
         <item>
           <key>darksouth</key>
@@ -3206,7 +3206,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a chessboard on a small table to the north of you. To your south is a large, ornate, black door. </value>
+          <value>There is a chessboard on a small table to the north of you. To the south is a large, ornate, black door. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3279,11 +3279,11 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You are in the corner of a small room. There is a large knight statue to your southwest. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
+          <value>You are in the corner of a small room. There is a large knight statue to the southwest. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>You are in the corner of a small room. There is a large knight statue to your southwest. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
+          <value>You are in the corner of a small room. There is a large knight statue to the southwest. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -7755,7 +7755,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a counter in front of you, and a wall to your south. You cannot see any blood on the ground.</value>
+          <value>There is a counter in front of you, and a wall to the south. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -7763,7 +7763,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a counter in front of you, and a wall to your south. You cannot see any blood on the ground.</value>
+          <value>There is a counter in front of you, and a wall to the south. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -7771,7 +7771,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a counter in front of you, and a wall to your south. You cannot see the trail of blood from here.</value>
+          <value>There is a counter in front of you, and a wall to the south. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -7779,7 +7779,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a counter in front of you, and a wall to your south. You cannot see the trail of blood from here.</value>
+          <value>There is a counter in front of you, and a wall to the south. You cannot see the trail of blood from here.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -13592,7 +13592,7 @@
         PrintRoomDesc (False)
         if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0 or player.facing_num = 3) {
-            msg ("There is a cask of oil sitting on the table to your northwest.")
+            msg ("There is a cask of oil sitting on the table to the northwest.")
           }
         }
       ]]></description>
@@ -13679,7 +13679,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -13940,7 +13940,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -14241,7 +14241,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 1) {
-            msg ("There is a cask of oil sitting on the table to your west.")
+            msg ("There is a cask of oil sitting on the table to the west.")
           }
         }
       ]]></description>
@@ -14398,7 +14398,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 1) {
-            msg ("There is a cask of oil sitting on the table to your west.")
+            msg ("There is a cask of oil sitting on the table to the west.")
           }
         }
       ]]></description>
@@ -14633,7 +14633,7 @@
         PrintRoomDesc (False)
         if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2 or player.facing_num = 3) {
-            msg ("There is a cask of oil sitting on the table to your southwest.")
+            msg ("There is a cask of oil sitting on the table to the southwest.")
           }
         }
       ]]></description>
@@ -14727,7 +14727,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -15793,7 +15793,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -15885,7 +15885,7 @@
         PrintRoomDesc (False)
         if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0 or player.facing_num = 1) {
-            msg ("There is a cask of oil sitting on the table to your northeast.")
+            msg ("There is a cask of oil sitting on the table to the northeast.")
           }
         }
       ]]></description>
@@ -16269,7 +16269,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 3) {
-            msg ("There is a cask of oil sitting on the table to your east.")
+            msg ("There is a cask of oil sitting on the table to the east.")
           }
         }
       ]]></description>
@@ -16420,7 +16420,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 0) {
-            msg ("There is a cask of oil sitting on the table to your south.")
+            msg ("There is a cask of oil sitting on the table to the south.")
           }
         }
       ]]></description>
@@ -16497,7 +16497,7 @@
         PrintRoomDesc (False)
         if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2 or player.facing_num = 1) {
-            msg ("There is a cask of oil sitting on the table to your southeast.")
+            msg ("There is a cask of oil sitting on the table to the southeast.")
           }
         }
       ]]></description>
@@ -16525,6 +16525,7 @@
   </object>
   <object name="library">
     <inherit name="editor_object" />
+    <attr name="grumpy_shadow_counter" type="int">0</attr>
     <object name="library1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -16793,6 +16794,11 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <beforefirstenter type="script">
+        msg ("You trip on a book lying on the floor, falling into the shelf. While trying to catch yourself you flail your arms for balance. Your lantern is blown out from the air movement, and you regain your balance, standing upright again.")
+        lantern.light_level = 0
+        JumpScare
+      </beforefirstenter>
       <exit name="South52" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -17579,7 +17585,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -18701,7 +18707,12 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (library32, 0)
+          msg ("Your foot gets caught in a hole on the ground, and you crash into a bookshelf. You hear a screech and something rushes at you. It pushes you, and you go flying through the air. You land harshly on the ground, with the lantern still in hand, but now unlit. The creature seems to be satisfied, picks up the books all over the floor in one quick motion, and wanders off. You get up.")
+          JumpScare
+          lantern.light_level = 0
+          lantern.fuel_level = lantern.fuel_level - 10
+          FaceWest
+          player.parent = library30
         </script>
       </exit>
     </object>
@@ -18763,8 +18774,11 @@
         </item>
       </descriptions>
       <description type="script">
-        PrintRoomDesc (False)
       </description>
+      <enter type="script">
+      </enter>
+      <beforeenter type="script">
+      </beforeenter>
       <exit name="South167" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -18977,7 +18991,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 3) {
-            msg ("There is a cask of oil sitting on the table to your east.")
+            msg ("There is a cask of oil sitting on the table to the east.")
           }
         }
       ]]></description>
@@ -20021,7 +20035,8 @@
         </item>
       </descriptions>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("The tall creature looks at you, and snarls. He is towering over you, and you can feel his breath on your face. He brings his face as close to yours as possible, and roars louder than you have ever heard before. You are disoriented, and deaf. You can feel warm blood run down the sides of your face from your ears. You start getting dizzy, but before you can faint the creature raises a fist and...")
+        Die
       </description>
       <exit name="West171" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -20638,7 +20653,8 @@
         </item>
       </descriptions>
       <description type="script">
-        PrintRoomDesc (False)
+        msg ("The tall creature looks at you, and snarls. He is towering over you, and you can feel his breath on your face. He brings his face as close to yours as possible, and roars louder than you have ever heard before. You are disoriented, and deaf. You can feel warm blood run down the sides of your face from your ears. You start getting dizzy, but before you can faint the creature raises a fist and...")
+        Die
       </description>
       <exit name="West179" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -20874,7 +20890,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 0) {
-            msg ("There is a cask of oil sitting on the table to your south.")
+            msg ("There is a cask of oil sitting on the table to the south.")
           }
         }
       ]]></description>
@@ -21471,9 +21487,14 @@
           <value>There is a bookshelf to the south of you. The path continues forwards.</value>
         </item>
       </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
+      <description type="script"><![CDATA[
+        if (player.facing_num = 0 and library71.collapsed and lantern.light_level > 0) {
+          msg ("The bookshelf a step forwards has collapsed and is blocking you from moving forward. The path continues to the west, and to the east of you.")
+        }
+        else {
+          PrintRoomDesc (False)
+        }
+      ]]></description>
       <exit name="West191" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -21493,7 +21514,12 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (library71, 0)
+          msg ("You accidentally stumble into the bookshelf. The wood on the shelf is rotting away, causing it to collapse from the added weight, and falls on top of you. The lantern is knocked out of your hands, and rolls away leaking oil out onto the floor. You think you hear something running towards you, and hold your breath. The silence rings in your ears, and you realize you don’t hear anything anymore. It must have been your imagination. You pull yourself out of the rubble, stand up, walk over to your lantern and pick it up.")
+          JumpScare
+          lantern.fuel_level = lantern.fuel_level / 2
+          North204.visible = false
+          West196.visible = false
+          library74.collapsed = true
         </script>
       </exit>
     </object>
@@ -21550,6 +21576,7 @@
           <value>TODO: implement this description</value>
         </item>
       </descriptions>
+      <collapsed type="boolean">false</collapsed>
       <description type="script">
         PrintRoomDesc (False)
       </description>
@@ -21837,15 +21864,34 @@
           <value>There is a bookshelf a step forwards that looks different than the others. It looks unstable. The path continues to the south and north of you.</value>
         </item>
       </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
+      <description type="script"><![CDATA[
+        if (player.facing_num = 3 and library71.collapsed and lantern.light_level > 0) {
+          msg ("The bookshelf a step forwards has collapsed and is blocking you from moving forward. The path continues to the south and north of you.")
+        }
+        else if (player.facing_num = 0 and library71.collapsed) {
+          if (lantern.light_level = 2) {
+            msg ("There is a bookshelf to the east of you and a collapsed bookshelf to the west. The path continues to the south and north of you.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("There is a bookshelf to the east of you and a collapsed bookshelf to the west.")
+          }
+        }
+        else {
+          PrintRoomDesc (False)
+        }
+      ]]></description>
       <exit name="West196" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (library71, 3)
+          msg ("You accidentally stumble into the bookshelf. The wood on the shelf is rotting away, causing it to collapse from the added weight, and falls on top of you. The lantern is knocked out of your hands, and rolls away leaking oil out onto the floor. You think you hear something running towards you, and hold your breath. The silence rings in your ears, and you realize you don’t hear anything anymore. It must have been your imagination. You pull yourself out of the rubble, stand up, walk over to your lantern and pick it up.")
+          JumpScare
+          player.parent = library74
+          lantern.fuel_level = lantern.fuel_level / 2
+          North204.visible = false
+          West196.visible = false
+          library71.collapsed = true
         </script>
       </exit>
       <exit name="South210" alias="south" to="defaultroom">
@@ -22165,7 +22211,14 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (library80, 0)
+          msg ("You step down on something oddly shaped, and look down at your feet to see a pile of human remains. You let out a scream, and stumble backwards.")
+          msg ("Something pulls your leg out from under you. You fall so quickly that you do not have time to brace yourself, and break your fall with your face. Blood rushes from your nose as you are dragged across the floor by your ankles.")
+          msg ("The creature lets out a screech, drops your legs and runs off.")
+          msg ("You stand up, and wipe the blood off your face.")
+          lantern.fuel_level = lantern.fuel_level - 10
+          JumpScare
+          player.parent = library77
+          FaceSouth
         </script>
       </exit>
     </object>
@@ -22595,7 +22648,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 0) {
-            msg ("There is a cask of oil sitting on the table to your south.")
+            msg ("There is a cask of oil sitting on the table to the south.")
           }
         }
       ]]></description>
@@ -23361,7 +23414,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your north.")
+            msg ("There is a cask of oil sitting on the table to the north.")
           }
         }
       ]]></description>
@@ -23471,7 +23524,12 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (library99, 0)
+          msg ("Your foot gets caught in a hole in the ground, where the floor seems to have rotted away. You fall to the ground, and your lantern falls from your grasp. You lantern gets snuffed from the commotion, and leaks some oil onto the ground.")
+          msg ("You hear a screech in the distance. You get your foot unstuck, and go retrieve your lantern.")
+          lantern.light_level = 0
+          lantern.fuel_level = lantern.fuel_level - 10
+          FaceEast
+          player.parent = library95
         </script>
       </exit>
     </object>
@@ -23603,7 +23661,7 @@
         PrintRoomDesc (False)
         if (not oil11.parent = null and lantern.light_level = 1) {
           if (player.facing_num = 0 or player.facing_num = 3) {
-            msg ("There is a cask of oil sitting on the table to your northwest.")
+            msg ("There is a cask of oil sitting on the table to the northwest.")
           }
         }
       </description>
@@ -23683,7 +23741,7 @@
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 1) {
-            msg ("There is a cask of oil sitting on the table to your west.")
+            msg ("There is a cask of oil sitting on the table to the west.")
           }
         }
       ]]></description>
@@ -23920,7 +23978,12 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (library99, 3)
+          msg ("Your foot gets caught in a hole in the ground, where the floor seems to have rotted away. You fall to the ground, and your lantern falls from your grasp. You lantern gets snuffed from the commotion, and leaks some oil onto the ground.")
+          msg ("You hear a screech in the distance. You get your foot unstuck, and go retrieve your lantern.")
+          lantern.light_level = 0
+          lantern.fuel_level = lantern.fuel_level - 10
+          FaceEast
+          player.parent = library95
         </script>
       </exit>
       <exit name="South239" alias="south" to="defaultroom">
@@ -24614,6 +24677,27 @@
     ]]></script>
   </turnscript>
   <turnscript name="paused_turn_script" />
+  <turnscript name="grumpy_shadow_turn_script">
+    <enabled />
+    <script><![CDATA[
+      if (player.parent = library41 or player.parent = library42 or player.parent = library43 or player.parent = library44 or player.parent = library49 or player.parent = library51 or player.parent = library52 or player.parent = library52 or player.parent = library57 or player.parent = library59 or player.parent = library65 or player.parent = library66 or player.parent = library67 or player.parent = library68) {
+        if (lantern.light_level > 0) {
+          library.grumpy_shadow_counter = library.grumpy_shadow_counter + 1
+        }
+        else {
+          library.grumpy_shadow_counter = 0
+        }
+        if (library.grumpy_shadow_counter = 4) {
+          msg ("The creature charges at you, snarling. He knocks you over while trying to punch your lantern. You fall to the ground, on your back. The lantern crashes on top of you, exploding like a fiery bomb, the glass splintering, and flying like shrapnel. You feel yourself cut up, and burning from the fire, but it wasn’t powerful enough to knock you unconscious, or kill you.")
+          msg ("The flames roar brightly, this enrages the creature even more, and he snarls, and begins stomping on the fire to put it out. Then, you realize that you are on fire... You feel a crushing blow to your ribs, and all the air is knocked out of you. You see him raise his foot again.")
+          Die
+        }
+      }
+      else {
+        library.grumpy_shadow_counter = 0
+      }
+    ]]></script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -24681,7 +24765,7 @@
         }
       }
     }
-    if (not game.heartEnabled) {
+    if (not game.heartEnabled and game.reenableCount = 0) {
       msg ("")
       msg ("(Time is paused. Enter any command to continue.)")
     }
@@ -24750,6 +24834,7 @@
   </function>
   <function name="Die">
     DisableHeart
+    msg ("")
     msg ("You have died.")
     finish
   </function>
