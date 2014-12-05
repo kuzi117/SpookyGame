@@ -47,7 +47,7 @@
       LockHub
       // REMOVE ME
       game.part = 2
-      player.parent = kitchen63
+      player.parent = library103
       lantern.parent = player
     </start>
     <changedpart type="script">
@@ -24671,7 +24671,14 @@
         </item>
       </descriptions>
       <description type="script">
-        PrintRoomDesc (False)
+        if (lantern.light_level = 0) {
+          msg ("You stumble on something in the darkness and fall to the ground. You scramble onto all fours and frantically search for your lantern. Before you can find it, you remember that something was following you... but now the room is oddly silent.")
+          msg ("You stand up, squinting to see. Nothing seems to be around. Suddenly, you feel breath down your neck. It is too late to run.")
+          Die
+        }
+        else {
+          PrintRoomDesc (False)
+        }
       </description>
       <exit name="West226" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -24745,6 +24752,13 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <beforefirstenter type="script">
+        msg ("The light is becoming too bright for you now, your eyes are watering and the lantern feels hot. Hotter than you remembered it ever feeling. You are disoriented by the brightness, and it feels like it is burning your hand. It stings, and you drop the lantern, unable to hold onto it any longer.")
+        msg ("The lantern falls to the floor and smashes into bits, the oil leaks everywhere and ignites. The books start to catch fire -- everything starts to catch fire.")
+        msg ("Your only choice is to continue down the hall, the rest of the area is bursting into flames quickly, and the light burns your eyes as if you were staring into the sun.")
+        JumpScare
+        DisableHeart
+      </beforefirstenter>
       <exit name="West227" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -25161,41 +25175,6 @@
       }
     ]]></script>
   </turnscript>
-  <turnscript name="reenable_heart_turn_script">
-    <enabled />
-    <script>
-      if (game.reenableCount = 0) {
-        game.reenableCount = 1
-      }
-      else {
-        EnableHeart
-      }
-    </script>
-  </turnscript>
-  <turnscript name="heartrate_turn_script">
-    <enabled />
-    <script><![CDATA[
-      if (game.heartRate < game.defaultHeartRate) {
-        offset = game.defaultHeartRate - game.heartRate
-        if (offset >= game.jumpScareAmount * 2 / 3) {
-          msg ("Your heart is pounding and your breath is short.")
-        }
-        else if (offset >= game.jumpScareAmount * 1 / 3) {
-          msg ("Your heart is beating quickly.")
-        }
-        else {
-          msg ("Your heart is starting to calm down.")
-        }
-        newHeartRate = game.heartRate + 150
-        if (newHeartRate <= game.defaultHeartRate) {
-          SetHeartRate (newHeartRate)
-        }
-        else {
-          SetHeartRate (game.defaultHeartRate)
-        }
-      }
-    ]]></script>
-  </turnscript>
   <turnscript name="peter_turn_script">
     <script><![CDATA[
       Peter.distance = Peter.distance - 1
@@ -25274,38 +25253,6 @@
     <pattern>knock over</pattern>
     <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
   </verb>
-  <turnscript name="lantern_turn_script">
-    <enabled />
-    <script><![CDATA[
-      request (RunScript, "resetHeartCount")
-      if (Got(lantern)) {
-        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
-          lantern.light_level = 0
-          lantern.burnt_out = True
-          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.low_fuel = True
-          if (lantern.light_level = 2) {
-            lantern.light_level = 1
-            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
-          }
-          else if (lantern.light_level = 1) {
-            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
-          }
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else {
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        if (game.debug) {
-          msg ("FUEL DEBUG: " + lantern.fuel_level)
-        }
-      }
-    ]]></script>
-  </turnscript>
-  <turnscript name="paused_turn_script" />
   <turnscript name="grumpy_shadow_turn_script">
     <enabled />
     <script><![CDATA[
@@ -25562,6 +25509,66 @@
       PrintRiddle (game.part)
     </script>
   </command>
+  <turnscript name="lantern_heart_turn_script">
+    <script><![CDATA[
+      request (RunScript, "resetHeartCount")
+      if (Got(lantern)) {
+        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+          lantern.light_level = 0
+          lantern.burnt_out = True
+          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+          lantern.low_fuel = True
+          if (lantern.light_level = 2) {
+            lantern.light_level = 1
+            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
+          }
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else {
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        if (game.debug) {
+          msg ("FUEL DEBUG: " + lantern.fuel_level)
+        }
+      }
+      if (game.heartRate < game.defaultHeartRate) {
+        offset = game.defaultHeartRate - game.heartRate
+        if (offset >= game.jumpScareAmount * 2 / 3) {
+          msg ("Your heart is pounding and your breath is short.")
+        }
+        else if (offset >= game.jumpScareAmount * 1 / 3) {
+          msg ("Your heart is beating quickly.")
+        }
+        else {
+          msg ("Your heart is starting to calm down.")
+        }
+        newHeartRate = game.heartRate + 150
+        if (newHeartRate <= game.defaultHeartRate) {
+          SetHeartRate (newHeartRate)
+        }
+        else {
+          SetHeartRate (game.defaultHeartRate)
+        }
+      }
+      if (game.reenableCount < 1) {
+        game.reenableCount = game.reenableCount + 1
+      }
+      else {
+        EnableHeart
+      }
+      if (not game.heartEnabled) {
+        msg ("")
+        msg ("(Time is paused. Enter any command to continue.)")
+      }
+    ]]></script>
+    <enabled />
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -25628,10 +25635,6 @@
           msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
         }
       }
-    }
-    if (not game.heartEnabled and game.reenableCount = 0) {
-      msg ("")
-      msg ("(Time is paused. Enter any command to continue.)")
     }
   </function>
   <function name="FaceNorth">
