@@ -46,8 +46,8 @@
       game.heartRate = game.defaultHeartRate
       LockHub
       // REMOVE ME
-      game.part = 2
-      player.parent = library103
+      game.part = 3
+      player.parent = hub7
       lantern.parent = player
     </start>
     <changedpart type="script">
@@ -25139,6 +25139,16 @@
           EndLibrary
         </script>
       </exit>
+      <object name="door">
+        <inherit name="editor_object" />
+        <inherit name="openable" />
+        <feature_container />
+        <close type="boolean">false</close>
+        <open type="boolean">false</open>
+        <openscript type="script">
+          EndLibrary
+        </openscript>
+      </object>
     </object>
   </object>
   <turnscript name="butcher_turn_script">
