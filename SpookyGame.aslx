@@ -2456,473 +2456,6 @@
   </command>
   <object name="hub">
     <inherit name="editor_object" />
-    <object name="hub1">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a wall in front of you. You are in the corner of a small room. The wall is made of stone, it is old and covered in cobwebs.</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall to the west of you. You are in the corner of a small room. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="South10" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub6, 2)
-        </script>
-      </exit>
-      <exit name="East1" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub2, 1)
-        </script>
-      </exit>
-    </object>
-    <object name="hub2">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a wall in front of you, it is made of stone. You are in a small room. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West3" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub1, 3)
-        </script>
-      </exit>
-      <exit name="South12" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub7, 2)
-        </script>
-      </exit>
-      <exit name="East2" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub3, 1)
-        </script>
-      </exit>
-    </object>
-    <object name="hub3">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West8" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub2, 3)
-        </script>
-      </exit>
-      <exit name="South14" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub8, 2)
-        </script>
-      </exit>
-      <exit name="East8" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub4, 1)
-        </script>
-      </exit>
-      <exit name="North13" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <scenery />
-        <locked type="boolean">false</locked>
-        <script type="script">
-          MoveAndFace (nursery1, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="hub4">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall to the north of you. A few steps forwards there is a wall.</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West9" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub3, 3)
-        </script>
-      </exit>
-      <exit name="South15" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub9, 2)
-        </script>
-      </exit>
-      <exit name="East9" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub5, 1)
-        </script>
-      </exit>
-    </object>
-    <object name="hub5">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall to the north of you. You are in the corner of a small room. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="South22" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub10, 2)
-        </script>
-      </exit>
-      <exit name="West2" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub4, 3)
-        </script>
-      </exit>
-    </object>
-    <object name="hub6">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a wall to the west of you, and a wall a few steps forwards. You are in a small room. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="South23" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub11, 2)
-        </script>
-      </exit>
-      <exit name="East23" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub7, 1)
-        </script>
-      </exit>
-      <exit name="North16" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub1, 0)
-        </script>
-      </exit>
-    </object>
     <object name="hub7">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -3178,164 +2711,6 @@
         </script>
       </exit>
     </object>
-    <object name="hub10">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a wall to the east of you. You are in a small room.</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West27" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub9, 3)
-        </script>
-      </exit>
-      <exit name="South27" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub14, 2)
-        </script>
-      </exit>
-      <exit name="North27" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub5, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="hub11">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a large oak door to the west of you. You are in a small room.</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West28" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (kitchen1, 3)
-        </script>
-      </exit>
-      <exit name="East28" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub12, 1)
-        </script>
-      </exit>
-      <exit name="North28" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub6, 0)
-        </script>
-      </exit>
-    </object>
     <object name="hub12">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -3490,92 +2865,6 @@
         <runscript />
         <script type="script">
           MoveAndFace (hub9, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="hub14">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West31" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub13, 3)
-        </script>
-      </exit>
-      <exit name="South31" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub18, 2)
-        </script>
-      </exit>
-      <exit name="East31" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library1, 1)
-        </script>
-      </exit>
-      <exit name="North31" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub10, 0)
         </script>
       </exit>
     </object>
@@ -3912,306 +3201,1020 @@
         </script>
       </exit>
     </object>
-    <object name="hub18">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West35" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub17, 3)
-        </script>
-      </exit>
-      <exit name="North35" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub14, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="hub19">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="East36" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub20, 1)
-        </script>
-      </exit>
-      <exit name="North36" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub15, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="hub20">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>There is a chessboard sitting on a small table a few steps forwards. You can see some pieces arranged on the board, but cannot tell what they are from here. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West37" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub19, 3)
-        </script>
-      </exit>
-      <exit name="East37" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub21, 1)
-        </script>
-      </exit>
-      <exit name="North37" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub16, 0)
-        </script>
-      </exit>
-      <exit name="South25" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub20, 2)
-        </script>
-      </exit>
-    </object>
-    <object name="hub21">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value> There is a large statue of a knight to the east of you, he is towering over you. You feel like youâ€™re being watched. </value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>There is a wall in front of you, and a large statue of a knight to the east of you. </value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>N/A </value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>N/A </value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West38" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub20, 3)
-        </script>
-      </exit>
-      <exit name="North38" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub17, 0)
-        </script>
-      </exit>
+    <object name="unused">
+      <inherit name="editor_object" />
+      <object name="hub1">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a wall in front of you. You are in the corner of a small room. The wall is made of stone, it is old and covered in cobwebs.</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall to the west of you. You are in the corner of a small room. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="South10" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub6, 2)
+          </script>
+        </exit>
+        <exit name="East1" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub2, 1)
+          </script>
+        </exit>
+      </object>
+      <object name="hub2">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a wall in front of you, it is made of stone. You are in a small room. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West3" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub1, 3)
+          </script>
+        </exit>
+        <exit name="South12" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub7, 2)
+          </script>
+        </exit>
+        <exit name="East2" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub3, 1)
+          </script>
+        </exit>
+      </object>
+      <object name="hub3">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West8" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub2, 3)
+          </script>
+        </exit>
+        <exit name="South14" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub8, 2)
+          </script>
+        </exit>
+        <exit name="East8" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub4, 1)
+          </script>
+        </exit>
+        <exit name="North13" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <scenery />
+          <locked type="boolean">false</locked>
+          <script type="script">
+            MoveAndFace (nursery1, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub4">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall to the north of you. A few steps forwards there is a wall.</value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West9" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub3, 3)
+          </script>
+        </exit>
+        <exit name="South15" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub9, 2)
+          </script>
+        </exit>
+        <exit name="East9" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub5, 1)
+          </script>
+        </exit>
+      </object>
+      <object name="hub5">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall to the north of you. You are in the corner of a small room. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="South22" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub10, 2)
+          </script>
+        </exit>
+        <exit name="West2" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub4, 3)
+          </script>
+        </exit>
+      </object>
+      <object name="hub6">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a wall to the west of you, and a wall a few steps forwards. You are in a small room. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="South23" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub11, 2)
+          </script>
+        </exit>
+        <exit name="East23" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub7, 1)
+          </script>
+        </exit>
+        <exit name="North16" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub1, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub10">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a wall to the east of you. You are in a small room.</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West27" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub9, 3)
+          </script>
+        </exit>
+        <exit name="South27" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub14, 2)
+          </script>
+        </exit>
+        <exit name="North27" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub5, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub11">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a large oak door to the west of you. You are in a small room.</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West28" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (kitchen1, 3)
+          </script>
+        </exit>
+        <exit name="East28" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub12, 1)
+          </script>
+        </exit>
+        <exit name="North28" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub6, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub14">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West31" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub13, 3)
+          </script>
+        </exit>
+        <exit name="South31" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub18, 2)
+          </script>
+        </exit>
+        <exit name="East31" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (library1, 1)
+          </script>
+        </exit>
+        <exit name="North31" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub10, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub18">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West35" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub17, 3)
+          </script>
+        </exit>
+        <exit name="North35" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub14, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub19">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="East36" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub20, 1)
+          </script>
+        </exit>
+        <exit name="North36" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub15, 0)
+          </script>
+        </exit>
+      </object>
+      <object name="hub20">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value>There is a chessboard sitting on a small table a few steps forwards. You can see some pieces arranged on the board, but cannot tell what they are from here. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West37" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub19, 3)
+          </script>
+        </exit>
+        <exit name="East37" alias="east" to="defaultroom">
+          <inherit name="eastdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub21, 1)
+          </script>
+        </exit>
+        <exit name="North37" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub16, 0)
+          </script>
+        </exit>
+        <exit name="South25" alias="south" to="defaultroom">
+          <inherit name="southdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub20, 2)
+          </script>
+        </exit>
+      </object>
+      <object name="hub21">
+        <inherit name="editor_room" />
+        <usedefaultprefix />
+        <descriptions type="stringdictionary">
+          <item>
+            <key>darknorth</key>
+            <value> There is a large statue of a knight to the east of you, he is towering over you. You feel like youâ€™re being watched. </value>
+          </item>
+          <item>
+            <key>darkeast</key>
+            <value>There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
+          </item>
+          <item>
+            <key>darksouth</key>
+            <value>There is a wall in front of you, and a large statue of a knight to the east of you. </value>
+          </item>
+          <item>
+            <key>darkwest</key>
+            <value>There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
+          </item>
+          <item>
+            <key>dimnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimeast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>dimwest</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightnorth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brighteast</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightsouth</key>
+            <value>N/A </value>
+          </item>
+          <item>
+            <key>brightwest</key>
+            <value>N/A </value>
+          </item>
+        </descriptions>
+        <description type="script">
+          PrintRoomDesc (False)
+        </description>
+        <exit name="West38" alias="west" to="defaultroom">
+          <inherit name="westdirection" />
+          <runscript />
+          <visible />
+          <script type="script">
+            MoveAndFace (hub20, 3)
+          </script>
+        </exit>
+        <exit name="North38" alias="north" to="defaultroom">
+          <inherit name="northdirection" />
+          <runscript />
+          <script type="script">
+            MoveAndFace (hub17, 0)
+          </script>
+        </exit>
+      </object>
     </object>
   </object>
   <object name="kitchen">
