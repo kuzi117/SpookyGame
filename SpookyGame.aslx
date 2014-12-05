@@ -47,7 +47,7 @@
       LockHub
       // REMOVE ME
       game.part = 3
-      player.parent = hub7
+      player.parent = hub16
       lantern.parent = player
     </start>
     <changedpart type="script">
@@ -2530,7 +2530,7 @@
               msg ("There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
             }
             case (3) {
-              msg ("Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
+              msg ("The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
             }
           }
         }
@@ -2883,21 +2883,33 @@
           <use type="script">
             if (game.part = 3) {
               msg ("You move the pawn into place and take the king from the board.")
+              msg ("")
               msg ("You don’t know why you’re here, what anyone wants from you, or how you’re going to leave, but you are not going down without a fight. That is all you know.")
+              msg ("")
               msg ("You don’t feel the same anymore, almost hollow. You know you can’t go back to how you were before. Maven... he mentioned there were others, but how many? For how long has this gone on? You are outraged now. You can see smoke billowing in through the dark cherry oak door, the fire has caught up to here now. You remember the shadows fleeing from the fire in the library, just like you. The light of the torches is bright, brighter than you remember. It gives you an idea.")
+              msg ("")
               msg ("\"You won’t take me. Not now, not ever.\"")
+              msg ("")
               msg ("You begin to rip the torches off the wall, and set everything you possibly can on fire -- the table, the chessboard, the doors. You pull at the last torch on the wall, and something clicks. You hear a mechanism, and gears start to push something into motion. The area gets brighter, and brighter, and you look up. The shutters are opening. The large black door bursts open, and an old decrepit man is standing there. He is wear a gold crown, with eyes as black as death itself.")
+              msg ("")
               msg ("\"WHAT ARE YOU DOING?!\" He booms, enraged, but he is weak, and the smoke is filling his lungs. A trail of shadow creatures follow him into the room, but howl in pain at the light.")
+              msg ("")
               msg ("You are nearly blinded now, and the shutters are almost fully open.")
+              msg ("")
               msg ("\"I don’t know who you are, what your purpose is, or what is that you do here. All I know is... I know that it is wrong.\" You hiss your words at him.")
+              msg ("")
               msg ("You lunge at him with the torch. You blindly swing at him, and feel the end of the torch puncture his chest. You smile.")
+              msg ("")
               msg ("The light burns. It burns hotter than you have ever felt, it feels as if you are disintegrating.")
+              msg ("")
               msg ("But, it is cleansing. You welcome the searing touch of the sun. The shadows begin to fade off of you. It is too late, because the shadows fade with you.")
+              msg ("")
               msg ("The sun cleanses everything. The shadows disappear in howls of pain, and the man... his eyes are clouded over, they are empty now. The death, and the malice they held are no longer there. He is gone now.")
+              msg ("")
               msg ("You sigh in relief.")
               msg ("It is over.")
               msg ("You fade into the sunlight.")
-              finish
+              FinishGame
             }
             else {
               msg ("The pawn can't attack any of the other pieces.")
@@ -3281,6 +3293,9 @@
         </item>
       </descriptions>
       <description type="script">
+        if (game.part = 3) {
+          msg ("The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
+        }
         PrintRoomDesc (False)
       </description>
       <enter type="script">
@@ -3297,7 +3312,26 @@
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub16, 2)
+          msg ("You walk into a long hallway, lit dimly with torches. The path is covered in dust, and cobwebs. It obviously hasn’t been traversed in a long time. It feels like every shadow that moves from the flicker of the torches is a creature. Everything seems to leave you be though, so you carry on forwards. You look down at your hands, they are darker than you have ever seen, they almost blend in with the shadows, and you feel hollow. Pressing onwards, you end up in a large room, decorated ornately. There are some shelves with books, tables with silverware, and thick velvet curtains to the floor along all the walls. There is a throne pointed towards one of the windows, you can only see the back of it. You approach the throne, and a creaky voice breaks the silence you were used to. \"You’ve made it I see.\" You pause for a moment, calculating.")
+          msg ("")
+          msg ("\"I am glad. I am getting too old for another trial.\" You are now in front of him. He is old, grey, and decrepit. A gold crown, inlay with all the jewels you can imagine, rests upon his head. His eyes are sunken in, and black, and dead as coal. He stands slowly, and is surprisingly tall for such a frail form.")
+          msg ("")
+          msg ("\"Why am I here?\" You ask. A small smirk spreads across his lips, and he coughs.")
+          msg ("")
+          msg ("\"Because I am getting old.\" He replies. You now notice the large staff in his hand, it is topped with a crystal as black as the night. A flame starts to flicker inside the crystal, and you start to feel light headed. You furrow your brow in confusion.")
+          msg ("")
+          msg ("\"I need to do this to stay alive, you see. Your life energy, for mine.\" He points the staff at you now, and the dizziness intensifies. \"You will be an empty shell of what you once were... just a shadow.\"")
+          msg ("")
+          msg ("You fall to your knees now, there is no strength left in you. You feel your life draining from you, and you can feel yourself become hollow. Your emotions leave you, and you feel almost robotic and empty; your humanity goes with it, and there is no sense to fight anymore. You see the shadows take over, and you cannot tell where your hand is, and where the shadows begin.")
+          msg ("")
+          msg ("And then, there is just nothing. Nothing but the shadows, and the light that breaks through them. You feel as if you must hide from the light, and that is the only thing left to feel.")
+          msg ("")
+          msg ("The man, you can see him now, but he is not the same. He is younger. He is healthier. He is smiling.")
+          msg ("")
+          msg ("You try to attack, but to no avail, he casts you away with his staff as if you were nothing, and walks off.")
+          msg ("")
+          msg ("You feel like nothing. You feel nothing. You are nothing. Nothing but a shadow.")
+          FinishGame
         </script>
       </exit>
       <exit name="East33" alias="east" to="defaultroom">
@@ -25736,10 +25770,9 @@
     game.reenableCount = 0
   </function>
   <function name="Die">
-    DisableHeart
     msg ("")
     msg ("You have died.")
-    finish
+    FinishGame
   </function>
   <function name="GetJS" parameters="all">
     SetHeartRate (game.heartRate)
@@ -25863,5 +25896,9 @@
       }
     }
   ]]></function>
+  <function name="FinishGame">
+    DisableHeart
+    finish
+  </function>
   <javascript src="javascript.js" />
 </asl>
