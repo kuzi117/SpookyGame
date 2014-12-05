@@ -25554,6 +25554,14 @@
       }
     ]]></script>
   </turnscript>
+  <command name="Remember">
+    <pattern type="string">(remember|remember riddle|riddle)</pattern>
+    <script>
+      msg ("You try to recall the last riddle you received...")
+      msg ("")
+      PrintRiddle (game.part)
+    </script>
+  </command>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -25782,7 +25790,6 @@
         msg ("<i>On this long night, the moon’s anniversary.</i>")
       }
       case (2) {
-        msg ("<i>The chessboard is set up again as before, but the pawn must be taken by the queen this time.</i>")
         msg ("<i>By her hand,</i>")
         msg ("<i>Her might the pawn cannot withstand.</i>")
         msg ("<i>The path is long, it forks and turns.</i>")
