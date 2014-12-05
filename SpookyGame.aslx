@@ -47,7 +47,7 @@
       LockHub
       // REMOVE ME
       game.part = 2
-      player.parent = nursery5
+      player.parent = kitchen63
       lantern.parent = player
     </start>
     <changedpart type="script">
@@ -25731,6 +25731,10 @@
     msg ("You try to stay as silent as possible, holding your breath. The creature makes an exasperated grunt and smashes his cleaver down on the counter, bits of turkey flying everywhere. The creature makes another satisfied grunt, and walks back to where he was before.")
     msg ("You stand up, out of hiding, and see a small piece of paper sitting in the turkey rubble. You grab it and read it.")
     msg ("")
+    PrintRiddle (1)
+    msg ("")
+    msg ("As you finish reading, a dark force overwhelms you and you pass out.")
+    msg ("")
     msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
     msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
     game.part = 1
@@ -25755,48 +25759,48 @@
   <function name="EndLibrary">
     library_turn_script.enabled = false
   </function>
-  <function name="PrintRiddle" parameters="number" type="int">
+  <function name="PrintRiddle" parameters="number" type="int"><![CDATA[
     switch (number) {
       case (0) {
-        msg ("One against four, the battle goes on.")
-        msg ("The one with the sword must take the pawn.")
-        msg ("Follow the trail, of blood, sweat and tears;")
-        msg ("For if you shall stray, you’ll realize your fears.")
-        msg ("Noise is dangerous, and the darkness is loud.")
-        msg ("To travel in it, will only for so long be allowed.")
-        msg ("To find the exit: serve the bird,")
-        msg ("To do so the creature’s wrath must be incurred.")
+        msg ("<i>One against four, the battle goes on.</i>")
+        msg ("<i>The one with the sword must take the pawn.</i>")
+        msg ("<i>Follow the trail, of blood, sweat and tears;</i>")
+        msg ("<i>For if you shall stray, you’ll realize your fears.</i>")
+        msg ("<i>Noise is dangerous, and the darkness is loud.</i>")
+        msg ("<i>To travel in it, will only for so long be allowed.</i>")
+        msg ("<i>To find the exit: serve the bird,</i>")
+        msg ("<i>To do so the creature’s wrath must be incurred.</i>")
       }
       case (1) {
-        msg ("In the tower the pawn will fall.")
-        msg ("So watch your back down the long hall.")
-        msg ("Find the boy, time and again,")
-        msg ("For seeking him will lead you to the end.")
-        msg ("In a closet, it is death you will find,")
-        msg ("If your exit is not perfectly timed.")
-        msg ("To find the boy, listen to the nursery,")
-        msg ("On this long night, the moon’s anniversary.")
+        msg ("<i>In the tower the pawn will fall.</i>")
+        msg ("<i>So watch your back down the long hall.</i>")
+        msg ("<i>Find the boy, time and again,</i>")
+        msg ("<i>For seeking him will lead you to the end.</i>")
+        msg ("<i>In a closet, it is death you will find,</i>")
+        msg ("<i>If your exit is not perfectly timed.</i>")
+        msg ("<i>To find the boy, listen to the nursery,</i>")
+        msg ("<i>On this long night, the moon’s anniversary.</i>")
       }
       case (2) {
-        msg ("The chessboard is set up again as before, but the pawn must be taken by the queen this time.")
-        msg ("By her hand, ")
-        msg ("Her might the pawn cannot withstand.")
-        msg ("The path is long, it forks and turns.")
-        msg ("Be careful, because for the shadows the light burns.")
-        msg ("There is a creature, tall and broad.")
-        msg ("Yet, in the dark his sight is flawed.")
-        msg ("Longer now, the darkness holds you,")
-        msg ("But only long enough to get through.")
+        msg ("<i>The chessboard is set up again as before, but the pawn must be taken by the queen this time.</i>")
+        msg ("<i>By her hand,</i>")
+        msg ("<i>Her might the pawn cannot withstand.</i>")
+        msg ("<i>The path is long, it forks and turns.</i>")
+        msg ("<i>Be careful, because for the shadows the light burns.</i>")
+        msg ("<i>There is a creature, tall and broad.</i>")
+        msg ("<i>Yet, in the dark his sight is flawed.</i>")
+        msg ("<i>Longer now, the darkness holds you,</i>")
+        msg ("<i>But only long enough to get through.</i>")
       }
       case (3) {
-        msg ("Here we are, near the end.")
-        msg ("For yourself, will you fend?")
-        msg ("And the pawn, so mighty and strong,")
-        msg ("Will face the darkened throng,")
-        msg ("Only to fall at the hands of a king?")
-        msg ("What a peculiar thing.")
+        msg ("<i>Here we are, near the end.</i>")
+        msg ("<i>For yourself, will you fend?</i>")
+        msg ("<i>And the pawn, so mighty and strong,</i>")
+        msg ("<i>Will face the darkened throng,</i>")
+        msg ("<i>Only to fall at the hands of a king?</i>")
+        msg ("<i>What a peculiar thing.</i>")
       }
     }
-  </function>
+  ]]></function>
   <javascript src="javascript.js" />
 </asl>
