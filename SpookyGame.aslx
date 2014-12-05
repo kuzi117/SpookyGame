@@ -37,6 +37,7 @@
     <attr name="cask_size" type="int">20</attr>
     <part type="int">0</part>
     <reenableCount type="int">0</reenableCount>
+    <saveTime type="boolean">false</saveTime>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -47,7 +48,7 @@
       LockHub
       // REMOVE ME
       game.part = 3
-      player.parent = hub16
+      player.parent = library111
       lantern.parent = player
     </start>
     <changedpart type="script">
@@ -69,6 +70,16 @@
       }
     </changedpart>
   </game>
+  <command name="save">
+    <pattern type="string">^save$</pattern>
+    <script>
+      request (RequestSave, "")
+      if (game.saveTime) {
+        DisableHeart
+        game.saveTime = false
+      }
+    </script>
+  </command>
   <command name="lookdir">
     <pattern type="string"><![CDATA[^look (?<exit>north|east|south|west|northeast|northwest|southeast|southwest|out|up|down|n|e|s|w|ne|nw|se|sw|o|u|d)$]]></pattern>
     <script><![CDATA[
@@ -24796,6 +24807,7 @@
         lantern.light_level = 0
         library_turn_script.enabled = false
         fire_turn_script.enabled = true
+        game.saveTime = True
         DisableHeart
       </beforefirstenter>
       <exit name="West227" alias="west" to="defaultroom">
@@ -25623,6 +25635,9 @@
         msg ("")
         msg ("(Time is paused. Enter any command to continue.)")
       }
+      if (game.saveTime) {
+        msg ("<b>(Now is probably a good time to save!)</b>")
+      }
     ]]></script>
   </turnscript>
   <turnscript name="fire_turn_script">
@@ -25763,6 +25778,7 @@
   <function name="EnableHeart">
     request (RunScript, "enableHeart")
     game.heartEnabled = true
+    game.saveTime = false
   </function>
   <function name="DisableHeart">
     request (RunScript, "disableHeart")
@@ -25820,6 +25836,7 @@
     game.part = 1
     FaceSouth
     DisableHeart
+    game.saveTime = True
     kitchen.inside = False
     player.parent = dungeon7
     SetHeartRate (game.defaultHeartRate)
@@ -25851,6 +25868,7 @@
     game.part = 3
     FaceSouth
     DisableHeart
+    game.saveTime = True
     player.parent = dungeon7
     SetHeartRate (game.defaultHeartRate)
   </function>
