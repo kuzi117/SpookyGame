@@ -2,6 +2,7 @@
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
+  <template name="DefaultSelfDescription">You are wearing damp prisoner's robes. They are uncomfortable and cold.</template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -35,6 +36,7 @@
     <jumpScareAmount type="int">900</jumpScareAmount>
     <attr name="cask_size" type="int">20</attr>
     <part type="int">0</part>
+    <reenableCount type="int">0</reenableCount>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -44,10 +46,28 @@
       game.heartRate = game.defaultHeartRate
       LockHub
       // REMOVE ME
-      player.parent = kitchen63
-      game.part = 2
+      lantern.parent = player
+      lantern.light_level = 2
+      player.parent = nursery65
     </start>
-    <reenableCount type="int">0</reenableCount>
+    <changedpart type="script">
+      if (game.part = 3) {
+        rook.visible = false
+        knight.visible = false
+        bishop.visible = false
+        queen.visible = false
+        pawn.visible = true
+        king.visible = true
+      }
+      else {
+        rook.visible = true
+        knight.visible = true
+        bishop.visible = true
+        queen.visible = true
+        pawn.visible = true
+        king.visible = false
+      }
+    </changedpart>
   </game>
   <command name="lookdir">
     <pattern type="string"><![CDATA[^look (?<exit>north|east|south|west|northeast|northwest|southeast|southwest|out|up|down|n|e|s|w|ne|nw|se|sw|o|u|d)$]]></pattern>
@@ -838,6 +858,7 @@
         PrintRoomDesc (False)
       </description>
       <enter type="script">
+        LockHub
       </enter>
       <onexit type="script">
       </onexit>
@@ -2769,12 +2790,19 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+      </enter>
       <exit name="West29" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (kitchen1, 3)
+          if (Got(lantern)) {
+            MoveAndFace (kitchen1, 3)
+          }
+          else {
+            msg ("A terrible smell emanates from the room behind the door, but it's too dark to see past the doorway. You feel like you should find a light source before continuing.")
+          }
         </script>
       </exit>
       <exit name="South29" alias="south" to="defaultroom">
@@ -2793,16 +2821,111 @@
       </exit>
       <object name="chessboard">
         <inherit name="editor_object" />
+        <inherit name="surface" />
         <scenery />
+        <alt type="stringlist">
+          <value>board</value>
+        </alt>
+        <feature_container />
         <look type="script"><![CDATA[
           if (game.part < 3) {
-            msg ("The board has a single white pawn and several black pieces.")
+            msg ("On the board is a single white pawn surrounded by several black pieces.")
             msg ("You can take the pawn using a rook, a knight, a bishop, or a queen.")
           }
           else {
             msg ("The board has a white pawn and a black king diagonally opposed to each other.")
           }
         ]]></look>
+        <take type="script">
+        </take>
+        <object name="rook">
+          <inherit name="editor_object" />
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            if (game.part = 1) {
+              msg ("You hear a click, as if a door has been unlocked, to the north.")
+              UnlockExit (North25)
+            }
+            else {
+              WrongPiece
+            }
+          </use>
+        </object>
+        <object name="knight">
+          <inherit name="editor_object" />
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            if (game.part = 0) {
+              msg ("You hear a click, as if a door has been unlocked, to the west.")
+              UnlockExit (West29)
+            }
+            else {
+              WrongPiece
+            }
+          </use>
+        </object>
+        <object name="bishop">
+          <inherit name="editor_object" />
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            WrongPiece
+          </use>
+        </object>
+        <object name="queen">
+          <inherit name="editor_object" />
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            if (game.part = 2) {
+              msg ("You hear a click, as if a door has been unlocked, to the east.")
+              UnlockExit (East30)
+            }
+            else {
+              WrongPiece
+            }
+          </use>
+        </object>
+        <object name="pawn">
+          <inherit name="editor_object" />
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            if (game.part = 3) {
+              msg ("You move the pawn into place and take the king from the board.")
+              msg ("You don’t know why you’re here, what anyone wants from you, or how you’re going to leave, but you are not going down without a fight. That is all you know.")
+              msg ("You don’t feel the same anymore, almost hollow. You know you can’t go back to how you were before. Maven... he mentioned there were others, but how many? For how long has this gone on? You are outraged now. You can see smoke billowing in through the dark cherry oak door, the fire has caught up to here now. You remember the shadows fleeing from the fire in the library, just like you. The light of the torches is bright, brighter than you remember. It gives you an idea.")
+              msg ("\"You won’t take me. Not now, not ever.\"")
+              msg ("You begin to rip the torches off the wall, and set everything you possibly can on fire -- the table, the chessboard, the doors. You pull at the last torch on the wall, and something clicks. You hear a mechanism, and gears start to push something into motion. The area gets brighter, and brighter, and you look up. The shutters are opening. The large black door bursts open, and an old decrepit man is standing there. He is wear a gold crown, with eyes as black as death itself.")
+              msg ("\"WHAT ARE YOU DOING?!\" He booms, enraged, but he is weak, and the smoke is filling his lungs. A trail of shadow creatures follow him into the room, but howl in pain at the light.")
+              msg ("You are nearly blinded now, and the shutters are almost fully open.")
+              msg ("\"I don’t know who you are, what your purpose is, or what is that you do here. All I know is... I know that it is wrong.\" You hiss your words at him.")
+              msg ("You lunge at him with the torch. You blindly swing at him, and feel the end of the torch puncture his chest. You smile.")
+              msg ("The light burns. It burns hotter than you have ever felt, it feels as if you are disintegrating.")
+              msg ("But, it is cleansing. You welcome the searing touch of the sun. The shadows begin to fade off of you. It is too late, because the shadows fade with you.")
+              msg ("The sun cleanses everything. The shadows disappear in howls of pain, and the man... his eyes are clouded over, they are empty now. The death, and the malice they held are no longer there. He is gone now.")
+              msg ("You sigh in relief.")
+              msg ("It is over.")
+              msg ("You fade into the sunlight.")
+              finish
+            }
+            else {
+              msg ("The pawn can't attack any of the other pieces.")
+            }
+          </use>
+        </object>
+        <object name="king">
+          <inherit name="editor_object" />
+          <visible type="boolean">false</visible>
+          <scenery />
+          <feature_usegive />
+          <use type="script">
+            msg ("You hear a click, as if a door has been unlocked, to the south.")
+            UnlockExit (South33)
+          </use>
+        </object>
       </object>
     </object>
     <object name="hub13">
@@ -3121,6 +3244,8 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+      </enter>
       <exit name="West33" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -7178,9 +7303,17 @@
         </item>
       </descriptions>
       <bloodTrail />
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (Got(lantern) and lantern.light_level > 0 and not oil1.parent = null) {
+          if (player.facing_num = 1) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("The counter to the east has a cask of oil sitting on it.")
+          }
+        }
+      ]]></description>
       <exit name="North72" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -7210,19 +7343,6 @@
           GetOil (oil1)
         </use>
       </object>
-      <turnscript name="oil1_script">
-        <enabled />
-        <script><![CDATA[
-          if (Got(lantern) and lantern.light_level > 0 and not oil1.parent = null) {
-            if (player.facing_num = 1) {
-              msg ("The counter in front of you has a cask of oil sitting on it.")
-            }
-            else if (player.facing_num <> 3) {
-              msg ("The counter to the east has a cask of oil sitting on it.")
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
     <object name="kitchen38">
       <inherit name="editor_room" />
@@ -9576,9 +9696,17 @@
         </item>
       </descriptions>
       <bloodTrail />
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil2.parent = null) {
+          if (player.facing_num = 2) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("The counter to the south has a cask of oil sitting on it.")
+          }
+        }
+      ]]></description>
       <exit name="East103" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -9609,19 +9737,6 @@
           GetOil (oil2)
         </use>
       </object>
-      <turnscript name="oil2_script68">
-        <enabled />
-        <script><![CDATA[
-          if (not oil2.parent = null) {
-            if (player.facing_num = 2) {
-              msg ("The counter in front of you has a cask of oil sitting on it.")
-            }
-            else if (player.facing_num <> 0) {
-              msg ("The counter to the south has a cask of oil sitting on it.")
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
     <object name="kitchen69">
       <inherit name="editor_room" />
@@ -9677,9 +9792,17 @@
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil2.parent = null) {
+          if (player.facing_num = 0) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("The counter to the north has a cask of oil sitting on it.")
+          }
+        }
+      ]]></description>
       <exit name="East104" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -9702,19 +9825,6 @@
           MoveAndFace (kitchen76, 3)
         </script>
       </exit>
-      <turnscript name="oil2_script69">
-        <enabled />
-        <script><![CDATA[
-          if (not oil2.parent = null) {
-            if (player.facing_num = 0) {
-              msg ("The counter in front of you has a cask of oil sitting on it.")
-            }
-            else if (player.facing_num <> 2) {
-              msg ("The counter to the north has a cask of oil sitting on it.")
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
     <object name="kitchen70">
       <inherit name="editor_room" />
@@ -10153,9 +10263,17 @@
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil2.parent = null) {
+          if (player.facing_num = 1) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("The counter to the east has a cask of oil sitting on it.")
+          }
+        }
+      ]]></description>
       <exit name="North110" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -10178,19 +10296,6 @@
           MoveAndFace (kitchen79, 3)
         </script>
       </exit>
-      <turnscript name="oil2_script75">
-        <enabled />
-        <script><![CDATA[
-          if (not oil2.parent = null) {
-            if (player.facing_num = 1) {
-              msg ("The counter in front of you has a cask of oil sitting on it.")
-            }
-            else if (player.facing_num <> 3) {
-              msg ("The counter to the east has a cask of oil sitting on it.")
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
     <object name="kitchen76">
       <inherit name="editor_room" />
@@ -11316,9 +11421,17 @@
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil3.parent = null) {
+          if (player.facing_num = 2) {
+            msg ("The counter in front of you has a cask of oil sitting on it.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("The counter to the south has a cask of oil sitting on it.")
+          }
+        }
+      ]]></description>
       <exit name="East46" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -11348,19 +11461,6 @@
           GetOil (oil3)
         </use>
       </object>
-      <turnscript name="oil3_script">
-        <enabled />
-        <script><![CDATA[
-          if (not oil3.parent = null) {
-            if (player.facing_num = 2) {
-              msg ("The counter in front of you has a cask of oil sitting on it.")
-            }
-            else if (player.facing_num <> 0) {
-              msg ("The counter to the south has a cask of oil sitting on it.")
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
   </object>
   <object name="nursery">
@@ -13457,7 +13557,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table to the northwest of you, there is a cask of oil sitting on it. </value>
+          <value>There is a small table to the northwest of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -13469,11 +13569,11 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards.</value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground. There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table to the northwest of you, there is a cask of oil sitting on it. </value>
+          <value>There is a small table to the northwest of you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -13485,11 +13585,16 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground.  There is a wall a few steps forwards. There is a cask of oil sitting on a small table to the northwest of you. </value>
+          <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground. There is a wall a few steps forwards. </value>
         </item>
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil4.parent = null) {
+          if (player.facing_num = 0 or player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table to your northwest.")
+          }
+        }
       </description>
       <exit name="North113" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -13536,11 +13641,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table in front of you, and a wall to the west. There is a cask of oil sitting on the table in front of you.</value>
+          <value>There is a small table in front of you, and a wall to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you.</value>
+          <value>There is a small table to the north of you. There is a children’s toy chest to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -13548,15 +13653,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south. </value>
+          <value>There is a wall in front of you. There is a small table to the north of you, and a children’s toy chest to the south. </value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table in front of you, and a wall to the west. There is a cask of oil sitting on the table in front of you. You can hear some noises coming from the northeast corner of the room.</value>
+          <value>There is a small table in front of you, and a wall to the west. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table to the north of you, it has a cask of oil sitting on it. There is a children’s toy chest to the south of you, it is covered in spider webs. </value>
+          <value>There is a small table to the north of you. There is a children’s toy chest to the south of you, it is covered in spider webs. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -13564,12 +13669,20 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you. There is a small table, with a cask of oil sitting on it, to the north of you, and a children’s toy chest to the south.</value>
+          <value>There is a wall in front of you. There is a small table to the north of you, and a children’s toy chest to the south.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil4.parent = null) {
+          if (player.facing_num = 2) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("There is a cask of oil sitting on the table to your north.")
+          }
+        }
+      ]]></description>
       <exit name="East108" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -13577,6 +13690,21 @@
           MoveAndFace (nursery29, 1)
         </script>
       </exit>
+      <object name="oil4">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil4)
+        </take>
+        <use type="script">
+          GetOil (oil4)
+        </use>
+      </object>
     </object>
     <object name="nursery31">
       <inherit name="editor_room" />
@@ -13679,7 +13807,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a side table with a cask of oil on it to the northwest, and a wall a few steps forwards.</value>
+          <value>There is a side table to the northwest, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -13695,7 +13823,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a side table with a cask of oil on it to the northwest, and a wall a few steps forwards. You are in a small room. You feel something watching you. </value>
+          <value>There is a side table to the northwest, and a wall a few steps forwards. You are in a small room. You feel something watching you. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -13712,6 +13840,11 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil5.parent = null) {
+          if (player.facing_num = 0 or player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table to the northwest.")
+          }
+        }
       </description>
       <exit name="North123" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -13765,7 +13898,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
+          <value>There is a small table in front of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -13781,7 +13914,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>You are in a small room. There is a small table in front of you, there is a cask of oil sitting on it. You feel like something is staring at you.</value>
+          <value>You are in a small room. There is a small table in front of you. You feel like something is staring at you.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -13800,9 +13933,17 @@
           <value>Boy hides here for the 1st time. Find him facing west and inspecting cabinet.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil5.parent = null) {
+          if (player.facing_num = 0) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("There is a cask of oil sitting on the table to your north.")
+          }
+        }
+      ]]></description>
       <exit name="East124" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -14058,11 +14199,11 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>You cannot see anything. You can feel a table of some sort in front of you. There seems to be something on it.</value>
+          <value>You cannot see anything. You can feel a table of some sort in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
+          <value>There is a small table to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -14070,15 +14211,15 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
+          <value>There is a small table to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it. </value>
+          <value>There is a small table in front of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table to the west of you, it has a cask of oil sitting on it. You can hear some noises coming from the northeast corner of the room.</value>
+          <value>There is a small table to the west of you. You can hear some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -14086,16 +14227,24 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small table to the west of you, it has a cask of oil sitting on it.</value>
+          <value>There is a small table to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
+          <value>There is a small table in front of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil4.parent = null) {
+          if (player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 1) {
+            msg ("There is a cask of oil sitting on the table to your west.")
+          }
+        }
+      ]]></description>
       <exit name="North128" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -14211,7 +14360,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you, with a cask of oil sitting on it.</value>
+          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -14219,15 +14368,15 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a wall to the east of you, and a small table to the west with a cask of oil sitting on it.</value>
+          <value>There is a wall to the east of you, and a small table to the west.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the north of you.</value>
+          <value>There is a small table in front of you. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you, with a cask of oil sitting on it. You are in the corner of a small room. </value>
+          <value>There is a wall in front of you, and to the east of you. There is a small table to the west of you. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>brighteast</key>
@@ -14235,16 +14384,24 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall to the east of you, and a small table to the west with a cask of oil sitting on it. You are in the corner of a small room.</value>
+          <value>There is a wall to the east of you, and a small table to the west. You are in the corner of a small room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the north of you. You are in the corner of a small room.</value>
+          <value>There is a small table in front of you. There is a wall to the north of you. You are in the corner of a small room.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil5.parent = null) {
+          if (player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 1) {
+            msg ("There is a cask of oil sitting on the table to your west.")
+          }
+        }
+      ]]></description>
       <exit name="South130" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -14252,6 +14409,21 @@
           MoveAndFace (nursery32, 2)
         </script>
       </exit>
+      <object name="oil5">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil5)
+        </take>
+        <use type="script">
+          GetOil (oil5)
+        </use>
+      </object>
     </object>
     <object name="nursery40">
       <inherit name="editor_room" />
@@ -14434,11 +14606,11 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a door a few steps to the west of you, and a small table with a cask of oil on it to the southwest.</value>
+          <value>There is a door a few steps to the west of you, and a small table to the southwest.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a door a few steps forwards, a small table to the southwest with a cask of oil it, and a small table to the northwest.</value>
+          <value>There is a door a few steps forwards, a small table to the southwest, and a small table to the northwest.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -14450,15 +14622,20 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a door a few steps to the west of you, and a small table with a cask of oil on it to the southwest.</value>
+          <value>There is a door a few steps to the west of you and a small table to the southwest.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a door a few steps forwards, a small table to the southwest with a cask of oil it, and a small table to the northwest.</value>
+          <value>There is a door a few steps forwards, a small table to the southwest, and a small table to the northwest.</value>
         </item>
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil4.parent = null) {
+          if (player.facing_num = 2 or player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table to your southwest.")
+          }
+        }
       </description>
       <exit name="North133" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -14516,15 +14693,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table to the north of you, and a table to the south of you with a cask of oil sitting on it. </value>
+          <value>There is a small table to the north of you, and a table to the south of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a door to the west of you.</value>
+          <value>There is a small table in front of you. There is a door to the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you. The table to the south has a cask of oil sitting on it.</value>
+          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -14532,20 +14709,28 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table to the north of you, and a table to the south of you with a cask of oil sitting on it. There is some noises coming from the northeast corner of the room.</value>
+          <value>There is a small table to the north of you, and a table to the south of you. There is some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a door to the west of you. There are some noises coming from the northeast corner of the room.</value>
+          <value>There is a small table in front of you. There is a door to the west of you. There are some noises coming from the northeast corner of the room.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you. The table to the south has a cask of oil sitting on it.</value>
+          <value>There is a door in front of you. There is a small table to the north of you, and a table to the south of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil4.parent = null) {
+          if (player.facing_num = 0) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("There is a cask of oil sitting on the table to your south.")
+          }
+        }
+      ]]></description>
       <exit name="East134" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -15570,11 +15755,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it.  There is a wall to the east of you.</value>
+          <value>There is a small table in front of you.  There is a wall to the east of you.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a wall in front of you, and a small table with a cask of oil sitting on it to the north. </value>
+          <value>There is a wall in front of you, and a small table to the north. </value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -15582,15 +15767,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small table with a cask of oil sitting on it to the north of you. There is an old, broken chair to the southwest of you.</value>
+          <value>There is a small table to the north of you. There is an old, broken chair to the southwest of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it.  There is a wall to the east of you.</value>
+          <value>There is a small table in front of you.  There is a wall to the east of you.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a wall in front of you, and a small table with a cask of oil sitting on it to the north.</value>
+          <value>There is a wall in front of you, and a small table to the north.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -15598,12 +15783,20 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small table with a cask of oil sitting on it to the north of you. There is an old, broken chair to the southwest of you.</value>
+          <value>There is a small table to the north of you. There is an old, broken chair to the southwest of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil6.parent = null) {
+          if (player.facing_num = 2) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("There is a cask of oil sitting on the table to your north.")
+          }
+        }
+      ]]></description>
       <exit name="South148" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -15619,6 +15812,21 @@
           MoveAndFace (nursery58, 3)
         </script>
       </exit>
+      <object name="oil6">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil6)
+        </take>
+        <use type="script">
+          GetOil (oil6)
+        </use>
+      </object>
     </object>
     <object name="nursery58">
       <inherit name="editor_room" />
@@ -15642,15 +15850,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table with a cask of oil on it to the northeast, and a bed to the northwest.</value>
+          <value>There is a small table to the northeast, and a bed to the northwest.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table with a cask of oil sitting on it to the northeast, and a broken, old chair to the south. </value>
+          <value>There is a small table to the northeast, and a broken, old chair to the south. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different... thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -15658,15 +15866,15 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table with a cask of oil on it to the northeast, and a bed to the northwest.</value>
+          <value>There is a small table it to the northeast, and a bed to the northwest.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table with a cask of oil sitting on it to the northeast, and a broken, old chair to the south. There is a wall a few steps forwards.</value>
+          <value>There is a small table to the northeast, and a broken, old chair to the south. There is a wall a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different… thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
+          <value>There is an old, broken chair in front of you. It is splintering, and it looks like it might collapse if anyone were to try to sit on it. There is a vanity table in front of it, with a mirror standing on it. You can see your reflection, you look different... thinner, and darker. As if you were fading away. Maybe it’s just the lighting.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -15675,6 +15883,11 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil6.parent = null) {
+          if (player.facing_num = 0 or player.facing_num = 1) {
+            msg ("There is a cask of oil sitting on the table to your northeast.")
+          }
+        }
       </description>
       <exit name="North149" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -16006,7 +16219,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You cannot see anything. You can feel a small table in front of you, there seems to be something on it.</value>
+          <value>You cannot see anything. You can feel a small table in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -16018,15 +16231,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table to the east of you, there is a cask of oil sitting on it. There is a bed to the west of you, it has a flower patterned duvet on it.</value>
+          <value>There is a small table to the east of you. There is a bed to the west of you, it has a flower patterned duvet on it.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it. </value>
+          <value>There is a small table in front of you. </value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table with a cask of oil sitting on it to the east, and a bed to the west. The bed has a flower patterned duvet on it.</value>
+          <value>There is a small table to the east, and a bed to the west. The bed has a flower patterned duvet on it.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -16034,24 +16247,32 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a small table to the east of you, there is a cask of oil sitting on it. There is a bed to the west of you, it has a flower patterned duvet on it. There is a wall a few spaces forwards.</value>
+          <value>There is a small table to the east of you. There is a bed to the west of you, it has a flower patterned duvet on it. There is a wall a few spaces forwards.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it.</value>
+          <value>There is a small table in front of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small table with a cask of oil sitting on it to the east, and a bed to the west. The bed has a flower patterned duvet on it. There is an old chair a few steps forwards.</value>
+          <value>There is a small table to the east, and a bed to the west. The bed has a flower patterned duvet on it. There is an old chair a few steps forwards.</value>
         </item>
         <item>
           <key>brightwest</key>
           <value>There is a bed in front of you, it has a flower patterned duvet on it. The flowers look like posies. There is a wall a few steps north of you. </value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil6.parent = null) {
+          if (player.facing_num = 1) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("There is a cask of oil sitting on the table to your east.")
+          }
+        }
+      ]]></description>
       <exit name="North154" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -16153,7 +16374,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You cannot see anything. You can feel a table in front of you, there seems to be something on it.</value>
+          <value>You cannot see anything. You can feel a table in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -16165,15 +16386,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a door in front of you, and a small table, with a cask of oil sitting on it, to the south. There is a wall to the north of you.</value>
+          <value>There is a door in front of you, and a small table to the south. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it. There is a door to the east of you.</value>
+          <value>There is a small table in front of you. There is a door to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small table to the south of you, with a cask of oil sitting on it. There is a wall to the north.</value>
+          <value>There is a small table to the south of you. There is a wall to the north.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -16181,20 +16402,28 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a door in front of you, and a small table, with a cask of oil sitting on it, to the south. There is a wall to the north of you.</value>
+          <value>There is a door in front of you, and a small table to the south. There is a wall to the north of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small table in front of you, there is a cask of oil sitting on it. There is a door to the east of you, and there is a bed a few steps to the west of you.</value>
+          <value>There is a small table in front of you. There is a door to the east of you, and there is a bed a few steps to the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a small table to the south of you, with a cask of oil sitting on it. There is a wall to the north, and a bed a few steps forwards.</value>
+          <value>There is a small table to the south of you. There is a wall to the north, and a bed a few steps forwards.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil6.parent = null) {
+          if (player.facing_num = 2) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("There is a cask of oil sitting on the table to your south.")
+          }
+        }
+      ]]></description>
       <exit name="East156" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -16237,11 +16466,11 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a wall to the north of you, and a small table with a cask of oil on it to the southeast.</value>
+          <value>There is a wall to the north of you, and a small table to the southeast.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. There is a small table with a cask of oil on it to the southeast. </value>
+          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. There is a small table to the southeast.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -16253,11 +16482,11 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a wall to the north of you, and a small table with a cask of oil on it to the southeast. There is a door a few steps forwards.</value>
+          <value>There is a wall to the north of you, and a small table to the southeast. There is a door a few steps forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. The flowers look like posies. There is a small table with a cask of oil on it to the southeast. </value>
+          <value>There is a bed to the west of you, it is covered in a flower patterned duvet. The flowers look like posies. There is a small table to the southeast. </value>
         </item>
         <item>
           <key>brightwest</key>
@@ -16266,6 +16495,11 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil6.parent = null) {
+          if (player.facing_num = 2 or player.facing_num = 1) {
+            msg ("There is a cask of oil sitting on the table to your southeast.")
+          }
+        }
       </description>
       <exit name="East157" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
@@ -24556,6 +24790,21 @@
           oil2.parent = player.parent
         }
       }
+      if (oil4.parent <> null) {
+        if (player.parent = nursery29 or player.parent = nursery30 or player.parent = nursery37 or player.parent = nursery42 or player.parent = nursery43) {
+          oil4.parent = player.parent
+        }
+      }
+      if (oil5.parent <> null) {
+        if (player.parent = nursery32 or player.parent = nursery33 or player.parent = nursery39) {
+          oil5.parent = player.parent
+        }
+      }
+      if (oil6.parent <> null) {
+        if (player.parent = nursery57 or player.parent = nursery58 or player.parent = nursery63 or player.parent = nursery65 or player.parent = nursery66) {
+          oil6.parent = player.parent
+        }
+      }
       if (player.parent = kitchen63 or player.parent = kitchen66 or player.parent = kitchen67 or player.parent = kitchen70) {
         turkey.parent = player.parent
       }
@@ -24805,6 +25054,13 @@
     LockExit (East30)
     LockExit (North25)
     LockExit (South33)
+  </function>
+  <function name="WrongPiece">
+    msg ("You hear the scraping of metal across the floor, and the clink of pieces of metal moving together... like a suit of armor.")
+    msg ("You look to the corner of the room where the statue of the knight was. It is not there anymore.")
+    msg ("You hear a clink of armor behind you, and turn around to see the knight. Shadows are oozing out of the armor.")
+    msg ("The knight raises his sword high above you, and...")
+    Die
   </function>
   <javascript src="javascript.js" />
 </asl>
