@@ -47,8 +47,8 @@
       LockHub
       // REMOVE ME
       lantern.parent = player
-      lantern.light_level = 2
-      player.parent = library34
+      lantern.light_level = 0
+      player.parent = library1
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -16577,6 +16577,7 @@
   <object name="library">
     <inherit name="editor_object" />
     <attr name="grumpy_shadow_counter" type="int">0</attr>
+    <darknessTimer type="int">0</darknessTimer>
     <object name="library1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -16633,6 +16634,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <beforeenter type="script">
+        library_turn_script.enabled = true
+      </beforeenter>
       <exit name="East59" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -24754,6 +24758,53 @@
     <pattern>dim</pattern>
     <defaultexpression>"You can't dim " + object.article + "."</defaultexpression>
   </verb>
+  <turnscript name="library_turn_script">
+    <script><![CDATA[
+      x = GetRandomInt(1,10)
+      if (x <= 2 and lantern.light_level < 2) {
+        flavour = GetRandomInt(1,3)
+        switch (flavour) {
+          case (0) {
+            msg ("You feel a gust of wind blow past you, you cannot see anything that caused it.")
+          }
+          case (1) {
+            msg ("You feel like something is watching you from atop the bookshelves.")
+          }
+          case (2) {
+            msg ("You hear something coming from the shadows, but you cannot see anything...")
+          }
+        }
+      }
+      if (not lantern.light_level = 0) {
+        library.darknessTimer = 0
+      }
+      else {
+        switch (library.darknessTimer) {
+          case (2) {
+            msg ("You feel as if something is watching you.")
+          }
+          case (4) {
+            msg ("You hear the shuffling of feet, but you aren't sure where it's coming from.")
+          }
+          case (6) {
+            msg ("The shuffling is getting louder.")
+          }
+          case (7) {
+            msg ("Something nearby is breathing heavily.")
+          }
+          case (9) {
+            msg ("Whatever was following you has become extremely silent.")
+          }
+          case (10) {
+            msg ("You feel something breathing down the back of your neck. You try to run, and fumble for your lantern hoping you have enough oil to scare the creature off.")
+            msg ("Before you can, it knocks the lantern from your hands, and growls at you. It stares you down, all you can see is the glow of its eyes. There are no words to describe its appearance except that it is shrouded in the shadows. It lunges at you.")
+            Die
+          }
+        }
+        library.darknessTimer = library.darknessTimer + 1
+      }
+    ]]></script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -24951,6 +25002,9 @@
     msg ("You hear a clink of armor behind you, and turn around to see the knight. Shadows are oozing out of the armor.")
     msg ("The knight raises his sword high above you, and...")
     Die
+  </function>
+  <function name="EndLibrary">
+    library_turn_script.enabled = false
   </function>
   <javascript src="javascript.js" />
 </asl>
