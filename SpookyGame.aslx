@@ -3186,6 +3186,57 @@
         <ontake type="script">
           EnableTurnScript (lantern_turn_script)
         </ontake>
+        <turnon type="script">
+          if (Got(lantern)) {
+            if (lantern.light_level = 0) {
+              lantern.light_level = 2
+              if (lantern.light_level = 2) {
+                msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
+                ShowRoomDescription
+              }
+            }
+            else {
+              msg ("Your lantern is already on.")
+            }
+          }
+          else {
+            msg ("I should pick it up before I fiddle with it...")
+          }
+        </turnon>
+        <turnoff type="script"><![CDATA[
+          if (Got(lantern)) {
+            if (lantern.light_level <> 0) {
+              lantern.light_level = 0
+              if (lantern.light_level = 0) {
+                msg ("Your lantern is now off. Your eyes adjust to the new light level.")
+                ShowRoomDescription
+              }
+            }
+            else {
+              msg ("Your lantern is already off.")
+            }
+          }
+          else {
+            msg ("I should pick it up before I fiddle with it...")
+          }
+        ]]></turnoff>
+        <dim type="script"><![CDATA[
+          if (Got(lantern)) {
+            if (lantern.light_level <> 1) {
+              lantern.light_level = 1
+              if (lantern.light_level = 1) {
+                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
+                ShowRoomDescription
+              }
+            }
+            else {
+              msg ("Your lantern is already dim.")
+            }
+          }
+          else {
+            msg ("I should pick it up before I fiddle with it...")
+          }
+        ]]></dim>
       </object>
     </object>
     <object name="hub16">
@@ -24698,6 +24749,11 @@
       }
     ]]></script>
   </turnscript>
+  <verb>
+    <property>dim</property>
+    <pattern>dim</pattern>
+    <defaultexpression>"You can't dim " + object.article + "."</defaultexpression>
+  </verb>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
