@@ -42,10 +42,12 @@
       dictionary remove (player.statusattributes, "facing")
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
+      LockHub
       // REMOVE ME
-      player.parent = hub16
-      game.part = 3
+      player.parent = kitchen63
+      game.part = 2
     </start>
+    <reenableCount type="int">0</reenableCount>
   </game>
   <command name="lookdir">
     <pattern type="string"><![CDATA[^look (?<exit>north|east|south|west|northeast|northwest|southeast|southwest|out|up|down|n|e|s|w|ne|nw|se|sw|o|u|d)$]]></pattern>
@@ -2789,6 +2791,19 @@
           MoveAndFace (hub7, 0)
         </script>
       </exit>
+      <object name="chessboard">
+        <inherit name="editor_object" />
+        <scenery />
+        <look type="script"><![CDATA[
+          if (game.part < 3) {
+            msg ("The board has a single white pawn and several black pieces.")
+            msg ("You can take the pawn using a rook, a knight, a bishop, or a queen.")
+          }
+          else {
+            msg ("The board has a white pawn and a black king diagonally opposed to each other.")
+          }
+        ]]></look>
+      </object>
     </object>
     <object name="hub13">
       <inherit name="editor_room" />
@@ -24492,6 +24507,22 @@
       }
     ]]></script>
   </turnscript>
+  <turnscript name="reenable_heart_turn_script">
+    <enabled />
+    <script>
+      if (game.reenableCount = 0) {
+        game.reenableCount = 1
+      }
+      else {
+        EnableHeart
+      }
+    </script>
+  </turnscript>
+  <verb>
+    <property>fix</property>
+    <pattern>fix</pattern>
+    <defaultexpression>"You can't fix " + object.article + "."</defaultexpression>
+  </verb>
   <turnscript name="heartrate_turn_script">
     <enabled />
     <script><![CDATA[
@@ -24516,11 +24547,6 @@
       }
     ]]></script>
   </turnscript>
-  <verb>
-    <property>fix</property>
-    <pattern>fix</pattern>
-    <defaultexpression>"You can't fix " + object.article + "."</defaultexpression>
-  </verb>
   <turnscript name="item_follow_script">
     <enabled />
     <script><![CDATA[
@@ -24533,8 +24559,31 @@
       if (player.parent = kitchen63 or player.parent = kitchen66 or player.parent = kitchen67 or player.parent = kitchen70) {
         turkey.parent = player.parent
       }
+      if (player.parent = hub12 or player.parent = hub13 or player.parent = hub8 or player.parent = hub16) {
+        chessboard.parent = player.parent
+      }
     ]]></script>
   </turnscript>
+  <verb>
+    <property>rattle</property>
+    <pattern>rattle</pattern>
+    <defaultexpression>"You can't rattle " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>smack</property>
+    <pattern>smack</pattern>
+    <defaultexpression>"You can't smack " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>knockdown</property>
+    <pattern>knock down</pattern>
+    <defaultexpression>"You can't knock down " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>knockover</property>
+    <pattern>knock over</pattern>
+    <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
+  </verb>
   <turnscript name="lantern_turn_script">
     <enabled />
     <script><![CDATA[
@@ -24566,35 +24615,7 @@
       }
     ]]></script>
   </turnscript>
-  <verb>
-    <property>rattle</property>
-    <pattern>rattle</pattern>
-    <defaultexpression>"You can't rattle " + object.article + "."</defaultexpression>
-  </verb>
-  <verb>
-    <property>smack</property>
-    <pattern>smack</pattern>
-    <defaultexpression>"You can't smack " + object.article + "."</defaultexpression>
-  </verb>
-  <verb>
-    <property>knockdown</property>
-    <pattern>knock down</pattern>
-    <defaultexpression>"You can't knock down " + object.article + "."</defaultexpression>
-  </verb>
-  <verb>
-    <property>knockover</property>
-    <pattern>knock over</pattern>
-    <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
-  </verb>
   <turnscript name="paused_turn_script" />
-  <turnscript name="reenable_heart_turn_script">
-    <enabled />
-    <script>
-      if (not game.heartEnabled) {
-        EnableHeart
-      }
-    </script>
-  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -24727,6 +24748,7 @@
   <function name="DisableHeart">
     request (RunScript, "disableHeart")
     game.heartEnabled = false
+    game.reenableCount = 0
   </function>
   <function name="Die">
     DisableHeart
@@ -24777,6 +24799,12 @@
     DisableHeart
     kitchen.inside = False
     player.parent = dungeon7
+  </function>
+  <function name="LockHub">
+    LockExit (West29)
+    LockExit (East30)
+    LockExit (North25)
+    LockExit (South33)
   </function>
   <javascript src="javascript.js" />
 </asl>
