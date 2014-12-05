@@ -11571,6 +11571,7 @@
   </object>
   <object name="nursery">
     <inherit name="editor_object" />
+    <nurseryTimer type="int">0</nurseryTimer>
     <object name="nursery1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -11627,6 +11628,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <firstenter type="script">
+        EnableTurnScript (nursery_turn_script)
+      </firstenter>
       <exit name="North33" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -13777,7 +13781,7 @@
         </script>
       </exit>
       <command name="Examine Crib">
-        <pattern type="string">(examine|look|check|ex|l|look in|open) crib</pattern>
+        <pattern type="string">(examine|look|check|ex|x|l|look in|open) crib</pattern>
         <script>
           if (nursery25.maven_here) {
             DisableHeart
@@ -14537,7 +14541,7 @@
         </script>
       </exit>
       <command name="Examine Cabinet">
-        <pattern type="string">(examine|look|check|ex|l|look in|open) cabinet</pattern>
+        <pattern type="string">(examine|look|check|ex|x|l|look in|open) cabinet</pattern>
         <script>
           if (nursery33.maven_here) {
             DisableHeart
@@ -16889,7 +16893,7 @@
         </script>
       </exit>
       <command name="Examine Bed">
-        <pattern type="string">(examine|look|check|ex|l|look in|open) bed</pattern>
+        <pattern type="string">(examine|look|check|ex|x|l|look in|open) bed</pattern>
         <script>
           if (nursery61.maven_here) {
             DisableHeart
@@ -25875,6 +25879,53 @@
       library.fireCount = library.fireCount + 1
     ]]></script>
   </turnscript>
+  <turnscript name="nursery_turn_script">
+    <script><![CDATA[
+      x = GetRandomInt(1,10)
+      if (x <= 2 and lantern.light_level < 2) {
+        flavour = GetRandomInt(1,3)
+        switch (flavour) {
+          case (0) {
+            msg ("You feel something brush past you, and look around, but you can’t see anything…")
+          }
+          case (1) {
+            msg ("You think you see a doll in shadows in front of you. You blink, and it’s gone.")
+          }
+          case (2) {
+            msg ("There is something moving in the shadows, and you can’t quite make it out. You squint, and it stops. The stillness is eerie.")
+          }
+        }
+      }
+      if (not lantern.light_level = 0) {
+        nursery.darknessTimer = 0
+      }
+      else {
+        switch (nursery.darknessTimer) {
+          case (2) {
+            msg ("You feel as if something is watching you.")
+          }
+          case (4) {
+            msg ("You hear the shuffling of feet, but you aren't sure where it's coming from.")
+          }
+          case (6) {
+            msg ("The shuffling is getting louder.")
+          }
+          case (7) {
+            msg ("Something nearby is breathing heavily.")
+          }
+          case (9) {
+            msg ("Whatever was following you has become extremely silent.")
+          }
+          case (10) {
+            msg ("You feel something breathing down the back of your neck. You try to run, and fumble for your lantern hoping you have enough oil to scare the creature off.")
+            msg ("Before you can, it knocks the lantern from your hands, and growls at you. It stares you down, all you can see is the glow of its eyes. There are no words to describe its appearance except that it is shrouded in the shadows. It lunges at you.")
+            Die
+          }
+        }
+        nursery.darknessTimer = nursery.darknessTimer + 1
+      }
+    ]]></script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -26149,6 +26200,7 @@
     msg ("You wake up.")
     msg ("You open your eyes. Your head is pounding, and you groan, as you push yourself up onto your hands and knees. You see your reflection in the puddle, again, and you look more tired than you can even fathom. The bags under your eyes almost seem to take up your face, and your cheeks looks shallow and sickly. You look darker, but that might just be the lack of light in the room. It almost looks like you’re fading. You shake the thoughts off, and stand up.")
     laila_turn_script.enabled = False
+    nursery_turn_script.enabled = False
     game.part = 2
     FaceSouth
     DisableHeart
