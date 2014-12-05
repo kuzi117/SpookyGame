@@ -43,7 +43,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = dungeon7
+      player.parent = hub16
       game.part = 3
     </start>
   </game>
@@ -838,9 +838,6 @@
       <enter type="script">
       </enter>
       <onexit type="script">
-        if (not game.heartEnabled) {
-          EnableHeart
-        }
       </onexit>
       <exit name="North7" alias="north" to="defaultroom">
         <inherit name="northdirection" />
@@ -2982,14 +2979,6 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
-      <exit name="West24" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub6, 3)
-        </script>
-      </exit>
       <exit name="South24" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -3002,13 +2991,6 @@
         <runscript />
         <script type="script">
           MoveAndFace (hub8, 1)
-        </script>
-      </exit>
-      <exit name="North24" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub2, 0)
         </script>
       </exit>
     </object>
@@ -3087,7 +3069,7 @@
         <inherit name="northdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub3, 0)
+          MoveAndFace (nursery1, 0)
         </script>
       </exit>
     </object>
@@ -3160,20 +3142,6 @@
         <runscript />
         <script type="script">
           MoveAndFace (hub13, 2)
-        </script>
-      </exit>
-      <exit name="East26" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub10, 1)
-        </script>
-      </exit>
-      <exit name="North26" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub4, 0)
         </script>
       </exit>
     </object>
@@ -3396,7 +3364,7 @@
         <runscript />
         <visible />
         <script type="script">
-          MoveAndFace (hub11, 3)
+          MoveAndFace (kitchen1, 3)
         </script>
       </exit>
       <exit name="South29" alias="south" to="defaultroom">
@@ -3481,7 +3449,7 @@
         <inherit name="eastdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub14, 1)
+          MoveAndFace (library1, 1)
         </script>
       </exit>
       <exit name="North30" alias="north" to="defaultroom">
@@ -3596,7 +3564,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value>There is a table in front of you. There are tarnished silver cups, and plates on it. On the southwest corner of the table, there is an unlit lantern.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you. There are tarnished silver cups, and plates on it.)</value>
+          <value>There is a table in front of you. There are tarnished silver cups, and plates on it.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3633,14 +3601,10 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (lantern.parent = hub15) {
+          msg ("On the southwest corner of the table, there is an unlit lantern.")
+        }
       </description>
-      <exit name="South32" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub19, 2)
-        </script>
-      </exit>
       <exit name="East32" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -3655,6 +3619,114 @@
           MoveAndFace (hub12, 0)
         </script>
       </exit>
+      <object name="lantern">
+        <inherit name="editor_object" />
+        <inventoryverbs type="stringlist">
+          <value>Look at</value>
+          <value>Drop</value>
+        </inventoryverbs>
+        <take />
+        <attr name="light_level" type="int">0</attr>
+        <drop type="boolean">false</drop>
+        <dropmsg>I have a feeling I'll need this soon.</dropmsg>
+        <attr name="fuel_level" type="int">60</attr>
+        <attr name="burnt_out" type="boolean">false</attr>
+        <attr name="low_fuel" type="boolean">false</attr>
+        <look type="script"><![CDATA[
+          if (Got(lantern)) {
+            if (lantern.light_level = 2) {
+              msg ("Your lantern is bright.")
+            }
+            else if (lantern.light_level = 1) {
+              msg ("Your lantern is dim.")
+            }
+            else {
+              msg ("Your lantern is off.")
+            }
+            if (lantern.fuel_level = 60) {
+              msg ("Your lantern has full fuel.")
+            }
+            else if (lantern.fuel_level >= 50) {
+              msg ("Your lantern is mostly full.")
+            }
+            else if (lantern.fuel_level >= 35) {
+              msg ("Your lantern is partly full.")
+            }
+            else if (lantern.fuel_level >= 20) {
+              msg ("Your lantern is half empty.")
+            }
+            else if (lantern.fuel_level >= 10) {
+              msg ("Your lantern is running low.")
+            }
+            else if (lantern.fuel_level > 0) {
+              msg ("Your lantern is extremely low.")
+            }
+            else {
+              msg ("Your lantern has run out of fuel.")
+            }
+          }
+          else {
+            msg ("The lantern looks like it's still serviceable.")
+          }
+        ]]></look>
+        <turnup type="script"><![CDATA[
+          if (Got(lantern)) {
+            if (lantern.burnt_out = True and lantern.fuel_level > 0) {
+              lantern.burnt_out = False
+            }
+            if (lantern.low_fuel = True and lantern.fuel_level > 10) {
+              lantern.low_fuel = False
+            }
+            if (lantern.burnt_out) {
+              msg ("You can't turn your lantern up since you don't have any fuel.")
+            }
+            else if (lantern.low_fuel and lantern.light_level = 1) {
+              msg ("Your low fuel is limiting how much you can turn your lantern up.")
+            }
+            else if (lantern.light_level <> 2) {
+              lantern.light_level = lantern.light_level + 1
+              if (lantern.light_level = 1) {
+                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
+              }
+              else {
+                msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
+              }
+            }
+            else {
+              msg ("Your lantern is already bright.")
+            }
+          }
+          else {
+            msg ("I should pick it up before I fiddle with it..")
+          }
+        ]]></turnup>
+        <turndown type="script"><![CDATA[
+          if (Got(lantern)) {
+            if (lantern.light_level <> 0) {
+              lantern.light_level = lantern.light_level - 1
+              if (lantern.light_level = 1) {
+                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
+              }
+              else {
+                msg ("Your lantern is now off. Your eyes adjust to the new light level.")
+                PrintRoomDesc (False)
+              }
+            }
+            else {
+              msg ("Your lantern is already off.")
+            }
+          }
+          else {
+            msg ("I should pick it up before I fiddle with it...")
+          }
+        ]]></turndown>
+        <ontake type="script">
+          EnableTurnScript (lantern_turn_script)
+        </ontake>
+      </object>
     </object>
     <object name="hub16">
       <inherit name="editor_room" />
@@ -3724,7 +3796,7 @@
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub20, 2)
+          MoveAndFace (hub16, 2)
         </script>
       </exit>
       <exit name="East33" alias="east" to="defaultroom">
@@ -3797,20 +3869,6 @@
         <visible />
         <script type="script">
           MoveAndFace (hub16, 3)
-        </script>
-      </exit>
-      <exit name="South34" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub21, 2)
-        </script>
-      </exit>
-      <exit name="East34" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub18, 1)
         </script>
       </exit>
       <exit name="North34" alias="north" to="defaultroom">
@@ -3963,114 +4021,6 @@
           MoveAndFace (hub15, 0)
         </script>
       </exit>
-      <object name="lantern">
-        <inherit name="editor_object" />
-        <inventoryverbs type="stringlist">
-          <value>Look at</value>
-          <value>Drop</value>
-        </inventoryverbs>
-        <take />
-        <attr name="light_level" type="int">0</attr>
-        <drop type="boolean">false</drop>
-        <dropmsg>I have a feeling I'll need this soon.</dropmsg>
-        <attr name="fuel_level" type="int">60</attr>
-        <attr name="burnt_out" type="boolean">false</attr>
-        <attr name="low_fuel" type="boolean">false</attr>
-        <look type="script"><![CDATA[
-          if (Got(lantern)) {
-            if (lantern.light_level = 2) {
-              msg ("Your lantern is bright.")
-            }
-            else if (lantern.light_level = 1) {
-              msg ("Your lantern is dim.")
-            }
-            else {
-              msg ("Your lantern is off.")
-            }
-            if (lantern.fuel_level = 60) {
-              msg ("Your lantern has full fuel.")
-            }
-            else if (lantern.fuel_level >= 50) {
-              msg ("Your lantern is mostly full.")
-            }
-            else if (lantern.fuel_level >= 35) {
-              msg ("Your lantern is partly full.")
-            }
-            else if (lantern.fuel_level >= 20) {
-              msg ("Your lantern is half empty.")
-            }
-            else if (lantern.fuel_level >= 10) {
-              msg ("Your lantern is running low.")
-            }
-            else if (lantern.fuel_level > 0) {
-              msg ("Your lantern is extremely low.")
-            }
-            else {
-              msg ("Your lantern has run out of fuel.")
-            }
-          }
-          else {
-            msg ("The lantern looks like it's still serviceable.")
-          }
-        ]]></look>
-        <turnup type="script"><![CDATA[
-          if (Got(lantern)) {
-            if (lantern.burnt_out = True and lantern.fuel_level > 0) {
-              lantern.burnt_out = False
-            }
-            if (lantern.low_fuel = True and lantern.fuel_level > 10) {
-              lantern.low_fuel = False
-            }
-            if (lantern.burnt_out) {
-              msg ("You can't turn your lantern up since you don't have any fuel.")
-            }
-            else if (lantern.low_fuel and lantern.light_level = 1) {
-              msg ("Your low fuel is limiting how much you can turn your lantern up.")
-            }
-            else if (lantern.light_level <> 2) {
-              lantern.light_level = lantern.light_level + 1
-              if (lantern.light_level = 1) {
-                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
-              }
-              else {
-                msg ("Your lantern is now bright. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
-              }
-            }
-            else {
-              msg ("Your lantern is already bright.")
-            }
-          }
-          else {
-            msg ("I should pick it up before I fiddle with it..")
-          }
-        ]]></turnup>
-        <turndown type="script"><![CDATA[
-          if (Got(lantern)) {
-            if (lantern.light_level <> 0) {
-              lantern.light_level = lantern.light_level - 1
-              if (lantern.light_level = 1) {
-                msg ("Your lantern is now dim. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
-              }
-              else {
-                msg ("Your lantern is now off. Your eyes adjust to the new light level.")
-                PrintRoomDesc (False)
-              }
-            }
-            else {
-              msg ("Your lantern is already off.")
-            }
-          }
-          else {
-            msg ("I should pick it up before I fiddle with it...")
-          }
-        ]]></turndown>
-        <ontake type="script">
-          EnableTurnScript (lantern_turn_script)
-        </ontake>
-      </object>
     </object>
     <object name="hub20">
       <inherit name="editor_room" />
@@ -24601,6 +24551,14 @@
     <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
   </verb>
   <turnscript name="paused_turn_script" />
+  <turnscript name="reenable_heart_turn_script">
+    <enabled />
+    <script>
+      if (not game.heartEnabled) {
+        EnableHeart
+      }
+    </script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
