@@ -9,7 +9,7 @@
 <b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -55,7 +55,6 @@
       LockHub
       msg ("You groan, and begin to open your eyes. Your vision is blurry at first, and you feel something wet on your face. You push yourself up on your hands and knees, and blink your eyes repeatedly to clear your vision. You see a face in front of you. It is your reflection in a puddle on the ground. You shake your head, and look down at your familiar face. It looks a little sunken in, and tired. You sigh, and stand up.")
       msg ("")
-      msg ("(Type HELP for gameplay help.)")
       // REMOVE ME
       // game.part = 3
       // player.parent = library111
@@ -79,7 +78,18 @@
         king.visible = false
       }
     </changedpart>
+    <helpShown type="boolean">false</helpShown>
   </game>
+  <command name="help">
+    <pattern type="string">^help$|^\?$</pattern>
+    <script>
+      msg (Template("DefaultHelp"))
+      if (not game.helpShown) {
+        game.helpShown = true
+        DisableHeart
+      }
+    </script>
+  </command>
   <command name="save">
     <pattern type="string">^save$</pattern>
     <script>
@@ -903,6 +913,8 @@
       </enter>
       <onexit type="script">
       </onexit>
+      <firstenter type="script">
+      </firstenter>
       <exit name="North7" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -25640,10 +25652,14 @@
       }
       else {
         EnableHeart
+        game.helpShown = true
       }
       if (not game.heartEnabled) {
         msg ("")
         msg ("(Time is paused. Enter any command to continue.)")
+        if (not game.helpShown) {
+          msg ("(Type HELP for gameplay help.)")
+        }
       }
       if (game.saveTime) {
         msg ("<b>(Now is probably a good time to save!)</b>")
