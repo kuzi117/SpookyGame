@@ -55,6 +55,9 @@
       game.heartRate = game.defaultHeartRate
       LockHub
       msg ("You groan, and begin to open your eyes. Your vision is blurry at first, and you feel something wet on your face. You push yourself up on your hands and knees, and blink your eyes repeatedly to clear your vision. You see a face in front of you. It is your reflection in a puddle on the ground. You shake your head, and look down at your familiar face. It looks a little sunken in, and tired. You sigh, and stand up.")
+      msg ("Once standing you notice a piece of paper in your hand. Confused, you uncrumple the paper and read the words with the help of the moonlight coming from the nearby window:")
+      msg ("")
+      PrintRiddle (0)
       msg ("")
       // REMOVE ME
       // game.part = 3
@@ -3217,7 +3220,6 @@
           }
         ]]></turndown>
         <ontake type="script">
-          EnableTurnScript (lantern_turn_script)
         </ontake>
         <turnon type="script">
           if (Got(lantern)) {
