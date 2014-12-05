@@ -8,7 +8,8 @@
 <b>- Facing:</b> Type FACE ... to face a direction<br/>
 <b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
+<b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -53,6 +54,8 @@
       game.heartRate = game.defaultHeartRate
       LockHub
       msg ("You groan, and begin to open your eyes. Your vision is blurry at first, and you feel something wet on your face. You push yourself up on your hands and knees, and blink your eyes repeatedly to clear your vision. You see a face in front of you. It is your reflection in a puddle on the ground. You shake your head, and look down at your familiar face. It looks a little sunken in, and tired. You sigh, and stand up.")
+      msg ("")
+      msg ("(Type HELP for gameplay help.)")
       // REMOVE ME
       // game.part = 3
       // player.parent = library111
