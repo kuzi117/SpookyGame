@@ -9,7 +9,7 @@
 <b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>    ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -45,6 +45,7 @@
     <part type="int">0</part>
     <reenableCount type="int">0</reenableCount>
     <saveTime type="boolean">false</saveTime>
+    <helpShown type="boolean">false</helpShown>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -78,7 +79,6 @@
         king.visible = false
       }
     </changedpart>
-    <helpShown type="boolean">false</helpShown>
   </game>
   <command name="help">
     <pattern type="string">^help$|^\?$</pattern>
@@ -13749,6 +13749,7 @@
           <value>This is where you find the boy for the 3rd time.</value>
         </item>
       </descriptions>
+      <attr name="maven_here" type="boolean">false</attr>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
         if (player.facing_num = 1 and nursery25.maven_here) {
@@ -13760,7 +13761,6 @@
           }
         }
       ]]></description>
-      <attr name="maven_here" type="boolean">false</attr>
       <exit name="North102" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -13785,6 +13785,7 @@
               msg ("‘Awesome, you found me again!’ Maven smiles, widely. ‘Well, I suppose I can keep my promise…’ Maven gestures to the crib, you can see a piece of paper on it now. It looks like another riddle. You thank Maven, and he smiles. ‘No problem, thank you for playing with me! It was a lot of fun, it has been a long time…” Maven looks into the distance, wistfully. ‘Not many people survive the tests, but I hope you do! Just be careful… I hear bad things happen when you change, when you meet him.’ Maven sighs, ‘Well go on then, don’t get stuck here forever like me. I was too young for the tests, I don’t know why he picked me back then, experiment maybe? Anyway, good luck out there!’ Maven vanishes into thin air.")
               Maven.conversation_part = 6
               nursery25.maven_here = False
+              EndNursery
             }
           }
           else {
@@ -14508,6 +14509,7 @@
           <value>Boy hides here for the 1st time. Find him facing west and inspecting cabinet.</value>
         </item>
       </descriptions>
+      <attr name="maven_here" type="boolean">false</attr>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
         if (not oil5.parent = null and lantern.light_level > 0) {
@@ -14527,7 +14529,6 @@
           }
         }
       ]]></description>
-      <attr name="maven_here" type="boolean">false</attr>
       <exit name="East124" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -16868,6 +16869,7 @@
           <value>This is where the boy hides for the 2nd time.</value>
         </item>
       </descriptions>
+      <attr name="maven_here" type="boolean">false</attr>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
         if (nursery61.maven_here and player.facing_num = 0) {
@@ -16879,7 +16881,6 @@
           }
         }
       ]]></description>
-      <attr name="maven_here" type="boolean">false</attr>
       <exit name="East152" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -26139,6 +26140,23 @@
   <function name="FinishGame">
     DisableHeart
     finish
+  </function>
+  <function name="EndNursery">
+    msg ("The same dark force begins to overwhelm you again, but as you start to lose consciousness you can hear Maven's voice..")
+    msg ("")
+    PrintRiddle (2)
+    msg ("")
+    msg ("You wake up.")
+    msg ("You open your eyes. Your head is pounding, and you groan, as you push yourself up onto your hands and knees. You see your reflection in the puddle, again, and you look more tired than you can even fathom. The bags under your eyes almost seem to take up your face, and your cheeks looks shallow and sickly. You look darker, but that might just be the lack of light in the room. It almost looks like you’re fading. You shake the thoughts off, and stand up.")
+    laila_turn_script.enabled = False
+    game.part = 2
+    FaceSouth
+    DisableHeart
+    game.saveTime = True
+    player.parent = dungeon7
+    lantern.parent = hub15
+    lantern.fuel_level = 60
+    SetHeartRate (game.defaultHeartRate)
   </function>
   <javascript src="javascript.js" />
 </asl>
