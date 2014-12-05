@@ -17146,6 +17146,7 @@
     <inherit name="editor_object" />
     <attr name="grumpy_shadow_counter" type="int">0</attr>
     <darknessTimer type="int">0</darknessTimer>
+    <fireCount type="int">0</fireCount>
     <object name="library1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -24460,7 +24461,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>it is pitch black. You feel as if you have faded into the darkness. You are at a fork in the path. </value>
+          <value>It is pitch black. You feel as if you have faded into the darkness. You are at a fork in the path. </value>
         </item>
         <item>
           <key>darkeast</key>
@@ -24757,6 +24758,10 @@
         msg ("The lantern falls to the floor and smashes into bits, the oil leaks everywhere and ignites. The books start to catch fire -- everything starts to catch fire.")
         msg ("Your only choice is to continue down the hall, the rest of the area is bursting into flames quickly, and the light burns your eyes as if you were staring into the sun.")
         JumpScare
+        lantern.parent = null
+        lantern.light_level = 0
+        library_turn_script.enabled = false
+        fire_turn_script.enabled = true
         DisableHeart
       </beforefirstenter>
       <exit name="West227" alias="west" to="defaultroom">
@@ -25125,6 +25130,13 @@
         <visible />
         <script type="script">
           MoveAndFace (library110, 3)
+        </script>
+      </exit>
+      <exit name="LibraryExit" alias="east" to="hub7">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          EndLibrary
         </script>
       </exit>
     </object>
@@ -25510,6 +25522,7 @@
     </script>
   </command>
   <turnscript name="lantern_heart_turn_script">
+    <enabled />
     <script><![CDATA[
       request (RunScript, "resetHeartCount")
       if (Got(lantern)) {
@@ -25567,7 +25580,20 @@
         msg ("(Time is paused. Enter any command to continue.)")
       }
     ]]></script>
-    <enabled />
+  </turnscript>
+  <turnscript name="fire_turn_script">
+    <enabled type="boolean">false</enabled>
+    <script><![CDATA[
+      JumpScare
+      if (library.fireCount > 10) {
+        msg ("The bookshelves are engulfed in flames and the blaze surrounds you completely. The burning pain -- whether from the fire itself or merely from exposure to the blinding light -- is overwhelming. Smoke fills your lungs and you collapse to the floor. You desperately crawl toward the exit... but it is too late.")
+        Die
+      }
+      else if (library.fireCount > 5) {
+        msg ("You can feel your flesh burning.")
+      }
+      library.fireCount = library.fireCount + 1
+    ]]></script>
   </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
@@ -25753,6 +25779,7 @@
     DisableHeart
     kitchen.inside = False
     player.parent = dungeon7
+    SetHeartRate (game.defaultHeartRate)
   </function>
   <function name="LockHub">
     LockExit (West29)
@@ -25768,7 +25795,21 @@
     Die
   </function>
   <function name="EndLibrary">
+    msg ("You aren't sure where the door leads, but you have no other choice. You frantically fumble with the knob and fling it open. You scramble through the doorway and slam the door behind you.")
+    msg ("It is dark and cool. Relief washes over you. A familiar dark force begins to overwhelm your senses and you drift into unconsciousness.")
+    msg ("In your sleep, words course through your mind. Their origin is uncertain, but to you, their meaning is clear:")
+    msg ("")
+    PrintRiddle (3)
+    msg ("")
+    msg ("You wake up.")
+    msg ("By now you are familiar with the feeling of this room, and sigh. Pushing yourself up, and opening your eyes you see your reflection in that damn puddle. You look darker, and it is hard to distinguish yourself from the shadows around you. You feel hollow, and empty. You sigh again and stand up.")
     library_turn_script.enabled = false
+    fire_turn_script.enabled = false
+    game.part = 3
+    FaceSouth
+    DisableHeart
+    player.parent = dungeon7
+    SetHeartRate (game.defaultHeartRate)
   </function>
   <function name="PrintRiddle" parameters="number" type="int"><![CDATA[
     switch (number) {
