@@ -25838,7 +25838,7 @@
     msg ("")
     msg ("As you finish reading, a dark force overwhelms you and you pass out.")
     msg ("")
-    msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
+    msg ("You begin to open your eyes. You are back in the dungeon cell and your lantern is missing. 'Not this again' you groan, internally, and feel the wetness on your face again.")
     msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
     game.part = 1
     FaceSouth
