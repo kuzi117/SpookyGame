@@ -7305,7 +7305,7 @@
       <bloodTrail />
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (Got(lantern) and lantern.light_level > 0 and not oil1.parent = null) {
+        if (Got(lantern) and lantern.light_level > 0 and not oil1.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 1) {
             msg ("The counter in front of you has a cask of oil sitting on it.")
           }
@@ -9698,7 +9698,7 @@
       <bloodTrail />
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil2.parent = null) {
+        if (not oil2.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2) {
             msg ("The counter in front of you has a cask of oil sitting on it.")
           }
@@ -9794,7 +9794,7 @@
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil2.parent = null) {
+        if (not oil2.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0) {
             msg ("The counter in front of you has a cask of oil sitting on it.")
           }
@@ -10265,7 +10265,7 @@
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil2.parent = null) {
+        if (not oil2.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 1) {
             msg ("The counter in front of you has a cask of oil sitting on it.")
           }
@@ -11423,7 +11423,7 @@
       <bloodTrail type="boolean">false</bloodTrail>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil3.parent = null) {
+        if (not oil3.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2) {
             msg ("The counter in front of you has a cask of oil sitting on it.")
           }
@@ -13588,14 +13588,14 @@
           <value>There is a children’s toy chest to the south of you, you see a spider from it, past your feet, on the ground. There is a wall a few steps forwards. </value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil4.parent = null) {
+        if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0 or player.facing_num = 3) {
             msg ("There is a cask of oil sitting on the table to your northwest.")
           }
         }
-      </description>
+      ]]></description>
       <exit name="North113" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -13674,11 +13674,11 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil4.parent = null) {
-          if (player.facing_num = 2) {
+        if (not oil4.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 0) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
-          else if (player.facing_num <> 0) {
+          else if (player.facing_num <> 2) {
             msg ("There is a cask of oil sitting on the table to your north.")
           }
         }
@@ -13838,14 +13838,14 @@
           <value>You are in a small room. There is a large mound of toys a few steps in front of you. There is a doll in front of them all, wearing a dress with little lambs on it. You could have sworn she just blinked.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil5.parent = null) {
+        if (not oil5.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0 or player.facing_num = 3) {
             msg ("There is a cask of oil sitting on the table to the northwest.")
           }
         }
-      </description>
+      ]]></description>
       <exit name="North123" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -13935,7 +13935,7 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil5.parent = null) {
+        if (not oil5.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
@@ -14236,7 +14236,7 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil4.parent = null) {
+        if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 3) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
@@ -14393,7 +14393,7 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil5.parent = null) {
+        if (not oil5.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 3) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
@@ -14629,14 +14629,14 @@
           <value>There is a door a few steps forwards, a small table to the southwest, and a small table to the northwest.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil4.parent = null) {
+        if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2 or player.facing_num = 3) {
             msg ("There is a cask of oil sitting on the table to your southwest.")
           }
         }
-      </description>
+      ]]></description>
       <exit name="North133" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -14722,12 +14722,12 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil4.parent = null) {
+        if (not oil4.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
           else if (player.facing_num <> 2) {
-            msg ("There is a cask of oil sitting on the table to your south.")
+            msg ("There is a cask of oil sitting on the table to your north.")
           }
         }
       ]]></description>
@@ -15788,11 +15788,11 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil6.parent = null) {
-          if (player.facing_num = 2) {
+        if (not oil6.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 0) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
-          else if (player.facing_num <> 0) {
+          else if (player.facing_num <> 2) {
             msg ("There is a cask of oil sitting on the table to your north.")
           }
         }
@@ -15881,14 +15881,14 @@
           <value>There is a chair to the south of you, and a bed to the northwest.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil6.parent = null) {
+        if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 0 or player.facing_num = 1) {
             msg ("There is a cask of oil sitting on the table to your northeast.")
           }
         }
-      </description>
+      ]]></description>
       <exit name="North149" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -16264,7 +16264,7 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil6.parent = null) {
+        if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 1) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
@@ -16415,7 +16415,7 @@
       </descriptions>
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil6.parent = null) {
+        if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2) {
             msg ("There is a cask of oil sitting on the table in front of you.")
           }
@@ -16493,14 +16493,14 @@
           <value>There is a bed in front of you, it is covered in a flower patterned duvet. The flowers look like posies. There is a wall to the north of you. </value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-        if (not oil6.parent = null) {
+        if (not oil6.parent = null and lantern.light_level > 0) {
           if (player.facing_num = 2 or player.facing_num = 1) {
             msg ("There is a cask of oil sitting on the table to your southeast.")
           }
         }
-      </description>
+      ]]></description>
       <exit name="East157" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -17525,7 +17525,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you, it seems to have something on it.</value>
+          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you.</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -17541,11 +17541,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a table in front of you, it has a cask of oil on it. There is a wall to the west, and a bookshelf to the east.</value>
+          <value>There is a table in front of you. There is a wall to the west, and a bookshelf to the east.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you, and a small table with a cask of oil on it to the north.</value>
+          <value>There is a bookshelf in front of you, and a small table to the north.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -17553,15 +17553,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a wall in front of you, there is a small table to the north of you. It has a cask of oil sitting on it.</value>
+          <value>There is a wall in front of you, there is a small table to the north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a table in front of you, it has a cask of oil on it. There is a wall to the west, and a bookshelf to the east. This is a dead end. </value>
+          <value>There is a table in front of you. There is a wall to the west, and a bookshelf to the east. This is a dead end. </value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you, and a small table with a cask of oil on it to the north. This is a dead end, the path continues to the south.  </value>
+          <value>There is a bookshelf in front of you, and a small table. This is a dead end, the path continues to the south.  </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -17569,12 +17569,20 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a wall in front of you, there is a small table to the north of you. It has a cask of oil sitting on it.</value>
+          <value>There is a wall in front of you, there is a small table to the north of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil7.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 0) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("There is a cask of oil sitting on the table to your north.")
+          }
+        }
+      ]]></description>
       <exit name="South134" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
@@ -17582,77 +17590,21 @@
           MoveAndFace (library14, 2)
         </script>
       </exit>
-      <exit name="North136" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library16, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="library16">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="South138" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library15, 2)
-        </script>
-      </exit>
+      <object name="oil7">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil7)
+        </take>
+        <use type="script">
+          GetOil (oil7)
+        </use>
+      </object>
     </object>
     <object name="library17">
       <inherit name="editor_room" />
@@ -17989,7 +17941,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a bookshelf to the south of you. The path continues forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -18005,7 +17957,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a bookshelf to the south of you. The path continues forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -18975,7 +18927,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you, it seems like there is something on it.</value>
+          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -18987,15 +18939,15 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bookshelf in front of you. To the east of you there is a small table with a cask of oil sitting on it.</value>
+          <value>There is a bookshelf in front of you. To the east of you there is a small table.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the south of you, and a bookshelf to the east.</value>
+          <value>There is a small table in front of you. There is a wall to the south of you, and a bookshelf to the east.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a wall in front of you, and a small table to the east of you with a cask of oil sitting on it.</value>
+          <value>There is a wall in front of you, and a small table to the east of you.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -19003,24 +18955,32 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value>There is a bookshelf in front of you. To the east of you there is a small table with a cask of oil sitting on it. This is a dead end.</value>
+          <value>There is a bookshelf in front of you. To the east of you there is a small table. This is a dead end.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a wall to the south of you, and a bookshelf to the east. This is a dead end.</value>
+          <value>There is a small table in front of you. There is a wall to the south of you, and a bookshelf to the east. This is a dead end.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a wall in front of you, and a small table to the east of you with a cask of oil sitting on it. This is a dead end. </value>
+          <value>There is a wall in front of you, and a small table to the east of you. This is a dead end. </value>
         </item>
         <item>
           <key>brightwest</key>
           <value>There is a wall to the south of you, and a bookshelf to the north. The path continues forwards.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil8.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 1) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 3) {
+            msg ("There is a cask of oil sitting on the table to your east.")
+          }
+        }
+      ]]></description>
       <exit name="West156" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -19029,13 +18989,21 @@
           MoveAndFace (library33, 3)
         </script>
       </exit>
-      <exit name="East155" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library46, 1)
-        </script>
-      </exit>
+      <object name="oil8">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil8)
+        </take>
+        <use type="script">
+          GetOil (oil8)
+        </use>
+      </object>
     </object>
     <object name="library36">
       <inherit name="editor_room" />
@@ -19613,7 +19581,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a bookshelf in front of you.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -19773,75 +19741,6 @@
         <runscript />
         <script type="script">
           MoveAndFace (library54, 1)
-        </script>
-      </exit>
-    </object>
-    <object name="library46">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>notes</key>
-          <value>JK Not a real space. It is ALSO oil lol</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="West167" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (library35, 3)
         </script>
       </exit>
     </object>
@@ -20503,7 +20402,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a bookshelf to the south, and north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -20519,7 +20418,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a bookshelf to the south, and north of you. The path continues forwards.</value>
         </item>
       </descriptions>
       <description type="script">
@@ -20915,74 +20814,6 @@
         </script>
       </exit>
     </object>
-    <object name="library61">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>notes</key>
-          <value>JK not a real space, oil space.</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="North195" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library62, 0)
-        </script>
-      </exit>
-    </object>
     <object name="library62">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -21009,15 +20840,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you. There is a small table with a cask of oil on it to the south of you.</value>
+          <value>There is a bookshelf in front of you. There is a small table to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table in front of you with a cask of oil sitting on it. There is a bookshelf to the east, and the west of you.</value>
+          <value>There is a small table in front of you. There is a bookshelf to the east, and the west of you.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf in front of you. There is a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>There is a bookshelf in front of you. There is a small table to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -21025,27 +20856,28 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>There is a bookshelf in front of you. There is a small table with a cask of oil on it to the south of you.</value>
+          <value>There is a bookshelf in front of you. There is a small table to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>There is a small table in front of you with a cask of oil sitting on it. There is a bookshelf to the east, and the west of you.</value>
+          <value>There is a small table in front of you. There is a bookshelf to the east, and the west of you.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>There is a bookshelf in front of you. There is a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>There is a bookshelf in front of you. There is a small table to the south of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
-      <exit name="South197" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library61, 2)
-        </script>
-      </exit>
+        if (not oil9.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 2) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("There is a cask of oil sitting on the table to your south.")
+          }
+        }
+      ]]></description>
       <exit name="North196" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -21053,6 +20885,21 @@
           MoveAndFace (library63, 0)
         </script>
       </exit>
+      <object name="oil9">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil9)
+        </take>
+        <use type="script">
+          GetOil (oil9)
+        </use>
+      </object>
     </object>
     <object name="library63">
       <inherit name="editor_room" />
@@ -22688,70 +22535,6 @@
         </script>
       </exit>
     </object>
-    <object name="library85">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="North219" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library86, 0)
-        </script>
-      </exit>
-    </object>
     <object name="library86">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -22766,7 +22549,7 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you. There is something on it.</value>
+          <value>You cannot see anything. You feel as if you have faded into the darkness. You can feel a small table in front of you.</value>
         </item>
         <item>
           <key>darkwest</key>
@@ -22778,15 +22561,15 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf in front of you, and a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>There is a bookshelf in front of you, and a small tableto the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a small table in front of you, with a cask of oil sitting on it. There is a bookshelf to the east, and west of you. This is a dead end.</value>
+          <value>There is a small table in front of you. There is a bookshelf to the east, and west of you. This is a dead end.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf in front of you, and a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>There is a bookshelf in front of you, and a small table to the south of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -22794,27 +22577,28 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>The bright light hurts your eyes. There is a bookshelf in front of you, and a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>The bright light hurts your eyes. There is a bookshelf in front of you, and a small table to the south of you.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>The bright light hurts your eyes. There is a small table in front of you, with a cask of oil sitting on it. There is a bookshelf to the east, and west of you. This is a dead end.</value>
+          <value>The bright light hurts your eyes. There is a small table in front of you. There is a bookshelf to the east, and west of you. This is a dead end.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>The bright light hurts your eyes. There is a bookshelf in front of you, and a small table with a cask of oil sitting on it to the south of you.</value>
+          <value>The bright light hurts your eyes. There is a bookshelf in front of you, and a small table to the south of you.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
-      <exit name="South221" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library85, 2)
-        </script>
-      </exit>
+        if (not oil10.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 2) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 0) {
+            msg ("There is a cask of oil sitting on the table to your south.")
+          }
+        }
+      ]]></description>
       <exit name="North220" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -22822,6 +22606,21 @@
           MoveAndFace (library87, 0)
         </script>
       </exit>
+      <object name="oil10">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil10)
+        </take>
+        <use type="script">
+          GetOil (oil10)
+        </use>
+      </object>
     </object>
     <object name="library87">
       <inherit name="editor_room" />
@@ -23524,11 +23323,11 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a small table in front of you, it has a cask of oil sitting on it. The path continues to the east, and the west.</value>
+          <value>There is a small table in front of you. The path continues to the east, and the west.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a bookshelf to the south of you, and a small table with a cask of oil sitting on it to the north. The path continues forwards. </value>
+          <value>There is a bookshelf to the south of you, and a small table to the north. The path continues forwards. </value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -23536,15 +23335,15 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a bookshelf to the south, and a small table with a cask of oil sitting on it to the north. The path continues forwards.</value>
+          <value>There is a bookshelf to the south, and a small table to the north. The path continues forwards.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>TODO: implement this description</value>
+          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a small table in front of you. The path continues to the easy, and the west.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a bookshelf to the south of you, and a small table with a cask of oil sitting on it to the north. </value>
+          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a bookshelf to the south of you, and a small table to the north. </value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -23552,12 +23351,20 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a bookshelf to the south, and a small table with a cask of oil sitting on it to the north.</value>
+          <value>The bright light hurts your eyes, you are straining through the pain to see. There is a bookshelf to the south, and a small table to the north.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not oil11.parent = null and lantern.light_level > 0) {
+          if (player.facing_num = 0) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 2) {
+            msg ("There is a cask of oil sitting on the table to your north.")
+          }
+        }
+      ]]></description>
       <exit name="West217" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -23573,84 +23380,21 @@
           MoveAndFace (library100, 1)
         </script>
       </exit>
-      <exit name="North230" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library97, 0)
-        </script>
-      </exit>
-    </object>
-    <object name="library97">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>TODO: implement this description</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>TODO: implement this description</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="South232" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library96, 2)
-        </script>
-      </exit>
-      <exit name="East219" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (library101, 1)
-        </script>
-      </exit>
+      <object name="oil11">
+        <inherit name="editor_object" />
+        <alt type="stringlist">
+          <value>cask</value>
+        </alt>
+        <alias>oil</alias>
+        <scenery />
+        <feature_usegive />
+        <take type="script">
+          GetOil (oil11)
+        </take>
+        <use type="script">
+          GetOil (oil11)
+        </use>
+      </object>
     </object>
     <object name="library98">
       <inherit name="editor_room" />
@@ -23674,7 +23418,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value>The ground a step in front of you looks unstable. The pain continues forwards, to the east, and to north.</value>
+          <value>The ground a step in front of you looks unstable. The path continues forwards, to the east, and to north.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -23857,6 +23601,11 @@
       </descriptions>
       <description type="script">
         PrintRoomDesc (False)
+        if (not oil11.parent = null and lantern.light_level = 1) {
+          if (player.facing_num = 0 or player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table to your northwest.")
+          }
+        }
       </description>
       <exit name="West221" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -23880,7 +23629,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>It is pitch black, You feel as if you have faded into the darkness. There is a bookshelf to the east of you, and a small table with a cask of oil on it to the west.</value>
+          <value>It is pitch black, You feel as if you have faded into the darkness. There is a bookshelf to the east of you, and a small table to the west.</value>
         </item>
         <item>
           <key>darkeast</key>
@@ -23888,15 +23637,15 @@
         </item>
         <item>
           <key>darksouth</key>
-          <value>It is pitch black. You feel as if you have faded into the darkness. There is a bookshelf to the east of you, and a small table with a cask of oil sitting on it to the west.</value>
+          <value>It is pitch black. You feel as if you have faded into the darkness. There is a bookshelf to the east of you, and a small table to the west.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>It is pitch black. You feel as if you have faded into the darkness. There is a small table with a cask of oil sitting on it in front of you. </value>
+          <value>It is pitch black. You feel as if you have faded into the darkness. There is a small table in front of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>There is a bookshelf to the east of you, and a small table with a cask of oil on it to the west. The path continues forwards. </value>
+          <value>There is a bookshelf to the east of you, and a small table to the west. The path continues forwards. </value>
         </item>
         <item>
           <key>dimeast</key>
@@ -23904,11 +23653,11 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value>There is a bookshelf to the east of you, and a small table with a cask of oil sitting on it to the west. The path continues forwards.</value>
+          <value>There is a bookshelf to the east of you, and a small table to the west. The path continues forwards.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>There is a small table with a cask of oil sitting on it in front of you. The path continues to the south, and the north. </value>
+          <value>There is a small table in front of you. The path continues to the south, and the north. </value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -23927,17 +23676,17 @@
           <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
       </descriptions>
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
-      <exit name="West222" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (library97, 3)
-        </script>
-      </exit>
+        if (not oil11.parent = null and lantern.light_level = 1) {
+          if (player.facing_num = 3) {
+            msg ("There is a cask of oil sitting on the table in front of you.")
+          }
+          else if (player.facing_num <> 1) {
+            msg ("There is a cask of oil sitting on the table to your west.")
+          }
+        }
+      ]]></description>
       <exit name="South236" alias="south" to="defaultroom">
         <inherit name="southdirection" />
         <runscript />
