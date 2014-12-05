@@ -43,8 +43,8 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen63
-      lantern.parent = player
+      player.parent = dungeon7
+      game.part = 3
     </start>
   </game>
   <command name="lookdir">
@@ -542,9 +542,14 @@
           <value>N/A </value>
         </item>
       </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
+      <description type="script"><![CDATA[
+        if (player.facing_num = 0 and game.part >= 3) {
+          msg ("There is a window in front of you, it is boarded over, but a few rays of sunlight are sneaking in through the cracks, lighting up the area.")
+        }
+        else {
+          PrintRoomDesc (False)
+        }
+      ]]></description>
       <exit name="East3" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -941,9 +946,14 @@
           <value>N/A </value>
         </item>
       </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
+      <description type="script"><![CDATA[
+        if (player.facing_num = 0 and game.part >= 3) {
+          msg ("You are in a prison cell. A few steps northwest of you there is a window, it is boarded up, but a few rays of sunlight are peaking through illuminating the area.")
+        }
+        else {
+          PrintRoomDesc (False)
+        }
+      ]]></description>
       <exit name="West1" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -2459,15 +2469,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
+          <value>There is a wall to the north of you. A few steps forwards, and to the north is a door. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall to the west of you. You are in the corner of a small room. </value>
+          <value>There is a wall to the west of you. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
+          <value>There is a wall in front of you, it is made of stone and it is cold and damp, there is some moss growing on the stone, making it slimy to the touch.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2526,19 +2536,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a wall in front of you, it is made of stone. You are in a small room. </value>
+          <value> There is a wall in front of you, it is made of stone. You are in a small room. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
+          <value>There is a wall to the north of you. You are in a small room. There is a door a step forwards, and on the north wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
+          <value>You are in a small room, a few steps to the southeast of you sits a chessboard on a small table. You can see some pieces arranged on the board.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
+          <value>There is a wall to the north of you, and a wall a few steps ahead. You are in a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2605,19 +2615,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
+          <value> There is a door in front of you. It is made of a darkly stained oak, with a tarnished silver handle. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
+          <value>There is a door to the north of you. You are in a small room, there is a chessboard a few steps south of you, located in the middle of the room. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
+          <value>You are in a small room. A few steps forwards there is a chessboard sitting on a small table. There are some pieces arranged on the board. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
+          <value>There is a door to the north of you. You are in a small room. A few steps south of you is a chessboard sitting on a small table. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2693,19 +2703,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
+          <value> There is a wall in front of you, it is made of stone. It is damp, and cold, covered in a slimy moss. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall to the north of you. A few steps forwards there is a wall.</value>
+          <value>There is a wall to the north of you. A few steps forwards there is a wall.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
+          <value>You are in a small room, the floor is made of old stone slabs, arranged to look like an ornate tiled design. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
+          <value>There is a wall to the north of you. There is a door a step forwards on the north wall. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2772,19 +2782,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          <value> There is a wall in front of you, and to the east of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
+          <value>There is a wall in front of you, and to the north of you. You are in the corner of a small room. The wall is made of stone, it is cold and thick with dust.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
+          <value>There is a wall to the east of you, you are in the corner of a small room. The floor is made of stone slabs that are arranged to look like an ornate tiled pattern. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall to the north of you. You are in the corner of a small room. </value>
+          <value>There is a wall to the north of you. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2848,15 +2858,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
+          <value>You are in a small room, there is a chessboard sitting on a small table, in the middle of the room. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
+          <value>There is a wall to the west of you. There is a door on the western wall a step forwards. It is made of a darkly stained oak.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
+          <value>There is a wall in front of you, it is made of stone. It is covered in cobwebs, and you see a spider flit across the wall.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -2922,19 +2932,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value> There is a wall a few steps forwards. You are in a small room. The room is lit by the moonlight cascading through large glass panes on the ceiling. The light coats the room in a ghostly glow. (TODO: Alternate for when windows shut: There is a wall a few steps forwards. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>There is a wall a few steps forwards. You are in a small room. The room is lit by the moonlight cascading through large glass panes on the ceiling. The light coats the room in a ghostly glow. (TODO: Alternate for when windows shut: There is a wall a few steps forwards. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard sitting on a small table to the southeast of you. You can see some pieces arranged on the board, but need to get a bit closer to fully make out what they are.</value>
+          <value>There is a chessboard sitting on a small table to the southeast of you. You can see some pieces arranged on the board, but need to get a bit closer to fully make out what they are.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a chessboard sitting on a table to the southeast of you. You are in a small room that is lit by the moonlight cascading in from large glass panes on the ceiling. (TODO: Alternate for when windows shut: There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>There is a chessboard sitting on a table to the southeast of you. You are in a small room that is lit by the moonlight cascading in from large glass panes on the ceiling. (TODO: Alternate for when windows shut: There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> You are in a small room, lit by the moonlight cascading through large glass panes in the ceiling. You can see some of the stars through it, including the constellation of Cassiopeia.  (TODO: Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>You are in a small room, lit by the moonlight cascading through large glass panes in the ceiling. You can see some of the stars through it, including the constellation of Cassiopeia.  (TODO: Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3008,19 +3018,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a darkly stained oak door a few steps forwards of you.</value>
+          <value> There is a darkly stained oak door a few steps forwards of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
+          <value>There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a chessboard sitting on a small table in front of you. There are some pieces arranged on the board.</value>
+          <value>There is a chessboard sitting on a small table in front of you. There are some pieces arranged on the board.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
+          <value>There is a chessboard sitting on a small table to the south of you, and a darkly stained oak door a few steps to the north.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3080,13 +3090,6 @@
           MoveAndFace (hub3, 0)
         </script>
       </exit>
-      <exit name="South35" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (chessboard, 2)
-        </script>
-      </exit>
     </object>
     <object name="hub9">
       <inherit name="editor_room" />
@@ -3094,11 +3097,11 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value> There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>There is a wall a few steps forwards. The room is lit by moonlight cascading in through large glass panes in the ceiling. You can see the full moon through the glass. It is large, and imposing. (TODO: Alternate for windows being shut: There is a wall a few steps forwards. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -3106,7 +3109,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard to the southwest of you, in the middle of the room. The room is lit by moonlight cascading in from the large glass panes on the ceiling. You can see the full moon through the glass, it is large and imposing. (TODO: Alternate: There is a chessboard to the southwest of you, in the middle of the room. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
+          <value>There is a chessboard to the southwest of you, in the middle of the room. The room is lit by moonlight cascading in from the large glass panes on the ceiling. You can see the full moon through the glass, it is large and imposing. (TODO: Alternate: There is a chessboard to the southwest of you, in the middle of the room. The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3184,15 +3187,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
+          <value>There is a wall in front of you. It is made of stone, and it is cold and damp. You see a centipede crawl through the cracks near the floor.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
+          <value>There is a wall to the east of you. A step forwards, on the eastern wall, is a large, dark cherry stained, oak door.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
+          <value>There is a chessboard sitting on a table in the middle of the room, a few steps forwards and to the south. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3263,15 +3266,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
+          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards. There is a table to the south of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
+          <value>There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. On the south side of the table there is an unlit lantern. There is a large oak door to the west of you. You are in a small room.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you, there is a few tarnished silver cups and plates sitting on the table, covered in cobwebs and dust. There is a large oak door to the west of you. You are in a small room. )</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
+          <value>There is a large oak door in front of you. It has a wrought iron door handle on it. There is a table to the south of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3338,19 +3341,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle a few steps west. </value>
+          <value> There is a chessboard sitting atop a small table to the east of you, and an oak door with a wrought iron handle a few steps west. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard sitting atop a small table in front of you. There are some pieces arrange on the board.</value>
+          <value>There is a chessboard sitting atop a small table in front of you. There are some pieces arrange on the board.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle a few steps west</value>
+          <value>There is a chessboard sitting on a small table to the east of you, and an oak door with a wrought iron handle a few steps west</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is an oak door a few steps forwards. You are in a small room. </value>
+          <value>There is an oak door a few steps forwards. You are in a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3410,13 +3413,6 @@
           MoveAndFace (hub7, 0)
         </script>
       </exit>
-      <exit name="East27" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (chessboard, 1)
-        </script>
-      </exit>
     </object>
     <object name="hub13">
       <inherit name="editor_room" />
@@ -3424,19 +3420,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a large, dark cherry stained, oak door a few steps to the east of you. There is a chessboard sitting on a small table to the west.</value>
+          <value> There is a large, dark cherry stained, oak door a few steps to the east of you. There is a chessboard sitting on a small table to the west.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a large, dark cherry stained, oak door a few steps forwards. You are in a small room.</value>
+          <value>There is a large, dark cherry stained, oak door a few steps forwards. You are in a small room.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a chessboard sitting on a small table to the west of you. There is a large, dark cherry stained, oak door to the east of you. </value>
+          <value>There is a chessboard sitting on a small table to the west of you. There is a large, dark cherry stained, oak door to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard sitting on a small table in front of you. There are some pieces arranged on it. </value>
+          <value>There is a chessboard sitting on a small table in front of you. There are some pieces arranged on it. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3495,14 +3491,6 @@
           MoveAndFace (hub9, 0)
         </script>
       </exit>
-      <exit name="West23" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (chessboard, 3)
-        </script>
-      </exit>
     </object>
     <object name="hub14">
       <inherit name="editor_room" />
@@ -3514,15 +3502,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
+          <value>There is a large, dark cherry stained, oak door in front of you. The handle is made of gold, but is plainly crafted. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
+          <value>There is a large, dark cherry stained, oak door to the east of you, and a chessboard sitting on a small table a few steps to the west. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
+          <value>There is a chessboard sitting on a small table in the middle of the room, a few steps forwards.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3596,19 +3584,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you, and a table to the west of you.</value>
+          <value> There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you, and a table to the west of you.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you. </value>
+          <value>There is a chessboard sitting on a small table, in the middle of the room, to the northeast of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a table to the west of you, and a wall a few steps forwards.</value>
+          <value>There is a table to the west of you, and a wall a few steps forwards.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a table in front of you. There are tarnished silver cups, and plates on it. On the southwest corner of the table, there is an unlit lantern.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you. There are tarnished silver cups, and plates on it.)</value>
+          <value>There is a table in front of you. There are tarnished silver cups, and plates on it. On the southwest corner of the table, there is an unlit lantern.  (TODO: Alternate for when the lantern is picked up: There is a table in front of you. There are tarnished silver cups, and plates on it.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3678,7 +3666,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
+          <value>There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
         </item>
         <item>
           <key>darksouth</key>
@@ -3686,7 +3674,7 @@
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
+          <value>There is a chessboard on a small table to the north of you. A few steps south of you is a large, ornate, black door. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3746,13 +3734,6 @@
           MoveAndFace (hub17, 1)
         </script>
       </exit>
-      <exit name="North12" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (chessboard, 0)
-        </script>
-      </exit>
     </object>
     <object name="hub17">
       <inherit name="editor_room" />
@@ -3760,19 +3741,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value> There is a chessboard on a small table to the northwest of you. There are some pieces arranged on it. </value>
+          <value>There is a chessboard on a small table to the northwest of you. There are some pieces arranged on it. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall a few steps forwards, and a few steps to the south of you. </value>
+          <value>There is a wall a few steps forwards, and a few steps to the south of you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall a few steps forwards, and a few steps to the east of you. </value>
+          <value>There is a wall a few steps forwards, and a few steps to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall a few steps to the south of you. There is a chessboard sitting on a small table to the northwest of you. </value>
+          <value>There is a wall a few steps to the south of you. There is a chessboard sitting on a small table to the northwest of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3846,19 +3827,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
+          <value> There is a wall to the east of you. There is a large, dark cherry stained, oak door on the eastern wall a step forwards.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
+          <value>There is a wall in front of you. It is made of stone, and is cold to the touch. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
+          <value>There is a large knight statue taking up the space in front of you. It feels almost like it is watching you, though it is dusty and does not seem to have moved in ages.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
+          <value>There is a large knight statue towering over you to the south. You are in the corner of a small room. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -3918,19 +3899,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
+          <value> There is a table to the west of you, it has an unlit lantern sitting on it.  (TODO: Alternate for when pick up lantern: There is a table to the west of you, there is not much of interest on it.)</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
+          <value>There is a wall to the south of you. On the southern wall, a step forwards, there is a very large, ornate, black door. It is beautifully crafted. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
+          <value>There is a wall in front of you, and a table to the west of you. The table has an unlit lantern on it. (TODO: Alternate for when pick up lantern: There is a wall in front of you, and a table to the west of you. There is not much of interest on it.)</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
+          <value>There is a table in front of you. There is an unlit lantern sitting on the table. (TODO: Alternate: There is a table in front of you, there is not much of interest of it. There is a wall to the south of you.)</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4101,15 +4082,15 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
+          <value>There is a large, ornate, black door to the south of you. There is a large statue of a knight a few steps forwards. You feel like it is watching you. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
+          <value>There is a large, ornate, black door in front of you. It is masterfully crafted, and inlayed with gold and jewels. The handle is an ornate, diamond encrusted, round knob. This is the largest, and most imposing of all the doors. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
+          <value>There is a large, ornate, black door to the south of you. There is a chessboard on a small table, in the middle of the room, a few steps to the north.</value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4183,19 +4164,19 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>  There is a large statue of a knight to the east of you, he is towering over you. You feel like youâ€™re being watched. </value>
+          <value> There is a large statue of a knight to the east of you, he is towering over you. You feel like youâ€™re being watched. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value> There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
+          <value>There is a large statue of a knight in front of you. He is towering over you, and although he is covered in a thick film of dust, and has not seemed to have been touched, or moved in ages, you feel as though you are being watched. </value>
         </item>
         <item>
           <key>darksouth</key>
-          <value> There is a wall in front of you, and a large statue of a knight to the east of you. </value>
+          <value>There is a wall in front of you, and a large statue of a knight to the east of you. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value> There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
+          <value>There is a wall to the south of you, and on the southern wall a step forwards there is a very large, ornate, black door. </value>
         </item>
         <item>
           <key>dimnorth</key>
@@ -4248,99 +4229,6 @@
           MoveAndFace (hub17, 0)
         </script>
       </exit>
-    </object>
-    <object name="chessboard">
-      <inherit name="editor_room" />
-      <usedefaultprefix />
-      <descriptions type="stringdictionary">
-        <item>
-          <key>darknorth</key>
-          <value>defaultdarknorth</value>
-        </item>
-        <item>
-          <key>darkeast</key>
-          <value>defaultdarkeast</value>
-        </item>
-        <item>
-          <key>darksouth</key>
-          <value>defaultdarksouth</value>
-        </item>
-        <item>
-          <key>darkwest</key>
-          <value>defaultdarkwest</value>
-        </item>
-        <item>
-          <key>dimnorth</key>
-          <value>defaultdimnorth</value>
-        </item>
-        <item>
-          <key>dimeast</key>
-          <value>defaultdimeast</value>
-        </item>
-        <item>
-          <key>dimsouth</key>
-          <value>defaultdimsouth</value>
-        </item>
-        <item>
-          <key>dimwest</key>
-          <value>defaultdimwest</value>
-        </item>
-        <item>
-          <key>brightnorth</key>
-          <value>defaultbrightnorth</value>
-        </item>
-        <item>
-          <key>brighteast</key>
-          <value>defaultbrighteast</value>
-        </item>
-        <item>
-          <key>brightsouth</key>
-          <value>defaultbrightsouth</value>
-        </item>
-        <item>
-          <key>brightwest</key>
-          <value>defaultbrightwest</value>
-        </item>
-      </descriptions>
-      <description type="script">
-        PrintRoomDesc (False)
-      </description>
-      <exit name="North10" alias="north" to="defaultroom">
-        <inherit name="northdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub8, 0)
-        </script>
-      </exit>
-      <exit name="East17" alias="east" to="defaultroom">
-        <inherit name="eastdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub13, 1)
-        </script>
-      </exit>
-      <exit name="South28" alias="south" to="defaultroom">
-        <inherit name="southdirection" />
-        <runscript />
-        <script type="script">
-          MoveAndFace (hub16, 2)
-        </script>
-      </exit>
-      <exit name="West17" alias="west" to="defaultroom">
-        <inherit name="westdirection" />
-        <runscript />
-        <visible />
-        <script type="script">
-          MoveAndFace (hub12, 3)
-        </script>
-      </exit>
-      <command name="Examine Chessboard">
-        <unresolved type="string"></unresolved>
-        <pattern type="string">(ex|examine|look) chessboard</pattern>
-        <script>
-          msg ("The chessboard has x on it. Please give me some real text..")
-        </script>
-      </command>
     </object>
   </object>
   <object name="kitchen">
@@ -4462,7 +4350,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value> You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
+          <value>You are in a hallway, there is a wall in front of you. There is a trail of blood on the ground leading west.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -4523,7 +4411,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value> You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
+          <value>You are in a hallway, there is a wall in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -4740,7 +4628,7 @@
         </item>
         <item>
           <key>darkeast</key>
-          <value> You cannot see anything.</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darksouth</key>
@@ -5246,7 +5134,7 @@
         </item>
         <item>
           <key>brightwest</key>
-          <value> You are in a hallway. You can see blood on the ground to the west of you, and a door directly north of you.</value>
+          <value>You are in a hallway. You can see blood on the ground to the west of you, and a door directly north of you.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -7265,7 +7153,7 @@
         </item>
         <item>
           <key>dimsouth</key>
-          <value> There is a counter to the east, and to the west of you. There are some spots of blood on the ground.</value>
+          <value>There is a counter to the east, and to the west of you. There are some spots of blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
@@ -12331,7 +12219,7 @@
         </item>
         <item>
           <key>brightsouth</key>
-          <value> There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall. It feels like she is watching you.</value>
+          <value>There is a door to the east of you, and a wall to the west. There is a painting of a lady on the wall. It feels like she is watching you.</value>
         </item>
         <item>
           <key>brightwest</key>
@@ -12397,7 +12285,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value> There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
+          <value>There is a small bed a few steps forwards. (TODO: Before you met boy: There is a figure of a small boy hanging in the air in front of the bed. He is looking up at you.)</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -19836,7 +19724,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value> There is a bookshelf to the south, and to the north of you. The path continues forwards.</value>
+          <value>There is a bookshelf to the south, and to the north of you. The path continues forwards.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -22005,7 +21893,7 @@
         </item>
         <item>
           <key>dimwest</key>
-          <value> There is a bookshelf in front of you. The path continues to the south and north of you.</value>
+          <value>There is a bookshelf in front of you. The path continues to the south and north of you.</value>
         </item>
         <item>
           <key>brightnorth</key>
@@ -24081,7 +23969,7 @@
         </item>
         <item>
           <key>dimnorth</key>
-          <value> There is a bookshelf in front of you. The path continues to the east, and to the west.</value>
+          <value>There is a bookshelf in front of you. The path continues to the east, and to the west.</value>
         </item>
         <item>
           <key>dimeast</key>
@@ -24097,7 +23985,7 @@
         </item>
         <item>
           <key>brightnorth</key>
-          <value> The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
+          <value>The light is so bright it makes your eyes burn, as if you were staring into the sun. It is so bright you can’t see anything.</value>
         </item>
         <item>
           <key>brighteast</key>
@@ -24890,7 +24778,7 @@
     msg ("")
     msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
     msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
-    game.stage = 1
+    game.part = 1
     FaceSouth
     DisableHeart
     kitchen.inside = False
