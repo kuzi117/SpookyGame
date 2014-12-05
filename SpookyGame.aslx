@@ -8,7 +8,7 @@
 <b>- Facing:</b> Type FACE ... to face a direction<br/>
 <b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -37,7 +37,7 @@
     <counterDisabled type="boolean">false</counterDisabled>
     <statusattributes type="stringdictionary" />
     <heartRate type="int">1200</heartRate>
-    <heartEnabled />
+    <heartEnabled type="boolean">false</heartEnabled>
     <defaultHeartRate type="int">1200</defaultHeartRate>
     <jumpScareAmount type="int">900</jumpScareAmount>
     <attr name="cask_size" type="int">20</attr>
@@ -52,10 +52,11 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       LockHub
+      msg ("You groan, and begin to open your eyes. Your vision is blurry at first, and you feel something wet on your face. You push yourself up on your hands and knees, and blink your eyes repeatedly to clear your vision. You see a face in front of you. It is your reflection in a puddle on the ground. You shake your head, and look down at your familiar face. It looks a little sunken in, and tired. You sigh, and stand up.")
       // REMOVE ME
-      game.part = 3
-      player.parent = library111
-      lantern.parent = player
+      // game.part = 3
+      // player.parent = library111
+      // lantern.parent = player
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -25845,6 +25846,8 @@
     game.saveTime = True
     kitchen.inside = False
     player.parent = dungeon7
+    lantern.parent = hub15
+    lantern.fuel_level = 60
     SetHeartRate (game.defaultHeartRate)
   </function>
   <function name="LockHub">
