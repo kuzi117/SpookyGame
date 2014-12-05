@@ -3,6 +3,13 @@
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <template name="DefaultSelfDescription">You are wearing damp prisoner's robes. They are uncomfortable and cold.</template>
+  <template name="DefaultHelp"><![CDATA[<u>Quick Help</u><br/>
+<b>- Objects:</b> Try LOOK AT ..., TAKE ..., OPEN ..., USE ..., TALK<br/>
+<b>- Facing:</b> Type FACE ... to face a direction<br/>
+<b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
+<b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
+<b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -31,12 +38,13 @@
     <counterDisabled type="boolean">false</counterDisabled>
     <statusattributes type="stringdictionary" />
     <heartRate type="int">1200</heartRate>
-    <heartEnabled />
+    <heartEnabled type="boolean">false</heartEnabled>
     <defaultHeartRate type="int">1200</defaultHeartRate>
     <jumpScareAmount type="int">900</jumpScareAmount>
     <attr name="cask_size" type="int">20</attr>
     <part type="int">0</part>
     <reenableCount type="int">0</reenableCount>
+    <saveTime type="boolean">false</saveTime>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -45,10 +53,12 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       LockHub
+      msg ("You groan, and begin to open your eyes. Your vision is blurry at first, and you feel something wet on your face. You push yourself up on your hands and knees, and blink your eyes repeatedly to clear your vision. You see a face in front of you. It is your reflection in a puddle on the ground. You shake your head, and look down at your familiar face. It looks a little sunken in, and tired. You sigh, and stand up.")
+      msg ("")
       // REMOVE ME
-      game.part = 2
-      player.parent = nursery5
-      lantern.parent = player
+      // game.part = 3
+      // player.parent = library111
+      // lantern.parent = player
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -68,7 +78,28 @@
         king.visible = false
       }
     </changedpart>
+    <helpShown type="boolean">false</helpShown>
   </game>
+  <command name="help">
+    <pattern type="string">^help$|^\?$</pattern>
+    <script>
+      msg (Template("DefaultHelp"))
+      if (not game.helpShown) {
+        game.helpShown = true
+        DisableHeart
+      }
+    </script>
+  </command>
+  <command name="save">
+    <pattern type="string">^save$</pattern>
+    <script>
+      request (RequestSave, "")
+      if (game.saveTime) {
+        DisableHeart
+        game.saveTime = false
+      }
+    </script>
+  </command>
   <command name="lookdir">
     <pattern type="string"><![CDATA[^look (?<exit>north|east|south|west|northeast|northwest|southeast|southwest|out|up|down|n|e|s|w|ne|nw|se|sw|o|u|d)$]]></pattern>
     <script><![CDATA[
@@ -882,6 +913,8 @@
       </enter>
       <onexit type="script">
       </onexit>
+      <firstenter type="script">
+      </firstenter>
       <exit name="North7" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -2530,7 +2563,7 @@
               msg ("There is a chessboard sitting on a table to the southeast of you. The ceiling has now been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
             }
             case (3) {
-              msg ("Alternate for windows being shut: The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
+              msg ("The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
             }
           }
         }
@@ -2883,21 +2916,33 @@
           <use type="script">
             if (game.part = 3) {
               msg ("You move the pawn into place and take the king from the board.")
+              msg ("")
               msg ("You don’t know why you’re here, what anyone wants from you, or how you’re going to leave, but you are not going down without a fight. That is all you know.")
+              msg ("")
               msg ("You don’t feel the same anymore, almost hollow. You know you can’t go back to how you were before. Maven... he mentioned there were others, but how many? For how long has this gone on? You are outraged now. You can see smoke billowing in through the dark cherry oak door, the fire has caught up to here now. You remember the shadows fleeing from the fire in the library, just like you. The light of the torches is bright, brighter than you remember. It gives you an idea.")
+              msg ("")
               msg ("\"You won’t take me. Not now, not ever.\"")
+              msg ("")
               msg ("You begin to rip the torches off the wall, and set everything you possibly can on fire -- the table, the chessboard, the doors. You pull at the last torch on the wall, and something clicks. You hear a mechanism, and gears start to push something into motion. The area gets brighter, and brighter, and you look up. The shutters are opening. The large black door bursts open, and an old decrepit man is standing there. He is wear a gold crown, with eyes as black as death itself.")
+              msg ("")
               msg ("\"WHAT ARE YOU DOING?!\" He booms, enraged, but he is weak, and the smoke is filling his lungs. A trail of shadow creatures follow him into the room, but howl in pain at the light.")
+              msg ("")
               msg ("You are nearly blinded now, and the shutters are almost fully open.")
+              msg ("")
               msg ("\"I don’t know who you are, what your purpose is, or what is that you do here. All I know is... I know that it is wrong.\" You hiss your words at him.")
+              msg ("")
               msg ("You lunge at him with the torch. You blindly swing at him, and feel the end of the torch puncture his chest. You smile.")
+              msg ("")
               msg ("The light burns. It burns hotter than you have ever felt, it feels as if you are disintegrating.")
+              msg ("")
               msg ("But, it is cleansing. You welcome the searing touch of the sun. The shadows begin to fade off of you. It is too late, because the shadows fade with you.")
+              msg ("")
               msg ("The sun cleanses everything. The shadows disappear in howls of pain, and the man... his eyes are clouded over, they are empty now. The death, and the malice they held are no longer there. He is gone now.")
+              msg ("")
               msg ("You sigh in relief.")
               msg ("It is over.")
               msg ("You fade into the sunlight.")
-              finish
+              FinishGame
             }
             else {
               msg ("The pawn can't attack any of the other pieces.")
@@ -3281,6 +3326,9 @@
         </item>
       </descriptions>
       <description type="script">
+        if (game.part = 3) {
+          msg ("The ceiling has been closed off by metal shutters to prevent any light from coming in. The room is lit by small torches high up on the walls around the room. The light is quite dim, but you can see without any problems.")
+        }
         PrintRoomDesc (False)
       </description>
       <enter type="script">
@@ -3297,7 +3345,26 @@
         <inherit name="southdirection" />
         <runscript />
         <script type="script">
-          MoveAndFace (hub16, 2)
+          msg ("You walk into a long hallway, lit dimly with torches. The path is covered in dust, and cobwebs. It obviously hasn’t been traversed in a long time. It feels like every shadow that moves from the flicker of the torches is a creature. Everything seems to leave you be though, so you carry on forwards. You look down at your hands, they are darker than you have ever seen, they almost blend in with the shadows, and you feel hollow. Pressing onwards, you end up in a large room, decorated ornately. There are some shelves with books, tables with silverware, and thick velvet curtains to the floor along all the walls. There is a throne pointed towards one of the windows, you can only see the back of it. You approach the throne, and a creaky voice breaks the silence you were used to. \"You’ve made it I see.\" You pause for a moment, calculating.")
+          msg ("")
+          msg ("\"I am glad. I am getting too old for another trial.\" You are now in front of him. He is old, grey, and decrepit. A gold crown, inlay with all the jewels you can imagine, rests upon his head. His eyes are sunken in, and black, and dead as coal. He stands slowly, and is surprisingly tall for such a frail form.")
+          msg ("")
+          msg ("\"Why am I here?\" You ask. A small smirk spreads across his lips, and he coughs.")
+          msg ("")
+          msg ("\"Because I am getting old.\" He replies. You now notice the large staff in his hand, it is topped with a crystal as black as the night. A flame starts to flicker inside the crystal, and you start to feel light headed. You furrow your brow in confusion.")
+          msg ("")
+          msg ("\"I need to do this to stay alive, you see. Your life energy, for mine.\" He points the staff at you now, and the dizziness intensifies. \"You will be an empty shell of what you once were... just a shadow.\"")
+          msg ("")
+          msg ("You fall to your knees now, there is no strength left in you. You feel your life draining from you, and you can feel yourself become hollow. Your emotions leave you, and you feel almost robotic and empty; your humanity goes with it, and there is no sense to fight anymore. You see the shadows take over, and you cannot tell where your hand is, and where the shadows begin.")
+          msg ("")
+          msg ("And then, there is just nothing. Nothing but the shadows, and the light that breaks through them. You feel as if you must hide from the light, and that is the only thing left to feel.")
+          msg ("")
+          msg ("The man, you can see him now, but he is not the same. He is younger. He is healthier. He is smiling.")
+          msg ("")
+          msg ("You try to attack, but to no avail, he casts you away with his staff as if you were nothing, and walks off.")
+          msg ("")
+          msg ("You feel like nothing. You feel nothing. You are nothing. Nothing but a shadow.")
+          FinishGame
         </script>
       </exit>
       <exit name="East33" alias="east" to="defaultroom">
@@ -17340,6 +17407,7 @@
     <inherit name="editor_object" />
     <attr name="grumpy_shadow_counter" type="int">0</attr>
     <darknessTimer type="int">0</darknessTimer>
+    <fireCount type="int">0</fireCount>
     <object name="library1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -24654,7 +24722,7 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>it is pitch black. You feel as if you have faded into the darkness. You are at a fork in the path. </value>
+          <value>It is pitch black. You feel as if you have faded into the darkness. You are at a fork in the path. </value>
         </item>
         <item>
           <key>darkeast</key>
@@ -24865,7 +24933,14 @@
         </item>
       </descriptions>
       <description type="script">
-        PrintRoomDesc (False)
+        if (lantern.light_level = 0) {
+          msg ("You stumble on something in the darkness and fall to the ground. You scramble onto all fours and frantically search for your lantern. Before you can find it, you remember that something was following you... but now the room is oddly silent.")
+          msg ("You stand up, squinting to see. Nothing seems to be around. Suddenly, you feel breath down your neck. It is too late to run.")
+          Die
+        }
+        else {
+          PrintRoomDesc (False)
+        }
       </description>
       <exit name="West226" alias="west" to="defaultroom">
         <inherit name="westdirection" />
@@ -24939,6 +25014,18 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <beforefirstenter type="script">
+        msg ("The light is becoming too bright for you now, your eyes are watering and the lantern feels hot. Hotter than you remembered it ever feeling. You are disoriented by the brightness, and it feels like it is burning your hand. It stings, and you drop the lantern, unable to hold onto it any longer.")
+        msg ("The lantern falls to the floor and smashes into bits, the oil leaks everywhere and ignites. The books start to catch fire -- everything starts to catch fire.")
+        msg ("Your only choice is to continue down the hall, the rest of the area is bursting into flames quickly, and the light burns your eyes as if you were staring into the sun.")
+        JumpScare
+        lantern.parent = null
+        lantern.light_level = 0
+        library_turn_script.enabled = false
+        fire_turn_script.enabled = true
+        game.saveTime = True
+        DisableHeart
+      </beforefirstenter>
       <exit name="West227" alias="west" to="defaultroom">
         <inherit name="westdirection" />
         <runscript />
@@ -25307,6 +25394,23 @@
           MoveAndFace (library110, 3)
         </script>
       </exit>
+      <exit name="LibraryExit" alias="east" to="hub7">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script">
+          EndLibrary
+        </script>
+      </exit>
+      <object name="door">
+        <inherit name="editor_object" />
+        <inherit name="openable" />
+        <feature_container />
+        <close type="boolean">false</close>
+        <open type="boolean">false</open>
+        <openscript type="script">
+          EndLibrary
+        </openscript>
+      </object>
     </object>
   </object>
   <turnscript name="butcher_turn_script">
@@ -25351,41 +25455,6 @@
             }
           }
           kitchen.butcherTimer = kitchen.butcherTimer + 1
-        }
-      }
-    ]]></script>
-  </turnscript>
-  <turnscript name="reenable_heart_turn_script">
-    <enabled />
-    <script>
-      if (game.reenableCount = 0) {
-        game.reenableCount = 1
-      }
-      else {
-        EnableHeart
-      }
-    </script>
-  </turnscript>
-  <turnscript name="heartrate_turn_script">
-    <enabled />
-    <script><![CDATA[
-      if (game.heartRate < game.defaultHeartRate) {
-        offset = game.defaultHeartRate - game.heartRate
-        if (offset >= game.jumpScareAmount * 2 / 3) {
-          msg ("Your heart is pounding and your breath is short.")
-        }
-        else if (offset >= game.jumpScareAmount * 1 / 3) {
-          msg ("Your heart is beating quickly.")
-        }
-        else {
-          msg ("Your heart is starting to calm down.")
-        }
-        newHeartRate = game.heartRate + 150
-        if (newHeartRate <= game.defaultHeartRate) {
-          SetHeartRate (newHeartRate)
-        }
-        else {
-          SetHeartRate (game.defaultHeartRate)
         }
       }
     ]]></script>
@@ -25468,38 +25537,6 @@
     <pattern>knock over</pattern>
     <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
   </verb>
-  <turnscript name="lantern_turn_script">
-    <enabled />
-    <script><![CDATA[
-      request (RunScript, "resetHeartCount")
-      if (Got(lantern)) {
-        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
-          lantern.light_level = 0
-          lantern.burnt_out = True
-          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.low_fuel = True
-          if (lantern.light_level = 2) {
-            lantern.light_level = 1
-            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
-          }
-          else if (lantern.light_level = 1) {
-            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
-          }
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else {
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        if (game.debug) {
-          msg ("FUEL DEBUG: " + lantern.fuel_level)
-        }
-      }
-    ]]></script>
-  </turnscript>
-  <turnscript name="paused_turn_script" />
   <turnscript name="grumpy_shadow_turn_script">
     <enabled />
     <script><![CDATA[
@@ -25748,6 +25785,95 @@
       }
     ]]></script>
   </turnscript>
+  <command name="Remember">
+    <pattern type="string">(remember|remember riddle|riddle)</pattern>
+    <script>
+      msg ("You try to recall the last riddle you received...")
+      msg ("")
+      PrintRiddle (game.part)
+    </script>
+  </command>
+  <turnscript name="lantern_heart_turn_script">
+    <enabled />
+    <script><![CDATA[
+      request (RunScript, "resetHeartCount")
+      if (Got(lantern)) {
+        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+          lantern.light_level = 0
+          lantern.burnt_out = True
+          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+          lantern.low_fuel = True
+          if (lantern.light_level = 2) {
+            lantern.light_level = 1
+            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+          }
+          else if (lantern.light_level = 1) {
+            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
+          }
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        else {
+          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+        }
+        if (game.debug) {
+          msg ("FUEL DEBUG: " + lantern.fuel_level)
+        }
+      }
+      if (game.heartRate < game.defaultHeartRate) {
+        offset = game.defaultHeartRate - game.heartRate
+        if (offset >= game.jumpScareAmount * 2 / 3) {
+          msg ("Your heart is pounding and your breath is short.")
+        }
+        else if (offset >= game.jumpScareAmount * 1 / 3) {
+          msg ("Your heart is beating quickly.")
+        }
+        else {
+          msg ("Your heart is starting to calm down.")
+        }
+        newHeartRate = game.heartRate + 150
+        if (newHeartRate <= game.defaultHeartRate) {
+          SetHeartRate (newHeartRate)
+        }
+        else {
+          SetHeartRate (game.defaultHeartRate)
+        }
+      }
+      if (game.reenableCount < 1) {
+        game.reenableCount = game.reenableCount + 1
+      }
+      else {
+        EnableHeart
+        game.helpShown = true
+      }
+      if (not game.heartEnabled) {
+        msg ("")
+        msg ("(Time is paused. Enter any command to continue.)")
+        if (not game.helpShown) {
+          msg ("(Type HELP for gameplay help.)")
+        }
+      }
+      if (game.saveTime) {
+        msg ("<b>(Now is probably a good time to save!)</b>")
+      }
+    ]]></script>
+  </turnscript>
+  <turnscript name="fire_turn_script">
+    <enabled type="boolean">false</enabled>
+    <script><![CDATA[
+      JumpScare
+      if (library.fireCount > 10) {
+        msg ("The bookshelves are engulfed in flames and the blaze surrounds you completely. The burning pain -- whether from the fire itself or merely from exposure to the blinding light -- is overwhelming. Smoke fills your lungs and you collapse to the floor. You desperately crawl toward the exit... but it is too late.")
+        Die
+      }
+      else if (library.fireCount > 5) {
+        msg ("You can feel your flesh burning.")
+      }
+      library.fireCount = library.fireCount + 1
+    ]]></script>
+  </turnscript>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -25815,10 +25941,6 @@
         }
       }
     }
-    if (not game.heartEnabled and game.reenableCount = 0) {
-      msg ("")
-      msg ("(Time is paused. Enter any command to continue.)")
-    }
   </function>
   <function name="FaceNorth">
     player.facing_num = 0
@@ -25876,6 +25998,7 @@
   <function name="EnableHeart">
     request (RunScript, "enableHeart")
     game.heartEnabled = true
+    game.saveTime = false
   </function>
   <function name="DisableHeart">
     request (RunScript, "disableHeart")
@@ -25883,10 +26006,9 @@
     game.reenableCount = 0
   </function>
   <function name="Die">
-    DisableHeart
     msg ("")
     msg ("You have died.")
-    finish
+    FinishGame
   </function>
   <function name="GetJS" parameters="all">
     SetHeartRate (game.heartRate)
@@ -25921,17 +26043,25 @@
     }
   </function>
   <function name="EndKitchen">
-    msg ("You knock over the pots and pans.")
-    msg ("The butcher does stuff and something happens with the turkey.")
-    msg ("You get knocked out.")
+    msg ("The creature in the distance grunts in annoyance. You can hear his footsteps stomping closer and closer towards you. The creature rushes up towards you, and you can hear his heavy breathing, and the putrid smell of rotting meat.")
+    msg ("You try to stay as silent as possible, holding your breath. The creature makes an exasperated grunt and smashes his cleaver down on the counter, bits of turkey flying everywhere. The creature makes another satisfied grunt, and walks back to where he was before.")
+    msg ("You stand up, out of hiding, and see a small piece of paper sitting in the turkey rubble. You grab it and read it.")
     msg ("")
-    msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
+    PrintRiddle (1)
+    msg ("")
+    msg ("As you finish reading, a dark force overwhelms you and you pass out.")
+    msg ("")
+    msg ("You begin to open your eyes. You are back in the dungeon cell and your lantern is missing. 'Not this again' you groan, internally, and feel the wetness on your face again.")
     msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
     game.part = 1
     FaceSouth
     DisableHeart
+    game.saveTime = True
     kitchen.inside = False
     player.parent = dungeon7
+    lantern.parent = hub15
+    lantern.fuel_level = 60
+    SetHeartRate (game.defaultHeartRate)
   </function>
   <function name="LockHub">
     LockExit (West29)
@@ -25947,7 +26077,68 @@
     Die
   </function>
   <function name="EndLibrary">
+    msg ("You aren't sure where the door leads, but you have no other choice. You frantically fumble with the knob and fling it open, scrambling through the doorway and slamming the door behind you.")
+    msg ("It is dark and cool in here. Relief washes over you, and you collapse on the stone floor out of exhaustion. A familiar dark force begins to overwhelm your senses and you drift into unconsciousness.")
+    msg ("In your sleep, words course through your mind. Their origin is uncertain, but to you, their meaning is clear:")
+    msg ("")
+    PrintRiddle (3)
+    msg ("")
+    msg ("You wake up.")
+    msg ("By now you are familiar with the feeling of this room, and sigh. Pushing yourself up, and opening your eyes you see your reflection in that damn puddle. You look darker, and it is hard to distinguish yourself from the shadows around you. You feel hollow, and empty. You sigh again and stand up.")
     library_turn_script.enabled = false
+    fire_turn_script.enabled = false
+    game.part = 3
+    FaceSouth
+    DisableHeart
+    game.saveTime = True
+    player.parent = dungeon7
+    SetHeartRate (game.defaultHeartRate)
+  </function>
+  <function name="PrintRiddle" parameters="number" type="int"><![CDATA[
+    switch (number) {
+      case (0) {
+        msg ("<i>One against four, the battle goes on.</i>")
+        msg ("<i>The one with the sword must take the pawn.</i>")
+        msg ("<i>Follow the trail, of blood, sweat and tears;</i>")
+        msg ("<i>For if you shall stray, you’ll realize your fears.</i>")
+        msg ("<i>Noise is dangerous, and the darkness is loud.</i>")
+        msg ("<i>To travel in it, will only for so long be allowed.</i>")
+        msg ("<i>To find the exit: serve the bird,</i>")
+        msg ("<i>To do so the creature’s wrath must be incurred.</i>")
+      }
+      case (1) {
+        msg ("<i>In the tower the pawn will fall.</i>")
+        msg ("<i>So watch your back down the long hall.</i>")
+        msg ("<i>Find the boy, time and again,</i>")
+        msg ("<i>For seeking him will lead you to the end.</i>")
+        msg ("<i>In a closet, it is death you will find,</i>")
+        msg ("<i>If your exit is not perfectly timed.</i>")
+        msg ("<i>To find the boy, listen to the nursery,</i>")
+        msg ("<i>On this long night, the moon’s anniversary.</i>")
+      }
+      case (2) {
+        msg ("<i>By her hand,</i>")
+        msg ("<i>Her might the pawn cannot withstand.</i>")
+        msg ("<i>The path is long, it forks and turns.</i>")
+        msg ("<i>Be careful, because for the shadows the light burns.</i>")
+        msg ("<i>There is a creature, tall and broad.</i>")
+        msg ("<i>Yet, in the dark his sight is flawed.</i>")
+        msg ("<i>Longer now, the darkness holds you,</i>")
+        msg ("<i>But only long enough to get through.</i>")
+      }
+      case (3) {
+        msg ("<i>Here we are, near the end.</i>")
+        msg ("<i>For yourself, will you fend?</i>")
+        msg ("<i>And the pawn, so mighty and strong,</i>")
+        msg ("<i>Will face the darkened throng,</i>")
+        msg ("<i>Only to fall at the hands of a king?</i>")
+        msg ("<i>What a peculiar thing.</i>")
+      }
+    }
+  ]]></function>
+  <function name="FinishGame">
+    DisableHeart
+    finish
   </function>
   <javascript src="javascript.js" />
 </asl>
