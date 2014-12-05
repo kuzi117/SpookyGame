@@ -34,6 +34,7 @@
     <defaultHeartRate type="int">1200</defaultHeartRate>
     <jumpScareAmount type="int">900</jumpScareAmount>
     <attr name="cask_size" type="int">20</attr>
+    <part type="int">0</part>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -42,7 +43,7 @@
       dictionary add (player.statusattributes, "facing", StringListItem(player.facings, player.facing_num))
       game.heartRate = game.defaultHeartRate
       // REMOVE ME
-      player.parent = kitchen70
+      player.parent = kitchen63
       lantern.parent = player
     </start>
   </game>
@@ -830,8 +831,12 @@
         PrintRoomDesc (False)
       </description>
       <enter type="script">
-        kitchen.inside = false
       </enter>
+      <onexit type="script">
+        if (not game.heartEnabled) {
+          EnableHeart
+        }
+      </onexit>
       <exit name="North7" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -7160,9 +7165,29 @@
         </item>
       </descriptions>
       <bloodTrail />
-      <description type="script">
+      <description type="script"><![CDATA[
         PrintRoomDesc (False)
-      </description>
+        if (not dishes.fixed) {
+          if (Got(lantern)) {
+            if (lantern.light_level = 1) {
+              if (player.facing_num = 3) {
+                msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+              }
+              else if (player.facing_num <> 1) {
+                msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
+              }
+            }
+            else if (lantern.light_level = 2) {
+              if (player.facing_num = 3) {
+                msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+              }
+              else if (player.facing_num <> 1) {
+                msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
+              }
+            }
+          }
+        }
+      ]]></description>
       <enter type="script">
       </enter>
       <beforeenter type="script">
@@ -7209,31 +7234,6 @@
           dishes.fixed = True
         </move>
       </object>
-      <turnscript name="dishes_script">
-        <enabled />
-        <script><![CDATA[
-          if (not dishes.fixed) {
-            if (Got(lantern)) {
-              if (lantern.light_level = 1) {
-                if (player.facing_num = 3) {
-                  msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
-                }
-                else if (player.facing_num <> 1) {
-                  msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second.")
-                }
-              }
-              else if (lantern.light_level = 2) {
-                if (player.facing_num = 3) {
-                  msg ("The counter in front of you has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-                }
-                else if (player.facing_num <> 1) {
-                  msg ("The counter to the west has a pile of dirty, bug infested, dishes on it. They look like they might fall at any second. You might be able to fix them without making too much noise.")
-                }
-              }
-            }
-          }
-        ]]></script>
-      </turnscript>
     </object>
     <object name="kitchen37">
       <inherit name="editor_room" />
@@ -7726,51 +7726,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything.</value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. You can feel a counter in front of you. </value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>TODO: implement this description</value>
+          <value>There are counters to the east and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you, and a wall to your south. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a wall in front of you, and counters to the east and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you, and a wall to your south. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>TODO: implement this description</value>
+          <value>There are counters to the east and to the west of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you, and a wall to your south. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a wall in front of you, and counters to the east and to the west of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you, and a wall to your south. You cannot see the trail of blood from here.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -8233,51 +8233,51 @@
       <descriptions type="stringdictionary">
         <item>
           <key>darknorth</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkeast</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. You can feel a counter in front of you</value>
         </item>
         <item>
           <key>darksouth</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. </value>
         </item>
         <item>
           <key>darkwest</key>
-          <value>TODO: implement this description</value>
+          <value>You cannot see anything. You can feel a counter in front of you.</value>
         </item>
         <item>
           <key>dimnorth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimeast</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimsouth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>dimwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you. You cannot see any blood on the ground.</value>
         </item>
         <item>
           <key>brightnorth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter to the east, and to the west of you. You think you can see some blood on the ground a few steps ahead, but it’s hard to tell.</value>
         </item>
         <item>
           <key>brighteast</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightsouth</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter to the east, and to the west of you. You cannot see the trail of blood from here.</value>
         </item>
         <item>
           <key>brightwest</key>
-          <value>TODO: implement this description</value>
+          <value>There is a counter in front of you. You cannot see the trail of blood from here.</value>
         </item>
       </descriptions>
       <bloodTrail type="boolean">false</bloodTrail>
@@ -9312,6 +9312,34 @@
           MoveAndFace (kitchen64, 2)
         </script>
       </exit>
+      <object name="pots1">
+        <inherit name="editor_object" />
+        <alias>pots</alias>
+        <alt type="stringlist">
+          <value>pots and pans</value>
+          <value>pans</value>
+        </alt>
+        <feature_usegive />
+        <push>EndKitchen</push>
+        <use type="script">
+          EndKitchen
+        </use>
+        <rattle type="script">
+          EndKitchen
+        </rattle>
+        <hit type="script">
+          EndKitchen
+        </hit>
+        <smack type="script">
+          EndKitchen
+        </smack>
+        <knockdown type="script">
+          EndKitchen
+        </knockdown>
+        <knockover type="script">
+          EndKitchen
+        </knockover>
+      </object>
     </object>
     <object name="kitchen64">
       <inherit name="editor_room" />
@@ -24664,6 +24692,27 @@
       }
     ]]></script>
   </turnscript>
+  <verb>
+    <property>rattle</property>
+    <pattern>rattle</pattern>
+    <defaultexpression>"You can't rattle " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>smack</property>
+    <pattern>smack</pattern>
+    <defaultexpression>"You can't smack " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>knockdown</property>
+    <pattern>knock down</pattern>
+    <defaultexpression>"You can't knock down " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>knockover</property>
+    <pattern>knock over</pattern>
+    <defaultexpression>"You can't knock over " + object.article + "."</defaultexpression>
+  </verb>
+  <turnscript name="paused_turn_script" />
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
       if (lantern.light_level = 2) {
@@ -24731,6 +24780,10 @@
         }
       }
     }
+    if (not game.heartEnabled) {
+      msg ("")
+      msg ("(Time is paused. Enter any command to continue.)")
+    }
   </function>
   <function name="FaceNorth">
     player.facing_num = 0
@@ -24787,9 +24840,11 @@
   </function>
   <function name="EnableHeart">
     request (RunScript, "enableHeart")
+    game.heartEnabled = true
   </function>
   <function name="DisableHeart">
     request (RunScript, "disableHeart")
+    game.heartEnabled = false
   </function>
   <function name="Die">
     DisableHeart
@@ -24827,6 +24882,19 @@
       msg ("You pour the oil into your lantern's reserve.")
       RemoveObject (oilObject)
     }
+  </function>
+  <function name="EndKitchen">
+    msg ("You knock over the pots and pans.")
+    msg ("The butcher does stuff and something happens with the turkey.")
+    msg ("You get knocked out.")
+    msg ("")
+    msg ("You begin to open your eyes. You are back in the dungeon cell. 'Not this again' you groan, internally, and feel the wetness on your face again.")
+    msg ("You push yourself up slowly, and see your reflection once more. You look very tired, bags under your eyes, cheeks sunken in and colourless. You rub your eyes, sigh, and stand up.")
+    game.stage = 1
+    FaceSouth
+    DisableHeart
+    kitchen.inside = False
+    player.parent = dungeon7
   </function>
   <javascript src="javascript.js" />
 </asl>
