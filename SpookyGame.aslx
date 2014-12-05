@@ -3,6 +3,12 @@
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <template name="DefaultSelfDescription">You are wearing damp prisoner's robes. They are uncomfortable and cold.</template>
+  <template name="DefaultHelp"><![CDATA[<u>Quick Help</u><br/>
+<b>- Objects:</b> Try LOOK AT ..., TAKE ..., OPEN ..., USE ..., TALK<br/>
+<b>- Facing:</b> Type FACE ... to face a direction<br/>
+<b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
+<b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
