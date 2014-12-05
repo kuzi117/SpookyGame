@@ -17133,7 +17133,7 @@
     <object name="Laila">
       <inherit name="editor_object" />
       <attr name="chase_state" type="int">0</attr>
-      <paused type="boolean">false</paused>
+      <paused />
       <attr name="sub_state" type="int">0</attr>
       <attr name="attack_from" type="int">0</attr>
     </object>
@@ -25380,7 +25380,7 @@
     ]]></script>
   </turnscript>
   <turnscript name="laila_turn_script">
-    <enabled />
+    <enabled type="boolean">false</enabled>
     <script><![CDATA[
       if (not Laila.paused) {
         if (Laila.chase_state = 0 and GetRandomDouble() < .25) {
