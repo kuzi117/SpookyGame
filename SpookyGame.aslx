@@ -13759,11 +13759,8 @@
       <description type="script"><![CDATA[
         PrintRoomDesc (False)
         if (player.facing_num = 1 and nursery25.maven_here) {
-          if (lantern.light_level <> 0 and Maven.conversation_part = 5) {
+          if (lantern.light_level <> 0 and Maven.conversation_part = 6) {
             msg ("You think you can see a faint glimmer emanating from under the blanket in the crib.")
-          }
-          else if (Maven.conversation_part = 6) {
-            msg ("Maven is standing in front of you.")
           }
         }
       ]]></description>
@@ -25621,7 +25618,7 @@
     <enabled type="boolean">false</enabled>
     <script><![CDATA[
       if (not Laila.paused) {
-        if (Laila.chase_state = 0 and GetRandomDouble() < .25) {
+        if (Laila.chase_state = 0 and GetRandomDouble() < .125) {
           msg ("You hear distant giggling...")
           Laila.chase_state = 1
           switch (player.facing_num) {
