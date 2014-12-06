@@ -10,7 +10,7 @@
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
 <b>- Riddles:</b> Type REMEMBER to remember the last riddle you were given<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>    ]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>      ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -26189,11 +26189,11 @@
     DisableHeart
     game.saveTime = True
     kitchen.inside = False
-    player.parent = dungeon7
     lantern.parent = hub15
     lantern.fuel_level = 60
     lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
+    player.parent = dungeon7
   </function>
   <function name="LockHub">
     LockExit (West29)
@@ -26224,8 +26224,8 @@
     FaceSouth
     DisableHeart
     game.saveTime = True
-    player.parent = dungeon7
     SetHeartRate (game.defaultHeartRate)
+    player.parent = dungeon7
   </function>
   <function name="PrintRiddle" parameters="number" type="int"><![CDATA[
     switch (number) {
@@ -26287,11 +26287,11 @@
     FaceSouth
     DisableHeart
     game.saveTime = True
-    player.parent = dungeon7
     lantern.parent = hub15
     lantern.fuel_level = 60
     lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
+    player.parent = dungeon7
   </function>
   <javascript src="javascript.js" />
 </asl>
