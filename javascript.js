@@ -4,6 +4,19 @@ var heartRate = 1000;
 var heartCount = maxHeartCount;
 var status = "";
 var timerEnabled = false;
+var geoffreyMode = false;
+
+function sendCommand(text, metadata) {
+    markScrollPosition();
+    var data = new Object();
+    data["command"] = text;
+    if (typeof metadata != "undefined") {
+        data["metadata"] = metadata;
+    }
+    
+    ASLEvent("UpdateHeartCount", "" + heartCount);
+    UIEvent("RunCommand", JSON.stringify(data));
+}
 
 // Hides unused panels
 function hidePanels() {
@@ -49,12 +62,24 @@ function disableHeart() {
     }
 }
 
+// Enables the heart timer
+function enableGeoffrey() {
+    geoffreyMode = true;
+}
+
+// Disables the heart timer
+function disableGeoffrey() {
+    geoffreyMode = false;
+}
+
 // Ticks down the heart beat and takes a turn if necessary
 function heartbeat() {
     heartCount--;
     
     if (heartCount <= 0) {
+        ASLEvent("UpdateHeartCount", "" + heartCount);
         ASLEvent("TimeOut", "");
+        scrollToEnd();
     }
     
     updateStatus(status);
