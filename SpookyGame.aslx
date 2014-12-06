@@ -26007,7 +26007,7 @@
   </function>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
-      if (lantern.light_level = 0 or player.parent.parent = hub) {
+      if (lantern.light_level = 0 or player.parent.parent = hub or player.parent.parent = dungeon) {
         switch (player.facing_num) {
           case (0) {
             msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
