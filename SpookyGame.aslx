@@ -49,7 +49,7 @@
     <helpShown type="boolean">false</helpShown>
     <geoffreyMode type="boolean">false</geoffreyMode>
     <geoffreyCount type="int">0</geoffreyCount>
-    <fakeTurn />
+    <fakeTurn type="boolean">false</fakeTurn>
     <heartCount>0</heartCount>
     <gameover type="boolean">false</gameover>
     <pov type="object">player</pov>
@@ -67,10 +67,10 @@
       msg ("")
       // REMOVE ME
       // game.part = 3
-      // player.parent = nursery44
-      // lantern.parent = player
-      // lantern.light_level = 2
-      // game.heartEnabled = true
+      player.parent = nursery13
+      lantern.parent = player
+      lantern.light_level = 1
+      game.heartEnabled = true
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -26168,7 +26168,7 @@
   ]]></function>
   <function name="GetOil" parameters="oilObject" type="object">
     if (Got(lantern)) {
-      AddFuel (20)
+      AddFuel (25)
       msg ("You pour the oil into your lantern's reserve.")
       RemoveObject (oilObject)
     }
