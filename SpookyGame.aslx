@@ -26009,19 +26009,19 @@
   </function>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
-      if (lantern.light_level = 2) {
+      if (lantern.light_level = 0 or player.parent.parent = hub) {
         switch (player.facing_num) {
           case (0) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightnorth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
           }
           case (1) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brighteast"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
           }
           case (2) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightsouth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
           }
           case (3) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightwest"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
           }
         }
       }
@@ -26041,19 +26041,19 @@
           }
         }
       }
-      else {
+      else if (lantern.light_level = 2) {
         switch (player.facing_num) {
           case (0) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightnorth"))
           }
           case (1) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brighteast"))
           }
           case (2) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightsouth"))
           }
           case (3) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightwest"))
           }
         }
       }
