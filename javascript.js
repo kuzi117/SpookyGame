@@ -6,6 +6,14 @@ var status = "";
 var timerEnabled = false;
 var geoffreyMode = false;
 
+(function () {
+    var proxied = UIEvent;
+    UIEvent = function(cmd, parameter) {
+        proxied("ASLEvent", "UpdateHeartCount;" + heartCount);
+        proxied(cmd, parameter);
+    };
+})();
+
 function sendCommand(text, metadata) {
     markScrollPosition();
     var data = new Object();
@@ -14,7 +22,6 @@ function sendCommand(text, metadata) {
         data["metadata"] = metadata;
     }
     
-    ASLEvent("UpdateHeartCount", "" + heartCount);
     UIEvent("RunCommand", JSON.stringify(data));
 }
 
@@ -77,7 +84,6 @@ function heartbeat() {
     heartCount--;
     
     if (heartCount <= 0) {
-        ASLEvent("UpdateHeartCount", "" + heartCount);
         ASLEvent("TimeOut", "");
         scrollToEnd();
     }

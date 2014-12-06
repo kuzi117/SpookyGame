@@ -10,7 +10,7 @@
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
 <b>- Riddles:</b> Type REMEMBER to remember the last riddle you were given<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>      ]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>        ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -52,6 +52,11 @@
     <fakeTurn type="boolean">false</fakeTurn>
     <heartCount>0</heartCount>
     <gameover type="boolean">false</gameover>
+    <autodescription_youarein_useprefix />
+    <attr name="autodescription_youcansee" type="int">0</attr>
+    <attr name="autodescription_description" type="int">1</attr>
+    <attr name="autodescription_youcango" type="int">2</attr>
+    <attr name="autodescription_youarein" type="int">0</attr>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -90,11 +95,6 @@
         king.visible = false
       }
     </changedpart>
-    <autodescription_youarein_useprefix />
-    <attr name="autodescription_youcansee" type="int">0</attr>
-    <attr name="autodescription_description" type="int">1</attr>
-    <attr name="autodescription_youcango" type="int">2</attr>
-    <attr name="autodescription_youarein" type="int">0</attr>
   </game>
   <command name="help">
     <pattern type="string">^help$|^\?$</pattern>
@@ -3139,7 +3139,7 @@
         <attr name="light_level" type="int">0</attr>
         <drop type="boolean">false</drop>
         <dropmsg>I have a feeling I'll need this soon.</dropmsg>
-        <attr name="fuel_level" type="int">60</attr>
+        <attr name="fuel_level" type="int">80</attr>
         <attr name="burnt_out" type="boolean">false</attr>
         <attr name="low_fuel" type="boolean">false</attr>
         <look type="script"><![CDATA[
@@ -3153,22 +3153,22 @@
             else {
               msg ("Your lantern is off.")
             }
-            if (lantern.fuel_level = 60) {
+            if (lantern.fuel_level = 80) {
               msg ("Your lantern has full fuel.")
             }
-            else if (lantern.fuel_level >= 50) {
+            else if (lantern.fuel_level >= 70) {
               msg ("Your lantern is mostly full.")
             }
-            else if (lantern.fuel_level >= 35) {
+            else if (lantern.fuel_level >= 60) {
               msg ("Your lantern is partly full.")
             }
-            else if (lantern.fuel_level >= 20) {
+            else if (lantern.fuel_level >= 40) {
               msg ("Your lantern is half empty.")
             }
-            else if (lantern.fuel_level >= 10) {
+            else if (lantern.fuel_level >= 25) {
               msg ("Your lantern is running low.")
             }
-            else if (lantern.fuel_level > 0) {
+            else if (lantern.fuel_level > 15) {
               msg ("Your lantern is extremely low.")
             }
             else {
@@ -26168,7 +26168,7 @@
   <function name="AddFuel" parameters="amount" type="int"><![CDATA[
     lantern.fuel_level = lantern.fuel_level + amount
     if (lantern.fuel_level > 60) {
-      lantern.fuel_level = 60
+      lantern.fuel_level = 80
     }
   ]]></function>
   <function name="GetOil" parameters="oilObject" type="object">
@@ -26195,7 +26195,7 @@
     game.saveTime = True
     kitchen.inside = False
     lantern.parent = hub15
-    lantern.fuel_level = 60
+    lantern.fuel_level = 80
     lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
     player.parent = dungeon7
@@ -26293,7 +26293,7 @@
     DisableHeart
     game.saveTime = True
     lantern.parent = hub15
-    lantern.fuel_level = 60
+    lantern.fuel_level = 80
     lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
     player.parent = dungeon7
