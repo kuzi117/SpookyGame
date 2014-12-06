@@ -11573,7 +11573,7 @@
   </object>
   <object name="nursery">
     <inherit name="editor_object" />
-    <nurseryTimer type="int">0</nurseryTimer>
+    <darknessTimer type="int">0</darknessTimer>
     <object name="nursery1">
       <inherit name="editor_room" />
       <usedefaultprefix />
@@ -13724,7 +13724,7 @@
         </item>
         <item>
           <key>dimeast</key>
-          <value>There is a small crib in front of you, and a small children’s dresser to the south of you. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
+          <value>There is a small crib in front of you, and a small children’s dresser to the south of you.</value>
         </item>
         <item>
           <key>dimsouth</key>
@@ -13740,7 +13740,7 @@
         </item>
         <item>
           <key>brighteast</key>
-          <value>You are in a small room. There is a small crib in front of you, and a small children’s dresser to the south of you. The crib is dusty, and practically rotting away. (TODO: If you are looking for the boy here: You think you can see a faint glimmer emanating from under the blanket in the crib.)</value>
+          <value>You are in a small room. There is a small crib in front of you, and a small children’s dresser to the south of you. The crib is dusty, and practically rotting away.</value>
         </item>
         <item>
           <key>brightsouth</key>
@@ -13787,15 +13787,15 @@
         <script>
           if (nursery25.maven_here) {
             DisableHeart
-            if (Maven.conversation_part = 5) {
+            if (Maven.conversation_part = 6) {
               msg ("‘Awesome, you found me again!’ Maven smiles, widely. ‘Well, I suppose I can keep my promise…’ Maven gestures to the crib, you can see a piece of paper on it now. It looks like another riddle. You thank Maven, and he smiles. ‘No problem, thank you for playing with me! It was a lot of fun, it has been a long time…” Maven looks into the distance, wistfully. ‘Not many people survive the tests, but I hope you do! Just be careful… I hear bad things happen when you change, when you meet him.’ Maven sighs, ‘Well go on then, don’t get stuck here forever like me. I was too young for the tests, I don’t know why he picked me back then, experiment maybe? Anyway, good luck out there!’ Maven vanishes into thin air.")
-              Maven.conversation_part = 6
+              Maven.conversation_part = 7
               nursery25.maven_here = False
               EndNursery
             }
           }
           else {
-            msg ("There's nothing particularly interesting about the cabinet."
+            msg ("There's nothing particularly interesting about the crib.")
           }
         </script>
       </command>
@@ -14556,7 +14556,7 @@
             }
           }
           else {
-            msg ("There's nothing particularly interesting about the cabinet."
+            msg ("There's nothing particularly interesting about the cabinet.")
           }
         </script>
       </command>
@@ -16908,7 +16908,7 @@
             }
           }
           else {
-            msg ("There's nothing particularly interesting about the bed."
+            msg ("There's nothing particularly interesting about the bed.")
           }
         </script>
       </command>
@@ -25759,34 +25759,36 @@
           Die
         }
       }
-      // Now print descriptions
-      if (player.facing_num = Laila.attack_from) {
-        if (lantern.light_level = 2 and Laila.chase_state = 1) {
-          msg ("You see a faint glimmering in the distance.")
-        }
-        else if (Laila.chase_state = 2) {
-          if (lantern.light_level = 1) {
-            msg ("You see a faint glimmering a few meters away from you.")
+      if (not Laila.paused) {
+        // Now print descriptions
+        if (player.facing_num = Laila.attack_from) {
+          if (lantern.light_level = 2 and Laila.chase_state = 1) {
+            msg ("You see a faint glimmering in the distance.")
           }
-          else if (lantern.light_level = 2) {
-            msg ("You see a ghostly figure a few meters away from you.")
-          }
-        }
-        else if (Laila.chase_state = 3) {
-          if (lantern.light_level = 2) {
-            msg ("You hear a shriek from the girl, 'I just wanted to play!', as she fades from existence.")
-            // Reset Laila
-            Laila.sub_state = 0
-            Laila.chase_state = 0
-            if (game.debug) {
-              msg ("Debug: Laila reset.")
+          else if (Laila.chase_state = 2) {
+            if (lantern.light_level = 1) {
+              msg ("You see a faint glimmering a few meters away from you.")
+            }
+            else if (lantern.light_level = 2) {
+              msg ("You see a ghostly figure a few meters away from you.")
             }
           }
-          else if (lantern.light_level = 1) {
-            msg ("A ghostly figure resembling a girl floats a short distance from you. You can see excitement on her face.")
-          }
-          else {
-            msg ("There's a faint glowing resembling a child floating a few feet off the ground not far in front off you.")
+          else if (Laila.chase_state = 3) {
+            if (lantern.light_level = 2) {
+              msg ("You hear a shriek from the girl, 'I just wanted to play!', as she fades from existence.")
+              // Reset Laila
+              Laila.sub_state = 0
+              Laila.chase_state = 0
+              if (game.debug) {
+                msg ("Debug: Laila reset.")
+              }
+            }
+            else if (lantern.light_level = 1) {
+              msg ("A ghostly figure resembling a girl floats a short distance from you. You can see excitement on her face.")
+            }
+            else {
+              msg ("There's a faint glowing resembling a child floating a few feet off the ground not far in front off you.")
+            }
           }
         }
       }
@@ -26115,6 +26117,7 @@
     player.parent = dungeon7
     lantern.parent = hub15
     lantern.fuel_level = 60
+    lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
   </function>
   <function name="LockHub">
@@ -26141,6 +26144,7 @@
     msg ("By now you are familiar with the feeling of this room, and sigh. Pushing yourself up, and opening your eyes you see your reflection in that damn puddle. You look darker, and it is hard to distinguish yourself from the shadows around you. You feel hollow, and empty. You sigh again and stand up.")
     library_turn_script.enabled = false
     fire_turn_script.enabled = false
+    lantern.light_level = 0
     game.part = 3
     FaceSouth
     DisableHeart
@@ -26210,6 +26214,7 @@
     player.parent = dungeon7
     lantern.parent = hub15
     lantern.fuel_level = 60
+    lantern.light_level = 0
     SetHeartRate (game.defaultHeartRate)
   </function>
   <javascript src="javascript.js" />
