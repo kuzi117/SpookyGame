@@ -9,7 +9,8 @@
 <b>- Moving around:</b> Type NORTH, EAST, SOUTH, WEST, UP or DOWN<br/>
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>    ]]></template>
+<b>- Riddles:</b> Type REMEMBER to remember the last riddle you were given<br/>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>  ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -46,6 +47,8 @@
     <reenableCount type="int">0</reenableCount>
     <saveTime type="boolean">false</saveTime>
     <helpShown type="boolean">false</helpShown>
+    <geoffreyMode type="boolean">false</geoffreyMode>
+    <geoffreyCount type="int">0</geoffreyCount>
     <pov type="object">player</pov>
     <start type="script">
       // Initial player facing
@@ -61,8 +64,10 @@
       msg ("")
       // REMOVE ME
       // game.part = 3
-      // player.parent = library111
+      // player.parent = nursery44
       // lantern.parent = player
+      // lantern.light_level = 2
+      // game.heartEnabled = true
     </start>
     <changedpart type="script">
       if (game.part = 3) {
@@ -82,6 +87,9 @@
         king.visible = false
       }
     </changedpart>
+    <fakeTurn />
+    <heartCount>0</heartCount>
+    <gameover type="boolean">false</gameover>
   </game>
   <command name="help">
     <pattern type="string">^help$|^\?$</pattern>
@@ -967,6 +975,7 @@
           player.facing_num = 0
           dictionary add (player.statusattributes, facing, StringListItem(player.facings, player.facing_num))
         </facenorth>
+        <lastPos type="object">dungeon7</lastPos>
       </object>
     </object>
     <object name="dungeon8">
@@ -13853,6 +13862,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+        geoffrey_turn_script.enabled = false
+      </enter>
       <exit name="East98" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -13925,6 +13937,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+        geoffrey_turn_script.enabled = true
+      </enter>
       <exit name="North104" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -15366,6 +15381,9 @@
           }
         }
       ]]></description>
+      <enter type="script">
+        geoffrey_turn_script.enabled = true
+      </enter>
       <exit name="East134" alias="east" to="defaultroom">
         <inherit name="eastdirection" />
         <runscript />
@@ -15469,6 +15487,9 @@
       <description type="script">
         PrintRoomDesc (False)
       </description>
+      <enter type="script">
+        geoffrey_turn_script.enabled = false
+      </enter>
       <exit name="North135" alias="north" to="defaultroom">
         <inherit name="northdirection" />
         <runscript />
@@ -25854,7 +25875,7 @@
         EnableHeart
         game.helpShown = true
       }
-      if (not game.heartEnabled) {
+      if (not game.heartEnabled and not game.gameover) {
         msg ("")
         msg ("(Time is paused. Enter any command to continue.)")
         if (not game.helpShown) {
@@ -25927,21 +25948,78 @@
       }
     ]]></script>
   </turnscript>
+  <turnscript name="geoffrey_turn_script">
+    <enabled type="boolean">false</enabled>
+    <script><![CDATA[
+      if (player.parent <> player.lastPos) {
+        if (game.heartCount = "4" or game.heartCount = "5" or game.heartCount = "6") {
+          game.geoffreyCount = game.geoffreyCount - 1
+          if (game.geoffreyCount < 0) {
+            game.geoffreyCount = 0
+          }
+        }
+        else {
+          game.geoffreyCount = game.geoffreyCount + 1
+        }
+      }
+      switch (game.geoffreyCount) {
+        case (1) {
+          msg ("You can hear a child grunting in the far end of the room as if he is agitated.")
+        }
+        case (2) {
+          msg ("There is angry slamming coming from the far end of the room.")
+        }
+        case (3) {
+          msg ("You hear a heavy sigh come from the small boy in the corner. He stands up, and looks irritated. He glares at you, and screams \"Shut up, shut up, shut up!\" He growls and starts charging at you, you take a step back and lose your balance, tripping on a stray toy. You tumble, face down, to the ground, and as you are trying to get back up you see his feet on the ground in front of you. You look up at him, and he is looking at you, coldly. \"I know how to make you shut up.\" He raises his fist, which is clenching a bone from the anatomy skeleton he was playing with before… though, it looks like a real human bone, fashioned into a shiv. \"At least I will have another toy...\" he swings his arm down, and stabs the bone into your neck.")
+          Die
+        }
+      }
+      player.lastPos = player.parent
+    ]]></script>
+  </turnscript>
+  <function name="RunTurnScripts">
+    if (IsGameRunning()) {
+      if (game.fakeTurn) {
+        if (game.menucallback = null) {
+          foreach (turnscript, AllTurnScripts()) {
+            if (GetBoolean(turnscript, "enabled")) {
+              inscope = false
+              if (turnscript.parent = game or turnscript.parent = null) {
+                inscope = true
+              }
+              else {
+                if (Contains(turnscript.parent, game.pov)) {
+                  inscope = true
+                }
+              }
+              if (inscope) {
+                do (turnscript, "script")
+              }
+            }
+          }
+        }
+        game.fakeTurn = false
+      }
+      else {
+        game.fakeTurn = true
+      }
+    }
+  </function>
   <function name="PrintRoomDesc" parameters="all">
     if (Got(lantern)) {
-      if (lantern.light_level = 2) {
+      if (lantern.light_level = 0 or player.parent.parent = hub) {
         switch (player.facing_num) {
           case (0) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightnorth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
           }
           case (1) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brighteast"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
           }
           case (2) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightsouth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
           }
           case (3) {
-            msg (StringDictionaryItem (player.parent.descriptions, "brightwest"))
+            msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
           }
         }
       }
@@ -25961,19 +26039,19 @@
           }
         }
       }
-      else {
+      else if (lantern.light_level = 2) {
         switch (player.facing_num) {
           case (0) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darknorth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightnorth"))
           }
           case (1) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darkeast"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brighteast"))
           }
           case (2) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darksouth"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightsouth"))
           }
           case (3) {
-            msg (StringDictionaryItem (player.parent.descriptions, "darkwest"))
+            msg (StringDictionaryItem (player.parent.descriptions, "brightwest"))
           }
         }
       }
@@ -26193,6 +26271,7 @@
   ]]></function>
   <function name="FinishGame">
     DisableHeart
+    gameover = true
     finish
   </function>
   <function name="EndNursery">
