@@ -10,7 +10,7 @@
 <b>- Lantern:</b> Your lantern can be at three light levels: off, dim or bright. Higher levels give you more information, but burn more fuel per turn. Type TURN UP/DOWN LANTERN to change the light level. Type TURN OFF LANTERN, DIM LANTERN or TURN ON LANTERN to switch to off, dim or bright mode respectively<br/>
 <b>- Heartbeat:</b> When the heartbeat counter in the top-right corner reaches zero, time will pass. Performing any action will reset the counter to 10.<br/>
 <b>- Riddles:</b> Type REMEMBER to remember the last riddle you were given<br/>
-<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>          ]]></template>
+<b>- Shortcuts:</b> Press the up arrow and down arrow to scroll through commands you have already typed in. Try X ... as a shortcut for LOOK AT..., N as a shortcut for NORTH, or FN as a shortcut for FACE NORTH<br/>            ]]></template>
   <game name="Shadowed">
     <gameid>245fb0e5-fd17-4ec8-ac17-5d4d0ec1d710</gameid>
     <version>1.0</version>
@@ -41,7 +41,7 @@
     <heartRate type="int">1200</heartRate>
     <heartEnabled type="boolean">false</heartEnabled>
     <defaultHeartRate type="int">1200</defaultHeartRate>
-    <jumpScareAmount type="int">900</jumpScareAmount>
+    <jumpScareAmount type="int">666</jumpScareAmount>
     <attr name="cask_size" type="int">20</attr>
     <part type="int">0</part>
     <reenableCount type="int">0</reenableCount>
@@ -25821,67 +25821,69 @@
   <turnscript name="lantern_heart_turn_script">
     <enabled />
     <script><![CDATA[
-      request (RunScript, "resetHeartCount")
-      if (Got(lantern)) {
-        if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
-          lantern.light_level = 0
-          lantern.burnt_out = True
-          msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
-        }
-        else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
-          lantern.low_fuel = True
-          if (lantern.light_level = 2) {
-            lantern.light_level = 1
-            msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+      if (not game.gameover) {
+        request (RunScript, "resetHeartCount")
+        if (Got(lantern)) {
+          if (lantern.fuel_level <= 0 and lantern.burnt_out <> True) {
+            lantern.light_level = 0
+            lantern.burnt_out = True
+            msg ("Your lantern flame flickers for a moment and disappears. The room is engulfed in darkness.")
+            lantern.fuel_level = lantern.fuel_level - lantern.light_level
           }
-          else if (lantern.light_level = 1) {
-            msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
+          else if (lantern.fuel_level - lantern.light_level < 10 and lantern.low_fuel <> True) {
+            lantern.low_fuel = True
+            if (lantern.light_level = 2) {
+              lantern.light_level = 1
+              msg ("Your lantern flame begins to gutter. You're forced to turn it down to maintain a steady flame. Your eyes adjust to the light level.")
+            }
+            else if (lantern.light_level = 1) {
+              msg ("You notice that your lantern's reservoir is nearly fumes. Turning it up will probably be impossible until you get more fuel.")
+            }
+            lantern.fuel_level = lantern.fuel_level - lantern.light_level
           }
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+          else {
+            lantern.fuel_level = lantern.fuel_level - lantern.light_level
+          }
+          if (game.debug) {
+            msg ("FUEL DEBUG: " + lantern.fuel_level)
+          }
+        }
+        if (game.heartRate < game.defaultHeartRate) {
+          offset = game.defaultHeartRate - game.heartRate
+          if (offset >= game.jumpScareAmount * 2 / 3) {
+            msg ("Your heart is pounding and your breath is short.")
+          }
+          else if (offset >= game.jumpScareAmount * 1 / 3) {
+            msg ("Your heart is beating quickly.")
+          }
+          else {
+            msg ("Your heart is starting to calm down.")
+          }
+          newHeartRate = game.heartRate + 150
+          if (newHeartRate <= game.defaultHeartRate) {
+            SetHeartRate (newHeartRate)
+          }
+          else {
+            SetHeartRate (game.defaultHeartRate)
+          }
+        }
+        if (game.reenableCount < 1) {
+          game.reenableCount = game.reenableCount + 1
         }
         else {
-          lantern.fuel_level = lantern.fuel_level - lantern.light_level
+          EnableHeart
+          game.helpShown = true
         }
-        if (game.debug) {
-          msg ("FUEL DEBUG: " + lantern.fuel_level)
+        if (not game.heartEnabled) {
+          msg ("")
+          msg ("(Time is paused. Enter any command to continue.)")
+          if (not game.helpShown) {
+            msg ("(Type HELP for gameplay help.)")
+          }
         }
-      }
-      if (game.heartRate < game.defaultHeartRate) {
-        offset = game.defaultHeartRate - game.heartRate
-        if (offset >= game.jumpScareAmount * 2 / 3) {
-          msg ("Your heart is pounding and your breath is short.")
+        if (game.saveTime) {
+          msg ("<b>(Now is probably a good time to save!)</b>")
         }
-        else if (offset >= game.jumpScareAmount * 1 / 3) {
-          msg ("Your heart is beating quickly.")
-        }
-        else {
-          msg ("Your heart is starting to calm down.")
-        }
-        newHeartRate = game.heartRate + 150
-        if (newHeartRate <= game.defaultHeartRate) {
-          SetHeartRate (newHeartRate)
-        }
-        else {
-          SetHeartRate (game.defaultHeartRate)
-        }
-      }
-      if (game.reenableCount < 1) {
-        game.reenableCount = game.reenableCount + 1
-      }
-      else {
-        EnableHeart
-        game.helpShown = true
-      }
-      if (not game.heartEnabled and not game.gameover) {
-        msg ("")
-        msg ("(Time is paused. Enter any command to continue.)")
-        if (not game.helpShown) {
-          msg ("(Type HELP for gameplay help.)")
-        }
-      }
-      if (game.saveTime) {
-        msg ("<b>(Now is probably a good time to save!)</b>")
       }
     ]]></script>
   </turnscript>
